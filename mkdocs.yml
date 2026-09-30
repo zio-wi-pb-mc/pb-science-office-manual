@@ -1,0 +1,28 @@
+site_name: ZIO — instrukcja projektu
+site_description: Instrukcja pracy studentów w projekcie ZIO
+repo_url: "https://github.com/zio-wi-pb-mc/pb-science-office"
+docs_dir: manual
+theme:
+  name: material
+  language: pl
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+nav:
+  - Start: index.md
+  - Projekt i MVP: 01-projekt-i-mvp.md
+  - Organizacja pracy: 02-organizacja.md
+  - Backlog i zadania: 03-backlog.md
+  - Git i Pull Requests: 04-git-pr.md
+  - Testy i błędy: 05-testy-bugi.md
+  - Tygodniowe rozliczenie: 06-postep.md
+  - AI w projekcie: 07-ai.md
+  - Ocenianie: 08-ocenianie.md
+  - Ankieta startowa: 09-ankieta.md
+  - FAQ: 10-faq.md
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
