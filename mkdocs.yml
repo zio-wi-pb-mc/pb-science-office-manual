@@ -11,6 +11,7 @@ theme:
     - content.code.copy
 nav:
   - Start: index.md
+  - Pierwsze zajęcia: 00-start.md
   - Projekt i MVP: 01-projekt-i-mvp.md
   - Organizacja pracy: 02-organizacja.md
   - Backlog i zadania: 03-backlog.md
