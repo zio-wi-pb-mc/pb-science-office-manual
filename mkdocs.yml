@@ -12,6 +12,7 @@ theme:
 nav:
   - Start: index.md
   - Pierwsze zajęcia: 00-start.md
+  - GitHub — krok po kroku: 13-github-krok-po-kroku.md
   - Projekt i MVP: 01-projekt-i-mvp.md
   - Organizacja pracy: 02-organizacja.md
   - Backlog i zadania: 03-backlog.md
@@ -23,6 +24,7 @@ nav:
   - Ankieta startowa: 09-ankieta.md
   - Zajęcia:
       - Zajęcia 1 — PS1: 11-zajecia-01-ps1.md
+      - Zajęcia 1 — PS2: 14-zajecia-01-ps2.md
       - Plan Discovery A–F: 12-plan-discovery-a-f.md
   - FAQ: 10-faq.md
 markdown_extensions:
