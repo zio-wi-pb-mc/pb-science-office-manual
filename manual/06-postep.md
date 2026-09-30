@@ -2,17 +2,33 @@
 
 Nie przesyłamy cotygodniowych raportów DOCX.
 
-Każdy student tworzy na początku semestru jedno Issue typu **Student progress** i pozostawia je otwarte do końca zajęć.
+Źródłem informacji o postępie są Issue, Pull Request, review/test i status w GitHub Project.
 
-Raz w tygodniu dodaje komentarz:
+## Termin
+
+**Do wtorku do 20:00** każdy student aktualizuje stan swojej pracy i komentarz w Issue typu **Student progress**:
 
 ```text
-Tydzień: 4
-DONE: #41 — formularz budżetu
-PR: #57
-REVIEW/TEST: #61
-BLOCKER: brak
-NEXT: #66
+Tydzień: 2
+
+DONE:
+#41 — ...
+
+PR:
+#57
+
+REVIEW/TEST:
+#61
+
+BLOCKER:
+brak
+
+NEXT:
+#66
 ```
 
-Raport ma być krótki. Dowodem pracy są podlinkowane Issues, PR-y, review i testy.
+Dowodem pracy są podlinkowane artefakty.
+
+Lead dodatkowo publikuje handoff zespołu, aby PS2 w środę i PS1 w czwartek pracowały na aktualnym stanie projektu.
+
+Jeżeli ważne ustalenie powstaje podczas środowych zajęć PS2, lead PS2 zapisuje je tego samego dnia.

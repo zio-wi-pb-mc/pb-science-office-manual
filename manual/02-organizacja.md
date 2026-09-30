@@ -1,21 +1,70 @@
 # Organizacja pracy
 
-Studenci pracują w małych podach, zwykle około czteroosobowych. Pod ma leada, który reprezentuje pod na krótkim spotkaniu statusowym z prowadzącym.
+## Struktura
 
-## Pod nie jest właścicielem oceny
+- **PS1 — czwartek:** zespoły A/B/C
+- **PS2 — środa:** zespoły D/E/F
 
-Ocena jest indywidualna. Każde Issue ma konkretnego właściciela, dlatego wkład poszczególnych osób jest widoczny.
+Po Discovery zespoły pozostają jednostkami organizacyjnymi, ale zadania mogą być przydzielane dynamicznie ze wspólnego backlogu.
 
-## Lead poda
+## Lead zespołu
 
 Lead:
+- zna stan prac członków zespołu,
+- pilnuje, aby każdy miał konkretne Issue,
+- pilnuje aktualności statusów,
+- wykrywa duplikaty i zależności,
+- zbiera blockery i pytania,
+- publikuje handoff zespołu,
+- przekazuje prowadzącemu krótki status,
+- nadal wykonuje własną pracę.
 
-- zna stan prac członków poda,
-- pilnuje, aby zadania były aktualne,
-- zgłasza blokery,
-- uczestniczy w planowaniu kolejnych zadań,
-- nadal wykonuje normalną pracę techniczną/analityczną.
+## Stały rytm PS1 ↔ PS2
+
+### Wtorek 20:00
+- aktualizacja Issues i PR,
+- zakończone zadania mają link do rezultatów,
+- niedokończone zadania mają aktualny status i blocker,
+- lead publikuje handoff.
+
+### Środa — PS2
+- PS2 zaczyna od boardu i handoffów,
+- nie powtarza pracy PS1,
+- korzysta z istniejących dokumentów, decyzji i kodu.
+
+### Środa po zajęciach
+- leadzi PS2 zapisują nowe ustalenia, pytania i blockery.
+
+### Czwartek — PS1
+- PS1 rozpoczyna od aktualnego stanu po PS2.
+
+## Format handoffu
+
+```text
+## Handoff — YYYY-MM-DD
+
+### Zakończone
+- #12 — ... — PR #31
+
+### W toku
+- #14 — ... — czego brakuje
+
+### Najważniejsze ustalenia
+- ...
+
+### Blockery / pytania
+- ...
+
+### Ważne dla kolejnej grupy
+- ...
+```
+
+Handoff ma być krótki i opierać się na linkach do Issues/PR.
+
+## Odpowiedzialność indywidualna
+
+Ocena jest indywidualna. Każde Issue ma konkretnego właściciela.
 
 ## Wspólne mechanizmy
 
-Dla elementów takich jak auth, workflow, PDF/DOCX, CI czy shared UI wyznaczany jest owner i backup. Inne osoby korzystają z tych mechanizmów, zamiast implementować własne wersje.
+Dla auth, workflow, PDF/DOCX, CI, shared UI itp. wyznaczany jest owner i backup. Nie tworzymy wielu niezależnych implementacji tego samego mechanizmu.

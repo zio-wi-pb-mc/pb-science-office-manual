@@ -1,3 +1,199 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Uruchom w repo: pb-science-office-manual
+test -f mkdocs.yml || { echo "Uruchom ten skrypt w katalogu pb-science-office-manual"; exit 1; }
+
+cat > manual/index.md <<'EOF'
+# ZIO — projekt semestralny
+
+Realizujemy **jeden wspólny projekt**: nowy system wspierający obsługę prac/projektów i wybranych procesów Działu Nauki PB.
+
+**PS1 (czwartek) i PS2 (środa) pracują nad jednym produktem, jednym repozytorium i jednym backlogiem.**
+
+!!! tip "Najbliższe zajęcia"
+    Studenci PS1 zaczynają od instrukcji **[Zajęcia 1 — PS1](11-zajecia-01-ps1.md)** i wykonują ją krok po kroku.
+
+## Stały rytm PS1 ↔ PS2
+
+- **wtorek 20:00** — aktualizacja Issues/PR i handoff zespołów,
+- **środa — PS2** — praca na aktualnym stanie po PS1,
+- **środa po zajęciach** — PS2 zapisuje najważniejsze ustalenia i blockery,
+- **czwartek — PS1** — praca na aktualnym stanie po PS2.
+
+Wyniki jednej grupy są wejściem do pracy drugiej. Nie tworzymy równoległych, konkurencyjnych rozwiązań bez uzgodnienia przez Issue/ADR.
+
+## Najważniejsze zasady
+
+1. Każde zadanie ma jednego właściciela.
+2. Jedna osoba ma maksymalnie jedno główne zadanie `In progress`.
+3. Kod i dokumentacja trafiają do `main` tylko przez Pull Request.
+4. Każdy wykonuje również review lub test cudzej pracy.
+5. Zadanie jest zakończone dopiero po spełnieniu Definition of Done.
+6. AI jest dozwolone, ale autor odpowiada za rezultat i musi go rozumieć.
+7. Źródłem prawdy są GitHub Issues, Pull Requests i GitHub Project.
+EOF
+
+cat > manual/00-start.md <<'EOF'
+# Start projektu
+
+Dokładny scenariusz pierwszych zajęć PS1 znajduje się na stronie **[Zajęcia 1 — PS1](11-zajecia-01-ps1.md)**.
+
+## Dwie grupy, jeden projekt
+
+- **PS1 — czwartek**
+- **PS2 — środa**
+
+Na początku Discovery:
+- PS1 pracuje w zespołach **A/B/C**,
+- PS2 rozpocznie od zespołów **D/E/F**, wykorzystując wyniki A/B/C.
+
+A–F to tymczasowe strumienie Discovery, a nie stały podział modułów do końca semestru.
+
+## Profil studenta
+
+Każdy student tworzy raz:
+
+**Issues → New issue → Student profile**
+
+Tytuł:
+
+`[PROFILE] Imię Nazwisko`
+
+Profil służy do utworzenia możliwie zrównoważonych zespołów.
+
+## Zespół i lead
+
+W każdej grupie PS powstają trzy zespoły po około 4 osoby.
+
+Lead:
+- zna aktualne zadania członków zespołu,
+- pilnuje aktualności Issues,
+- zbiera blockery i pytania,
+- przygotowuje krótki handoff,
+- kontaktuje się z prowadzącym,
+- nadal wykonuje własne zadanie.
+
+Lead nie jest przełożonym i nie wykonuje pracy za inne osoby.
+
+## Handoff
+
+**Do wtorku 20:00** praca z poprzedniego tygodnia ma mieć aktualny stan w Issues/PR, a lead publikuje krótki handoff.
+
+PS2 w środę i PS1 w czwartek rozpoczynają od przeczytania aktualnego handoffu oraz boardu projektu.
+EOF
+
+cat > manual/02-organizacja.md <<'EOF'
+# Organizacja pracy
+
+## Struktura
+
+- **PS1 — czwartek:** zespoły A/B/C
+- **PS2 — środa:** zespoły D/E/F
+
+Po Discovery zespoły pozostają jednostkami organizacyjnymi, ale zadania mogą być przydzielane dynamicznie ze wspólnego backlogu.
+
+## Lead zespołu
+
+Lead:
+- zna stan prac członków zespołu,
+- pilnuje, aby każdy miał konkretne Issue,
+- pilnuje aktualności statusów,
+- wykrywa duplikaty i zależności,
+- zbiera blockery i pytania,
+- publikuje handoff zespołu,
+- przekazuje prowadzącemu krótki status,
+- nadal wykonuje własną pracę.
+
+## Stały rytm PS1 ↔ PS2
+
+### Wtorek 20:00
+- aktualizacja Issues i PR,
+- zakończone zadania mają link do rezultatów,
+- niedokończone zadania mają aktualny status i blocker,
+- lead publikuje handoff.
+
+### Środa — PS2
+- PS2 zaczyna od boardu i handoffów,
+- nie powtarza pracy PS1,
+- korzysta z istniejących dokumentów, decyzji i kodu.
+
+### Środa po zajęciach
+- leadzi PS2 zapisują nowe ustalenia, pytania i blockery.
+
+### Czwartek — PS1
+- PS1 rozpoczyna od aktualnego stanu po PS2.
+
+## Format handoffu
+
+```text
+## Handoff — YYYY-MM-DD
+
+### Zakończone
+- #12 — ... — PR #31
+
+### W toku
+- #14 — ... — czego brakuje
+
+### Najważniejsze ustalenia
+- ...
+
+### Blockery / pytania
+- ...
+
+### Ważne dla kolejnej grupy
+- ...
+```
+
+Handoff ma być krótki i opierać się na linkach do Issues/PR.
+
+## Odpowiedzialność indywidualna
+
+Ocena jest indywidualna. Każde Issue ma konkretnego właściciela.
+
+## Wspólne mechanizmy
+
+Dla auth, workflow, PDF/DOCX, CI, shared UI itp. wyznaczany jest owner i backup. Nie tworzymy wielu niezależnych implementacji tego samego mechanizmu.
+EOF
+
+cat > manual/06-postep.md <<'EOF'
+# Tygodniowe rozliczenie
+
+Nie przesyłamy cotygodniowych raportów DOCX.
+
+Źródłem informacji o postępie są Issue, Pull Request, review/test i status w GitHub Project.
+
+## Termin
+
+**Do wtorku do 20:00** każdy student aktualizuje stan swojej pracy i komentarz w Issue typu **Student progress**:
+
+```text
+Tydzień: 2
+
+DONE:
+#41 — ...
+
+PR:
+#57
+
+REVIEW/TEST:
+#61
+
+BLOCKER:
+brak
+
+NEXT:
+#66
+```
+
+Dowodem pracy są podlinkowane artefakty.
+
+Lead dodatkowo publikuje handoff zespołu, aby PS2 w środę i PS1 w czwartek pracowały na aktualnym stanie projektu.
+
+Jeżeli ważne ustalenie powstaje podczas środowych zajęć PS2, lead PS2 zapisuje je tego samego dnia.
+EOF
+
+cat > manual/11-zajecia-01-ps1.md <<'EOF'
 # Zajęcia 1 — PS1 (czwartek)
 
 Ta strona jest **instrukcją wykonania zajęć**. Pracuj kolejno od punktu 1 do końca.
@@ -318,3 +514,101 @@ Lead:
 - publikuje krótki handoff zespołu.
 
 Dzięki temu **PS2 w środę zaczyna od aktualnych wyników PS1**.
+EOF
+
+cat > manual/12-plan-discovery-a-f.md <<'EOF'
+# Plan Discovery — zespoły A–F
+
+A–F dotyczą pierwszej fazy projektu. Nie są stałym podziałem modułów na cały semestr.
+
+## Rytm
+
+- **PS1 — czwartek:** A/B/C
+- **wtorek 20:00:** handoff wyników A/B/C
+- **PS2 — środa:** D/E/F pracuje na wynikach A/B/C
+- **środa po zajęciach:** handoff PS2
+- **PS1 — czwartek:** kontynuacja na aktualnym stanie
+
+## PS1
+
+### A — obecny system i dane
+- UI i funkcje aktualnego systemu,
+- model pojęciowy,
+- reguły finansowe,
+- pytania do administratora.
+
+### B — procesy, formularze i wymagania
+- katalog spraw i formularzy,
+- praca własna/kosztorys/rozliczenie,
+- delegacje i konferencje,
+- elementy wspólne formularzy.
+
+### C — Core i środowisko
+- Django/PostgreSQL/Docker,
+- modularny monolit,
+- PDF/DOCX,
+- CI i testy.
+
+## PS2 — plan wstępny
+
+Dokładne D/E/F zostaną doprecyzowane po handoffie A/B/C.
+
+### D — legacy, baza i migracja
+- analiza PHP,
+- analiza anonimowej bazy,
+- mapowanie tabel,
+- reguły ukryte w kodzie,
+- migracja i testy zgodności.
+
+### E — role, workflow i wymagania użytkowników
+- realizator,
+- Dział Nauki,
+- kierownictwo,
+- administrator,
+- role/uprawnienia,
+- akceptacja/zwrot/odrzucenie,
+- scenariusze akceptacyjne MVP.
+
+### F — pierwszy vertical slice
+- wykorzystanie Core z C,
+- mock logowania,
+- użytkownik i role,
+- lista projektów/prac,
+- szczegóły projektu,
+- pierwsze dane budżetowe,
+- CI i testy.
+
+F nie tworzy drugiego szkieletu aplikacji.
+
+## Po Discovery
+
+1. zamrażamy MVP,
+2. klasyfikujemy MVP/P1/P2,
+3. szacujemy S/M/L,
+4. utrzymujemy jeden backlog,
+5. zadania rozdzielamy zgodnie z potrzebą i obciążeniem.
+
+Priorytet: działające MVP na początku grudnia.
+EOF
+
+# mkdocs.yml już powinien zawierać wpisy 11/12; dopisz je tylko jeśli ich brak.
+python - <<'PY'
+from pathlib import Path
+p = Path("mkdocs.yml")
+s = p.read_text(encoding="utf-8")
+if "11-zajecia-01-ps1.md" not in s:
+    marker = "  - FAQ: 10-faq.md\n"
+    block = """  - Zajęcia:
+      - Zajęcia 1 — PS1: 11-zajecia-01-ps1.md
+      - Plan Discovery A–F: 12-plan-discovery-a-f.md
+"""
+    s = s.replace(marker, block + marker)
+p.write_text(s, encoding="utf-8")
+PY
+
+git add .
+git commit -m "Clarify PS1 PS2 handoff and first class instructions"
+git push origin main
+
+echo
+echo "GOTOWE. GitHub Pages przebuduje się automatycznie."
