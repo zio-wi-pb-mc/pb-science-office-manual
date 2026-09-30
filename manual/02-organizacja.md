@@ -35,8 +35,13 @@ Lead:
 ### Środa po zajęciach
 - leadzi PS2 zapisują nowe ustalenia, pytania i blockery.
 
+**To jest krótki handoff, a nie termin zakończenia zadań.**  
+PS2 nie musi kończyć pracy między środą a czwartkiem. Celem jest jedynie pozostawienie PS1 aktualnej informacji: co zostało podjęte, przez kogo, jakie są ustalenia, zależności i blockery.
+
 ### Czwartek — PS1
 - PS1 rozpoczyna od aktualnego stanu po PS2.
+
+PS1 nie przygotowuje osobnego raportu w piątek. Obie grupy pracują dalej do wspólnego terminu **wtorek 20:00**, kiedy następuje pełna aktualizacja tygodniowa i handoff przed środowym PS2.
 
 ## Format handoffu
 

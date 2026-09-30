@@ -241,3 +241,15 @@ Na końcu zajęć każdy lead raportuje status.
 ```
 
 PS1 w czwartek zaczyna od przeczytania tego handoffu.
+
+!!! important "Co PS2 musi mieć gotowe na czwartek?"
+    **Nie trzeba kończyć zadań ani mieć gotowych PR-ów do czwartku.**
+
+    Do środy 20:00 wystarczy, że:
+
+    - każde rozpoczęte zadanie ma Issue, właściciela i aktualny status,
+    - Issue jest doprecyzowane po review,
+    - zapisano najważniejsze ustalenia, zależności i blockery,
+    - lead opublikował krótki handoff dla PS1.
+
+    Pełne tygodniowe rozliczenie pracy pozostaje we **wtorek do 20:00**: wynik/PR, review lub test, aktualizacja Student progress i blocker, jeśli występuje.

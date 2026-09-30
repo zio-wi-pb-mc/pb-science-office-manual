@@ -318,3 +318,5 @@ Lead:
 - publikuje krótki handoff zespołu.
 
 Dzięki temu **PS2 w środę zaczyna od aktualnych wyników PS1**.
+
+PS1 nie przygotowuje dodatkowego raportu w piątek. Po czwartkowych zajęciach pracuje normalnie do wspólnego terminu **wtorek 20:00**.

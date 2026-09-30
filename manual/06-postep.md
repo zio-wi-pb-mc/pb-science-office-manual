@@ -32,3 +32,11 @@ Dowodem pracy są podlinkowane artefakty.
 Lead dodatkowo publikuje handoff zespołu, aby PS2 w środę i PS1 w czwartek pracowały na aktualnym stanie projektu.
 
 Jeżeli ważne ustalenie powstaje podczas środowych zajęć PS2, lead PS2 zapisuje je tego samego dnia.
+
+## Dwa różne terminy
+
+**Środa 20:00 — tylko PS2:** krótki handoff dla PS1. Nie jest to termin zakończenia zadań. Wystarczy aktualny stan Issues, właściciele, ustalenia, zależności i blockery.
+
+**Wtorek 20:00 — obie grupy:** pełne tygodniowe rozliczenie pracy: wynik/PR, review lub test, Student progress oraz aktualny blocker.
+
+PS1 po czwartkowych zajęciach nie ma dodatkowego piątkowego raportu.
