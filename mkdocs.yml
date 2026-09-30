@@ -21,6 +21,9 @@ nav:
   - AI w projekcie: 07-ai.md
   - Ocenianie: 08-ocenianie.md
   - Ankieta startowa: 09-ankieta.md
+  - Zajęcia:
+      - Zajęcia 1 — PS1: 11-zajecia-01-ps1.md
+      - Plan Discovery A–F: 12-plan-discovery-a-f.md
   - FAQ: 10-faq.md
 markdown_extensions:
   - admonition

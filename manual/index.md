@@ -1,3 +1,6 @@
+!!! tip "Najbliższe zajęcia"
+    Studenci PS1 zaczynają od instrukcji **[Zajęcia 1 — PS1](11-zajecia-01-ps1.md)**.
+
 # ZIO — projekt semestralny
 
 W ramach pracowni specjalistycznej realizujemy **jeden wspólny projekt**: nowy system wspierający obsługę prac/projektów i wybranych procesów Działu Nauki PB.
