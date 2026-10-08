@@ -26,6 +26,8 @@ nav:
       - Zajęcia 1 — PS1: 11-zajecia-01-ps1.md
       - Zajęcia 1 — PS2: 14-zajecia-01-ps2.md
       - Plan Discovery A–F: 12-plan-discovery-a-f.md
+      - Zajęcia 2 — kod legacy i Discovery 2.0: 15-zajecia-02-kod-legacy.md
+      - Propozycje zadań po audycie: 16-propozycje-zadan-po-audycie.md
   - FAQ: 10-faq.md
 markdown_extensions:
   - admonition
