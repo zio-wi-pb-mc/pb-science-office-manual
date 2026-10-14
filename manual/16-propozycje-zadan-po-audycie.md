@@ -1,76 +1,176 @@
-# Propozycje zadań po otrzymaniu kodu legacy
+# Stan projektu i kierunki dalszych prac
 
-**Data propozycji:** 8.10.2026  
-**Status:** **POMYSŁY DO WYBORU** — nie są przydziałami, zatwierdzonymi Issues ani decyzją o MVP.  
-**Powiązanie:** [Zajęcia 2 — kod legacy i Discovery 2.0](15-zajecia-02-kod-legacy.md).
+**Stan na: 14.10.2026**
+**Charakter dokumentu:** żywe podsumowanie komunikacyjne; aktualizowane w miarę postępu PR.
+**Źródło prawdy:** GitHub Issues, Pull Requests i GitHub Project.
 
-## Jak korzystać z listy
+!!! important "To nie jest lista przydziałów"
+    Ta strona nie mówi, kto ma wykonać następne zadanie. Pokazuje, **co już istnieje, co jest w toku, od czego zależą inne zespoły i gdzie są luki**. Student lub zespół proponuje następne Issue samodzielnie, a lead/prowadzący sprawdzają zakres, duplikaty i zależności.
 
-Przed utworzeniem Issue sprawdź istniejące zadania/PR i porozmawiaj z leadem. Temat może wymagać zawężenia, połączenia z już prowadzonym Issue albo odłożenia. Oznaczenia `A-LEG-01` itd. są **lokalnymi identyfikatorami propozycji**, a nie numerami GitHub Issues. Priorytety (`P0/P1`) są **orientacyjne**.
+## Jak korzystać z tej strony
 
-Zadanie powinno mieć jednego właściciela, konkretny plik wynikowy, źródła, listę niewiadomych, kryteria akceptacji i peer review. Jako źródła wolno wskazywać nazwy klas/funkcji bez kopiowania prywatnych danych lub sekretów.
+Przed rozpoczęciem nowego zadania:
 
-## A — obecny system, dane, finanse
+1. sprawdź aktualne Issue/PR swojego zespołu,
+2. sprawdź, czy wynik innego zespołu nie rozwiązuje już problemu,
+3. ustal, kto potrzebuje rezultatu Twojej pracy,
+4. zaproponuj konkretne Issue z jednym właścicielem i mierzalnym rezultatem,
+5. jeżeli czegoś nie wiadomo — zapisz `UNKNOWN`/blocker zamiast tworzyć własną regułę biznesową.
 
-| Kod | Propozycja | Sugerowany rezultat | Orientacyjnie |
+Prowadzący nie musi zatwierdzać każdego drobnego kroku. Szczególnego uzgodnienia wymagają przede wszystkim zadania przekrojowe, decyzje architektoniczne, migracja, bezpieczeństwo oraz zadania rozmiaru L.
+
+## Cel czasowy
+
+Celem jest, aby **na początku grudnia istniało działające, zintegrowane MVP**, a nie zbiór niezależnych analiz.
+
+Orientacyjne kamienie milowe:
+
+| Termin | Oczekiwany stan produktu |
+|---|---|
+| koniec października | najważniejsze luki Discovery zamknięte; dane, finanse, role i workflow nie blokują implementacji |
+| połowa listopada | pierwszy spójny przepływ MVP działa end-to-end na danych testowych |
+| koniec listopada | podstawowe uprawnienia, formularze/dokumenty i testy krytycznych przepływów są zintegrowane |
+| początek grudnia | feature freeze MVP; poprawiamy błędy, integrację, testy, UX i dokumentację |
+
+## Szybki obraz A–F
+
+| Zespół | Stan | Najważniejsze aktywne wyniki | Najważniejsze zależności |
 |---|---|---|---|
-| **A-LEG-01** | Mapa typów prac i ich wspólnych/różnych pól | `docs/legacy/project-types.md` | P0 |
-| **A-LEG-02** | Rezerwacja a wydatek: znaczenie i rozliczenie częściowe | `docs/legacy/reservation-life-cycle.md` + scenariusze syntetyczne | P0 |
-| **A-LEG-03** | Uzgodnienie definicji salda i kosztów pośrednich | `docs/legacy/finance-reconciliation.md` | P0 |
+| **A** | analiza legacy/finansów w toku | typy prac #85; saldo i koszty pośrednie #97 / PR #121; rezerwacja vs wydatek #81 / PR #99 | F4 potrzebuje potwierdzonych reguł finansowych; D korzysta ze znaczenia pól |
+| **B** | kilka analiz w review | proces legacy #79 / PR #105; procesy poza legacy #80 / PR #104; katalog outputów #82 / PR #110; mapa pól #83 / PR #103; scenariusze #84 / PR #111 | E potrzebuje potwierdzonych procesów; F potrzebuje pól i scenariuszy |
+| **C** | wspólny Core jest już na `dev` | Django/PostgreSQL/Docker, pytest, ADR-y, dokumentacja i CI | nie tworzyć kolejnego skeletonu; wspierać integrację F i wspólne decyzje techniczne |
+| **D** | mapa bazy w review | #114 / PR #115 — tabele, pola, relacje logiczne i triggery | kolejne kroki powinny wynikać z luk D2: identyfikatory, lata/kontynuacje, jakość danych, migracja |
+| **E** | role i workflow w toku | #120 — role/uprawnienia; #116 / PR #117 — statusy i przejścia | F2 potrzebuje ról; kolejne workflow powinny korzystać z wyników B i legacy |
+| **F** | implementacja vertical slice w toku | #113 — użytkownik/logowanie; #112 — lista i szczegóły; #91 / draft PR #93 — budżet | F3/F4 muszą współdzielić model projektu; F4 zależy od A/D; F2 od E |
 
-**Warunek:** wzory nie mogą być przedstawiane jako zatwierdzone reguły księgowe bez testów i potwierdzenia administratora.
+Numery powyżej opisują **stan na dzień aktualizacji**. Jeżeli PR został później scalony albo Issue zamknięte, GitHub ma pierwszeństwo przed tym dokumentem.
 
-## B — procesy, formularze i wymagania (również nowa osoba)
+## A — obecny system, dane i finanse
 
-| Kod | Propozycja | Sugerowany rezultat | Orientacyjnie |
-|---|---|---|---|
-| **B-LEG-01** | Proces pracy własnej: co obsługuje legacy, a co pozostaje poza nim | `docs/requirements/legacy-own-work-process.md` | P0 |
-| **B-LEG-02** | Katalog raportów, eksportów i dokumentów | `docs/requirements/output-artifacts-catalog.md` | P1 |
-| **B-LEG-03** | Aktualizacja pytań do administratora po otrzymaniu kodu | aktualizacja `docs/legacy/questions-for-admin.md` | P1 |
-| **B-LEG-04** | **Mapa pól formularzy, źródeł danych i walidacji** | `docs/requirements/legacy-form-fields.md` | P1 |
-| **B-LEG-05** | **Scenariusze akceptacyjne dla 1–2 potwierdzonych procesów** | `docs/testing/legacy-process-scenarios.md` | P1 |
+### Co jest teraz ważne
 
-**Dodatkowa osoba w B:** do rozważenia B-LEG-04 lub B-LEG-05. Lead najpierw sprawdza bieżące zadania, a zakres ustala z prowadzącym. Te tematy nie wymuszają przekazywania cudzych Issues.
+- typy prac i ich różnice są analizowane w #85,
+- reguły salda i kosztów pośrednich zostały szczegółowo odtworzone w #97 / PR #121,
+- cykl rezerwacji i wydatku jest analizowany w #81 / PR #99,
+- mapa uczestników projektu (#87) została już wykonana.
 
-Dla **B-LEG-04** warto zebrać co najmniej 2 reprezentatywne formularze/operacje: pole, typ, wymaganie, regułę walidacji, źródło, miejsce użycia, status potwierdzenia. Dla **B-LEG-05**: co najmniej 5 scenariuszy Given/When/Then, jawnie oznaczając założenia, których legacy nie potwierdza.
+### Co powinny dostać inne zespoły
 
-## C — Core, testy, dokumenty
+- jednoznaczne znaczenie pól finansowych,
+- potwierdzony sposób liczenia salda,
+- zachowanie rezerwacji i częściowego rozliczenia,
+- jawnie opisane rozbieżności legacy.
 
-| Kod | Propozycja | Sugerowany rezultat | Orientacyjnie |
-|---|---|---|---|
-| **C-LEG-01** | ADR modelu finansowego nowego systemu (bez migracji produkcyjnej) | `docs/adr/ADR-003-financial-domain.md` | P0 |
-| **C-LEG-02** | Testy golden master finansów na sztucznych danych | `tests/fixtures/finance_cases.json` i opis scenariuszy | P0 |
-| **C-LEG-03** | Weryfikacja ADR PDF/DOCX względem realnych raportów legacy | aktualizacja `docs/adr/ADR-002-document-generation.md` | P1 |
+**Pytanie kierujące:** jaki brak w wiedzy o legacy realnie blokuje teraz D albo F?
 
-## D — schemat, migracja, jakość danych
+## B — procesy, formularze i wymagania
 
-| Kod | Propozycja | Sugerowany rezultat | Orientacyjnie |
-|---|---|---|---|
-| **D-LEG-01** | Diagram logicznych relacji i rejestr tabel | `docs/legacy/schema-map.md` | P0 |
-| **D-LEG-02** | Identyfikatory legacy, lata i kontynuacje prac | `docs/migration/legacy-id-and-years.md` | P0 |
-| **D-LEG-03** | Lista kontroli jakości i integralności migracji | `docs/migration/data-quality-checklist.md` | P1 |
+### Co jest teraz ważne
 
-Brak zadeklarowanych kluczy obcych nie jest dowodem, że każda relacja jest błędna. Analiza danych rzeczywistych może odbywać się tylko w zatwierdzonym środowisku i zakresie uprawnień.
+B ma już kilka równoległych rezultatów dotyczących procesów, pól formularzy, raportów i scenariuszy. Priorytetem nie jest tworzenie kolejnych katalogów, tylko **domknięcie jakości i powiązanie wyników z kodem legacy**.
 
-## E — role, uprawnienia, workflow
+### Co powinny dostać inne zespoły
 
-| Kod | Propozycja | Sugerowany rezultat | Orientacyjnie |
-|---|---|---|---|
-| **E-LEG-01** | Macierz aktorów, operacji i zasięgu danych | `docs/requirements/legacy-permissions-matrix.md` | P0 |
-| **E-LEG-02** | Rozdzielenie flag legacy od stanów projektowanego workflow | `docs/requirements/statuses-and-transitions.md` | P0 |
-| **E-LEG-03** | Model autoryzacji i testy uprawnień nowej aplikacji | `docs/security/authorization-matrix.md` | P0 |
+- potwierdzony proces pracy własnej,
+- pola i walidacje używane przez formularze,
+- komplet najważniejszych raportów/eksportów,
+- scenariusze akceptacyjne, które E i F mogą wykorzystać bez zgadywania.
+
+**Pytanie kierujące:** który brak w procesie lub formularzu uniemożliwia teraz zaprojektowanie workflow albo implementację vertical slice?
+
+## C — Core, testy i decyzje techniczne
+
+Podstawowy Core istnieje już na `dev`. Dalsza praca C powinna coraz częściej polegać na **wspieraniu integracji**, a nie na tworzeniu kolejnych niezależnych fundamentów.
+
+### Kierunek
+
+- utrzymywać jeden sposób uruchamiania i testowania,
+- domykać decyzje architektoniczne wtedy, gdy są potrzebne implementacji,
+- dostarczać wspólne mechanizmy używane przez F,
+- pilnować CI i jakości technicznej PR-ów implementacyjnych.
+
+**Pytanie kierujące:** jaka wspólna decyzja lub infrastruktura blokuje obecnie więcej niż jeden zespół?
+
+## D — baza, identyfikatory i migracja
+
+#114 / PR #115 daje pierwszą szczegółową mapę starej bazy. Nie należy tworzyć drugiej konkurencyjnej mapy tabel.
+
+### Luki, z których mogą wynikać następne Issue
+
+- historyczne identyfikatory i ich stabilność,
+- lata oraz kontynuacje prac,
+- osierocone i niespójne relacje,
+- kontrola jakości danych przed migracją,
+- mapowanie legacy → nowy model tylko dla zakresu potrzebnego MVP.
+
+To są **kierunki**, nie gotowy przydział. Najpierw należy sprawdzić, który z nich blokuje F lub przyszłą migrację najbardziej.
+
+**Pytanie kierujące:** czego nie wiemy o danych legacy, a bez czego nie da się bezpiecznie zaprojektować modelu nowego systemu lub migracji?
+
+## E — role, uprawnienia i workflow
+
+Aktualnie powstają dwa ważne wyniki:
+
+- #120 — macierz aktorów, ról i uprawnień,
+- #116 / PR #117 — wspólny model statusów i przejść.
+
+E powinno pilnować rozdzielenia dwóch rzeczy:
+
+1. **co legacy faktycznie pozwala robić**,
+2. **jak chcemy zaprojektować workflow nowego systemu**.
+
+Po domknięciu E1/E2 można proponować dalsze prace dotyczące widoków Działu Nauki, autoryzacji lub scenariuszy workflow — ale tylko wtedy, gdy wynik jest potrzebny implementacji.
+
+**Pytanie kierujące:** jakiej decyzji o roli, uprawnieniu lub przejściu potrzebuje teraz F2/F3/F4?
 
 ## F — pierwszy działający fragment nowego systemu
 
-W zespole F **obowiązuje dotychczasowa lista Discovery-F1–F4** z pierwszych zajęć. W szczególności: nie powstaje drugi szkielet aplikacji, a widoki używają danych testowych. Na tym etapie **nie proponuje się nowego, konkurencyjnego backlogu dla F**. Zespół dostosuje własne otwarte Issues po dostarczeniu wyników A–E.
+F ma obecnie najbardziej bezpośrednią odpowiedzialność za zamianę Discovery w działający produkt:
 
-## Przed zatwierdzeniem zadania
+- #113 — minimalny użytkownik/rola i logowanie testowe,
+- #112 — lista i szczegóły projektu/pracy,
+- #91 / draft PR #93 — podsumowanie budżetu.
 
-- [ ] Nie istnieje już Issue/PR o tym samym zakresie.
-- [ ] Rezultat można zweryfikować w ciągu ok. tygodnia pracy.
-- [ ] Źródła i ograniczenia są jawne.
-- [ ] Przykłady zawierają tylko dane syntetyczne.
-- [ ] Zależności od innych zespołów są zapisane.
-- [ ] Lead i prowadzący zaakceptowali zakres i priorytet.
+F nie powinien czekać na idealne zakończenie wszystkich analiz. Jeżeli reguła nie jest jeszcze potwierdzona, należy użyć danych syntetycznych i jawnego `UNKNOWN`, a następnie zgłosić zależność właściwemu zespołowi.
 
-**Odrębnie po stronie prowadzącego/administratora:** kwalifikacja danych do dydaktyki, kontrola i wymiana sekretów, konfiguracja serwera, rozstrzygnięcie rozbieżności księgowych oraz zakres migracji. Nie zamieniać tych punktów w samodzielne zadania studenta bez odpowiednich uprawnień.
+### Najważniejsze teraz
+
+- F3 i F4 powinny uzgodnić wspólny model/identyfikator projektu,
+- F4 powinno podmieniać placeholdery dopiero na reguły potwierdzone przez A/D,
+- F2 powinno przyjąć role zgodne z wynikiem E, bez budowania pełnego SSO,
+- kolejne kroki F powinny rozszerzać **ten sam vertical slice**, a nie powoływać nowe niezależne moduły demonstracyjne.
+
+**Pytanie kierujące:** jaki najmniejszy kolejny krok sprawi, że obecne F2/F3/F4 będą działały bardziej jak jeden system?
+
+## Minimalny standard komunikacji między zespołami
+
+Nie tworzymy dodatkowej biurokracji. Wystarczy, że raz w tygodniu lead zapisze w uzgodnionym miejscu krótkie trzy punkty:
+
+```text
+### Handoff
+- Nowe potwierdzone fakty / wynik:
+- Ważne dla innych zespołów:
+- Blocker / potrzebna decyzja:
+```
+
+Jeżeli PR zmienia założenie używane przez inny zespół, autor lub lead powinien **wprost oznaczyć zależne Issue/PR**. Nie zakładamy, że druga grupa sama zauważy zmianę.
+
+## Kiedy tworzyć nowe Issue
+
+Nowe Issue ma sens, gdy:
+
+- istnieje konkretny brak lub decyzja potrzebna produktowi,
+- nie ma już aktywnego Issue/PR o tym samym zakresie,
+- rezultat da się zweryfikować,
+- wiadomo, komu wynik będzie potrzebny,
+- zakres jest wystarczająco mały, aby zrobić rzeczywisty postęp w około tydzień.
+
+Nie tworzymy Issue tylko dlatego, że jakiś temat pojawia się w starym planie zajęć.
+
+## Ograniczenia
+
+Materiały legacy pozostają materiałami dydaktycznymi o ograniczonym dostępie. W publicznych Issues/PR i dokumentacji wolno publikować wnioski, nazwy plików/funkcji/tabel i dane syntetyczne, ale nie dane osobowe, sekrety, dump bazy ani nieautoryzowane fragmenty konfiguracji.
+
+## Historia aktualizacji
+
+- **14.10.2026** — utworzono żywe podsumowanie stanu A–F; zastępuje wcześniejszą listę „propozycji zadań po audycie”.

@@ -4,8 +4,10 @@ Realizujemy **jeden wspólny projekt**: nowy system wspierający obsługę prac/
 
 **PS1 (czwartek) i PS2 (środa) pracują nad jednym produktem, jednym repozytorium i jednym backlogiem.**
 
-!!! tip "Aktualny etap — Discovery 2.0"
-    Na **drugich zajęciach** studenci otrzymują zatwierdzony kod legacy i materiały o bazie. Instrukcja: **[Zajęcia 2 — kod legacy i Discovery 2.0](15-zajecia-02-kod-legacy.md)**. [Propozycje zadań po audycie](16-propozycje-zadan-po-audycie.md) to pomysły na dalszą pracę, a nie gotowy przydział. Instrukcje pierwszych zajęć pozostają w sekcji „Zajęcia”.
+!!! tip "Aktualny etap — Discovery 2.0 i integracja MVP"
+    Stały podział odpowiedzialności opisuje [Plan Discovery A–F](12-plan-discovery-a-f.md). Bieżący obraz projektu, zależności między zespołami i kierunki dalszej pracy są utrzymywane na stronie [Stan projektu i kierunki dalszych prac](16-propozycje-zadan-po-audycie.md).
+
+    Strona stanu jest **podsumowaniem komunikacyjnym**, a nie listą przydziałów. Źródłem prawdy dla wykonania pracy pozostają GitHub Issues, Pull Requests i GitHub Project.
 
 ## Stały rytm PS1 ↔ PS2
 
@@ -25,3 +27,4 @@ Wyniki jednej grupy są wejściem do pracy drugiej. Nie tworzymy równoległych,
 5. Zadanie jest zakończone dopiero po spełnieniu Definition of Done.
 6. AI jest dozwolone, ale autor odpowiada za rezultat i musi go rozumieć.
 7. Źródłem prawdy są GitHub Issues, Pull Requests i GitHub Project.
+8. Kolejne zadania powinny wynikać z faktycznych braków projektu i zależności między zespołami, a nie z gotowej listy tematów.
