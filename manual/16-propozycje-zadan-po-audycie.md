@@ -1,150 +1,187 @@
 # Stan projektu i kierunki dalszych prac
 
-**Stan na: 14.10.2026**
-**Charakter dokumentu:** żywe podsumowanie komunikacyjne; aktualizowane w miarę postępu PR.
+**Stan na: 15.10.2026**  
+**Charakter dokumentu:** żywe podsumowanie komunikacyjne.  
 **Źródło prawdy:** GitHub Issues, Pull Requests i GitHub Project.
 
-!!! important "To nie jest lista przydziałów"
-    Ta strona nie mówi, kto ma wykonać następne zadanie. Pokazuje, **co już istnieje, co jest w toku, od czego zależą inne zespoły i gdzie są luki**. Student lub zespół proponuje następne Issue samodzielnie, a lead/prowadzący sprawdzają zakres, duplikaty i zależności.
+!!! important "Kończy się pierwsza fala Discovery, nie praca zespołów"
+    Zespoły A–E nie kończą pracy po zamknięciu obecnych analiz. Projekt przechodzi do etapu **Requirements, Integration & MVP**. Kolejne zadania powinny wynikać z potrzeb działającego produktu, a nie z potrzeby tworzenia następnego dokumentu.
 
-## Jak korzystać z tej strony
+## Co zrobić po zakończeniu obecnego Issue
 
-Przed rozpoczęciem nowego zadania:
+1. sprawdź bieżące Issue/PR własnego i zależnych zespołów,
+2. znajdź najmniejszy brak blokujący MVP lub inny zespół,
+3. zaproponuj nowe Issue z jednym właścicielem,
+4. wskaż odbiorcę rezultatu,
+5. zdefiniuj mierzalne acceptance criteria,
+6. nie wymyślaj reguł biznesowych — użyj `UNKNOWN`, jeśli czegoś nie potwierdzono.
 
-1. sprawdź aktualne Issue/PR swojego zespołu,
-2. sprawdź, czy wynik innego zespołu nie rozwiązuje już problemu,
-3. ustal, kto potrzebuje rezultatu Twojej pracy,
-4. zaproponuj konkretne Issue z jednym właścicielem i mierzalnym rezultatem,
-5. jeżeli czegoś nie wiadomo — zapisz `UNKNOWN`/blocker zamiast tworzyć własną regułę biznesową.
-
-Prowadzący nie musi zatwierdzać każdego drobnego kroku. Szczególnego uzgodnienia wymagają przede wszystkim zadania przekrojowe, decyzje architektoniczne, migracja, bezpieczeństwo oraz zadania rozmiaru L.
+Wspólne ustalenia etapu 2 są również w Issue **#127** w repozytorium projektu.
 
 ## Cel czasowy
 
-Celem jest, aby **na początku grudnia istniało działające, zintegrowane MVP**, a nie zbiór niezależnych analiz.
-
-Orientacyjne kamienie milowe:
-
 | Termin | Oczekiwany stan produktu |
 |---|---|
-| koniec października | najważniejsze luki Discovery zamknięte; dane, finanse, role i workflow nie blokują implementacji |
+| koniec października | krytyczne luki Discovery zamknięte; wyniki są gotowe do implementacji |
 | połowa listopada | pierwszy spójny przepływ MVP działa end-to-end na danych testowych |
-| koniec listopada | podstawowe uprawnienia, formularze/dokumenty i testy krytycznych przepływów są zintegrowane |
+| koniec listopada | podstawowe uprawnienia, pierwszy formularz/workflow, dokumenty i testy są zintegrowane |
 | początek grudnia | feature freeze MVP; poprawiamy błędy, integrację, testy, UX i dokumentację |
 
 ## Szybki obraz A–F
 
-| Zespół | Stan | Najważniejsze aktywne wyniki | Najważniejsze zależności |
-|---|---|---|---|
-| **A** | analiza legacy/finansów w toku | typy prac #85; saldo i koszty pośrednie #97 / PR #121; rezerwacja vs wydatek #81 / PR #99 | F4 potrzebuje potwierdzonych reguł finansowych; D korzysta ze znaczenia pól |
-| **B** | kilka analiz w review | proces legacy #79 / PR #105; procesy poza legacy #80 / PR #104; katalog outputów #82 / PR #110; mapa pól #83 / PR #103; scenariusze #84 / PR #111 | E potrzebuje potwierdzonych procesów; F potrzebuje pól i scenariuszy |
-| **C** | wspólny Core jest już na `dev` | Django/PostgreSQL/Docker, pytest, ADR-y, dokumentacja i CI | nie tworzyć kolejnego skeletonu; wspierać integrację F i wspólne decyzje techniczne |
-| **D** | mapa bazy w review | #114 / PR #115 — tabele, pola, relacje logiczne i triggery | kolejne kroki powinny wynikać z luk D2: identyfikatory, lata/kontynuacje, jakość danych, migracja |
-| **E** | role i workflow w toku | #120 — role/uprawnienia; #116 / PR #117 — statusy i przejścia | F2 potrzebuje ról; kolejne workflow powinny korzystać z wyników B i legacy |
-| **F** | implementacja vertical slice w toku | #113 — użytkownik/logowanie; #112 — lista i szczegóły; #91 / draft PR #93 — budżet | F3/F4 muszą współdzielić model projektu; F4 zależy od A/D; F2 od E |
+| Zespół | Teraz | Po bieżących zadaniach |
+|---|---|---|
+| **A** | #85, #81 / PR #99; #97 i #87 zakończone | odpowiedzi na konkretne pytania domenowe F/D, przypadki brzegowe, test cases |
+| **B** | #82 / PR #110, #84 / PR #111, #126; #83 / PR #103 merged | **Requirements & Acceptance** dla F/E; user stories, acceptance criteria, review zgodności |
+| **C** | stabilizacja środowiska i release #90 | Platform & Integration: CI, Docker, testy, wspólne komponenty, review techniczne |
+| **D** | #114 / PR #115 zakończone | identyfikatory, ciągłość lat, jakość danych, minimalna migracja dla MVP |
+| **E** | #120 / PR #123, #116 / PR #117 | minimalny kontrakt ról/uprawnień i workflow dla jednego procesu |
+| **F** | #113, #112, #91 / draft PR #93 | zintegrować `login → lista → szczegóły → budżet`, potem rozszerzać ten sam vertical slice |
 
-Numery powyżej opisują **stan na dzień aktualizacji**. Jeżeli PR został później scalony albo Issue zamknięte, GitHub ma pierwszeństwo przed tym dokumentem.
+## A — Domain / legacy / finanse
 
-## A — obecny system, dane i finanse
+### Bieżące
 
-### Co jest teraz ważne
+- #85 — typy prac,
+- #81 / PR #99 — rezerwacja a wydatek,
+- #97 / PR #121 — saldo i koszty pośrednie — zakończone,
+- #87 — uczestnicy projektu — zakończone.
 
-- typy prac i ich różnice są analizowane w #85,
-- reguły salda i kosztów pośrednich zostały szczegółowo odtworzone w #97 / PR #121,
-- cykl rezerwacji i wydatku jest analizowany w #81 / PR #99,
-- mapa uczestników projektu (#87) została już wykonana.
+### Dalej
 
-### Co powinny dostać inne zespoły
+A nie wykonuje kolejnego szerokiego audytu. Następne Issue powinny odpowiadać na konkretne pytania:
 
-- jednoznaczne znaczenie pól finansowych,
-- potwierdzony sposób liczenia salda,
-- zachowanie rezerwacji i częściowego rozliczenia,
-- jawnie opisane rozbieżności legacy.
+- co oznacza pole potrzebne F3/F4,
+- jaka reguła finansowa jest potwierdzona,
+- jaki przypadek brzegowy trzeba uwzględnić,
+- jaki syntetyczny przykład/test case powinien wejść do testów,
+- jaka rozbieżność legacy wymaga decyzji.
 
-**Pytanie kierujące:** jaki brak w wiedzy o legacy realnie blokuje teraz D albo F?
+**Pytanie kierujące:** czego F lub D nie może teraz zrobić bez odpowiedzi A?
 
-## B — procesy, formularze i wymagania
+## B — Requirements & Acceptance
 
-### Co jest teraz ważne
+### Bieżące
 
-B ma już kilka równoległych rezultatów dotyczących procesów, pól formularzy, raportów i scenariuszy. Priorytetem nie jest tworzenie kolejnych katalogów, tylko **domknięcie jakości i powiązanie wyników z kodem legacy**.
+- #82 / PR #110 — raporty/eksporty,
+- #84 / PR #111 — scenariusze akceptacyjne,
+- #126 — rozwinięcie procesów poza legacy,
+- #83 / PR #103 — mapa pól — wynik już merged.
 
-### Co powinny dostać inne zespoły
+### Dalej
 
-- potwierdzony proces pracy własnej,
-- pola i walidacje używane przez formularze,
-- komplet najważniejszych raportów/eksportów,
-- scenariusze akceptacyjne, które E i F mogą wykorzystać bez zgadywania.
+B przechodzi z katalogowania do **Requirements & Acceptance**.
 
-**Pytanie kierujące:** który brak w procesie lub formularzu uniemożliwia teraz zaprojektowanie workflow albo implementację vertical slice?
+Następne prace powinny polegać na:
 
-## C — Core, testy i decyzje techniczne
+- przekładaniu potwierdzonego procesu na user stories,
+- pisaniu acceptance criteria dla elementu, który F faktycznie implementuje,
+- wskazywaniu wymaganych pól i walidacji,
+- opisywaniu edge cases,
+- wykonywaniu review implementacji pod kątem zgodności z procesem,
+- doprowadzeniu jednego procesu end-to-end.
 
-Podstawowy Core istnieje już na `dev`. Dalsza praca C powinna coraz częściej polegać na **wspieraniu integracji**, a nie na tworzeniu kolejnych niezależnych fundamentów.
+Nie tworzymy kolejnego katalogu formularzy/raportów wyłącznie po to, aby mieć zadanie.
 
-### Kierunek
+**Najbliższy odbiorca wyników B:** F2/F3/F4 oraz E.
 
-- utrzymywać jeden sposób uruchamiania i testowania,
-- domykać decyzje architektoniczne wtedy, gdy są potrzebne implementacji,
-- dostarczać wspólne mechanizmy używane przez F,
-- pilnować CI i jakości technicznej PR-ów implementacyjnych.
+## C — Platform & Integration
 
-**Pytanie kierujące:** jaka wspólna decyzja lub infrastruktura blokuje obecnie więcej niż jeden zespół?
+### Bieżące
 
-## D — baza, identyfikatory i migracja
+Najważniejszym zadaniem jest stabilizacja wspólnego środowiska i pierwszy release `dev → main` (#90).
 
-#114 / PR #115 daje pierwszą szczegółową mapę starej bazy. Nie należy tworzyć drugiej konkurencyjnej mapy tabel.
+### Dalej
 
-### Luki, z których mogą wynikać następne Issue
+Po release C:
 
-- historyczne identyfikatory i ich stabilność,
-- lata oraz kontynuacje prac,
-- osierocone i niespójne relacje,
-- kontrola jakości danych przed migracją,
-- mapowanie legacy → nowy model tylko dla zakresu potrzebnego MVP.
+- utrzymuje CI, Docker, pytest i clean-clone setup,
+- usuwa problemy techniczne blokujące kilka zespołów,
+- dostarcza wspólne komponenty potrzebne vertical slice,
+- robi review architektury i integracji,
+- pomaga F scalać rozwiązania w jeden produkt.
 
-To są **kierunki**, nie gotowy przydział. Najpierw należy sprawdzić, który z nich blokuje F lub przyszłą migrację najbardziej.
+C nie buduje drugiego fundamentu aplikacji.
 
-**Pytanie kierujące:** czego nie wiemy o danych legacy, a bez czego nie da się bezpiecznie zaprojektować modelu nowego systemu lub migracji?
+## D — Data & Migration
 
-## E — role, uprawnienia i workflow
+### Bieżące
 
-Aktualnie powstają dwa ważne wyniki:
+#114 / PR #115 dało szczegółową mapę starej bazy.
 
-- #120 — macierz aktorów, ról i uprawnień,
-- #116 / PR #117 — wspólny model statusów i przejść.
+### Dalej
 
-E powinno pilnować rozdzielenia dwóch rzeczy:
+Naturalne kolejne kierunki:
 
-1. **co legacy faktycznie pozwala robić**,
-2. **jak chcemy zaprojektować workflow nowego systemu**.
+- stabilność identyfikatorów,
+- lata i kontynuacje prac,
+- osierocone/niespójne relacje,
+- kontrola jakości danych,
+- mapowanie legacy → nowy model w zakresie MVP,
+- testy zgodności migracji na danych syntetycznych.
 
-Po domknięciu E1/E2 można proponować dalsze prace dotyczące widoków Działu Nauki, autoryzacji lub scenariuszy workflow — ale tylko wtedy, gdy wynik jest potrzebny implementacji.
+Nie robimy kolejnej mapy całej bazy.
 
-**Pytanie kierujące:** jakiej decyzji o roli, uprawnieniu lub przejściu potrzebuje teraz F2/F3/F4?
+## E — Workflow & Permissions
 
-## F — pierwszy działający fragment nowego systemu
+### Bieżące
 
-F ma obecnie najbardziej bezpośrednią odpowiedzialność za zamianę Discovery w działający produkt:
+- #120 / PR #123 — role i uprawnienia,
+- #116 / PR #117 — statusy i przejścia.
 
-- #113 — minimalny użytkownik/rola i logowanie testowe,
-- #112 — lista i szczegóły projektu/pracy,
-- #91 / draft PR #93 — podsumowanie budżetu.
+### Dalej
 
-F nie powinien czekać na idealne zakończenie wszystkich analiz. Jeżeli reguła nie jest jeszcze potwierdzona, należy użyć danych syntetycznych i jawnego `UNKNOWN`, a następnie zgłosić zależność właściwemu zespołowi.
+Po E1/E2:
 
-### Najważniejsze teraz
+- minimalny kontrakt ról/uprawnień dla F2/F3,
+- workflow jednego procesu referencyjnego,
+- scenariusze odmowy dostępu,
+- zasady przejść i edycji,
+- rozdzielenie faktów legacy od projektu nowego systemu.
 
-- F3 i F4 powinny uzgodnić wspólny model/identyfikator projektu,
-- F4 powinno podmieniać placeholdery dopiero na reguły potwierdzone przez A/D,
-- F2 powinno przyjąć role zgodne z wynikiem E, bez budowania pełnego SSO,
-- kolejne kroki F powinny rozszerzać **ten sam vertical slice**, a nie powoływać nowe niezależne moduły demonstracyjne.
+Nie projektujemy całego systemu workflow naraz.
 
-**Pytanie kierujące:** jaki najmniejszy kolejny krok sprawi, że obecne F2/F3/F4 będą działały bardziej jak jeden system?
+## F — Vertical Slice
 
-## Minimalny standard komunikacji między zespołami
+### Bieżące
 
-Nie tworzymy dodatkowej biurokracji. Wystarczy, że raz w tygodniu lead zapisze w uzgodnionym miejscu krótkie trzy punkty:
+- #113 — użytkownik/rola i logowanie testowe,
+- #112 — lista i szczegóły projektu,
+- #91 / draft PR #93 — budżet.
+
+### Najbliższy wspólny cel
+
+Połączyć:
+
+`logowanie testowe → lista prac → szczegóły pracy → budżet`
+
+Kolejny krok powinien rozszerzać ten sam przepływ o pierwszy formularz lub workflow, gdy B/E dostarczą minimalne wymagania.
+
+F nie czeka na zakończenie całego Discovery.
+
+## Kiedy tworzyć nowe Issue
+
+Nowe Issue ma sens, gdy:
+
+- rozwiązuje konkretny brak,
+- wiadomo, kto wykorzysta wynik,
+- nie dubluje aktywnego Issue/PR,
+- rezultat można zweryfikować,
+- zakres pozwala zrobić rzeczywisty postęp w około tydzień.
+
+Minimalny opis:
+
+```text
+Cel:
+Odbiorca / zależność:
+Rezultat:
+Acceptance criteria:
+Źródło:
+```
+
+## Handoff
+
+Raz w tygodniu wystarczy:
 
 ```text
 ### Handoff
@@ -153,24 +190,11 @@ Nie tworzymy dodatkowej biurokracji. Wystarczy, że raz w tygodniu lead zapisze 
 - Blocker / potrzebna decyzja:
 ```
 
-Jeżeli PR zmienia założenie używane przez inny zespół, autor lub lead powinien **wprost oznaczyć zależne Issue/PR**. Nie zakładamy, że druga grupa sama zauważy zmianę.
-
-## Kiedy tworzyć nowe Issue
-
-Nowe Issue ma sens, gdy:
-
-- istnieje konkretny brak lub decyzja potrzebna produktowi,
-- nie ma już aktywnego Issue/PR o tym samym zakresie,
-- rezultat da się zweryfikować,
-- wiadomo, komu wynik będzie potrzebny,
-- zakres jest wystarczająco mały, aby zrobić rzeczywisty postęp w około tydzień.
-
-Nie tworzymy Issue tylko dlatego, że jakiś temat pojawia się w starym planie zajęć.
-
 ## Ograniczenia
 
-Materiały legacy pozostają materiałami dydaktycznymi o ograniczonym dostępie. W publicznych Issues/PR i dokumentacji wolno publikować wnioski, nazwy plików/funkcji/tabel i dane syntetyczne, ale nie dane osobowe, sekrety, dump bazy ani nieautoryzowane fragmenty konfiguracji.
+Materiały legacy pozostają materiałami dydaktycznymi o ograniczonym dostępie. W publicznych Issues/PR wolno publikować wnioski, nazwy plików/funkcji/tabel i dane syntetyczne, ale nie dane osobowe, sekrety ani dump bazy.
 
 ## Historia aktualizacji
 
-- **14.10.2026** — utworzono żywe podsumowanie stanu A–F; zastępuje wcześniejszą listę „propozycji zadań po audycie”.
+- **15.10.2026** — przejście z pierwszej fali Discovery do etapu Requirements, Integration & MVP; doprecyzowano dalszą rolę wszystkich zespołów A–F.
+- **14.10.2026** — utworzono żywe podsumowanie stanu A–F.
