@@ -4,10 +4,21 @@ Realizujemy **jeden wspólny projekt**: nowy system wspierający obsługę prac/
 
 **PS1 (czwartek) i PS2 (środa) pracują nad jednym produktem, jednym repozytorium i jednym backlogiem.**
 
-!!! tip "Aktualny etap — Discovery 2.0 i integracja MVP"
-    Stały podział odpowiedzialności opisuje [Plan Discovery A–F](12-plan-discovery-a-f.md). Bieżący obraz projektu, zależności między zespołami i kierunki dalszej pracy są utrzymywane na stronie [Stan projektu i kierunki dalszych prac](16-propozycje-zadan-po-audycie.md).
+!!! tip "Aktualny etap — Requirements, Integration & MVP"
+    Pierwsza fala Discovery dobiega końca. Nie oznacza to końca pracy zespołów A–E — zmienia się rodzaj pracy. Stały podział odpowiedzialności opisuje [Plan Discovery A–F](12-plan-discovery-a-f.md), a dalsze kierunki są na stronie [Stan projektu i kierunki dalszych prac](16-propozycje-zadan-po-audycie.md).
 
     Strona stanu jest **podsumowaniem komunikacyjnym**, a nie listą przydziałów. Źródłem prawdy dla wykonania pracy pozostają GitHub Issues, Pull Requests i GitHub Project.
+
+## Co dalej po Discovery
+
+- **A** — konkretne pytania domenowe i finansowe potrzebne implementacji,
+- **B** — **Requirements & Acceptance**,
+- **C** — **Platform & Integration**,
+- **D** — **Data & Migration**,
+- **E** — **Workflow & Permissions**,
+- **F** — integracja jednego vertical slice.
+
+Po zakończeniu bieżącego Issue zespół nie czeka automatycznie na nowy przydział. Wybiera najmniejszy brak potrzebny innemu zespołowi albo MVP i proponuje kolejne Issue.
 
 ## Stały rytm PS1 ↔ PS2
 

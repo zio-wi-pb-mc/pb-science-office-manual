@@ -1,6 +1,6 @@
 # Plan Discovery — zespoły A–F
 
-A–F opisują **obszary odpowiedzialności w fazie Discovery i dochodzenia do MVP**. Nie są stałym podziałem modułów na cały semestr i nie oznaczają, że każdy kolejny krok ma być z góry przydzielony przez prowadzącego.
+A–F opisują **obszary odpowiedzialności w fazie Discovery i dochodzenia do MVP**. Nie są stałym podziałem modułów na cały semestr. Wraz z postępem projektu zespoły przechodzą z analizy do przygotowania wymagań, integracji i implementacji.
 
 Aktualny stan prac jest utrzymywany osobno: [Stan projektu i kierunki dalszych prac](16-propozycje-zadan-po-audycie.md).
 
@@ -22,6 +22,16 @@ Lead i prowadzący sprawdzają przede wszystkim, czy zadanie:
 - prowadzi projekt w stronę działającego systemu.
 
 Nie traktujemy dokumentacji projektu jako menu zadań do mechanicznego wybierania.
+
+## Etap 2 — Requirements, Integration & MVP
+
+Po zakończeniu pierwszej fali Discovery **nie kończy się praca zespołów**. Zmienia się jej charakter:
+
+- mniej niezależnego katalogowania,
+- więcej odpowiedzi na konkretne pytania blokujące implementację,
+- więcej acceptance criteria i scenariuszy,
+- więcej integracji,
+- więcej działającego kodu i testów.
 
 ## Rytm
 
@@ -60,7 +70,9 @@ Odpowiada przede wszystkim za:
 - raporty, eksporty i dokumenty wyjściowe,
 - scenariusze i wymagania funkcjonalne.
 
-**Główne wyjście dla innych:** potwierdzone zachowania użytkownika i scenariusze potrzebne E oraz F.
+**Po pierwszej fali Discovery:** B przechodzi do **Requirements & Acceptance** — przekłada potwierdzone procesy na user stories i acceptance criteria, przygotowuje scenariusze dla F, wskazuje pola/walidacje/edge cases i robi review implementacji pod kątem zgodności z procesem.
+
+**Główne wyjście dla innych:** wymagania i scenariusze, które E oraz F mogą bezpośrednio wykorzystać.
 
 ### C — Core i środowisko
 
@@ -71,6 +83,8 @@ Odpowiada przede wszystkim za:
 - CI i testy,
 - generowanie dokumentów,
 - decyzje techniczne wspólne dla wszystkich zespołów.
+
+**Po pierwszym release:** C działa jako **Platform & Integration** — utrzymuje CI, Docker, testy i clean-clone setup oraz wspiera integrację F.
 
 **Główne wyjście dla innych:** jeden wspólny, działający fundament aplikacji. C nie tworzy alternatywnego produktu obok pracy F.
 
@@ -86,6 +100,8 @@ Odpowiada przede wszystkim za:
 - jakość danych,
 - strategię migracji i testy zgodności.
 
+**Po przygotowaniu mapy bazy:** D przechodzi do identyfikatorów, ciągłości lat, jakości danych, minimalnego mapowania legacy → nowy model i testów migracji.
+
 **Główne wyjście dla innych:** potwierdzony model danych legacy i ograniczenia migracji potrzebne A, C i F.
 
 ### E — role, workflow i wymagania użytkowników
@@ -98,19 +114,19 @@ Odpowiada przede wszystkim za:
 - akceptację, zwrot, odrzucenie i historię zmian,
 - wymagania widoków Działu Nauki i kierownictwa.
 
+**Po domknięciu E1/E2:** E przygotowuje minimalny kontrakt ról/uprawnień i workflow jednego procesu referencyjnego potrzebny implementacji.
+
 **Główne wyjście dla innych:** uzgodnione role i przejścia potrzebne B, C oraz F.
 
 ### F — pierwszy vertical slice
 
 F integruje wyniki innych zespołów w **jeden działający fragment nowego systemu**.
 
-Zakres rozwija się stopniowo:
+Najbliższy wspólny przepływ to:
 
-- użytkownik i logowanie testowe,
-- lista projektów/prac,
-- szczegóły projektu,
-- pierwsze dane budżetowe,
-- później kolejne elementy workflow.
+`logowanie testowe → lista prac → szczegóły pracy → budżet`
+
+Kolejne Issue F powinny rozszerzać ten sam vertical slice o pierwszy formularz/workflow, gdy B/E dostarczą minimalne wymagania.
 
 F nie tworzy drugiego szkieletu aplikacji i nie wymyśla własnych reguł biznesowych. Jeśli zależność A–E nie jest jeszcze rozstrzygnięta, używa danych syntetycznych, jawnego `TODO/UNKNOWN` albo zgłasza blocker.
 
