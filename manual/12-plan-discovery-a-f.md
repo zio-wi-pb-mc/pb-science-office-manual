@@ -1,8 +1,8 @@
 # Plan Discovery — zespoły A–F
 
-A–F opisują **obszary odpowiedzialności w fazie Discovery i dochodzenia do MVP**. Nie są stałym podziałem modułów na cały semestr. Wraz z postępem projektu zespoły przechodzą z analizy do przygotowania wymagań, integracji i implementacji.
+A–F opisują obszary odpowiedzialności podczas Discovery i dochodzenia do MVP. Nie są stałym podziałem modułów na cały semestr. Wraz z postępem projektu zespoły przechodzą od analizy do przygotowania wymagań, implementacji i integracji.
 
-Aktualny stan prac jest utrzymywany osobno: [Stan projektu i kierunki dalszych prac](16-propozycje-zadan-po-audycie.md).
+Aktualny stan prac jest opisany osobno: [Stan projektu i dalsze prace](16-propozycje-zadan-po-audycie.md).
 
 ## Zasada samodzielności
 
@@ -18,18 +18,18 @@ Lead i prowadzący sprawdzają przede wszystkim, czy zadanie:
 - nie dubluje istniejącego Issue/PR,
 - ma konkretny rezultat i mierzalne kryteria akceptacji,
 - ma rozsądny zakres,
-- nie blokuje ważniejszej zależności między zespołami,
+- nie omija ważniejszej zależności między zespołami,
 - prowadzi projekt w stronę działającego systemu.
 
-Nie traktujemy dokumentacji projektu jako menu zadań do mechanicznego wybierania.
+Dokumentacja projektu nie jest listą tematów do mechanicznego wybierania.
 
-## Etap 2 — Requirements, Integration & MVP
+## Etap 2 — od analizy do integracji MVP
 
-Po zakończeniu pierwszej fali Discovery **nie kończy się praca zespołów**. Zmienia się jej charakter:
+Po zakończeniu pierwszej części Discovery **nie kończy się praca zespołów**. Zmienia się jej charakter:
 
-- mniej niezależnego katalogowania,
-- więcej odpowiedzi na konkretne pytania blokujące implementację,
-- więcej acceptance criteria i scenariuszy,
+- mniej ogólnych analiz i katalogów,
+- więcej odpowiedzi na konkretne pytania potrzebne implementacji,
+- więcej kryteriów akceptacji i scenariuszy testowych,
 - więcej integracji,
 - więcej działającego kodu i testów.
 
@@ -38,10 +38,10 @@ Po zakończeniu pierwszej fali Discovery **nie kończy się praca zespołów**. 
 - **PS1 — czwartek:** A/B/C,
 - **wtorek 20:00:** aktualizacja stanu, PR i najważniejszych zależności,
 - **PS2 — środa:** D/E/F pracuje na aktualnych wynikach A/B/C,
-- **środa po zajęciach:** krótki handoff PS2,
+- **środa po zajęciach:** krótkie przekazanie najważniejszych ustaleń,
 - **PS1 — czwartek:** kontynuacja na aktualnym stanie.
 
-Minimalny handoff powinien odpowiadać na trzy pytania:
+Przekazanie między zespołami powinno odpowiadać na trzy pytania:
 
 1. Co zostało potwierdzone lub zmienione?
 2. Co jest potrzebne innemu zespołowi?
@@ -49,7 +49,7 @@ Minimalny handoff powinien odpowiadać na trzy pytania:
 
 ## PS1
 
-### A — obecny system i dane
+### A — system legacy i reguły biznesowe
 
 Odpowiada przede wszystkim za:
 
@@ -57,11 +57,13 @@ Odpowiada przede wszystkim za:
 - reguły finansowe,
 - typy prac/projektów,
 - rezerwacje, wydatki i saldo,
-- rozbieżności wymagające potwierdzenia administratora.
+- rozbieżności wymagające potwierdzenia.
 
-**Główne wyjście dla innych:** zweryfikowane reguły biznesowe i znaczenie danych, z których korzystają C, D i F.
+Po pierwszej części Discovery A nie wykonuje kolejnego szerokiego audytu. Odpowiada na konkretne pytania zgłaszane przez D i F: znaczenie pola, potwierdzenie reguły, przypadek brzegowy, przykład do testu albo rozbieżność w legacy.
 
-### B — procesy, formularze i wymagania
+**Główny wynik dla innych zespołów:** zweryfikowane reguły biznesowe i znaczenie danych.
+
+### B — procesy, wymagania i kryteria akceptacji
 
 Odpowiada przede wszystkim za:
 
@@ -70,11 +72,17 @@ Odpowiada przede wszystkim za:
 - raporty, eksporty i dokumenty wyjściowe,
 - scenariusze i wymagania funkcjonalne.
 
-**Po pierwszej fali Discovery:** B przechodzi do **Requirements & Acceptance** — przekłada potwierdzone procesy na user stories i acceptance criteria, przygotowuje scenariusze dla F, wskazuje pola/walidacje/edge cases i robi review implementacji pod kątem zgodności z procesem.
+Po pierwszej części Discovery B:
 
-**Główne wyjście dla innych:** wymagania i scenariusze, które E oraz F mogą bezpośrednio wykorzystać.
+- przekłada potwierdzone procesy na małe scenariusze użytkownika i kryteria akceptacji,
+- przygotowuje scenariusze testowe dla elementów implementowanych przez F,
+- wskazuje wymagane pola, walidacje i przypadki brzegowe,
+- sprawdza w przeglądzie PR, czy implementacja odpowiada ustalonemu procesowi,
+- pomaga doprowadzić jeden wybrany proces od początku do końca.
 
-### C — Core i środowisko
+**Główny wynik dla innych zespołów:** wymagania i scenariusze, które E i F mogą bezpośrednio wykorzystać.
+
+### C — środowisko techniczne i integracja
 
 Odpowiada przede wszystkim za:
 
@@ -82,15 +90,21 @@ Odpowiada przede wszystkim za:
 - architekturę aplikacji,
 - CI i testy,
 - generowanie dokumentów,
-- decyzje techniczne wspólne dla wszystkich zespołów.
+- wspólne decyzje techniczne.
 
-**Po pierwszym release:** C działa jako **Platform & Integration** — utrzymuje CI, Docker, testy i clean-clone setup oraz wspiera integrację F.
+Po pierwszym stabilnym wydaniu C:
 
-**Główne wyjście dla innych:** jeden wspólny, działający fundament aplikacji. C nie tworzy alternatywnego produktu obok pracy F.
+- utrzymuje wspólne środowisko,
+- pilnuje, aby projekt dawał się uruchomić od czystego klona repozytorium,
+- usuwa problemy techniczne blokujące kilka zespołów,
+- wspiera F przy integracji,
+- wykonuje techniczne przeglądy PR.
+
+**Główny wynik dla innych zespołów:** jeden wspólny, stabilny fundament aplikacji.
 
 ## PS2
 
-### D — legacy, baza i migracja
+### D — dane legacy i migracja
 
 Odpowiada przede wszystkim za:
 
@@ -98,64 +112,68 @@ Odpowiada przede wszystkim za:
 - identyfikatory historyczne,
 - lata i kontynuacje prac,
 - jakość danych,
-- strategię migracji i testy zgodności.
+- przygotowanie migracji i testy zgodności.
 
-**Po przygotowaniu mapy bazy:** D przechodzi do identyfikatorów, ciągłości lat, jakości danych, minimalnego mapowania legacy → nowy model i testów migracji.
+Po przygotowaniu mapy bazy D skupia się na problemach, które rzeczywiście wpływają na nowy model lub migrację: identyfikatorach, ciągłości danych między latami, niespójnościach, minimalnym zakresie migracji i testach.
 
-**Główne wyjście dla innych:** potwierdzony model danych legacy i ograniczenia migracji potrzebne A, C i F.
+**Główny wynik dla innych zespołów:** potwierdzony model danych legacy i ograniczenia migracji.
 
-### E — role, workflow i wymagania użytkowników
+### E — role, uprawnienia i przepływ pracy
 
 Odpowiada przede wszystkim za:
 
 - aktorów i role,
 - uprawnienia i zasięg danych,
-- oddzielenie flag legacy od projektowanego workflow,
+- oddzielenie flag legacy od stanów nowego systemu,
 - akceptację, zwrot, odrzucenie i historię zmian,
 - wymagania widoków Działu Nauki i kierownictwa.
 
-**Po domknięciu E1/E2:** E przygotowuje minimalny kontrakt ról/uprawnień i workflow jednego procesu referencyjnego potrzebny implementacji.
+Po domknięciu podstawowej macierzy ról i statusów E przygotowuje minimalny zestaw uprawnień i przejść potrzebny aktualnie implementowanemu procesowi.
 
-**Główne wyjście dla innych:** uzgodnione role i przejścia potrzebne B, C oraz F.
+**Główny wynik dla innych zespołów:** role, uprawnienia i przejścia, które można bezpośrednio implementować i testować.
 
-### F — pierwszy vertical slice
+### F — pierwszy spójny fragment systemu
 
 F integruje wyniki innych zespołów w **jeden działający fragment nowego systemu**.
 
-Najbliższy wspólny przepływ to:
+Najbliższy wspólny przepływ:
 
 `logowanie testowe → lista prac → szczegóły pracy → budżet`
 
-Kolejne Issue F powinny rozszerzać ten sam vertical slice o pierwszy formularz/workflow, gdy B/E dostarczą minimalne wymagania.
+Kolejne zadania F powinny rozszerzać ten sam fragment o pierwszy formularz lub krok procesu, gdy B i E dostarczą minimalne wymagania.
 
-F nie tworzy drugiego szkieletu aplikacji i nie wymyśla własnych reguł biznesowych. Jeśli zależność A–E nie jest jeszcze rozstrzygnięta, używa danych syntetycznych, jawnego `TODO/UNKNOWN` albo zgłasza blocker.
+F nie tworzy drugiego szkieletu aplikacji i nie wymyśla własnych reguł biznesowych. Jeśli czegoś jeszcze nie ustalono, używa danych syntetycznych i jawnie oznacza brakujące ustalenie.
 
 ## Zależności między zespołami
 
 | Wynik | Najczęstszy odbiorca |
 |---|---|
 | A — reguły finansowe i znaczenie danych | D, F |
-| B — procesy, formularze, scenariusze | E, F |
-| C — architektura, CI, testy, wspólne komponenty | wszystkie zespoły implementacyjne |
-| D — model bazy, identyfikatory, migracja | A, C, F |
-| E — role, uprawnienia i workflow | B, C, F |
-| F — pierwszy zintegrowany przepływ | ujawnia braki i nowe pytania dla A–E |
+| B — wymagania, formularze i scenariusze | E, F |
+| C — architektura, CI, testy i wspólne mechanizmy | wszystkie zespoły implementacyjne |
+| D — model bazy, identyfikatory i migracja | A, C, F |
+| E — role, uprawnienia i przepływ pracy | B, C, F |
+| F — pierwszy zintegrowany fragment systemu | ujawnia braki i nowe pytania dla A–E |
 
 ## Kamienie milowe projektu
 
-To są **cele produktu**, a nie indywidualne terminy oceniania studentów.
+To są cele produktu, a nie indywidualne terminy oceniania studentów.
 
-- **do końca października:** zamknięte najważniejsze luki Discovery; model danych, finanse, role i workflow są wystarczająco potwierdzone, aby nie blokować implementacji,
-- **do połowy listopada:** pierwszy spójny przepływ MVP działa end-to-end na danych testowych,
-- **do końca listopada:** zintegrowane podstawowe uprawnienia, formularze/dokumenty i testy kluczowych przepływów,
-- **początek grudnia:** feature freeze MVP — priorytetem stają się błędy, integracja, testy, UX i dokumentacja.
+- **do końca października:** zamknięte najważniejsze luki w analizie; wyniki są gotowe do wykorzystania w implementacji,
+- **do połowy listopada:** pierwszy spójny przepływ MVP działa od początku do końca na danych testowych,
+- **do końca listopada:** podstawowe uprawnienia, pierwszy formularz/proces, dokumenty i testy są zintegrowane,
+- **początek grudnia:** zamrożenie zakresu MVP — dalej skupiamy się na błędach, integracji, testach, UX i dokumentacji.
 
-Jeżeli Discovery ujawnia nowy problem, zespół nie czeka na „idealną specyfikację”. Zapisuje niewiadomą, ogranicza zakres i kontynuuje to, co można zrobić bez zgadywania.
+Jeżeli analiza ujawnia nowy problem, zespół nie czeka na idealną specyfikację. Zapisuje brakujące ustalenie, ogranicza zakres i kontynuuje to, co można zrobić bez zgadywania.
 
-## Po Discovery
+## Po zakończeniu bieżącego zadania
 
-1. zamrażamy zakres MVP,
-2. klasyfikujemy pozostałe elementy jako MVP/P1/P2,
-3. utrzymujemy jeden backlog,
-4. zadania rozdzielamy zgodnie z potrzebą produktu i obciążeniem,
-5. coraz większy nacisk przenosimy z dokumentacji na integrację działającego systemu.
+Nowe Issue powinno jasno określać:
+
+- jaki problem rozwiązuje,
+- kto wykorzysta wynik,
+- co konkretnie powstanie,
+- po czym poznamy, że zadanie jest zakończone,
+- na jakim źródle opiera się rozwiązanie.
+
+Jedno zadanie ma jednego właściciela.
