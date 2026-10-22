@@ -1,213 +1,252 @@
 # Stan projektu i dalsze prace
 
-**Stan na 15.10.2026**  
-**Cel tej strony:** krótkie podsumowanie aktualnego stanu projektu i wskazanie, co powinno wydarzyć się dalej.  
-**Aktualny stan zadań:** GitHub Issues, Pull Requests i GitHub Project.
+**Stan na 22.10.2026**  
+**Cel tej strony:** wskazać, gdzie projekt jest teraz i co najbardziej przybliża nas do działającego produktu.  
+**Aktualny stan zadań:** GitHub Issues, Pull Requests i GitHub Project mają pierwszeństwo przed tą stroną.
 
-!!! important "Kończy się pierwsza część Discovery, nie praca zespołów"
-    Zespoły A–E nie kończą pracy po zamknięciu obecnych analiz. Projekt przechodzi do etapu, w którym wyniki analiz mają być wykorzystywane do przygotowania wymagań, testów i wspólnego MVP.
+!!! important "Od Discovery do produktu"
+    Pierwsza faza analizy legacy dostarczyła już dużo materiału. Od tego momentu kolejne zadania powinny przede wszystkim prowadzić do **działającego kodu, testów, integracji albo usunięcia konkretnej blokady implementacyjnej**.
 
-## Co zrobić po zakończeniu obecnego Issue
+    Zespoły A–F są sposobem organizacji pracy, a nie sztywnymi silosami. Jeżeli ktoś kończy swój zakres Discovery, może przejść do pomocy innemu zespołowi, jeśli to bardziej przybliża wspólne MVP.
 
-1. sprawdź bieżące Issue/PR własnego i zależnych zespołów,
-2. znajdź najmniejszy brak, który rzeczywiście blokuje dalszą pracę lub MVP,
-3. zaproponuj nowe Issue z jednym właścicielem,
-4. wskaż, kto wykorzysta wynik,
-5. określ konkretny rezultat i kryteria akceptacji,
-6. jeśli czegoś nie wiadomo — oznacz brakujące ustalenie zamiast wymyślać regułę biznesową.
+## Gdzie jest źródło prawdy
 
-Wspólne ustalenia są również opisane w Issue **#127** w głównym repozytorium.
+1. **`dev` — bieżący zintegrowany stan projektu.** Zwykłe branche tworzymy od `dev`, a zwykłe PR-y kierujemy do `dev`.
+2. **Otwarte PR-y — praca jeszcze niezintegrowana.** Przed rozpoczęciem zadania trzeba sprawdzić, czy ktoś już nie robi tego samego.
+3. **`main` — ostatnie stabilne wydanie.** Nie musi zawierać każdej najnowszej zmiany z `dev`.
+4. **GitHub Pages — instrukcja i kierunek pracy.** Nie zastępuje aktualnych Issues i PR-ów.
 
-## Aktualne otwarte Pull Requesty
+Do `main` trafia okresowo sprawdzony stan `dev` przez Release PR. Finalny merge Release PR wykonuje prowadzący.
 
-Na moment tej aktualizacji otwartych jest **7 PR-ów**:
+## Najbliższy checkpoint
 
-| Zespół | PR | Zakres |
-|---|---|---|
-| **A** | #99 | rezerwacja a wydatek |
-| **B** | #110 | katalog raportów, eksportów i dokumentów |
-| **B** | #111 | scenariusze akceptacyjne legacy |
-| **C** | #90 | pierwsze stabilne wydanie `dev → main` |
-| **E** | #117 | statusy i przejścia |
-| **E** | #123 | role i uprawnienia |
-| **F** | #93 | roboczy widok budżetu |
+Najbliższa kolejność prac technicznych:
 
-GitHub ma pierwszeństwo przed tą tabelą, jeśli stan PR zmieni się po dacie aktualizacji.
+1. domknąć [#157 — weryfikacja i integracja skeletonu](https://github.com/zio-wi-pb-mc/pb-science-office/pull/157),
+2. scalić #157 do `dev`,
+3. powtórzyć clean-clone test i CI,
+4. zweryfikować [#90 — release `dev → main`](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90),
+5. wydać pierwszy stabilny checkpoint do `main`.
 
-## Cel czasowy
+Dzięki temu `main` będzie stabilnym wydaniem, a nie miejscem bieżącej integracji.
 
-| Termin | Oczekiwany stan produktu |
-|---|---|
-| koniec października | najważniejsze luki w analizie są zamknięte, a wyniki gotowe do wykorzystania w implementacji |
-| połowa listopada | pierwszy spójny przepływ MVP działa od początku do końca na danych testowych |
-| koniec listopada | podstawowe uprawnienia, pierwszy formularz/proces, dokumenty i testy są zintegrowane |
-| początek grudnia | zamrożenie zakresu MVP; dalej skupiamy się na błędach, integracji, testach, UX i dokumentacji |
+## Najbliższy cel produktu
 
-## Szybki obraz A–F
+Najważniejszy wspólny rezultat:
 
-| Zespół | Stan | Co dalej |
-|---|---|---|
-| **A** | #85 i #81 / PR #99; analiza salda #97 / PR #121 zakończona | odpowiadać na konkretne pytania domenowe potrzebne D/F |
-| **B** | otwarte PR #110 i #111 oraz Issue #126; większość pierwszych analiz jest już scalona | przygotowywać wymagania, kryteria akceptacji i scenariusze dla E/F |
-| **C** | stabilizacja środowiska i PR #90 | po wydaniu utrzymywać wspólne środowisko i wspierać integrację |
-| **D** | mapa bazy #114 / PR #115 zakończona | identyfikatory, ciągłość danych, jakość danych i minimalna migracja dla MVP |
-| **E** | PR #117 i #123 | domknąć role, uprawnienia i przejścia potrzebne pierwszemu procesowi |
-| **F** | #112, #113 i roboczy PR #93 | połączyć logowanie, listę, szczegóły i budżet w jeden działający fragment |
+`mock login → lista projektów → szczegóły projektu → budżet`
+
+Ma działać w jednej aplikacji:
+- po czystym klonie,
+- na danych syntetycznych,
+- z testami,
+- bez ręcznego poprawiania konfiguracji.
+
+Dopiero potem dokładamy pierwszy mały formularz lub proces.
+
+## Co zmieniło się od poprzedniej aktualizacji
+
+Od 15.10 scalono kolejne wyniki Discovery, m.in. analizę finansową, formularze i procesy legacy. Zespół B dostarczył m.in. PR #110, #152 i #154. Powstały też prace dotyczące typów projektów (#142, #150), przypadków finansowych (#136), testów zgodności (#132) oraz stabilizacji środowiska (#157).
+
+Jednocześnie nadal otwartych jest wiele PR-ów z analizą i dokumentacją. Dlatego priorytetem nie jest już tworzenie kolejnych podobnych dokumentów, tylko wykorzystanie istniejących wyników w kodzie i testach.
+
+# Jak rozkładamy teraz pracę
+
+Poniższe punkty są **propozycjami organizacji pracy**, a nie nowymi wymaganiami biznesowymi. Przed rozpoczęciem należy sprawdzić aktualny `dev`, Issues i PR-y. Jeżeli coś zostało już wykonane, nie robimy tego drugi raz.
 
 ## A — system legacy i reguły biznesowe
 
+A ma już dużo wiedzy o finansach i danych legacy.
+
 ### Bieżące
+- #99 — rezerwacja a wydatek,
+- #136 — przypadki związane z rezerwą,
+- #142 — typy prac,
+- #150 — przykładowe dane typów prac.
 
-- #85 — typy prac,
-- #81 / PR #99 — rezerwacja a wydatek,
-- #97 / PR #121 — saldo i koszty pośrednie — zakończone,
-- #87 — uczestnicy projektu — zakończone.
+### Propozycja dalszej pracy
 
-### Dalej
+Zamiast kolejnego szerokiego audytu:
 
-A nie wykonuje kolejnego szerokiego audytu. Następne zadania powinny odpowiadać na konkretne pytania, np.:
+- przekładać potwierdzone reguły na małe dane referencyjne używane w testach F3/F4,
+- przygotowywać syntetyczne przypadki `wejście → oczekiwany wynik`,
+- pomagać F3/F4 sprawdzać znaczenie pól i wyniki finansowe.
 
-- co oznacza pole potrzebne F3/F4,
-- jaka reguła finansowa jest potwierdzona,
-- jaki przypadek brzegowy trzeba uwzględnić,
-- jaki syntetyczny przypadek testowy powinien wejść do testów,
-- jaka rozbieżność w legacy wymaga decyzji.
+Jeżeli osoba z A nie ma aktywnego zadania blokującego, może wejść w przygotowanie fixtures lub testów F3/F4.
 
-**Pytanie kierujące:** czego F lub D nie może teraz zrobić bez odpowiedzi A?
+**Pożądany rezultat:** wiedza A trafia do automatycznego testu albo działającego widoku.
 
 ## B — wymagania i kryteria akceptacji
 
+B wykonało już dużą część Discovery. Dostarczono m.in. katalog raportów i kolejne doprecyzowania procesów.
+
 ### Bieżące
+- #111 — scenariusze legacy do poprawy,
+- #148 — należy uporządkować; jeżeli nadal względem `dev` wnosi tylko whitespace, nie powinien być scalany.
 
-- #82 / PR #110 — raporty i eksporty,
-- #84 / PR #111 — scenariusze akceptacyjne,
-- #126 — dalsze doprecyzowanie procesów poza legacy.
+### Propozycja B-1 — wsparcie F3 testami
 
-Wcześniejsze prace B, w tym PR #37, #39, #103, #104 i #105, zostały już scalone.
+**Odbiorca:** F3 (#112).  
+**Rezultat:** wykonywalne testy listy i szczegółów projektu.
 
-### Dalej
+Przykładowy zakres:
+- grant, praca statutowa i własna na danych syntetycznych,
+- dwa projekty mogą mieć ten sam numer i rok, ale różny typ,
+- kliknięcie projektu otwiera właściwe szczegóły,
+- pusta lista i brak projektu są obsłużone.
 
-B przechodzi od ogólnych analiz do przygotowania wymagań potrzebnych implementacji.
+Nie chodzi o kolejny dokument z testami, tylko o testy uruchamiane przez pytest/CI.
 
-Następne zadania powinny polegać na:
+### Propozycja B-2 — wsparcie F2 po minimum z E
 
-- opisaniu małego scenariusza użytkownika,
-- przygotowaniu kryteriów akceptacji dla elementu, który F faktycznie implementuje,
-- wskazaniu wymaganych pól i walidacji,
-- opisaniu przypadków brzegowych,
-- sprawdzeniu w przeglądzie PR, czy implementacja odpowiada ustalonemu procesowi,
-- doprowadzeniu jednego procesu od początku do końca.
+**Odbiorca:** F2 (#113).  
+**Rezultat:** wykonywalne testy logowania/uprawnień, w tym przynajmniej jeden przypadek odmowy.
 
-Nie tworzymy kolejnego katalogu formularzy lub raportów wyłącznie po to, aby mieć następne zadanie.
+### Propozycja B-3 — review zgodności implementacji
 
-**Najbliżsi odbiorcy wyników B:** E i F.
+Osoby B mogą wykonywać review F2/F3/F4 pod kątem zgodności z ustalonym procesem zamiast otwierać kolejne katalogi.
+
+**Pożądany rezultat:** kolejna praca B jest widoczna w działającej aplikacji lub CI, nie tylko w Markdown.
 
 ## C — środowisko techniczne i integracja
 
 ### Bieżące
 
-Najważniejszym zadaniem jest stabilizacja wspólnego środowiska i pierwsze stabilne wydanie `dev → main` (#90).
+Najważniejsze są:
+- #157 — stabilne uruchomienie od czystego klona,
+- #90 — pierwszy release `dev → main`.
 
-### Dalej
+### Propozycja dalszej pracy
 
-Po wydaniu C:
-
+Po pierwszym release C:
 - utrzymuje CI, Docker i testy,
-- pilnuje, aby projekt dawał się uruchomić od czystego klona repozytorium,
 - usuwa problemy techniczne blokujące kilka zespołów,
-- przygotowuje wspólne mechanizmy potrzebne implementacji,
-- wykonuje techniczne przeglądy PR,
-- pomaga F scalać rozwiązania w jeden produkt.
+- pomaga integrować F2/F3/F4,
+- nie tworzy drugiego skeletonu ani nowego fundamentu aplikacji.
 
-C nie buduje drugiego fundamentu aplikacji.
+Jeżeli C ma wolną osobę, bardziej wartościowa jest pomoc przy integracji F niż kolejny ADR.
 
-## D — dane legacy i migracja
+## D — dane i migracja
+
+Mapa starej bazy jest już dostępna. Kolejna mapa całej bazy nie jest teraz priorytetem.
 
 ### Bieżące
+- #132 / #124 — plan testów zgodności wymaga domknięcia.
 
-#114 / PR #115 dało pierwszą szczegółową mapę starej bazy.
+### Propozycja D-1 — dane syntetyczne i fixtures dla F3
 
-### Dalej
+**Odbiorca:** F3 (#112).  
+**Rezultat:** dane testowe zgodne z potwierdzonym znaczeniem pól oraz testy ich wykorzystania.
 
-Kolejne zadania powinny wynikać z potrzeb nowego modelu lub migracji, np.:
+### Propozycja D-2 — minimalny importer po ustabilizowaniu F3
 
-- stabilność identyfikatorów,
-- lata i kontynuacje prac,
-- niespójne lub osierocone relacje,
-- kontrola jakości danych,
-- mapowanie legacy do nowego modelu w zakresie MVP,
-- testy migracji na danych syntetycznych.
+Po ustaleniu modelu projektu w F3:
 
-Nie robimy kolejnej mapy całej bazy.
+- mały plik syntetyczny imitujący dane legacy,
+- import np. grant/statut/własne do nowego modelu,
+- test poprawnego importu,
+- test błędnego rekordu,
+- jawne zachowanie przy ponownym uruchomieniu.
+
+To jest prototyp migracji dla MVP, **nie migracja całej produkcyjnej bazy**.
+
+### Propozycja D-3 — plan testów ma prowadzić do testów
+
+Po poprawieniu #132 wybrane przypadki z planu powinny zostać zamienione na testy wykonywalne. Dokument nie powinien być końcem zadania.
 
 ## E — role, uprawnienia i przepływ pracy
 
 ### Bieżące
+- #117 — statusy i przejścia,
+- #123 — role i uprawnienia.
 
-- #120 / PR #123 — role i uprawnienia,
-- #116 / PR #117 — statusy i przejścia.
+Oba PR-y trzeba najpierw poprawić i domknąć.
 
-### Dalej
+### Propozycja E-1 — minimalny kontrakt dla F2/F3
 
-Po domknięciu tych prac E:
+Nie trzeba od razu rozstrzygać pełnego systemu uprawnień.
 
-- przygotowuje minimalny zestaw ról i uprawnień potrzebny F2/F3,
-- doprecyzowuje przejścia stanów dla jednego procesu,
-- przygotowuje scenariusze odmowy dostępu,
-- oddziela zachowanie systemu legacy od propozycji dla nowego systemu.
+**Rezultat:**
+- minimalne role potrzebne F2/F3,
+- kilka dozwolonych i zabronionych działań,
+- przynajmniej jeden test pozytywny i jeden negatywny.
 
-Nie projektujemy od razu pełnego przepływu pracy dla wszystkich procesów.
+### Propozycja E-2 — później mały mechanizm statusów
+
+Po zatwierdzeniu modelu statusów można zaimplementować walidację dozwolonych i zabronionych przejść bez budowania całego workflow i UI.
+
+Jeżeli E ma wolną osobę po domknięciu dokumentów, może ona bezpośrednio pomóc F2 w kodzie/testach.
 
 ## F — pierwszy spójny fragment systemu
 
+F pozostaje właścicielem pierwszego działającego fragmentu.
+
 ### Bieżące
-
-- #113 — użytkownik i logowanie testowe,
+- #113 — użytkownik/rola i mock logowania,
 - #112 — lista i szczegóły projektu,
-- #91 / roboczy PR #93 — budżet.
+- #91 / PR #93 — budżet,
+- #155 — integracja F3–F4,
+- #156 / PR #157 — stabilne środowisko.
 
-### Najbliższy wspólny cel
+### Propozycja kolejności
 
-Połączyć:
+1. po #157 rozwijać F2 i F3 na aktualnym `dev`,
+2. F4 integrować z F3, a nie utrzymywać jako osobne demo,
+3. wykorzystać pomoc A/B/D/E do fixtures, testów i weryfikacji,
+4. doprowadzić cały fragment do jednego demonstratora.
 
-`logowanie testowe → lista prac → szczegóły pracy → budżet`
+**Kryterium wspólnego sukcesu:**  
+`mock login → lista → szczegóły → budżet` działa i przechodzi testy od czystego klona.
 
-Następny krok powinien rozszerzać ten sam fragment o pierwszy formularz lub element procesu, gdy B i E dostarczą minimalne wymagania.
+# Gdzie kierować wolne osoby
 
-F nie musi czekać na zakończenie wszystkich analiz.
+Jeżeli ktoś nie ma aktywnego zadania, w pierwszej kolejności powinien szukać pracy tutaj:
+
+1. **F3 (#112)** — lista + szczegóły + wspólny model z F4,
+2. **F2 (#113)** — logowanie/role,
+3. **#155** — integracja szczegółów z budżetem,
+4. **testy automatyczne** dla F2/F3/F4,
+5. **#157/#90** do momentu pierwszego stabilnego release.
+
+Nie ma potrzeby zachowywać równej liczby zadań w A–F. Ważniejsze jest dowiezienie wspólnego produktu.
 
 ## Kiedy tworzyć nowe Issue
 
-Nowe Issue ma sens, gdy:
-
-- rozwiązuje konkretny brak,
-- wiadomo, kto wykorzysta wynik,
-- nie dubluje aktywnego Issue/PR,
-- rezultat można zweryfikować,
-- zakres pozwala zrobić rzeczywisty postęp w około tydzień.
-
-Minimalny opis:
+Nowe Issue powinno mieć:
 
 ```text
 Cel:
 Odbiorca / zależność:
-Rezultat:
-Kryteria akceptacji:
-Źródło:
+Co konkretnie powstanie:
+Jak to sprawdzimy:
+Źródło / podstawa:
+Poza zakresem:
 ```
+
+Jeżeli rezultatem ma być dokument, trzeba dodatkowo wskazać, **jaki kod, test lub decyzja implementacyjna są obecnie przez jego brak zablokowane**.
 
 ## Przekazanie między zespołami
 
-Raz w tygodniu wystarczy krótka informacja:
+Raz w tygodniu:
 
 ```text
 ### Przekazanie
-- Nowe potwierdzone fakty / wynik:
-- Ważne dla innych zespołów:
-- Blokada / potrzebna decyzja:
+- Co rzeczywiście powstało:
+- Kto może teraz tego użyć:
+- Co blokuje produkt:
+- Proponowany następny krok:
 ```
 
-Jeżeli PR zmienia założenie używane przez inny zespół, autor lub lead powinien wprost oznaczyć zależne Issue/PR.
+Ostatni punkt jest tylko propozycją, dopóki nie zostanie uzgodniony jako konkretne Issue.
+
+## Kamienie milowe
+
+| Termin | Oczekiwany stan produktu |
+|---|---|
+| koniec października | #157 domknięte, pierwszy stabilny release w `main`, F2/F3/F4 rozwijane na wspólnej bazie |
+| połowa listopada | działa `mock login → lista → szczegóły → budżet` |
+| koniec listopada | podstawowe uprawnienia i pierwszy mały formularz/proces zintegrowane z testami |
+| początek grudnia | zamrożenie zakresu MVP; dalej stabilizacja, testy, UX i dokumentacja |
 
 ## Ograniczenia
 
@@ -215,5 +254,6 @@ Materiały legacy pozostają materiałami dydaktycznymi o ograniczonym dostępie
 
 ## Historia aktualizacji
 
-- **15.10.2026** — doprecyzowano dalszą pracę A–F i poprawiono opis na bardziej naturalny język; uwzględniono aktualny stan 7 otwartych PR-ów.
+- **22.10.2026** — przesunięto nacisk z kolejnego Discovery na implementację, testy i integrację; wyjaśniono rolę `dev` i `main`; dopuszczono elastyczne przesuwanie osób między A–F i dodano konkretne propozycje wsparcia produktu.
+- **15.10.2026** — doprecyzowano dalszą pracę A–F po pierwszym audycie.
 - **14.10.2026** — utworzono podsumowanie stanu A–F.
