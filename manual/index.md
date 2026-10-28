@@ -1,53 +1,64 @@
-# ZIO — projekt semestralny
+# ZIO — co robić teraz
 
-Realizujemy **jeden wspólny projekt**: nowy system wspierający obsługę prac/projektów i wybranych procesów Działu Nauki PB.
+!!! important "Nie musisz czytać całego manuala"
+    Jeśli wchodzisz tutaj przed zajęciami albo po zakończeniu swojego zadania, zacznij od trzech kroków poniżej.
 
-**PS1 i PS2 pracują nad jednym produktem, jednym repozytorium i jednym backlogiem.**
+## 1. Sprawdź swoją aktualną pracę
 
-!!! tip "Aktualny etap — implementacja i integracja MVP"
-    Pierwsza szeroka faza Discovery jest zakończona. Priorytetem są teraz działający kod, testy, integracja, migracja danych i usuwanie blokad MVP.
+[**Otwórz GitHub Project — główna tablica pracy**](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1)
 
-    Zacznij od:
+Sprawdź:
 
-    1. [Dashboardu projektu i leaderboardu](19-dashboard-projektu.md),
-    2. [Stanu projektu i priorytetów](16-propozycje-zadan-po-audycie.md),
-    3. [Banku możliwych zadań MVP](17-bank-zadan-mvp.md),
-    4. [Środowisk MVP — Local, Demo i Shared Staging](18-srodowiska-mvp.md),
-    5. [Ról i odpowiedzialności A–F](12-plan-discovery-a-f.md).
+- czy masz zadanie `IN PROGRESS`,
+- czy czeka na Ciebie review lub test,
+- czy ktoś zgłosił blocker albo zależność od Twojej pracy.
 
-    Źródłem aktualnego stanu zadań pozostają GitHub Issues, Pull Requests i GitHub Project.
+## 2. Jeśli nie masz zadania — zobacz priorytety
 
-## Szybkie wejście do pracy
+[**Co robić teraz — stan projektu i priorytety**](16-propozycje-zadan-po-audycie.md)
 
-- [GitHub Project — główna tablica pracy](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1)
-- [Contribution Leaderboard — Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86)
-- [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues)
-- [Pull Requests](https://github.com/zio-wi-pb-mc/pb-science-office/pulls)
-
-## Najbliższy wspólny cel
+Najbliższy wspólny cel produktu:
 
 `logowanie → lista projektów → szczegóły projektu → budżet`
 
-Ma działać jako jeden spójny fragment aplikacji na danych syntetycznych, z PostgreSQL i testami.
+Jeżeli Twój obszar nie ma w tej chwili pracy blokującej MVP, możesz pomóc innemu zespołowi.
 
-Po ustabilizowaniu tego przepływu dokładamy pierwszy mały formularz/proces.
+## 3. Wybierz sensowny kolejny krok
 
-## Jak pracujemy
+[**Bank możliwych zadań MVP**](17-bank-zadan-mvp.md)
 
-- **A–F nie są silosami.** Gdy kończysz własne zadanie, możesz pomóc innemu obszarowi, jeśli przyspiesza to MVP.
-- Każde zadanie ma jednego właściciela.
-- Jedna osoba ma maksymalnie jedno główne zadanie `In progress`.
-- Zwykłe PR trafiają do `dev`.
-- `main` jest stabilnym checkpointem i dostaje zmiany przez Release PR.
-- Każdy wykonuje również review lub test cudzej pracy.
-- AI jest dozwolone, ale autor odpowiada za rezultat i musi go rozumieć.
-- Nie tworzymy drugich, konkurencyjnych modeli, frameworków, auth, sposobów liczenia finansów ani środowisk.
+To nie jest lista obowiązkowych przydziałów. Przed utworzeniem Issue sprawdź, czy podobne zadanie już nie istnieje.
 
-## Stały rytm PS1 ↔ PS2
+Dobre nowe zadanie powinno prowadzić do co najmniej jednego z rezultatów:
 
-- **wtorek 20:00** — aktualizacja Issues/PR i zależności,
-- **środa — PS2** — praca na aktualnym stanie,
-- **środa po zajęciach** — krótkie przekazanie ustaleń i blokad,
-- **czwartek — PS1** — kontynuacja na aktualnym stanie.
+- działającego kodu,
+- testu automatycznego,
+- integracji,
+- poprawy Docker/CI,
+- importu/migracji,
+- usunięcia konkretnego blockera MVP.
 
-Wynik jednej grupy jest wejściem do pracy drugiej.
+## Szybkie linki
+
+- [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1)
+- [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues)
+- [Pull Requests](https://github.com/zio-wi-pb-mc/pb-science-office/pulls)
+- [Leaderboard #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86)
+- [Dashboard projektu](19-dashboard-projektu.md)
+- [Środowiska MVP — Local, Demo, Staging](18-srodowiska-mvp.md)
+
+## Najważniejsza zasada
+
+**A–F nie są silosami.** Zespół określa główny obszar odpowiedzialności, ale produkt jest wspólny.
+
+Po zakończeniu bieżącego Issue:
+
+1. sprawdź GitHub Project,
+2. sprawdź zależności i otwarte PR,
+3. wybierz mały brak potrzebny MVP,
+4. utwórz Issue z jednym właścicielem,
+5. pracuj na branchu od `dev`,
+6. otwórz PR do `dev`,
+7. wykonaj lub uzyskaj peer review.
+
+Pozostałe zasady organizacyjne, Git, testy, ocenianie i materiały startowe są schowane w sekcji **Informacje podstawowe**.
