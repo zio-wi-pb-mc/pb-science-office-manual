@@ -1,7 +1,23 @@
 # ZIO — co robić teraz
 
 !!! important "Nie musisz czytać całego manuala"
-    Jeśli wchodzisz tutaj przed zajęciami albo po zakończeniu swojego zadania, zacznij od trzech kroków poniżej.
+    Jeśli wchodzisz tutaj przed zajęciami albo po zakończeniu swojego zadania, zacznij od poniższych kroków.
+
+## Leaderboard
+
+Aktualny widok punktów jest dostępny bezpośrednio na stronie:
+
+[**Otwórz Dashboard i Leaderboard**](19-dashboard-projektu.md)
+
+| # | Student | Zespół | Punkty* |
+|---:|---|:---:|---:|
+| 1 | Vladislav Matveev (@Leucist) | C | **10** |
+| 2 | Nazar Hrinchenko (@Grinnazar) | C | **9** |
+| 2 | Maciej Sawicki (@Maciek-Sawicki) | C | **9** |
+| 4 | Weronika Sosnowska (@wersosn) | C | **8** |
+| 5 | Mykola Nishchymnyi (@kolyasiquez) | C | **4** |
+
+\* Ostatnie pełne rozliczenie punktów: **14.10.2026**. Nowe PR-y i zadania są dopisywane do punktów dopiero po spełnieniu reguł z #86.
 
 ## 1. Sprawdź swoją aktualną pracę
 
@@ -40,11 +56,11 @@ Dobre nowe zadanie powinno prowadzić do co najmniej jednego z rezultatów:
 
 ## Szybkie linki
 
+- [Dashboard i Leaderboard](19-dashboard-projektu.md)
 - [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1)
 - [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues)
 - [Pull Requests](https://github.com/zio-wi-pb-mc/pb-science-office/pulls)
-- [Leaderboard #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86)
-- [Dashboard projektu](19-dashboard-projektu.md)
+- [Leaderboard #86 — zasady i historia](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86)
 - [Środowiska MVP — Local, Demo, Staging](18-srodowiska-mvp.md)
 
 ## Najważniejsza zasada
@@ -60,5 +76,3 @@ Po zakończeniu bieżącego Issue:
 5. pracuj na branchu od `dev`,
 6. otwórz PR do `dev`,
 7. wykonaj lub uzyskaj peer review.
-
-Pozostałe zasady organizacyjne, Git, testy, ocenianie i materiały startowe są schowane w sekcji **Informacje podstawowe**.
