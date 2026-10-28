@@ -2,81 +2,82 @@
 
 Ta strona zbiera najważniejsze miejsca do codziennej pracy nad projektem.
 
-## Contribution Leaderboard — widok dla studentów
+## Contribution Leaderboard
+
+**Aktualne przeliczenie: 28.10.2026, 12:26 (Europe/Warsaw).**
 
 !!! important "Punkty ≠ automatyczna ocena"
-    Ranking jest narzędziem motywacyjnym. Pokazuje **punkty formalnie rozliczone według #86**, a nie ocenę z przedmiotu.
+    Ranking jest narzędziem motywacyjnym. Pokazuje punkty formalnie rozliczone według zasad z #86.
 
-### Ranking indywidualny
-
-**Ostatnie pełne rozliczenie punktów: 14.10.2026.**  
-Aktywność po tej dacie może być już widoczna w GitHubie, ale nie jest dopisywana do punktów, dopóki zadanie nie spełni zasad rozliczenia z #86.
+### Ranking indywidualny — od początku semestru
 
 | # | Student | GitHub | Zespół | Punkty | Taski | Review |
 |---:|---|---|:---:|---:|---:|---:|
-| 1 | Vladislav Matveev | @Leucist | C | **10** | 2 | 3 |
-| 2 | Nazar Hrinchenko | @Grinnazar | C | **9** | 2 | 2 |
-| 2 | Maciej Sawicki | @Maciek-Sawicki | C | **9** | 2 | 2 |
-| 4 | Weronika Sosnowska | @wersosn | C | **8** | 2 | 1 |
-| 5 | Mykola Nishchymnyi | @kolyasiquez | C | **4** | 1 | 2 |
-| 6 | Jakub Mirończuk | @mielonxd | A | 0 | 0 | 0 |
-| 6 | Daniel Perkowski | @dperkowski | A | 0 | 0 | 0 |
-| 6 | Aleksandra Masiejczyk | @Olinda-M | A | 0 | 0 | 0 |
-| 6 | Patrycja Choćko | @patrycjachocko | B | 0 | 0 | 0 |
-| 6 | Karina Chilkiewicz | @karichil | B | 0 | 0 | 0 |
-| 6 | Bartłomiej Karanowski | @Zapsiu | B | 0 | 0 | 0 |
-| 6 | Klaudia Natalia Klim | @Hackeristi | B | 0 | 0 | 0 |
-| 6 | Gabriel Chomiczewski | @Camed | B | 0 | 0 | 0 |
-| 6 | Miłosz Dubowski | @Orangunio | D | 0 | 0 | 0 |
-| 6 | Tomasz Sidoruk | @TS40 | D | 0 | 0 | 0 |
-| 6 | Emilia Drewnowska | @Emili-d | E | 0 | 0 | 0 |
-| 6 | Cezary Babik | @CzaroAmaro | E | 0 | 0 | 0 |
-| 6 | Michał Borawski | @michalborawski | E | 0 | 0 | 0 |
-| 6 | Jakub Pawlak | @NacomiTagiera | F | 0 | 0 | 0 |
-| 6 | Patryk Bura | @Patryk-Bura | F | 0 | 0 | 0 |
-| 6 | Łukasz Bondar | @lukaszbondar1 | F | 0 | 0 | 0 |
-| 6 | Paweł Kozikowski | @Pawelkoz201 | F | 0 | 0 | 0 |
+| 1 | Nazar Hrinchenko | @Grinnazar | C | **21** | 4 | 4 |
+| 2 | Vladislav Matveev | @Leucist | C | **19** | 5 | 6 |
+| 3 | Weronika Sosnowska | @wersosn | C | **18** | 4 | 4 |
+| 4 | Mykola Nishchymnyi | @kolyasiquez | C | **16** | 3 | 4 |
+| 5 | Maciej Sawicki | @Maciek-Sawicki | C | **15** | 3 | 3 |
+| 6 | Daniel Perkowski | @dperkowski | A | **11** | 2 | 1 |
+| 7 | Bartłomiej Karanowski | @Zapsiu | B | **8** | 3 | 2 |
+| 8 | Jakub Mirończuk | @mielonxd | A | **7** | 1 | 2 |
+| 8 | Klaudia Natalia Klim | @Hackeristi | B | **7** | 3 | 1 |
+| 10 | Karina Chilkiewicz | @karichil | B | **6** | 2 | 2 |
+| 11 | Patrycja Choćko | @patrycjachocko | B | **4** | 1 | 2 |
+| 12 | Miłosz Dubowski | @Orangunio | D | **2** | 1 | 0 |
+| 12 | Paweł Kozikowski | @Pawelkoz201 | F | **2** | 1 | 0 |
+| 14 | Tomasz Sidoruk | @TS40 | D | **1** | 0 | 1 |
+| 14 | Łukasz Bondar | @lukaszbondar1 | F | **1** | 0 | 1 |
+| 16 | Aleksandra Masiejczyk | @Olinda-M | A | **0** | 0 | 0 |
+| 16 | Gabriel Chomiczewski | @Camed | B | **0** | 0 | 0 |
+| 16 | Emilia Drewnowska | @Emili-d | E | **0** | 0 | 0 |
+| 16 | Cezary Babik | @CzaroAmaro | E | **0** | 0 | 0 |
+| 16 | Michał Borawski | @michalborawski | E | **0** | 0 | 0 |
+| 16 | Jakub Pawlak | @NacomiTagiera | F | **0** | 0 | 0 |
+| 16 | Patryk Bura | @Patryk-Bura | F | **0** | 0 | 0 |
 
-!!! warning "Dlaczego część aktywnych osób ma jeszcze 0?"
-    Zero nie oznacza braku pracy. Punkty pojawiają się dopiero po pełnym cyklu: **Issue → jeden właściciel → PR → peer review → merge → poprawne rozliczenie rozmiaru**. Wiele prac z drugiej połowy października jest już scalonych albo w review, ale nie było częścią ostatniego pełnego przeliczenia z 14.10.
+### Ranking zespołów
 
-### Bieżąca aktywność po ostatnim rozliczeniu
+| # | Zespół | Suma punktów | Aktywni | Punkty / osobę |
+|---:|:---:|---:|---:|---:|
+| 1 | C | **89** | 5 | **17.80** |
+| 2 | A | **18** | 3 | **6.00** |
+| 3 | B | **25** | 5 | **5.00** |
+| 4 | D | **3** | 2 | **1.50** |
+| 5 | F | **3** | 4 | **0.75** |
+| 6 | E | **0** | 3 | **0.00** |
 
-Od ostatniego formalnego snapshotu w repozytorium pojawiło się dużo nowej pracy. Przykładowo scalono już m.in. F4 (#93), role/statusy (#117/#123), schemat PostgreSQL legacy (#164), walidację środowiska (#176), readiness PostgreSQL (#178) i CI z PostgreSQL (#179).
+### Prace scalone, które jeszcze czekają na formalne rozliczenie
 
-Dlatego przy interpretowaniu rankingu należy równolegle patrzeć na [Pull Requests](https://github.com/zio-wi-pb-mc/pb-science-office/pulls) i [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1). Kolejne rozliczenie punktowe powinno uwzględnić te prace dopiero po spełnieniu reguł #86.
+| PR / Issue | Student | Co blokuje punkty |
+|---|---|---|
+| #164 / #125 | Miłosz Dubowski | brak studenckiego merytorycznego peer review |
+| #117 / #116 | Cezary Babik | Issue #116 nadal otwarte |
+| #123 / #120 | Emilia Drewnowska | Issue otwarte i dwóch Assignees |
+| #152 / #128 | Patrycja Choćko | dostępne studenckie Approve bez merytorycznej treści |
+| #105 / #79 | Patrycja Choćko | brak merytorycznego peer review studenta PR |
+| #88 / #87 | Jakub Mirończuk | brak merytorycznego peer review studenta PR |
+| #63 / #30 | Daniel Perkowski | brak merytorycznego peer review studenta PR |
+| #29 / #20 | Aleksandra Masiejczyk | brak merytorycznego peer review studenta PR |
+| #27 / #26 | Jakub Mirończuk | brak merytorycznego peer review studenta PR |
 
-### Ranking zespołów — ostatni pełny snapshot
-
-| Zespół | Punkty / aktywną osobę* |
-|:---:|---:|
-| A | 0.00 |
-| B | 0.00 |
-| C | **8.00** |
-| D | 0.00 |
-| E | 0.00 |
-| F | 0.00 |
-
-\* Dla bieżącego widoku używamy tylko obecnie aktywnych studentów. Historyczny snapshot indywidualny pochodzi z 14.10; dlatego ranking zespołów ma charakter orientacyjny.
-
-[**Pełne zasady i historia naliczeń — Issue #86**](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86)
+[**Pełne zasady i aktualne rozliczenie — Issue #86**](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86)
 
 ### Zasady punktacji w skrócie
 
 | Wkład | Punkty |
 |---|---:|
 | Zadanie S — rozmiar domyślny | 2 |
-| Zadanie M — po zatwierdzeniu | 5 |
-| Zadanie L — po zatwierdzeniu przez prowadzącego | 8 |
+| Zadanie M — zatwierdzone przed merge | 5 |
+| Zadanie L — zatwierdzone przez prowadzącego przed merge | 8 |
 | Merytoryczne peer review | +1 |
 
-Najważniejsze reguły:
-- M zatwierdza lead; lead nie zatwierdza własnego M,
-- L zatwierdza prowadzący,
-- M/L trzeba zatwierdzić **przed mergem**,
-- bez zatwierdzenia zadanie liczy się jako S,
-- review: maks. 3 pkt tygodniowo,
-- samo tworzenie Issue/PR, liczba commitów i liczba linii nie dają punktów.
+Najważniejsze:
+- zadanie musi mieć zamknięte Issue, jednego właściwego Assignee, merge i merytoryczne peer review,
+- M/L musi zostać zatwierdzone **przed mergem**,
+- zatwierdzenie rozmiaru po merge nie działa wstecz,
+- review: maks. 3 pkt na tydzień,
+- samo kliknięcie Approve bez merytorycznej treści nie gwarantuje punktu.
 
 ---
 
@@ -106,4 +107,4 @@ Przed rozpoczęciem nowego zadania sprawdź tablicę, Issues i otwarte Pull Requ
 - [Bank możliwych zadań MVP](17-bank-zadan-mvp.md)
 
 !!! important "Źródło prawdy"
-    Dla statusu pracy źródłem prawdy są GitHub Project, Issues i Pull Requests. GitHub Pages pokazuje punkty oraz aktualne zasady organizacyjne.
+    Dla statusu pracy źródłem prawdy są GitHub Project, Issues i Pull Requests. GitHub Pages pokazuje bieżący snapshot punktów i zasady organizacyjne.
