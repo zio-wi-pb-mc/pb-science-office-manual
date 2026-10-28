@@ -1,42 +1,31 @@
-# Stan projektu i dalsze prace
+# Stan projektu i priorytety
 
-**Stan na 28.10.2026**  
-**Cel tej strony:** wskazać aktualny stan projektu, priorytety produktowe i proponowany podział pracy po zmianach w składzie grup.  
-**Źródło prawdy:** aktualne GitHub Issues, Pull Requests i GitHub Project mają pierwszeństwo przed tą stroną.
+**Stan na: 28.10.2026**  
+**Źródło prawdy:** GitHub Issues, Pull Requests i GitHub Project mają pierwszeństwo przed tą stroną.
 
-!!! important "Najważniejsza zmiana"
-    Projekt wychodzi z fazy szerokiego Discovery. Kolejne zadania powinny przede wszystkim prowadzić do **działającego kodu, testów, integracji, migracji danych albo usunięcia konkretnej blokady MVP**.
+!!! important "Etap projektu"
+    Projekt wychodzi z szerokiego Discovery. Priorytetem są teraz **działający kod, testy, integracja, migracja danych i usuwanie blokad MVP**.
 
-    Zespoły A–F są sposobem organizacji pracy, a nie sztywnymi silosami. Jeśli w jednym obszarze brakuje ludzi, a w innym są wolne moce, **przesuwamy osoby tam, gdzie najbardziej pomagają dowieźć produkt**.
+    Zespoły A–F określają główny obszar odpowiedzialności, ale **nie są sztywnymi silosami**. Jeżeli ktoś kończy pracę w swoim obszarze, powinien pomóc tam, gdzie najbardziej przyspieszy wspólny produkt.
 
-## Gdzie jest źródło prawdy
+## Najbliższy cel produktu
 
-1. **`dev` — bieżący zintegrowany stan projektu.** Zwykłe branche tworzymy od `dev`, a zwykłe PR-y kierujemy do `dev`.
-2. **Otwarte PR-y — praca jeszcze niezintegrowana.** Przed rozpoczęciem zadania trzeba sprawdzić, czy ktoś już nie robi tego samego.
-3. **`main` — ostatnie stabilne wydanie.** Nie musi zawierać każdej najnowszej zmiany z `dev`.
-4. **GitHub Pages — kierunek pracy i reguły organizacyjne.** Nie zastępuje aktualnych Issues/PR.
+Najważniejszy wspólny przepływ:
 
-Do `main` trafia okresowo sprawdzony stan `dev` przez Release PR. Finalny merge Release PR wykonuje prowadzący.
+`logowanie testowe → lista projektów → szczegóły projektu → budżet`
 
-# Co zmieniło się od 22.10
+Ma działać:
 
-W ostatnich dniach projekt przesunął się wyraźnie w stronę implementacji:
+- w jednej aplikacji,
+- po czystym klonie repozytorium,
+- na danych syntetycznych,
+- z PostgreSQL,
+- z testami automatycznymi,
+- bez ręcznego poprawiania konfiguracji.
 
-- **F4 / budżet (#93)** został scalony do `dev`,
-- **statusy i przejścia (#117)** zostały scalone,
-- **role i uprawnienia E1 (#123)** zostały scalone,
-- **schemat legacy w PostgreSQL (#164)** został scalony wraz z eksperymentalną weryfikacją relacji/FK,
-- scalono techniczne usprawnienia środowiska: **walidację `.env` (#176)** i **readiness endpoint PostgreSQL (#178)**,
-- **F2 (#180)** ma już implementację logowania testowego i ról, ale wymaga poprawienia CI,
-- **dostęp do projektów (#174)** jest rozwijany jako draft,
-- **#157** jest już Ready for review i ma rozbudowane testy środowiska, ale wymaga finalnego clean-clone review i synchronizacji z aktualnym `dev`,
-- **#90** pozostaje kandydatem na pierwszy stabilny release `dev → main`.
+Po jego ustabilizowaniu dokładamy **pierwszy mały formularz/proces**.
 
-To oznacza, że nie potrzebujemy już kolejnej rundy szerokich dokumentów Discovery. Potrzebujemy spójnego produktu.
-
-# Najbliższy checkpoint
-
-Kolejność techniczna pozostaje:
+## Najbliższy checkpoint techniczny
 
 1. domknąć **#157 — stabilne środowisko / clean clone**,
 2. scalić #157 do `dev`,
@@ -44,320 +33,123 @@ Kolejność techniczna pozostaje:
 4. finalnie zweryfikować **#90 — release `dev → main`**,
 5. wydać pierwszy stabilny checkpoint do `main`.
 
-Równolegle rozwijamy właściwy produkt — nie czekamy z implementacją F2/F3/F4 na release.
+Równolegle rozwijamy F2/F3/F4 — nie czekamy z produktem na release.
 
-# Najbliższy cel produktu
+## Co już istnieje
 
-Najważniejszy wspólny rezultat:
+W ostatnim etapie projekt przesunął się wyraźnie w stronę implementacji:
 
-`logowanie testowe → lista projektów → szczegóły projektu → budżet`
+- F4 / budżet (#93) jest scalony do `dev`,
+- statusy i przejścia (#117) są scalone,
+- role i uprawnienia (#123) są scalone,
+- schemat legacy w PostgreSQL (#164) jest scalony,
+- walidacja `.env` (#176) i readiness PostgreSQL (#178) są scalone,
+- F2 (#180) zawiera implementację logowania testowego i ról,
+- dostęp do projektów (#174) jest rozwijany,
+- #157 zawiera rozbudowaną weryfikację Docker/clean-clone,
+- #90 pozostaje kandydatem na pierwszy stabilny release.
 
-Ma działać:
+## Aktualne role zespołów
 
-- w jednej aplikacji,
-- po czystym klonie,
-- na danych syntetycznych,
-- z PostgreSQL,
-- z testami automatycznymi,
-- bez ręcznego poprawiania konfiguracji.
+| Zespół | Główna odpowiedzialność teraz |
+|---|---|
+| **A** | reguły legacy → fixtures, przypadki referencyjne i testy |
+| **B** | wymagania → testy akceptacyjne, E2E, review działającego produktu |
+| **C** | wspólne środowisko, CI, Docker, release, integracja |
+| **D** | dane legacy, importer, migracja i parity tests |
+| **E** | role, uprawnienia, dostęp do danych i minimalny workflow |
+| **F** | integracja vertical slice i rozwój działającego MVP |
 
-Dopiero po tym dokładamy pierwszy mały formularz/proces.
+Szczegółowy, względnie stały zakres A–F: [Plan Discovery A–F](12-plan-discovery-a-f.md).
 
-# Aktualny skład zespołów
+## Gdy kończysz bieżące zadanie
 
-Po zmianach organizacyjnych pracujemy dalej tylko z aktywnymi uczestnikami.
+Nie czekaj automatycznie na przydział prowadzącego.
 
-## PS1
+1. sprawdź otwarte Issues i PR,
+2. sprawdź [Bank możliwych zadań MVP](17-bank-zadan-mvp.md),
+3. wybierz najmniejszy brak, który realnie przesuwa produkt do przodu,
+4. sprawdź, czy nikt już tego nie robi,
+5. zaproponuj Issue z jednym właścicielem i mierzalnym rezultatem.
 
-### A — obecny system i dane
-Lead: **Daniel Perkowski**
+Kolejność priorytetów dla wolnych osób:
 
-- Jakub Mirończuk
-- Daniel Perkowski
-- Aleksandra Masiejczyk
+1. integracja F2/F3/F4,
+2. testy automatyczne vertical slice,
+3. Docker / CI / release / demo,
+4. importer i testy migracji,
+5. kontrola dostępu,
+6. pierwszy mały formularz/proces.
 
-**Liczebność: 3**
+Nowy dokument Discovery jest niżej na liście, chyba że jego brak konkretnie blokuje kod lub test.
 
-### B — procesy, formularze i wymagania
-Lead: **Karina Chilkiewicz**
+## Środowiska
 
-- Patrycja Choćko
-- Karina Chilkiewicz
-- Bartłomiej Karanowski
-- Klaudia Natalia Klim
-- Gabriel Chomiczewski
+Docelowy model uruchamiania projektu opisuje osobna strona:
 
-**Liczebność: 5**
+[**Środowiska MVP — Local Dev, Demo i Shared Staging**](18-srodowiska-mvp.md)
 
-### C — Core i środowisko techniczne
-Lead: **Vladislav Matveev**
+Najważniejsza zasada: **każdy student powinien móc uruchomić aktualną aplikację i ją zobaczyć**, a zaakceptowany stan produktu powinien być możliwy do demonstracji w środowisku zbliżonym do wdrożeniowego.
 
-- Mykola Nishchymnyi
-- Vladislav Matveev
-- Weronika Sosnowska
-- Nazar Hrinchenko
-- Maciej Sawicki
+## Aktualny skład aktywnych zespołów
 
-**Liczebność: 5**
+### PS1
 
-## PS2
+**A — obecny system i dane**  
+Lead: Daniel Perkowski  
+Jakub Mirończuk, Daniel Perkowski, Aleksandra Masiejczyk
 
-### D — legacy, baza i migracja
-Lead: **Tomasz Sidoruk**
+**B — procesy, formularze i wymagania**  
+Lead: Karina Chilkiewicz  
+Patrycja Choćko, Karina Chilkiewicz, Bartłomiej Karanowski, Klaudia Natalia Klim, Gabriel Chomiczewski
 
-- Miłosz Dubowski
-- Tomasz Sidoruk
+**C — Core i środowisko techniczne**  
+Lead: Vladislav Matveev  
+Mykola Nishchymnyi, Vladislav Matveev, Weronika Sosnowska, Nazar Hrinchenko, Maciej Sawicki
 
-**Liczebność: 2**
+### PS2
 
-### E — role, workflow i wymagania użytkowników
-Lead: **Michał Borawski**
+**D — legacy, baza i migracja**  
+Lead: Tomasz Sidoruk  
+Miłosz Dubowski, Tomasz Sidoruk
 
-- Emilia Drewnowska
-- Cezary Babik
-- Michał Borawski
+**E — role, workflow i wymagania użytkowników**  
+Lead: Michał Borawski  
+Emilia Drewnowska, Cezary Babik, Michał Borawski
 
-**Liczebność: 3**
+**F — pierwszy vertical slice / implementacja**  
+Lead: Paweł Kozikowski  
+Jakub Pawlak, Patryk Bura, Łukasz Bondar, Paweł Kozikowski
 
-### F — pierwszy vertical slice / implementacja
-Lead: **Paweł Kozikowski**
+## Wyrównywanie obciążenia
 
-- Jakub Pawlak
-- Patryk Bura
-- Łukasz Bondar
-- Paweł Kozikowski
+Nie utrzymujemy sztucznie równych silosów.
 
-**Liczebność: 4**
+- po domknięciu #157/#90 Jakub Pawlak może wesprzeć D przy importerze/migracji,
+- osoby z B po zakończeniu bieżących zadań mogą przechodzić do testów A/F lub implementacji pierwszego formularza,
+- osoby z A mogą pisać fixtures i wykonywalne testy finansów używane bezpośrednio przez F4,
+- C może i powinno pomagać F w integracji, CI, Dockerze i środowisku demonstracyjnym.
 
-# Proponowane wyrównanie obciążenia
-
-!!! note "To jest propozycja organizacyjna"
-    Poniższe przesunięcia mają służyć produktowi. Nie zmieniają autorstwa już wykonanych zadań i nie wymagają porzucania rozpoczętego PR w połowie.
-
-## PS2 — rekomendowane przesunięcie po #157/#90
-
-Największa nierównowaga jest w PS2:
-
-- D = 2 osoby,
-- E = 3 osoby,
-- F = 4 osoby.
-
-Po domknięciu stabilizacji środowiska **proponowane jest przesunięcie Jakuba Pawlaka (F1) do zespołu D**.
-
-Uzasadnienie:
-
-- funkcja F1 (skeleton/środowisko) po #157 i #90 przestaje wymagać osobnego właściciela w F,
-- środowisko techniczne przejmuje dalej C,
-- D ma obecnie tylko dwie osoby, a przed nim realna praca implementacyjna: migracja, importer, testy danych i zgodność PostgreSQL,
-- F po zmianie pozostaje bardzo naturalnym zespołem 3-osobowym:
-  - F2 — Patryk Bura,
-  - F3 — Łukasz Bondar,
-  - F4/integracja — Paweł Kozikowski.
-
-**Docelowo PS2: D=3, E=3, F=3.**
-
-## PS1 — możliwe przesunięcie B → A
-
-PS1 ma obecnie:
-
-- A = 3 osoby,
-- B = 5 osób,
-- C = 5 osób.
-
-Nie ma tu krytycznego problemu, ale dalsze czyste Discovery B jest coraz mniej potrzebne.
-
-**Propozycja:** po zakończeniu bieżących zadań jedna osoba z B może przejść do A i pracować nad:
-
-- fixtures dla finansów,
-- przypadkami referencyjnymi,
-- testami F3/F4,
-- przygotowaniem syntetycznych danych do testów zgodności.
-
-Nie ma potrzeby wykonywać tego przesunięcia natychmiast. Najpierw należy domknąć aktualne PR-y. Konkretna osoba może zostać wybrana na podstawie bieżącego obciążenia.
-
-**Potencjalny układ docelowy PS1: A=4, B=4, C=5.**
-
-# Jak rozkładamy teraz pracę
-
-Poniższe punkty są **propozycjami dalszej pracy**, a nie automatycznie zatwierdzonymi wymaganiami biznesowymi.
-
-## A — system legacy i reguły biznesowe
-
-A powinno teraz przede wszystkim przekładać wiedzę legacy na dane i testy.
-
-### Bieżące
-
-- #99 — rezerwacja vs wydatek,
-- #136 — przypadki referencyjne rezerwy,
-- #163 — słownik finansowy wymaga jeszcze korekty relacji.
-
-### Proponowany kierunek
-
-- syntetyczne przypadki `wejście → oczekiwany wynik`,
-- fixtures do testów finansowych,
-- wsparcie F4 i testów agregacji,
-- wsparcie D w danych migracyjnych.
-
-**Nie otwieramy kolejnego szerokiego audytu finansów, jeśli nie ma konkretnego odbiorcy.**
-
-## B — wymagania i testy akceptacyjne
-
-B ma już dużą część Discovery za sobą. #111 jest merytorycznie zaakceptowany.
-
-### Proponowany kierunek
-
-B powinno przejść z dokumentów do **wykonywalnych testów i review produktu**:
-
-- testy listy/szczegółów F3,
-- testy logowania i uprawnień F2,
-- review implementacji F2/F3/F4 względem zaakceptowanych wymagań,
-- pierwszy mały scenariusz E2E po zintegrowaniu vertical slice.
-
-**Rezultat kolejnego zadania B powinien być widoczny w CI albo działającym scenariuszu, nie tylko w Markdown.**
-
-## C — Core, CI i integracja
-
-C ma obecnie duże znaczenie, dlatego nie zmniejszamy zespołu.
-
-### Bieżące
-
-- #157 — finalne clean-clone review i merge,
-- #90 — przygotowanie pierwszego release,
-- utrzymanie `.env`, Docker, PostgreSQL, readiness i CI.
-
-### Po release
-
-C powinno:
-- usuwać problemy techniczne blokujące kilka zespołów,
-- pomagać integrować F2/F3/F4,
-- utrzymywać pipeline i środowisko,
-- nie tworzyć kolejnego skeletonu ani równoległego frameworka.
-
-## D — baza i migracja
-
-D jest obecnie najmniejszym zespołem, dlatego powinno dostać dodatkową osobę po #157/#90.
-
-### Stan
-
-- #164 — schemat legacy w PostgreSQL został scalony,
-- #132 — plan testów zgodności jest blisko domknięcia.
-
-### Proponowane następne zadania
-
-1. wykorzystać schemat #164 do testów importu,
-2. przygotować mały importer danych syntetycznych legacy → model nowego systemu,
-3. testować przypadki z osieroconymi relacjami wykrytymi podczas #164,
-4. przekuć wybrane scenariusze #132 w wykonywalne testy,
-5. po ustabilizowaniu F3 przygotować migrację przykładowych projektów.
-
-Nie migrujemy jeszcze całej produkcyjnej bazy.
-
-## E — role, workflow i dostęp
-
-E ma już scalone podstawowe ustalenia:
-
-- #117 — statusy i przejścia,
-- #123 — role i uprawnienia.
-
-### Bieżące
-
-- #173 / PR #174 — dostęp do projektów i testy uprawnień.
-
-### Proponowany kierunek
-
-- doprowadzić kontrolę dostępu do działających testów,
-- zsynchronizować z F2 (#180),
-- dopiero potem rozszerzać workflow,
-- nie projektować jeszcze pełnych uprawnień wszystkich przyszłych modułów.
-
-## F — pierwszy vertical slice
-
-F ma już realny kod produktu.
-
-### Stan
-
-- F4 / budżet (#93) — **scalone do `dev`**,
-- F2 / logowanie (#180) — implementacja jest, ale CI wymaga poprawki,
-- F3 (#112) — nadal rozwijane,
-- #155 — integracja F3 z F4,
-- #157 — końcowa stabilizacja środowiska.
-
-### Priorytet
-
-1. naprawić CI F2 (#180),
-2. domknąć F3,
-3. połączyć F3 z już scalonym F4,
-4. połączyć to z F2,
-5. zrobić jeden demonstrator od logowania do budżetu.
-
-Po #157/#90 Jakub Pawlak może przejść do D, a F pozostaje zespołem skupionym na F2/F3/F4.
-
-# Gdzie kierować wolne osoby
-
-Jeżeli ktoś kończy bieżące zadanie, kolejność priorytetów jest następująca:
-
-1. **F2/F3/F4 — integracja vertical slice,**
-2. **testy automatyczne vertical slice,**
-3. **D — importer i testy migracji,**
-4. **E — kontrola dostępu do projektów,**
-5. **C — blokery CI/Docker/release.**
-
-Nowy dokument Discovery jest niżej na liście, chyba że konkretny kod jest bez niego zablokowany.
-
-# Kiedy tworzyć nowe Issue
-
-Nowe Issue powinno mieć:
-
-```text
-Cel:
-Odbiorca / zależność:
-Co konkretnie powstanie:
-Jak to sprawdzimy:
-Źródło / podstawa:
-Poza zakresem:
-```
-
-Jeżeli rezultatem ma być dokument, trzeba dodatkowo wskazać **jaki kod, test albo decyzja implementacyjna są przez jego brak zablokowane**.
-
-# Handoff między zespołami
-
-Raz w tygodniu wystarczy:
-
-```text
-### Przekazanie
-- Co rzeczywiście powstało:
-- Kto może teraz tego użyć:
-- Co blokuje produkt:
-- Proponowany następny krok:
-```
-
-Ostatni punkt jest propozycją do czasu utworzenia/uzgodnienia konkretnego Issue.
-
-# Kamienie milowe
+## Kamienie milowe
 
 | Termin | Oczekiwany stan produktu |
 |---|---|
-| koniec października | #157 domknięte, pierwszy release `dev → main`, F2/F3/F4 na wspólnej bazie |
+| koniec października | #157 domknięte, pierwszy stabilny release, F2/F3/F4 na wspólnej bazie |
 | połowa listopada | działa `logowanie → lista → szczegóły → budżet` |
 | koniec listopada | podstawowe uprawnienia + pierwszy mały formularz/proces + testy |
 | początek grudnia | feature freeze MVP; dalej stabilizacja, UX, testy i dokumentacja |
 
-# Czego teraz nie robić
+## Czego teraz nie robić
 
 - nie tworzyć drugiego skeletonu,
-- nie powtarzać analizy legacy bez konkretnego odbiorcy,
-- nie projektować pełnego workflow całego systemu przed pierwszym działającym procesem,
+- nie powtarzać szerokiej analizy legacy bez konkretnego odbiorcy,
+- nie tworzyć drugiego modelu projektu, auth, finansów ani Dockera,
 - nie czekać z implementacją na zakończenie wszystkich dokumentów,
 - nie rozpoczynać zwykłej pracy od `main`,
-- nie utrzymywać sztucznie równych zespołów kosztem produktu.
-
-# Ograniczenia
-
-Materiały legacy pozostają materiałami dydaktycznymi o ograniczonym dostępie. W publicznych Issues/PR wolno publikować wnioski, nazwy plików/funkcji/tabel i dane syntetyczne, ale nie dane osobowe, sekrety ani dump bazy.
+- nie tworzyć Issue tylko dlatego, że temat widnieje w dawnym planie zajęć.
 
 ## Historia aktualizacji
 
-- **28.10.2026** — zaktualizowano stan implementacji, skład aktywnych zespołów i propozycję wyrównania obciążenia po zmianach organizacyjnych; uwzględniono m.in. merge #93, #117, #123, #164, #176 i #178.
-- **22.10.2026** — przesunięto nacisk z kolejnego Discovery na implementację, testy i integrację; wyjaśniono rolę `dev` i `main`.
-- **15.10.2026** — doprecyzowano dalszą pracę A–F po pierwszym audycie.
-- **14.10.2026** — utworzono podsumowanie stanu A–F.
+- **28.10.2026** — strona została skrócona do bieżącego stanu i priorytetów; szczegółowy bank pracy i środowiska wydzielono na osobne strony.
+- **22.10.2026** — przesunięto nacisk z Discovery na implementację, testy i integrację.
+- **14–15.10.2026** — utworzono i doprecyzowano pierwszy przekrojowy obraz A–F.
