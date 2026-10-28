@@ -1,7 +1,7 @@
 # Stan projektu i priorytety
 
 **Stan na: 28.10.2026**  
-**Źródło prawdy:** GitHub Issues, Pull Requests i GitHub Project mają pierwszeństwo przed tą stroną.
+**Źródło prawdy:** GitHub Issues, Pull Requests i GitHub Project mają pierwszeństwo przed tą stroną. Szybkie linki są na stronie [Dashboard projektu i leaderboard](19-dashboard-projektu.md).
 
 !!! important "Etap projektu"
     Projekt wychodzi z szerokiego Discovery. Priorytetem są teraz **działający kod, testy, integracja, migracja danych i usuwanie blokad MVP**.
