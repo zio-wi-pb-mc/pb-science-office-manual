@@ -3,28 +3,27 @@
 !!! important "Nie musisz czytać całego manuala"
     Jeśli wchodzisz tutaj przed zajęciami albo po zakończeniu swojego zadania, zacznij od poniższych kroków.
 
-## Leaderboard
+## Leaderboard — TOP 5
 
-Aktualny widok punktów jest dostępny bezpośrednio na stronie:
+**Stan: 28.10.2026, 12:26.**
 
-[**Otwórz Dashboard i Leaderboard**](19-dashboard-projektu.md)
+[**Otwórz pełny Dashboard i Leaderboard**](19-dashboard-projektu.md)
 
-| # | Student | Zespół | Punkty* |
+| # | Student | Zespół | Punkty |
 |---:|---|:---:|---:|
-| 1 | Vladislav Matveev (@Leucist) | C | **10** |
-| 2 | Nazar Hrinchenko (@Grinnazar) | C | **9** |
-| 2 | Maciej Sawicki (@Maciek-Sawicki) | C | **9** |
-| 4 | Weronika Sosnowska (@wersosn) | C | **8** |
-| 5 | Mykola Nishchymnyi (@kolyasiquez) | C | **4** |
+| 1 | Nazar Hrinchenko (@Grinnazar) | C | **21** |
+| 2 | Vladislav Matveev (@Leucist) | C | **19** |
+| 3 | Weronika Sosnowska (@wersosn) | C | **18** |
+| 4 | Mykola Nishchymnyi (@kolyasiquez) | C | **16** |
+| 5 | Maciej Sawicki (@Maciek-Sawicki) | C | **15** |
 
-\* Ostatnie pełne rozliczenie punktów: **14.10.2026**. Nowe PR-y i zadania są dopisywane do punktów dopiero po spełnieniu reguł z #86.
+Punkty są naliczone wyłącznie za prace spełniające zasady #86. Scalone, ale jeszcze formalnie nierozliczone zadania są pokazane osobno na Dashboardzie.
 
 ## 1. Sprawdź swoją aktualną pracę
 
 [**Otwórz GitHub Project — główna tablica pracy**](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1)
 
 Sprawdź:
-
 - czy masz zadanie `IN PROGRESS`,
 - czy czeka na Ciebie review lub test,
 - czy ktoś zgłosił blocker albo zależność od Twojej pracy.
@@ -43,10 +42,7 @@ Jeżeli Twój obszar nie ma w tej chwili pracy blokującej MVP, możesz pomóc i
 
 [**Bank możliwych zadań MVP**](17-bank-zadan-mvp.md)
 
-To nie jest lista obowiązkowych przydziałów. Przed utworzeniem Issue sprawdź, czy podobne zadanie już nie istnieje.
-
 Dobre nowe zadanie powinno prowadzić do co najmniej jednego z rezultatów:
-
 - działającego kodu,
 - testu automatycznego,
 - integracji,
@@ -66,13 +62,3 @@ Dobre nowe zadanie powinno prowadzić do co najmniej jednego z rezultatów:
 ## Najważniejsza zasada
 
 **A–F nie są silosami.** Zespół określa główny obszar odpowiedzialności, ale produkt jest wspólny.
-
-Po zakończeniu bieżącego Issue:
-
-1. sprawdź GitHub Project,
-2. sprawdź zależności i otwarte PR,
-3. wybierz mały brak potrzebny MVP,
-4. utwórz Issue z jednym właścicielem,
-5. pracuj na branchu od `dev`,
-6. otwórz PR do `dev`,
-7. wykonaj lub uzyskaj peer review.
