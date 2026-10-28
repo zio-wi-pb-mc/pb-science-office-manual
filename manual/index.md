@@ -9,12 +9,20 @@ Realizujemy **jeden wspólny projekt**: nowy system wspierający obsługę prac/
 
     Zacznij od:
 
-    1. [Stanu projektu i priorytetów](16-propozycje-zadan-po-audycie.md),
-    2. [Banku możliwych zadań MVP](17-bank-zadan-mvp.md),
-    3. [Środowisk MVP — Local, Demo i Shared Staging](18-srodowiska-mvp.md),
-    4. [Ról i odpowiedzialności A–F](12-plan-discovery-a-f.md).
+    1. [Dashboardu projektu i leaderboardu](19-dashboard-projektu.md),
+    2. [Stanu projektu i priorytetów](16-propozycje-zadan-po-audycie.md),
+    3. [Banku możliwych zadań MVP](17-bank-zadan-mvp.md),
+    4. [Środowisk MVP — Local, Demo i Shared Staging](18-srodowiska-mvp.md),
+    5. [Ról i odpowiedzialności A–F](12-plan-discovery-a-f.md).
 
     Źródłem aktualnego stanu zadań pozostają GitHub Issues, Pull Requests i GitHub Project.
+
+## Szybkie wejście do pracy
+
+- [GitHub Project — główna tablica pracy](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1)
+- [Contribution Leaderboard — Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86)
+- [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues)
+- [Pull Requests](https://github.com/zio-wi-pb-mc/pb-science-office/pulls)
 
 ## Najbliższy wspólny cel
 

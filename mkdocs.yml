@@ -11,6 +11,7 @@ theme:
     - content.code.copy
 nav:
   - Start: index.md
+  - Dashboard projektu: 19-dashboard-projektu.md
   - Pierwsze kroki: 00-start.md
   - Projekt i MVP: 01-projekt-i-mvp.md
   - Aktualna praca:
