@@ -1,4 +1,4 @@
-# Stan projektu i priorytety
+# Co robić teraz — stan projektu i priorytety
 
 **Stan na: 28.10.2026**  
 **Źródło prawdy:** GitHub Issues, Pull Requests i GitHub Project mają pierwszeństwo przed tą stroną. Szybkie linki są na stronie [Dashboard projektu i leaderboard](19-dashboard-projektu.md).
