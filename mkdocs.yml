@@ -11,24 +11,24 @@ theme:
     - content.code.copy
 nav:
   - Start: index.md
+  - Co robić teraz: 16-propozycje-zadan-po-audycie.md
+  - Bank zadań MVP: 17-bank-zadan-mvp.md
   - Dashboard projektu: 19-dashboard-projektu.md
-  - Pierwsze kroki: 00-start.md
-  - Projekt i MVP: 01-projekt-i-mvp.md
-  - Aktualna praca:
-      - Stan projektu i priorytety: 16-propozycje-zadan-po-audycie.md
-      - Bank możliwych zadań MVP: 17-bank-zadan-mvp.md
-      - Środowiska MVP — Local, Demo, Staging: 18-srodowiska-mvp.md
+  - Środowiska MVP: 18-srodowiska-mvp.md
+  - Informacje podstawowe:
+      - Projekt i MVP: 01-projekt-i-mvp.md
       - Role i odpowiedzialności A–F: 12-plan-discovery-a-f.md
-  - GitHub — krok po kroku: 13-github-krok-po-kroku.md
-  - Organizacja pracy: 02-organizacja.md
-  - Backlog i zadania: 03-backlog.md
-  - Git i Pull Requests: 04-git-pr.md
-  - Testy i błędy: 05-testy-bugi.md
-  - Tygodniowe rozliczenie: 06-postep.md
-  - AI w projekcie: 07-ai.md
-  - Ocenianie: 08-ocenianie.md
-  - Ankieta startowa: 09-ankieta.md
-  - FAQ: 10-faq.md
+      - Organizacja pracy: 02-organizacja.md
+      - Backlog i zadania: 03-backlog.md
+      - Git i Pull Requests: 04-git-pr.md
+      - Testy i błędy: 05-testy-bugi.md
+      - Tygodniowe rozliczenie: 06-postep.md
+      - GitHub — krok po kroku: 13-github-krok-po-kroku.md
+      - Pierwsze kroki / archiwum startowe: 00-start.md
+      - AI w projekcie: 07-ai.md
+      - Ocenianie: 08-ocenianie.md
+      - Ankieta startowa: 09-ankieta.md
+      - FAQ: 10-faq.md
 markdown_extensions:
   - admonition
   - tables
