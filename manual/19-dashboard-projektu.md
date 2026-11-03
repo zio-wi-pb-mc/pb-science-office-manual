@@ -6,6 +6,8 @@ Ta strona zbiera najważniejsze miejsca do codziennej pracy nad projektem.
 
 **Aktualne przeliczenie: 03.11.2026.**
 
+**Kontrola po akceptacjach PR — 03.11.2026:** PR #180, #192 i #193 otrzymały APPROVE prowadzącego, ale wciąż są otwarte; nie dopisano za nie punktów. Samo zatwierdzenie PR nie spełnia warunków rozliczenia z [Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86).
+
 !!! important "Punkty ≠ automatyczna ocena"
     Ranking jest narzędziem motywacyjnym. Pokazuje punkty formalnie rozliczone według zasad z #86.
 
