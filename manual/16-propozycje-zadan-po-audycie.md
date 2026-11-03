@@ -28,9 +28,9 @@ Po jego ustabilizowaniu dokładamy **pierwszy mały formularz/proces**.
 ## Najbliższy checkpoint — aktualny na 03.11
 
 1. **Fundament F1 #157 jest już scalony** — nie rozpoczynaj go ponownie.
-2. **F2 / logowanie: [PR #180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180)** — CI PASS, przeprowadzono merytoryczne review z testem clean clone. Priorytet: domknąć ewentualne uwagi i zintegrować z `dev`.
-3. **Local Demo: [PR #193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193)** — CI PASS (w tym test obrazu). Wymaga peer review i integracji.
-4. **F3/F4: [Issue #155](https://github.com/zio-wi-pb-mc/pb-science-office/issues/155)** — uzupełnić odbiór wspólnego przepływu projekt → szczegóły → budżet, także przypadki brzegowe; [PR #192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) ma CI PASS i oczekuje na review.
+2. **F2 / logowanie: [PR #180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180)** — APPROVE prowadzącego, CI PASS, istnieje merytoryczne review z testem clean clone. Oczekuje na końcowe zatwierdzenie studenckie i integrację do `dev`.
+3. **Local Demo: [PR #193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193)** — APPROVE prowadzącego, CI PASS (w tym test obrazu). Potrzebny niezależny test Demo od czystego klona oraz integracja.
+4. **F3/F4: [Issue #155](https://github.com/zio-wi-pb-mc/pb-science-office/issues/155)** — uzupełnić odbiór wspólnego przepływu projekt → szczegóły → budżet, także przypadki brzegowe; [PR #192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) ma APPROVE prowadzącego i CI PASS; potrzebuje peer review i sprawdzenia drobnej uwagi dotyczącej pustej listy.
 5. **Dostęp do projektów: [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174)** — nadal Draft; wymaga uzgodnienia i integracji z F2/F3.
 6. **[Release PR #90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90) (`dev → main`)** — pozostaje otwarty; przed wydaniem prowadzący weryfikuje aktualny zakres, CI i clean clone. Nie traktuj `main` jako kopii najnowszego `dev`.
 
@@ -41,10 +41,10 @@ Po jego ustabilizowaniu dokładamy **pierwszy mały formularz/proces**.
 
 - na `dev` są aplikacja Django, Docker/PostgreSQL, bazowe widoki syntetycznych projektów F3 i podsumowanie budżetu F4;
 - #157 (integracja szkieletu) jest zakończone, a mechanizm `/version/` jest już dostępny;
-- PR #180 (testowe logowanie) i PR #193 (obraz Demo) są otwarte z pozytywnym CI;
-- PR #192 dostarcza testy przypadków brzegowych F3–F4 i ma pozytywne CI;
+- PR #180 (testowe logowanie) i PR #193 (obraz Demo) są zatwierdzone przez prowadzącego, ale nadal otwarte; oba mają pozytywne CI;
+- PR #192 dostarcza testy przypadków brzegowych F3–F4; otrzymał APPROVE prowadzącego i ma pozytywne CI, ale nie jest scalony;
 - PR #174 (uprawnienia obiektowe) pozostaje Draft;
-- PR #188 (procedura Shared Staging) ma pozytywne CI, ale nie jest obecnie mergeable — wymaga uzgodnienia ze zmianami #193;
+- PR #188 (procedura Shared Staging) ma pozytywne CI i jest technicznie mergeable; opis procedury trzeba uzgodnić z obrazem z PR #193 przed scaleniem;
 - nie ma jeszcze potwierdzenia, że cały przepływ `login → lista → szczegóły → budżet` działa razem w trybie `DEBUG=False`.
 
 ## Aktualne role zespołów
@@ -52,7 +52,7 @@ Po jego ustabilizowaniu dokładamy **pierwszy mały formularz/proces**.
 | Zespół | Główna odpowiedzialność teraz |
 |---|---|
 | **A** | reguły legacy → fixtures, przypadki referencyjne i testy |
-| **B** | wymagania → testy akceptacyjne, E2E, review działającego produktu |
+| **B** | pierwszy mały formularz (wybór zakresu, Django/UI, walidacja, testy), praktyczny UX i E2E po integracji F2 |
 | **C** | wspólne środowisko, CI, Docker, release, integracja |
 | **D** | dane legacy, importer, migracja i parity tests |
 | **E** | role, uprawnienia, dostęp do danych i minimalny workflow |
@@ -148,6 +148,7 @@ Nie utrzymujemy sztucznie równych silosów.
 
 ## Historia aktualizacji
 
+- **03.11.2026 (aktualizacja po review)** — potwierdzono APPROVE prowadzącego dla #180/#192/#193, bez merge; określono brakujące kroki integracyjne i kierunek dla zespołu B.
 - **03.11.2026** — zaktualizowano checkpoint po merge #157; wskazano otwarte PR #180/#193/#192/#174, ryzyko `DEBUG=False` w Demo oraz kolejność integracji MVP.
 - **28.10.2026** — strona została skrócona do bieżącego stanu i priorytetów; szczegółowy bank pracy i środowiska wydzielono na osobne strony.
 - **22.10.2026** — przesunięto nacisk z Discovery na implementację, testy i integrację.

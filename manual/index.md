@@ -3,6 +3,15 @@
 !!! important "Nie musisz czytać całego manuala"
     Jeśli wchodzisz tutaj przed zajęciami albo po zakończeniu swojego zadania, zacznij od poniższych kroków.
 
+## Najpilniejsze prace — 03.11.2026
+
+!!! warning "Approve ≠ merge"
+    PR [#180 — logowanie](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180), [#192 — testy F3/F4](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) i [#193 — Docker Demo](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) otrzymały akceptację prowadzącego i mają zielone CI, ale nadal **nie zostały scalone do `dev`**. Wykonajcie brakujące peer review / testy, następnie integrację według zasad projektu.
+
+Najważniejsze kolejne kroki: integracja logowania z listą projektów i budżetem, uporządkowanie uprawnień [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) oraz uruchomienie pełnego MVP w Demo z `DEBUG=False`.
+
+[**Aktualne priorytety i zależności**](16-propozycje-zadan-po-audycie.md) · [**Bank pracy bez duplikatów**](17-bank-zadan-mvp.md)
+
 ## Leaderboard — TOP 5
 
 **Stan: 03.11.2026.**

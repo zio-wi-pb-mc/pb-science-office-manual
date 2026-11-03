@@ -72,9 +72,15 @@ Przygotować dane dwóch lub większej liczby projektów tak, aby F3 i F4 korzys
 
 Pomóc F przenieść potwierdzone reguły z dokumentacji do testowalnego kodu domenowego, bez kopiowania logiki do widoków.
 
-# B — wymagania, testy akceptacyjne i UX
+# B — pierwszy formularz, testy akceptacyjne i UX
 
-B powinno coraz mniej produkować sam Markdown, a coraz częściej **testować i poprawiać działający produkt**.
+**Ważne — aktualizacja 03.11.2026:** po zgłoszeniu duplikowania pracy przez zespoły B/F, pozycje B-TEST-01–04 są **pomysłami referencyjnymi, a nie wolnymi zadaniami**. Część odpowiadających im testów już istnieje na `dev` lub w otwartych PR. Nie implementuj ich drugi raz. Najpierw porównaj konkretny brak z istniejącymi testami i uzgodnij ewentualne uzupełnienie z właścicielem F.
+
+**Główny nowy kierunek B:** jeden mały formularz/proces w istniejącej aplikacji Django, od minimalnych wymagań przez widok i walidację aż po wykonywalne testy. W pięcioosobowym zespole przydziel konkretne, niepowielające się podzadania z jednym assignee, zamiast mechanicznie dzielić trzy ogólne hasła.
+
+B-E2E-01 (pełny `login → projekt → budżet`) wykonuj po integracji logowania [PR #180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180) z `dev`. B-UX-01 można realizować już teraz na działających widokach.
+
+Poniższe pozycje opisują potencjalne zakresy — przed rozpoczęciem sprawdź Project, Issues i PR.
 
 Możliwe Issues:
 
@@ -126,9 +132,9 @@ C jest obecnie **Platform / Integration Owner**. To jest duży obszar pracy impl
 
 Możliwe Issues:
 
-### C-ENV-01 — finalizacja clean-clone
+### C-ENV-01 — clean-clone (zrealizowany w #157)
 
-Domknąć #157 i potwierdzić na drugim komputerze:
+#157 jest zamknięte i scalone. Nie otwieraj kolejnego zadania o tym samym zakresie; przy następnych zmianach sprawdzaj regresje środowiska na drugim komputerze:
 
 `clone → .env → docker compose up --build → działająca aplikacja`.
 
@@ -136,9 +142,9 @@ Domknąć #157 i potwierdzić na drugim komputerze:
 
 Doprowadzić #90 do zweryfikowanego `dev → main`.
 
-### C-DEMO-01 — środowisko Demo / Release-like
+### C-DEMO-01 — środowisko Demo / Release-like (PR #193 otwarty, APPROVE prowadzącego)
 
-Przygotować `compose.demo.yaml` lub równoważną konfigurację:
+Nie implementuj tego ponownie. Potrzebne niezależne potwierdzenie działania od czystego klona i integracja. Zakres obejmuje: `compose.demo.yaml` lub równoważną konfigurację:
 
 - bez bind mount kodu,
 - `DEBUG=False`,
@@ -167,7 +173,7 @@ CI ma budować właściwy obraz aplikacji, uruchamiać go z PostgreSQL i wykona�
 
 Uruchomić test `login → project → budget` w środowisku kontenerowym.
 
-### C-REL-02 — wersja aplikacji
+### C-REL-02 — wersja aplikacji (endpoint już na `dev`; follow-up w #193)
 
 W aplikacji i/lub endpointzie diagnostycznym pokazać commit SHA / numer release, aby było wiadomo, co jest testowane.
 
