@@ -2,6 +2,8 @@
 
 Ta strona jest **bankiem sensownych kierunków pracy**, a nie automatycznym przydziałem.
 
+**Najpierw sprawdź [Roadmap 3 tygodnie](21-roadmap-3-tygodnie.md)** — zawiera priorytety na 4–20 listopada, osobno dla A–F, oraz status prac już będących w PR. Ten bank jest listą możliwości, nie listą wolnych przydziałów.
+
 Przed utworzeniem Issue:
 
 1. sprawdź aktualne Issues i PR,
