@@ -11,6 +11,7 @@ theme:
 nav:
   - Start: index.md
   - Co robić teraz: 16-propozycje-zadan-po-audycie.md
+  - Roadmap 3 tygodnie: 21-roadmap-3-tygodnie.md
   - Bank zadań MVP: 17-bank-zadan-mvp.md
   - Dashboard projektu: 19-dashboard-projektu.md
   - Środowiska MVP: 18-srodowiska-mvp.md
