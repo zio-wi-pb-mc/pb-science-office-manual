@@ -5,19 +5,19 @@
 
 ## Leaderboard — TOP 5
 
-**Stan: 28.10.2026, 12:26.**
+**Stan: 03.11.2026.**
 
 [**Otwórz pełny Dashboard i Leaderboard**](19-dashboard-projektu.md)
 
 | # | Student | Zespół | Punkty |
 |---:|---|:---:|---:|
-| 1 | Nazar Hrinchenko (@Grinnazar) | C | **21** |
-| 2 | Vladislav Matveev (@Leucist) | C | **19** |
-| 3 | Weronika Sosnowska (@wersosn) | C | **18** |
+| 1 | Weronika Sosnowska (@wersosn) | C | **22** |
+| 2 | Nazar Hrinchenko (@Grinnazar) | C | **21** |
+| 3 | Vladislav Matveev (@Leucist) | C | **19** |
 | 4 | Mykola Nishchymnyi (@kolyasiquez) | C | **16** |
 | 5 | Maciej Sawicki (@Maciek-Sawicki) | C | **15** |
 
-Punkty są naliczone wyłącznie za prace spełniające zasady #86. Scalone, ale jeszcze formalnie nierozliczone zadania są pokazane osobno na Dashboardzie.
+Punkty są naliczane wyłącznie za prace spełniające zasady #86. Scalone, ale formalnie nierozliczone zadania są pokazane osobno na Dashboardzie.
 
 ## 1. Sprawdź swoją aktualną pracę
 
