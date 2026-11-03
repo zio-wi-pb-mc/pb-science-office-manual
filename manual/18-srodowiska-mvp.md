@@ -34,9 +34,12 @@ i otrzymać:
 - kilka klonów nie koliduje ze sobą,
 - błędny `.env` daje czytelny błąd.
 
-Aktualny najważniejszy krok: **#157**.
+**Stan 03.11.2026:** #157 jest scalone i zamknięte. Nie trzeba ponawiać tego zadania; kolejny krok to niezależne sprawdzenie nowego obrazu Demo i integracji pełnego przepływu.
 
 # 2. Local Demo / Release-like
+
+!!! info "Aktualny PR"
+    [#193 — C-DEMO-01](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) otrzymał APPROVE prowadzącego, a CI z testem obrazu przechodzi. PR nadal oczekuje na niezależne uruchomienie od czystego klona i merge do `dev`. Aktualne widoki F3 na `dev` są zależne od `DEBUG=True`, dlatego pełny scenariusz użytkownika nie jest jeszcze potwierdzony w Demo z `DEBUG=False`.
 
 To środowisko służy do oglądania produktu tak, jak będzie zachowywał się po wdrożeniu.
 
@@ -134,14 +137,13 @@ Pozostałe zespoły dostarczają:
 
 # Proponowana kolejność Issues
 
-1. **C-ENV-01** — domknąć clean-clone (#157),
-2. **C-REL-01** — pierwszy stabilny release (#90),
-3. **C-DEMO-01** — release-like Docker Demo,
-4. **C-DEMO-02** — seed użytkowników/projektów/budżetów,
-5. **C-CI-01** — CI buduje i uruchamia obraz,
-6. **C-REL-02** — wersja/commit widoczna w aplikacji,
-7. **C-STAGE-01** — procedura wdrożenia na wspólną maszynę,
-8. po dostępności serwera — uruchomić Shared Staging.
+1. **C-ENV-01 / #157** — wykonane i scalone.
+2. **C-DEMO-01 / PR #193** — APPROVE prowadzącego, test obrazu CI PASS; niezależny test od czystego klona i merge jeszcze do wykonania.
+3. **C-DEMO-02** — deterministyczny seed syntetycznych użytkowników/projektów/budżetów.
+4. **F/E/C** — udostępnić pełny przepływ projektu w Demo z `DEBUG=False` bez obchodzenia kontroli dostępu.
+5. **C-STAGE-01 / PR #188** — uzgodnić procedurę ze stanem obrazu Demo, następnie review i integracja.
+6. **C-REL-01 / PR #90** — osobna decyzja prowadzącego po sprawdzeniu aktualnego `dev`.
+7. Po dostępności serwera — uruchomić Shared Staging.
 
 # Definition of Done środowiska demonstracyjnego
 
