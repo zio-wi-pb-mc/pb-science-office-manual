@@ -1,6 +1,6 @@
 # Co robić teraz — stan projektu i priorytety
 
-**Stan na: 28.10.2026**  
+**Stan na: 03.11.2026**  
 **Źródło prawdy:** GitHub Issues, Pull Requests i GitHub Project mają pierwszeństwo przed tą stroną. Szybkie linki są na stronie [Dashboard projektu i leaderboard](19-dashboard-projektu.md).
 
 !!! important "Etap projektu"
@@ -25,29 +25,27 @@ Ma działać:
 
 Po jego ustabilizowaniu dokładamy **pierwszy mały formularz/proces**.
 
-## Najbliższy checkpoint techniczny
+## Najbliższy checkpoint — aktualny na 03.11
 
-1. domknąć **#157 — stabilne środowisko / clean clone**,
-2. scalić #157 do `dev`,
-3. powtórzyć CI i clean-clone na aktualnym `dev`,
-4. finalnie zweryfikować **#90 — release `dev → main`**,
-5. wydać pierwszy stabilny checkpoint do `main`.
+1. **Fundament F1 #157 jest już scalony** — nie rozpoczynaj go ponownie.
+2. **F2 / logowanie: [PR #180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180)** — CI PASS, przeprowadzono merytoryczne review z testem clean clone. Priorytet: domknąć ewentualne uwagi i zintegrować z `dev`.
+3. **Local Demo: [PR #193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193)** — CI PASS (w tym test obrazu). Wymaga peer review i integracji.
+4. **F3/F4: [Issue #155](https://github.com/zio-wi-pb-mc/pb-science-office/issues/155)** — uzupełnić odbiór wspólnego przepływu projekt → szczegóły → budżet, także przypadki brzegowe; [PR #192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) ma CI PASS i oczekuje na review.
+5. **Dostęp do projektów: [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174)** — nadal Draft; wymaga uzgodnienia i integracji z F2/F3.
+6. **[Release PR #90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90) (`dev → main`)** — pozostaje otwarty; przed wydaniem prowadzący weryfikuje aktualny zakres, CI i clean clone. Nie traktuj `main` jako kopii najnowszego `dev`.
 
-Równolegle rozwijamy F2/F3/F4 — nie czekamy z produktem na release.
+!!! warning "Ważny blocker demonstracji"
+    Obecna lista i szczegóły projektów F3 są w kodzie `dev` odcinane przy `DEBUG=False`. Tymczasem nowy obraz Demo #193 używa `DEBUG=False`. **Sukces smoke testów obrazu nie oznacza jeszcze, że pełny przepływ MVP działa w tym trybie.** Należy rozwiązać to w F/E/C przez poprawny dostęp i integrację, bez wymuszania `DEBUG=True` w środowisku release-like.
 
 ## Co już istnieje
 
-W ostatnim etapie projekt przesunął się wyraźnie w stronę implementacji:
-
-- F4 / budżet (#93) jest scalony do `dev`,
-- statusy i przejścia (#117) są scalone,
-- role i uprawnienia (#123) są scalone,
-- schemat legacy w PostgreSQL (#164) jest scalony,
-- walidacja `.env` (#176) i readiness PostgreSQL (#178) są scalone,
-- F2 (#180) zawiera implementację logowania testowego i ról,
-- dostęp do projektów (#174) jest rozwijany,
-- #157 zawiera rozbudowaną weryfikację Docker/clean-clone,
-- #90 pozostaje kandydatem na pierwszy stabilny release.
+- na `dev` są aplikacja Django, Docker/PostgreSQL, bazowe widoki syntetycznych projektów F3 i podsumowanie budżetu F4;
+- #157 (integracja szkieletu) jest zakończone, a mechanizm `/version/` jest już dostępny;
+- PR #180 (testowe logowanie) i PR #193 (obraz Demo) są otwarte z pozytywnym CI;
+- PR #192 dostarcza testy przypadków brzegowych F3–F4 i ma pozytywne CI;
+- PR #174 (uprawnienia obiektowe) pozostaje Draft;
+- PR #188 (procedura Shared Staging) ma pozytywne CI, ale nie jest obecnie mergeable — wymaga uzgodnienia ze zmianami #193;
+- nie ma jeszcze potwierdzenia, że cały przepływ `login → lista → szczegóły → budżet` działa razem w trybie `DEBUG=False`.
 
 ## Aktualne role zespołów
 
@@ -125,7 +123,7 @@ Jakub Pawlak, Patryk Bura, Łukasz Bondar, Paweł Kozikowski
 
 Nie utrzymujemy sztucznie równych silosów.
 
-- po domknięciu #157/#90 Jakub Pawlak może wesprzeć D przy importerze/migracji,
+- Jakub Pawlak po ukończeniu swoich bieżących zadań może wesprzeć D przy importerze/migracji,
 - osoby z B po zakończeniu bieżących zadań mogą przechodzić do testów A/F lub implementacji pierwszego formularza,
 - osoby z A mogą pisać fixtures i wykonywalne testy finansów używane bezpośrednio przez F4,
 - C może i powinno pomagać F w integracji, CI, Dockerze i środowisku demonstracyjnym.
@@ -150,6 +148,7 @@ Nie utrzymujemy sztucznie równych silosów.
 
 ## Historia aktualizacji
 
+- **03.11.2026** — zaktualizowano checkpoint po merge #157; wskazano otwarte PR #180/#193/#192/#174, ryzyko `DEBUG=False` w Demo oraz kolejność integracji MVP.
 - **28.10.2026** — strona została skrócona do bieżącego stanu i priorytetów; szczegółowy bank pracy i środowiska wydzielono na osobne strony.
 - **22.10.2026** — przesunięto nacisk z Discovery na implementację, testy i integrację.
 - **14–15.10.2026** — utworzono i doprecyzowano pierwszy przekrojowy obraz A–F.
