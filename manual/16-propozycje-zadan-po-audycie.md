@@ -8,6 +8,8 @@
 
     Zespoły A–F określają główny obszar odpowiedzialności, ale **nie są sztywnymi silosami**. Jeżeli ktoś kończy pracę w swoim obszarze, powinien pomóc tam, gdzie najbardziej przyspieszy wspólny produkt.
 
+[**Roadmap i plan pracy A–F na 4–20 listopada**](21-roadmap-3-tygodnie.md) — konkretne zadania na najbliższe zajęcia i kolejne dwa tygodnie, zależności i kryteria odbioru.
+
 ## Najbliższy cel produktu
 
 Najważniejszy wspólny przepływ:

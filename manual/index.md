@@ -3,6 +3,12 @@
 !!! important "Nie musisz czytać całego manuala"
     Jeśli wchodzisz tutaj przed zajęciami albo po zakończeniu swojego zadania, zacznij od poniższych kroków.
 
+## Plan na najbliższe 3 tygodnie
+
+**[Roadmap 4–20 listopada — cele, zadania dla A–F i kryteria ukończenia](21-roadmap-3-tygodnie.md)**
+
+Tutaj znajdziesz, co można robić **już na najbliższych zajęciach**, co planujemy na **następne 2–3 tygodnie** oraz które PR/Issues są już zajęte. Zanim wybierzesz zadanie, sprawdź aktualny [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1).
+
 ## Najpilniejsze prace — 03.11.2026
 
 !!! warning "Approve ≠ merge"
