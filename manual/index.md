@@ -9,12 +9,12 @@
 
 Tutaj znajdziesz, co można robić **już na najbliższych zajęciach**, co planujemy na **następne 2–3 tygodnie** oraz które PR/Issues są już zajęte. Zanim wybierzesz zadanie, sprawdź aktualny [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1).
 
-## Najpilniejsze prace — 03.11.2026
+## Najpilniejsze prace — 04.11.2026
 
-!!! warning "Approve ≠ merge"
-    PR [#180 — logowanie](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180), [#192 — testy F3/F4](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) i [#193 — Docker Demo](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) otrzymały akceptację prowadzącego i mają zielone CI, ale nadal **nie zostały scalone do `dev`**. Wykonajcie brakujące peer review / testy, następnie integrację według zasad projektu.
+!!! info "Stan implementacji"
+    Logowanie [#180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180), testy F4 [#192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) i Docker Demo [#193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) **zostały scalone do `dev`**. Nie zaczynaj tych zadań ponownie.
 
-Najważniejsze kolejne kroki: integracja logowania z listą projektów i budżetem, uporządkowanie uprawnień [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) oraz uruchomienie pełnego MVP w Demo z `DEBUG=False`.
+Teraz F integruje [pełny przepływ #194](https://github.com/zio-wi-pb-mc/pb-science-office/issues/194), E pracuje nad dostępem [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173), a C dostał **niezależny backlog inżynierski bez czekania na importer i pozostałe zespoły**. [Zobacz zadania C w roadmapie](21-roadmap-3-tygodnie.md#zespol-c-zadania-niezalezne-od-innych-grup-aktualizacja-0411).
 
 [**Aktualne priorytety i zależności**](16-propozycje-zadan-po-audycie.md) · [**Bank pracy bez duplikatów**](17-bank-zadan-mvp.md)
 

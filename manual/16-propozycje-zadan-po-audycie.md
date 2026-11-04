@@ -1,6 +1,6 @@
 # Co robić teraz — stan projektu i priorytety
 
-**Stan na: 03.11.2026**  
+**Stan na: 04.11.2026**  
 **Źródło prawdy:** GitHub Issues, Pull Requests i GitHub Project mają pierwszeństwo przed tą stroną. Szybkie linki są na stronie [Dashboard projektu i leaderboard](19-dashboard-projektu.md).
 
 !!! important "Etap projektu"
@@ -30,9 +30,9 @@ Po jego ustabilizowaniu dokładamy **pierwszy mały formularz/proces**.
 ## Najbliższy checkpoint — aktualny na 03.11
 
 1. **Fundament F1 #157 jest już scalony** — nie rozpoczynaj go ponownie.
-2. **F2 / logowanie: [PR #180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180)** — APPROVE prowadzącego, CI PASS, istnieje merytoryczne review z testem clean clone. Oczekuje na końcowe zatwierdzenie studenckie i integrację do `dev`.
-3. **Local Demo: [PR #193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193)** — APPROVE prowadzącego, CI PASS (w tym test obrazu). Potrzebny niezależny test Demo od czystego klona oraz integracja.
-4. **F3/F4: [Issue #155](https://github.com/zio-wi-pb-mc/pb-science-office/issues/155)** — uzupełnić odbiór wspólnego przepływu projekt → szczegóły → budżet, także przypadki brzegowe; [PR #192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) ma APPROVE prowadzącego i CI PASS; potrzebuje peer review i sprawdzenia drobnej uwagi dotyczącej pustej listy.
+2. **F2 / logowanie: [PR #180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180)** — scalony do `dev` 03.11. Priorytet: integracja z F3/F4 w [Issue #194](https://github.com/zio-wi-pb-mc/pb-science-office/issues/194).
+3. **Local Demo: [PR #193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193)** — scalony do `dev` 03.11; teraz konieczna funkcjonalna walidacja przepływu z `DEBUG=False`.
+4. **F3/F4: [Issue #155](https://github.com/zio-wi-pb-mc/pb-science-office/issues/155)** — uzupełnić odbiór wspólnego przepływu projekt → szczegóły → budżet, także przypadki brzegowe; [PR #192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) jest scalony do `dev` 04.11.
 5. **Dostęp do projektów: [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174)** — nadal Draft; wymaga uzgodnienia i integracji z F2/F3.
 6. **[Release PR #90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90) (`dev → main`)** — pozostaje otwarty; przed wydaniem prowadzący weryfikuje aktualny zakres, CI i clean clone. Nie traktuj `main` jako kopii najnowszego `dev`.
 
@@ -43,8 +43,7 @@ Po jego ustabilizowaniu dokładamy **pierwszy mały formularz/proces**.
 
 - na `dev` są aplikacja Django, Docker/PostgreSQL, bazowe widoki syntetycznych projektów F3 i podsumowanie budżetu F4;
 - #157 (integracja szkieletu) jest zakończone, a mechanizm `/version/` jest już dostępny;
-- PR #180 (testowe logowanie) i PR #193 (obraz Demo) są zatwierdzone przez prowadzącego, ale nadal otwarte; oba mają pozytywne CI;
-- PR #192 dostarcza testy przypadków brzegowych F3–F4; otrzymał APPROVE prowadzącego i ma pozytywne CI, ale nie jest scalony;
+- PR #180 (logowanie), #193 (Docker Demo) i #192 (testy F4) są już scalone do `dev`;
 - PR #174 (uprawnienia obiektowe) pozostaje Draft;
 - PR #188 (procedura Shared Staging) ma pozytywne CI i jest technicznie mergeable; opis procedury trzeba uzgodnić z obrazem z PR #193 przed scaleniem;
 - nie ma jeszcze potwierdzenia, że cały przepływ `login → lista → szczegóły → budżet` działa razem w trybie `DEBUG=False`.
@@ -55,7 +54,7 @@ Po jego ustabilizowaniu dokładamy **pierwszy mały formularz/proces**.
 |---|---|
 | **A** | reguły legacy → fixtures, przypadki referencyjne i testy |
 | **B** | pierwszy mały formularz (wybór zakresu, Django/UI, walidacja, testy), praktyczny UX i E2E po integracji F2 |
-| **C** | wspólne środowisko, CI, Docker, release, integracja |
+| **C** | Platform & Integration: samodzielny backlog doctor, CI/migracje, konta demo, testy HTTP i security, staging |
 | **D** | dane legacy, importer, migracja i parity tests |
 | **E** | role, uprawnienia, dostęp do danych i minimalny workflow |
 | **F** | integracja vertical slice i rozwój działającego MVP |
@@ -150,6 +149,7 @@ Nie utrzymujemy sztucznie równych silosów.
 
 ## Historia aktualizacji
 
+- **04.11.2026** — po merge #180/#192/#193 zespół C dostał niezależne zadania inżynierskie; zaktualizowano roadmapę i kierunki prac.
 - **03.11.2026 (aktualizacja po review)** — potwierdzono APPROVE prowadzącego dla #180/#192/#193, bez merge; określono brakujące kroki integracyjne i kierunek dla zespołu B.
 - **03.11.2026** — zaktualizowano checkpoint po merge #157; wskazano otwarte PR #180/#193/#192/#174, ryzyko `DEBUG=False` w Demo oraz kolejność integracji MVP.
 - **28.10.2026** — strona została skrócona do bieżącego stanu i priorytetów; szczegółowy bank pracy i środowiska wydzielono na osobne strony.
