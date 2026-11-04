@@ -52,7 +52,7 @@ Po jego ustabilizowaniu dokładamy **pierwszy mały formularz/proces**.
 
 | Zespół | Główna odpowiedzialność teraz |
 |---|---|
-| **A** | reguły legacy → fixtures, przypadki referencyjne i testy |
+| **A** | ulepszenia istniejącego widoku finansów F4 i brakujące testy biznesowe; wsparcie walidacji formularza, bez kolejnych szerokich analiz legacy |
 | **B** | pierwszy mały formularz (wybór zakresu, Django/UI, walidacja, testy), praktyczny UX i E2E po integracji F2 |
 | **C** | Platform & Integration: samodzielny backlog doctor, CI/migracje, konta demo, testy HTTP i security, staging |
 | **D** | dane legacy, importer, migracja i parity tests |
@@ -149,6 +149,7 @@ Nie utrzymujemy sztucznie równych silosów.
 
 ## Historia aktualizacji
 
+- **04.11.2026 (A)** — scalenie #163/#192/#136 potwierdzone; A przechodzi do funkcji budżetu F4 i uzupełniania konkretnych luk testowych, zgodnie z planem produktu.
 - **04.11.2026** — po merge #180/#192/#193 zespół C dostał niezależne zadania inżynierskie; zaktualizowano roadmapę i kierunki prac.
 - **03.11.2026 (aktualizacja po review)** — potwierdzono APPROVE prowadzącego dla #180/#192/#193, bez merge; określono brakujące kroki integracyjne i kierunek dla zespołu B.
 - **03.11.2026** — zaktualizowano checkpoint po merge #157; wskazano otwarte PR #180/#193/#192/#174, ryzyko `DEBUG=False` w Demo oraz kolejność integracji MVP.
