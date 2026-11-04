@@ -34,7 +34,7 @@ Po jego ustabilizowaniu dokładamy **pierwszy mały formularz/proces**.
 3. **Local Demo: [PR #193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193)** — scalony do `dev` 03.11; teraz konieczna funkcjonalna walidacja przepływu z `DEBUG=False`.
 4. **F3/F4: [Issue #155](https://github.com/zio-wi-pb-mc/pb-science-office/issues/155)** — uzupełnić odbiór wspólnego przepływu projekt → szczegóły → budżet, także przypadki brzegowe; [PR #192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) jest scalony do `dev` 04.11.
 5. **Dostęp do projektów: [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174)** — nadal Draft; wymaga uzgodnienia i integracji z F2/F3.
-6. **[Release PR #90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90) (`dev → main`)** — pozostaje otwarty; przed wydaniem prowadzący weryfikuje aktualny zakres, CI i clean clone. Nie traktuj `main` jako kopii najnowszego `dev`.
+6. **[Pierwszy release PR #90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90) (`dev → main`)** — **MERGED 04.11.2026**, commit `b800a67`; CI dla `main` PASS. Gałąź `dev` została odtworzona od aktualnego `main`. Kolejne PR kierujcie do `dev`, nie do `main`. Jest to wersja rozwojowa, nie produkcyjna.
 
 !!! warning "Ważny blocker demonstracji"
     Obecna lista i szczegóły projektów F3 są w kodzie `dev` odcinane przy `DEBUG=False`. Tymczasem nowy obraz Demo #193 używa `DEBUG=False`. **Sukces smoke testów obrazu nie oznacza jeszcze, że pełny przepływ MVP działa w tym trybie.** Należy rozwiązać to w F/E/C przez poprawny dostęp i integrację, bez wymuszania `DEBUG=True` w środowisku release-like.
