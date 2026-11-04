@@ -1,6 +1,6 @@
 # Roadmap ZIO — plan na 3 tygodnie
 
-**Okres: 4–20 listopada 2026.** Stan GitHub sprawdzony 03.11.2026.
+**Okres: 4–20 listopada 2026.** Aktualizacja dla zespołu C: 04.11.2026.
 
 !!! important "Plan, nie automatyczny przydział"
     Ta strona pokazuje studentom **co robić teraz, w kolejnym tygodniu i za 2–3 tygodnie**. Przed rozpoczęciem zadania sprawdź [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1), [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues) i [PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls). Nie twórz duplikatów. W GitHub Project są rzeczywiste przypisania i statusy.
@@ -34,17 +34,35 @@
 |---|---|---|---|
 | **A — finanse/legacy** | Peer review i ewentualna poprawka [#192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192); dopracować [słownik #163](https://github.com/zio-wi-pb-mc/pb-science-office/pull/163) zgodnie z review | Wspólne fixtures F3/F4, testy zer, braków, rezerwacji, rozliczeń, projektów o podobnych identyfikatorach | Działające testy, reguły potwierdzone źródłem |
 | **B — formularze/UX** | UX na istniejących widokach; wybór **jednego małego formularza** i podział na konkretne Issue | Backend Django, HTML, walidacje i testy formularza; pełne E2E po integracji F2 | Działający kod i testy zamiast wyłącznie Markdown |
-| **C — platforma** | Test od czystego klona [Demo #193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193), peer review, integracja; uzgodnienie [staging #188](https://github.com/zio-wi-pb-mc/pb-science-office/pull/188) | Seed syntetycznych użytkowników i projektów, test Demo z `DEBUG=False`, wsparcie integracji i [release #90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90) | Obraz + PostgreSQL + dostępna aplikacja + smoke |
+| **C — Platform & Integration** | Niezależne zadania: [doctor #196](https://github.com/zio-wi-pb-mc/pb-science-office/issues/196), migracje w CI, seed kont demo, runner HTTP | Testy security i staging; później pełne E2E po integracji F/E | 4 równoległe narzędzia/testy z realnymi wynikami, bez czekania na inne zespoły |
 | **D — importer/migracja** | Poprawić [plan zgodności #132](https://github.com/zio-wi-pb-mc/pb-science-office/pull/132); wybrać jeden wykonalny przypadek | Minimalny importer syntetycznego przykładu, walidacja identyfikatorów i test parity | Uruchamialny importer i test |
 | **E — uprawnienia** | Zaktualizować Draft [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) względem bieżącego `dev` i F2, ustalić [scenariusze #181](https://github.com/zio-wi-pb-mc/pb-science-office/issues/181) | Integracja dostępu na liście, szczegółach i JSON; testy odmowy i minimalny status formularza | Użytkownik nie widzi cudzych projektów również po zmianie URL |
 | **F — funkcje MVP** | Integracja [F2 #180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180) z F3/F4, [#155](https://github.com/zio-wi-pb-mc/pb-science-office/issues/155), wsparcie kontroli dostępu | Nawigacja, stany błędów, E2E login → budżet, integracja formularza grupy B | Jeden demonstracyjny przepływ w jednej aplikacji |
 
 **To kierunki do wyboru i uzgodnienia, nie nowe Issues.** Lead sprawdza bieżące zadania każdej osoby. Jeden student ma maksymalnie jedno główne Issue `IN PROGRESS`.
 
+## Zespół C — zadania niezależne od innych grup (aktualizacja 04.11)
+
+!!! important "C ma własny backlog na 2–3 tygodnie"
+    Docker i obraz Demo [#193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) są już scalone. **Nie czekaj na importer D, formularz B, uprawnienia E ani ukończenie aplikacji F.** Grupa C rozwija narzędzia wspólne wszystkim zespołom. Nie tworzy drugiego frameworka, własnego modelu projektów ani kolejnej wersji Dockera.
+
+| Kierunek / priorytet | Niezależny rezultat, który można zrobić **teraz** | Jak odbieramy |
+|---|---|---|
+| **C-DX-02 — diagnostyka lokalna / [Issue #196](https://github.com/zio-wi-pb-mc/pb-science-office/issues/196)** — P0 | Komenda `doctor`: diagnozuje bazę, migracje, konfigurację, health i wersję; wykorzystuje istniejący env-check | Uruchamialne CLI, test poprawnej i błędnej konfiguracji, brak wycieku sekretów |
+| **C-QUALITY-01 — kontrola migracji i integralności konfiguracji** — P0 | Rozszerzyć istniejący CI o wykrywanie nieutworzonych migracji (np. `makemigrations --check --dry-run`), a także regresji przy uruchomieniu z pustą bazą | Celowo brakująca migracja powoduje FAIL, istniejący CI pozostaje zielony; bez przepisywania workflow |
+| **C-DEMO-02 — reprodukowalne konta testowe** — P0 | Komenda do tworzenia **wyłącznie syntetycznych kont Django** i resetowania danych demo w bezpieczny sposób. Projekty F3 są obecnie w `src/projects/data.py` jako statyczny zestaw syntetyczny, **nie należy wymyślać nowej tabeli projektów ani importera D** | Idempotentny seed kont; ograniczenie do środowiska demo; test powtórnego uruchomienia |
+| **C-CI-02 — harness testów HTTP** — P1 | Ogólny runner HTTP uruchamiający kanoniczny obraz z PostgreSQL, wykonujący sprawdzenie login/health/version i zapisujący czytelny raport błędów. Można zacząć od istniejących endpointów | Uruchamia się jednym poleceniem lokalnie i w CI, nie deklaruje PASS dla niesprawdzonych widoków F3/F4 |
+| **C-SEC-01 — podstawowy audyt zależności i sekretów** — P1 | Dodać do istniejącego CI lekkie, uzasadnione skanowanie przypadkowo commitowanych sekretów i podatności bez instalowania ciężkiej platformy | Realny negatywny test, instrukcja reagowania i akceptowalny czas działania; bez wypisywania wartości sekretów |
+| **C-STAGE-01 — istniejący [PR #188](https://github.com/zio-wi-pb-mc/pb-science-office/pull/188)** — BACKUP | Zaktualizować procedurę do scalonego obrazu #193 i potwierdzić lokalną procedurę bez czekania na uczelniany serwer | Jeden sprawdzony scenariusz uruchomienia, odtworzenia i rollbacku; bez fikcyjnych deklaracji wdrożenia |
+
+**Zależne od innych — dopiero kolejny krok:** pełny test użytkownika login → lista → projekt → budżet wymaga [integracji F/#194](https://github.com/zio-wi-pb-mc/pb-science-office/issues/194) i [uprawnień E/#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173). C może wcześniej zbudować infrastrukturę testu i oznaczyć brak funkcjonalności jako oczekiwany blocker; **nie ukrywa 404 z F3 przy `DEBUG=False` i nie naprawia tego przez włączenie debugowania**. Scenariusze E2E przygotowuje B/F; C odpowiada za mechanizm ich uruchamiania w CI.
+
+**Podział pięciu osób:** lead C rozdziela cztery równoległe prace (doctor, migracje CI, seed kont demo, harness HTTP), a piąta osoba bierze security/checks lub istniejące staging. To **propozycje nowych Issues**, poza #196, które już istnieje. Przed utworzeniem każdego sprawdzić duplikaty; każdy student ma jedno główne Issue `IN PROGRESS`.
+
 ## 4. Na co uważać — już zajęte i zależne
 
 - **#157 jest scalone** — nie ponawiaj budowy skeletonu i clean clone.
-- **PR #180, #192 i #193 mają APPROVE prowadzącego**, ale w chwili aktualizacji **nie były scalone do `dev`**. Samo Approve nie kończy zadania.
+- **PR #180, #192 i #193 są już scalone do `dev`** (sprawdzone 04.11). Nie powtarzaj implementacji ani infrastruktury z tych PR.
 - **PR #174 to Draft**, wymagający dostosowania do nowszego F3 i integracji F2.
 - **B-TEST-01–04 w Banku zadań to pomysły, a nie wolne przydziały.** Część testów już istnieje. B nie powiela zakresu F.
 - **Ważna integracja:** na `dev` widoki F3 są ograniczone przy `DEBUG=False`, natomiast Demo #193 używa `DEBUG=False`. Trzeba zapewnić prawidłowy dostęp z użyciem auth/uprawnień, nie włączać debugowania.
