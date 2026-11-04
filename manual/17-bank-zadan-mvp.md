@@ -80,7 +80,7 @@ Pomóc F przenieść potwierdzone reguły z dokumentacji do testowalnego kodu do
 
 **Główny nowy kierunek B:** jeden mały formularz/proces w istniejącej aplikacji Django, od minimalnych wymagań przez widok i walidację aż po wykonywalne testy. W pięcioosobowym zespole przydziel konkretne, niepowielające się podzadania z jednym assignee, zamiast mechanicznie dzielić trzy ogólne hasła.
 
-B-E2E-01 (pełny `login → projekt → budżet`) wykonuj po integracji logowania [PR #180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180) z `dev`. B-UX-01 można realizować już teraz na działających widokach.
+Logowanie [PR #180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180) jest już scalone do `dev`. Pełne E2E wymaga jeszcze integracji F/#194 i E/#173; B może już przygotować scenariusz, a UX testować na istniejących widokach.
 
 Poniższe pozycje opisują potencjalne zakresy — przed rozpoczęciem sprawdź Project, Issues i PR.
 
@@ -128,9 +128,9 @@ Na podstawie potwierdzonych wymagań wybrać **jeden mały formularz**, ogranicz
 
 Osoba z B może bezpośrednio pomóc F zaimplementować uzgodniony formularz. Przynależność do B nie zabrania pisania kodu produktu.
 
-# C — platforma, Docker, CI i integracja
+# C — Platform & Integration Engineering
 
-C jest obecnie **Platform / Integration Owner**. To jest duży obszar pracy implementacyjnej.
+**Od 04.11:** Docker Demo [#193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) jest już scalony. C nie czeka na D/E/F: **[pełna lista niezależnych zadań na 2–3 tygodnie](21-roadmap-3-tygodnie.md#zespol-c-zadania-niezalezne-od-innych-grup-aktualizacja-0411)** — developer doctor, check migracji w CI, seed syntetycznych kont, runner HTTP, security, staging.
 
 Możliwe Issues:
 
@@ -144,9 +144,9 @@ Możliwe Issues:
 
 Doprowadzić #90 do zweryfikowanego `dev → main`.
 
-### C-DEMO-01 — środowisko Demo / Release-like (PR #193 otwarty, APPROVE prowadzącego)
+### C-DEMO-01 — środowisko Demo / Release-like (PR #193 SCALONY)
 
-Nie implementuj tego ponownie. Potrzebne niezależne potwierdzenie działania od czystego klona i integracja. Zakres obejmuje: `compose.demo.yaml` lub równoważną konfigurację:
+Nie implementuj tego ponownie; zamiast tego weryfikuj funkcjonalne odbiory Demo. Zakres obejmuje: `compose.demo.yaml` lub równoważną konfigurację:
 
 - bez bind mount kodu,
 - `DEBUG=False`,
@@ -158,14 +158,9 @@ Nie implementuj tego ponownie. Potrzebne niezależne potwierdzenie działania od
 
 Szczegóły: [Środowiska MVP](18-srodowiska-mvp.md).
 
-### C-DEMO-02 — seed danych demonstracyjnych
+### C-DEMO-02 — seed kont demonstracyjnych
 
-Jedna deterministyczna komenda tworząca:
-
-- testowych użytkowników,
-- kilka projektów,
-- dane budżetowe,
-- role potrzebne vertical slice.
+Idempotentna i bezpieczna komenda tworząca **syntetyczne konta testowe i role** Django. Projekty F3 są obecnie statycznymi rekordami w `src/projects/data.py`; bez samowolnego projektowania tabel lub importera danych zespołu D. Po powstaniu kanonicznego modelu można rozszerzyć seed w osobnym Issue.
 
 ### C-CI-01 — test obrazu Docker
 
