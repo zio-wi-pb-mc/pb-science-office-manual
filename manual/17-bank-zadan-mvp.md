@@ -32,9 +32,11 @@ Przykładowe zadania przekrojowe:
 - obsługa 404 i braku danych,
 - syntetyczny dataset używany przez wszystkie elementy demonstratora.
 
-# A — legacy, finanse i dane referencyjne
+# A — finanse i funkcje działającego MVP
 
-A nie powinno otwierać kolejnych szerokich audytów. Wiedza z legacy ma teraz trafiać do **kodu, fixtures i testów**.
+**Od 04.11:** grupa A nie powinna kontynuować dokumentacji dla samej dokumentacji. [Plan prac A na 2–3 tygodnie](21-roadmap-3-tygodnie.md#zespol-a-zadania-nastawione-na-produkt-aktualizacja-0411): ulepszenie ekranu budżetu F4, uzupełnienie wyłącznie brakujących testów biznesowych, potem walidacja pierwszego formularza B/F. #163, #192 i #136 są już scalone; nie powielać.
+
+Dalsze pozycje są **rezerwowym bankiem propozycji**, a nie listą zadań wymagających ponownego wykonania.
 
 Możliwe Issues:
 
