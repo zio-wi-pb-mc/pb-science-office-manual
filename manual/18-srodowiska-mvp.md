@@ -142,7 +142,7 @@ Pozostałe zespoły dostarczają:
 3. **C-DEMO-02** — deterministyczny seed syntetycznych użytkowników/projektów/budżetów.
 4. **F/E/C** — udostępnić pełny przepływ projektu w Demo z `DEBUG=False` bez obchodzenia kontroli dostępu.
 5. **C-STAGE-01 / PR #188** — uzgodnić procedurę ze stanem obrazu Demo, następnie review i integracja.
-6. **C-REL-01 / PR #90** — osobna decyzja prowadzącego po sprawdzeniu aktualnego `dev`.
+6. **C-REL-01 / [PR #90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90)** — pierwsze wydanie rozwojowe do `main` **scalone 04.11.2026** (commit `b800a67`, CI PASS). `dev` odtworzono. Nie oznacza to jeszcze gotowości produkcyjnego Demo.
 7. Po dostępności serwera — uruchomić Shared Staging.
 
 # Definition of Done środowiska demonstracyjnego

@@ -3,6 +3,15 @@
 !!! important "Nie musisz czytać całego manuala"
     Jeśli wchodzisz tutaj przed zajęciami albo po zakończeniu swojego zadania, zacznij od poniższych kroków.
 
+## Aktualność — 4 listopada 2026: pierwsze wydanie rozwojowe
+
+!!! success "v0.1.0 — pierwszy merge do main zakończony"
+    [PR #90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90) (`dev → main`) został **scalony 4.11.2026**. Pierwszy stan aplikacji jest teraz w [gałęzi `main`](https://github.com/zio-wi-pb-mc/pb-science-office/tree/main), commit `b800a67`. Wszystkie joby CI uruchomione po scaleniu zakończyły się sukcesem.
+
+**Jak pracujemy dalej:** odtworzono [gałąź `dev`](https://github.com/zio-wi-pb-mc/pb-science-office/tree/dev) na bazie wydania. Nowe zadania: `feature → dev` (PR, review i testy); okresowe wydania: `dev → main` po decyzji prowadzącego. **Nie usuwamy `dev` po kolejnych wydaniach.**
+
+**Co dalej:** to **wydanie rozwojowe, nie gotowy system produkcyjny**. Priorytetem jest działające MVP: logowanie → projekty → szczegóły → budżet, a potem formularz. Pełny przepływ przy `DEBUG=False` nadal wymaga integracji i odbioru; zielony smoke test obrazu nie potwierdza ukończenia całego produktu.
+
 ## Plan na najbliższe 3 tygodnie
 
 **[Roadmap 4–20 listopada — cele, zadania dla A–F i kryteria ukończenia](21-roadmap-3-tygodnie.md)**

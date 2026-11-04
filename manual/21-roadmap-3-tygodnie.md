@@ -11,7 +11,7 @@
 
 | Kiedy | Cel | Jak sprawdzimy, że działa |
 |---|---|---|
-| **Tydzień 1, 4–6.11** | Domknąć gotowe PR i zależności | Review/test/merge do `dev` dla [F2 #180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180), [testów #192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192), [Demo #193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193), zgodnie z warunkami każdego PR |
+| **Tydzień 1, 4–6.11** | Pierwsze wydanie i integracja | **Wykonane:** #180, #192, #193 scalone do `dev`; [release PR #90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90) scalony do `main` 4.11; `dev` odtworzono. **Dalej:** pełny przepływ MVP i uprawnienia |
 | **Tydzień 2, 9–13.11** | Jeden działający przepływ użytkownika | Login → lista → szczegóły → budżet tego samego projektu i roku, własne/cudze projekty, przypadki negatywne, testy integracyjne |
 | **Tydzień 3, 16–20.11** | Powtarzalne Demo + pierwszy formularz | Czysty start Demo z `DEBUG=False`, syntetyczne dane i E2E; przynajmniej działający przekrojowy fragment pierwszego formularza Django z walidacją i testami |
 
