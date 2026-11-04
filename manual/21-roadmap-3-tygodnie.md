@@ -1,6 +1,6 @@
 # Roadmap ZIO — plan na 3 tygodnie
 
-**Okres: 4–20 listopada 2026.** Aktualizacja dla zespołu C: 04.11.2026.
+**Okres: 4–20 listopada 2026.** Aktualizacja dla zespołów A/C: 04.11.2026.
 
 !!! important "Plan, nie automatyczny przydział"
     Ta strona pokazuje studentom **co robić teraz, w kolejnym tygodniu i za 2–3 tygodnie**. Przed rozpoczęciem zadania sprawdź [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1), [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues) i [PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls). Nie twórz duplikatów. W GitHub Project są rzeczywiste przypisania i statusy.
@@ -32,7 +32,7 @@
 
 | Zespół | **Teraz (4–6.11)** | **Dalej (9–20.11)** | Odbiór |
 |---|---|---|---|
-| **A — finanse/legacy** | Peer review i ewentualna poprawka [#192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192); dopracować [słownik #163](https://github.com/zio-wi-pb-mc/pb-science-office/pull/163) zgodnie z review | Wspólne fixtures F3/F4, testy zer, braków, rezerwacji, rozliczeń, projektów o podobnych identyfikatorach | Działające testy, reguły potwierdzone źródłem |
+| **A — finanse i funkcje MVP** | Uporządkować zakończone #163/#192/#136; uzgodnić z F4 krótkie objaśnienia kwot w UI; znaleźć rzeczywiste luki w testach finansowych | Ulepszenia ekranu budżetu i testy referencyjne, później walidacja pól finansowych pierwszego formularza B/F | Konkretny PR z widoczną funkcją albo brakującym testem, bez dodatkowej ogólnej dokumentacji |
 | **B — formularze/UX** | UX na istniejących widokach; wybór **jednego małego formularza** i podział na konkretne Issue | Backend Django, HTML, walidacje i testy formularza; pełne E2E po integracji F2 | Działający kod i testy zamiast wyłącznie Markdown |
 | **C — Platform & Integration** | Niezależne zadania: [doctor #196](https://github.com/zio-wi-pb-mc/pb-science-office/issues/196), migracje w CI, seed kont demo, runner HTTP | Testy security i staging; później pełne E2E po integracji F/E | 4 równoległe narzędzia/testy z realnymi wynikami, bez czekania na inne zespoły |
 | **D — importer/migracja** | Poprawić [plan zgodności #132](https://github.com/zio-wi-pb-mc/pb-science-office/pull/132); wybrać jeden wykonalny przypadek | Minimalny importer syntetycznego przykładu, walidacja identyfikatorów i test parity | Uruchamialny importer i test |
@@ -40,6 +40,20 @@
 | **F — funkcje MVP** | Integracja [F2 #180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180) z F3/F4, [#155](https://github.com/zio-wi-pb-mc/pb-science-office/issues/155), wsparcie kontroli dostępu | Nawigacja, stany błędów, E2E login → budżet, integracja formularza grupy B | Jeden demonstracyjny przepływ w jednej aplikacji |
 
 **To kierunki do wyboru i uzgodnienia, nie nowe Issues.** Lead sprawdza bieżące zadania każdej osoby. Jeden student ma maksymalnie jedno główne Issue `IN PROGRESS`.
+
+## Zespół A — zadania nastawione na produkt (aktualizacja 04.11)
+
+**A ma dostarczać użyteczne funkcje i sprawdzalną poprawność finansów w aplikacji, nie kolejne ogólne opracowania legacy.** Zespół liczy trzy osoby; lead rozdziela zakres zgodnie z bieżącą pracą i uzgadnia kod współdzielony z F. Nie ma obowiązku tworzenia trzech PR tylko dlatego, że grupa ma trzy osoby.
+
+| Priorytet | Co można zrobić teraz — bez czekania na importer D | Kryterium odbioru |
+|---|---|---|
+| **P0 — Finanse widoczne i zrozumiałe w MVP** | Sprawdzić aktualny ekran F4 z użytkownikiem: które kwoty i pojęcia wymagają objaśnienia? Przenieść **wyłącznie potrzebne** definicje z ukończonego [PR #163](https://github.com/zio-wi-pb-mc/pb-science-office/pull/163) do krótkich etykiet / tooltipów / pomocy kontekstowej w istniejącym widoku, **po uzgodnieniu z właścicielem F4**. Nie zmieniać mechaniki obliczeń bez weryfikacji. | PR z użytecznym ulepszeniem widoku F4, zweryfikowany na syntetycznych przykładach |
+| **P0 — Weryfikacja realnych scenariuszy budżetowych** | Z istniejących przypadków źródłowych wybrać te, których **jeszcze nie pokrywają** testy w `tests/test_budget_calculations.py`, `test_budget_preview.py`, `test_project_budget_adapter.py` i `test_invalid_data_and_blank_fields_and_zero_amount.py`. Dodać brakujące testy referencyjne, a wykryte błędy przekazać do właściciela F4 lub poprawić wspólnie. | Rzeczywiście brakujący przypadek biznesowy w CI albo naprawiony błąd; żadnych kopii istniejących testów |
+| **P1 — Kontrakt finansowy dla pierwszego formularza** | Razem z B/F ustalić **minimalne pola finansowe i reguły walidacji**, jeśli wybrany formularz ma wpływ na budżet/rezerwacje; następnie przygotować lub zaimplementować wyłącznie tę małą część produktu. Jeżeli formularz nie dotyczy finansów, zamiast tego przejąć uzgodnioną poprawkę F3/F4. | Działająca walidacja / test / PR, nie kolejny niezależny dokument |
+
+**Do domknięcia, nie do rozpoczynania od nowa:** [PR #163](https://github.com/zio-wi-pb-mc/pb-science-office/pull/163) (słownik), [PR #192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) (testy F4) i [PR #136](https://github.com/zio-wi-pb-mc/pb-science-office/pull/136) (przypadki rezerwy) są już scalone. Odpowiadające im nadal otwarte [#162](https://github.com/zio-wi-pb-mc/pb-science-office/issues/162), [#191](https://github.com/zio-wi-pb-mc/pb-science-office/issues/191) i [#134](https://github.com/zio-wi-pb-mc/pb-science-office/issues/134) wymagają weryfikacji kryteriów i administracyjnego domknięcia; **nie są nowymi zadaniami implementacyjnymi**. [PR #185](https://github.com/zio-wi-pb-mc/pb-science-office/pull/185) jest Draft — domknąć, jeśli blokuje programistów, bez rozbudowywania analizy ponad to, co potrzebne.
+
+**Gdy F4 nie ma wolnego fragmentu do równoległej implementacji:** A może niezależnie przeanalizować luki w aktualnych testach finansów i przygotować niewielki PR testowy; po wyborze formularza przez B/F dołączyć do jego modułu. Nie blokować się oczekiwaniem na import danych — używać istniejących danych syntetycznych F3/F4.
 
 ## Zespół C — zadania niezależne od innych grup (aktualizacja 04.11)
 

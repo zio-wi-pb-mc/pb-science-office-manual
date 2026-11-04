@@ -9,6 +9,8 @@
 
 Tutaj znajdziesz, co można robić **już na najbliższych zajęciach**, co planujemy na **następne 2–3 tygodnie** oraz które PR/Issues są już zajęte. Zanim wybierzesz zadanie, sprawdź aktualny [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1).
 
+**[Grupa A — aktualny plan implementacyjny (finanse F4, testy biznesowe)](21-roadmap-3-tygodnie.md#zespol-a-zadania-nastawione-na-produkt-aktualizacja-0411)** — nie powtarzajcie scalonych PR #163, #192, #136.
+
 ## Najpilniejsze prace — 04.11.2026
 
 !!! info "Stan implementacji"
