@@ -1,10 +1,14 @@
 # Roadmap ZIO — od 10 listopada do 31 stycznia
 
+!!! important "Swoboda wyboru zadań — obowiązująca zasada"
+    **Żadne Issue wskazane w roadmapie ani banku zadań nie jest obowiązkowym przydziałem dla konkretnej grupy lub studenta.** To propozycje pomagające znaleźć sensowną pracę, szczególnie gdy zespół nie ma własnego pomysłu. Zespoły mogą proponować i realizować inne rozwiązania lub inaczej rozdzielić pracę między sobą, jeżeli prowadzą do potrzebnej funkcjonalności, nie duplikują istniejących PR i zachowują uzgodnione kontrakty. **Obowiązkowy jest wspólny cel i termin przekazania 31.01.2027, a nie numer Issue czy narzucona metoda implementacji.** Przed zmianą właściciela już trwającej pracy uzgodnij to z zainteresowanymi.
+
+
 **Ten plan zastępuje dotychczasową roadmapę trzytygodniową. Ostateczne oddanie: 31.01.2027.** Pełne bramki i odpowiedzialności: [Plan zakończenia](23-plan-do-31-stycznia.md). Zakres legacy: [macierz](22-audyt-legacy-parity.md).
 
 ## Twarde terminy (bramki, nie obietnice)
 
-| Data | Wymagany wynik | Odpowiadają |
+| Docelowa data | Wspólny rezultat do odebrania | Przykładowa współpraca |
 |---|---|---|
 | **13.11** | Test dwóch kont, serwerowe uprawnienia oraz ścieżka logowanie → projekt → budżet w `DEBUG=False` | E/C/F |
 | **20.11** | Akceptacja listy MUST przez Dział Nauki; lista niepewności i rezygnacji | Prowadzący + A–F |
@@ -20,9 +24,9 @@
 !!! warning "Święta nie są pełnym sprintem"
     Krytyczny kod projektu i finansów trzeba scalić **przed 18 grudnia**. Zakładać ograniczoną dostępność między 21.12 a 06.01; w styczniu tylko domknięcie, nie przebudowę architektury.
 
-## Zadania zespołów A–F — teraz / następny etap
+## Przykładowe ścieżki pracy A–F — można wybrać inne
 
-| Zespół | 10–20.11 | 21.11–18.12 | 19.12–31.01 |
+| Zespół | Możliwy temat 10–20.11 | Możliwy temat 21.11–18.12 | Możliwy temat 19.12–31.01 |
 |---|---|---|---|
 | **A** | [#209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209), [#210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210), [#185](https://github.com/zio-wi-pb-mc/pb-science-office/pull/185), [#204](https://github.com/zio-wi-pb-mc/pb-science-office/issues/204) | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) zapis finansów i testy parytetu | [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215) raporty, poprawki danych i odbiór |
 | **B** | [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201): F01 | Dokończyć F01; następnie tylko potwierdzone MUST administracji | Testy formularzy, poprawki i wsparcie odbioru |
