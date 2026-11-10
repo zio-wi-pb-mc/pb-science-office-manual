@@ -1,13 +1,17 @@
-# Co robić teraz — priorytety dostarczenia do stycznia
+# Co robić teraz — propozycje priorytetów do stycznia
+
+!!! important "Swoboda wyboru zadań — obowiązująca zasada"
+    **Żadne Issue wskazane w roadmapie ani banku zadań nie jest obowiązkowym przydziałem dla konkretnej grupy lub studenta.** To propozycje pomagające znaleźć sensowną pracę, szczególnie gdy zespół nie ma własnego pomysłu. Zespoły mogą proponować i realizować inne rozwiązania lub inaczej rozdzielić pracę między sobą, jeżeli prowadzą do potrzebnej funkcjonalności, nie duplikują istniejących PR i zachowują uzgodnione kontrakty. **Obowiązkowy jest wspólny cel i termin przekazania 31.01.2027, a nie numer Issue czy narzucona metoda implementacji.** Przed zmianą właściciela już trwającej pracy uzgodnij to z zainteresowanymi.
+
 
 **Stan: 10.11.2026. Nieprzekraczalny deadline: 31.01.2027.** [Pełny harmonogram](23-plan-do-31-stycznia.md) · [Macierz brakujących funkcji starego systemu](22-audyt-legacy-parity.md).
 
 !!! warning "Zmiana priorytetu"
-    Implementujemy **MUST** dla użytkowników Działu Nauki. Nie dokładamy nowego workflow ani wszystkich 58 formularzy bez potwierdzenia, że są niezbędne do zastąpienia legacy. 20 listopada zamykamy listę obowiązkowych funkcji na podstawie audytu i konsultacji.
+    Realizujemy wspólnie funkcjonalności **MUST** uzgodnione z Działem Nauki; wybór konkretnych Issues i podziału pracy pozostaje elastyczny. Nie dokładamy nowego workflow ani wszystkich 58 formularzy bez potwierdzenia, że są niezbędne do zastąpienia legacy. 20 listopada zamykamy listę obowiązkowych funkcji na podstawie audytu i konsultacji.
 
 ## P0 — aktualne blokery
 
-| Wynik, nie ogólne zadanie | Owner | Issue / PR | Odbiór |
+| Oczekiwany rezultat | Proponowana współpraca | Przykładowe Issue / PR | Kryterium odbioru |
 |---|---|---|---|
 | Ograniczenia widoczności: użytkownik A nie odczyta B | E+F | [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173) / [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) | HTML/JSON/lista/szczegóły/budżet 403 lub 404, PostgreSQL |
 | Realny start Demo | C+F | [#205](https://github.com/zio-wi-pb-mc/pb-science-office/issues/205) / [#207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) | Test HTTP login → lista → szczegóły → budżet z `DEBUG=False` |
@@ -33,9 +37,9 @@
 
 `dev → main`: tylko prowadzący po zamknięciu bramki. W styczniu stabilizujemy, a nie dopisujemy nowe moduły.
 
-## Skład i odpowiedzialności
+## Proponowane kierunki dla zespołów (do samodzielnego wyboru)
 
-| Zespół | Najbliższy konkretny wynik | Cel do końca grudnia |
+| Zespół | Przykładowy najbliższy temat | Możliwy kolejny kierunek |
 |---|---|---|
 | **A / Daniel Perkowski** | [#204](https://github.com/zio-wi-pb-mc/pb-science-office/issues/204), [#209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209), [#210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210), [#185](https://github.com/zio-wi-pb-mc/pb-science-office/pull/185) | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) — trwałe finanse, parytet reguł |
 | **B / Karina Chilkiewicz** | [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201): jeden wspólny F01 | Wspierać pozostałe **potwierdzone MUST**, nie tworzyć nowych formularzy bez decyzji |
