@@ -1,8 +1,6 @@
 # Dashboard projektu i leaderboard
 
-!!! important "Swoboda wyboru zadań — obowiązująca zasada"
-    **Żadne Issue wskazane w roadmapie ani banku zadań nie jest obowiązkowym przydziałem dla konkretnej grupy lub studenta.** To propozycje pomagające znaleźć sensowną pracę, szczególnie gdy zespół nie ma własnego pomysłu. Zespoły mogą proponować i realizować inne rozwiązania lub inaczej rozdzielić pracę między sobą, jeżeli prowadzą do potrzebnej funkcjonalności, nie duplikują istniejących PR i zachowują uzgodnione kontrakty. **Obowiązkowy jest wspólny cel i termin przekazania 31.01.2027, a nie numer Issue czy narzucona metoda implementacji.** Przed zmianą właściciela już trwającej pracy uzgodnij to z zainteresowanymi.
-
+**Cel projektu:** do **31 stycznia 2027 r.** dostarczamy **wdrożoną, przetestowaną i odebraną przez Dział Nauki aplikację** zastępującą uzgodniony zakres starego systemu. Zespoły samodzielnie wybierają zadania i rozwiązania; roadmapa oraz Issues są propozycjami pomagającymi zaplanować pracę.
 
 
 !!! warning "Stan produktu ≠ punktacja / deadline 31.01.2027"
@@ -22,7 +20,6 @@
 | Odbiór i przekazanie | Zaplanowane, nie wykonane | [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) do 31.01 |
 
 **Nie podajemy fikcyjnego procentu ukończenia systemu.** Przyjęcie kryteriów MUST z Działem Nauki do 20.11 warunkuje wiarygodną ocenę zakresu.
-
 
 
 Ta strona zbiera najważniejsze miejsca do codziennej pracy nad projektem.
