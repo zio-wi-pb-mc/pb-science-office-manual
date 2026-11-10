@@ -1,9 +1,13 @@
 # ZIO — co robić teraz
 
+!!! important "Swoboda wyboru zadań — obowiązująca zasada"
+    **Żadne Issue wskazane w roadmapie ani banku zadań nie jest obowiązkowym przydziałem dla konkretnej grupy lub studenta.** To propozycje pomagające znaleźć sensowną pracę, szczególnie gdy zespół nie ma własnego pomysłu. Zespoły mogą proponować i realizować inne rozwiązania lub inaczej rozdzielić pracę między sobą, jeżeli prowadzą do potrzebnej funkcjonalności, nie duplikują istniejących PR i zachowują uzgodnione kontrakty. **Obowiązkowy jest wspólny cel i termin przekazania 31.01.2027, a nie numer Issue czy narzucona metoda implementacji.** Przed zmianą właściciela już trwającej pracy uzgodnij to z zainteresowanymi.
+
+
 !!! danger "Twardy termin: 31 stycznia 2027"
     **Studenci kończą przedmiot w styczniu. Cały projekt musi zostać przekazany najpóźniej 31.01.2027.** Zasadnicze implementacje muszą zakończyć się w grudniu, 15 stycznia następuje feature freeze. Dalsze rozbudowy nie mogą zastąpić funkcji wymaganych przez Dział Nauki.
 
-## Dwa dokumenty obowiązkowe na najbliższe zajęcia
+## Dwa najważniejsze dokumenty planistyczne
 
 - **[Plan zakończenia ZIO do 31 stycznia](23-plan-do-31-stycznia.md)** — bramki 13.11, 20.11, 04.12, 18.12, 08.01, 15.01 i odbiór.
 - **[Audyt legacy → Django: funkcje, luki, odpowiedzialni](22-audyt-legacy-parity.md)** — 27 obszarów starej aplikacji porównanych z kodem `dev`, odróżnienie potwierdzonego legacy od nowych formularzy.
@@ -14,9 +18,9 @@
 
 **Niedostarczone:** trwałe dane i edycja projektów (dziś sześć `SyntheticProject`), zapis rezerwacji i wydatków, dostęp do własnych projektów, pełne Demo `DEBUG=False`, migracja, raporty i wiele operacji starego systemu. Sama liczba łączonych PR **nie oznacza** zgodności 1:1 z legacy.
 
-## Najważniejsze zadania — od teraz
+## Propozycje najważniejszych obszarów — od teraz
 
-| P0 / kolejność | Kierunek | Odpowiada |
+| Priorytet obszaru | Przykładowy kierunek pracy | Proponowane zespoły |
 |---|---|---|
 | **1. Natychmiast** | [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173): dostęp obiektowy + [#205](https://github.com/zio-wi-pb-mc/pb-science-office/issues/205): bezpieczne konta Demo; pełny test `DEBUG=False` | E/C/F |
 | **2. Do 20.11** | Uzgodnienie funkcji MUST z Działem Nauki na podstawie [audytu](22-audyt-legacy-parity.md) | Prowadzący + liderzy |
