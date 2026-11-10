@@ -1,6 +1,10 @@
-# Bank zadań — wyłącznie rezultat przydatny przed 31.01
+# Bank propozycji — co można zrobić, gdy brakuje pomysłu
 
-To **rezerwowe pomysły**, nie lista dodatkowych przydziałów. [Twarde terminy](23-plan-do-31-stycznia.md), [obowiązujące zadania](16-propozycje-zadan-po-audycie.md), [macierz legacy](22-audyt-legacy-parity.md). Nie rozpoczynaj żadnego z poniższych zadań, jeśli istnieje już właściciel i Issue.
+!!! important "Swoboda wyboru zadań — obowiązująca zasada"
+    **Żadne Issue wskazane w roadmapie ani banku zadań nie jest obowiązkowym przydziałem dla konkretnej grupy lub studenta.** To propozycje pomagające znaleźć sensowną pracę, szczególnie gdy zespół nie ma własnego pomysłu. Zespoły mogą proponować i realizować inne rozwiązania lub inaczej rozdzielić pracę między sobą, jeżeli prowadzą do potrzebnej funkcjonalności, nie duplikują istniejących PR i zachowują uzgodnione kontrakty. **Obowiązkowy jest wspólny cel i termin przekazania 31.01.2027, a nie numer Issue czy narzucona metoda implementacji.** Przed zmianą właściciela już trwającej pracy uzgodnij to z zainteresowanymi.
+
+
+To **rezerwowe pomysły**, nie lista dodatkowych przydziałów. [Twarde terminy](23-plan-do-31-stycznia.md), [proponowane priorytety](16-propozycje-zadan-po-audycie.md), [macierz legacy](22-audyt-legacy-parity.md). Nie rozpoczynaj żadnego z poniższych zadań, jeśli istnieje już właściciel i Issue.
 
 | Obszar | Przykładowy mały PR, jeśli brak osoby/fragmentu | Efekt akceptacyjny |
 |---|---|---|
@@ -12,6 +16,6 @@ To **rezerwowe pomysły**, nie lista dodatkowych przydziałów. [Twarde terminy]
 | **A/F** | Eksport kosztorysu CSV i historia wydatków | Zgodność z raportem w aplikacji i dostępem roli; [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215) |
 | **C** | Automatyczny E2E na obrazie Demo, backup i restore bazy | PASS całego flow `DEBUG=False`, nie tylko health; [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) |
 
-**Nie rozdrabniać Issue na fikcyjne S/M/L.** O rozmiarze decydują zasady [#86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86), nie autor. Nie zaczynać nowych ADR lub kolejnych kopii słowników, drugiego szkieletu aplikacji ani nowego frontendu. Każdy nowy formularz spoza potwierdzonego legacy wymaga decyzji prowadzącego.
+**Możecie również zaproponować własny temat** — uzgodnijcie z liderem zależności i kryterium odbioru. **Nie rozdrabniać Issue na fikcyjne S/M/L.** O rozmiarze decydują zasady [#86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86), nie autor. Nie zaczynać nowych ADR lub kolejnych kopii słowników, drugiego szkieletu aplikacji ani nowego frontendu. Każdy nowy formularz spoza potwierdzonego legacy wymaga decyzji prowadzącego.
 
 Przed utworzeniem Issue: sprawdź [PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls), [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues), [Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1), wskaż ownera, termin i sposób demonstracji. Studenci integrują tylko do `dev`.
