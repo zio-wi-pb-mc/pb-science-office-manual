@@ -1,5 +1,8 @@
 # Roadmap ZIO — od 10 listopada do 31 stycznia
 
+!!! danger "31.01.2027 = działająca aplikacja po wdrożeniu i testach"
+    **31 stycznia NIE jest terminem przekazania kodu do późniejszego wdrożenia.** Do tego dnia aplikacja ma być już **wdrożona w docelowo uzgodnionym środowisku, uruchomiona, przetestowana przez Dział Nauki i odebrana**. Instalacja, migracja, konta i role, bezpieczeństwo, scenariusze użytkowników oraz backup/restore muszą przejść testy wcześniej. Sama demonstracja lub zielone CI nie wystarczą. Konkretne zadania dla studentów nadal są propozycjami, nie nakazem.
+
 !!! important "Swoboda wyboru zadań — obowiązująca zasada"
     **Żadne Issue wskazane w roadmapie ani banku zadań nie jest obowiązkowym przydziałem dla konkretnej grupy lub studenta.** To propozycje pomagające znaleźć sensowną pracę, szczególnie gdy zespół nie ma własnego pomysłu. Zespoły mogą proponować i realizować inne rozwiązania lub inaczej rozdzielić pracę między sobą, jeżeli prowadzą do potrzebnej funkcjonalności, nie duplikują istniejących PR i zachowują uzgodnione kontrakty. **Obowiązkowy jest wspólny cel i termin przekazania 31.01.2027, a nie numer Issue czy narzucona metoda implementacji.** Przed zmianą właściciela już trwającej pracy uzgodnij to z zainteresowanymi.
 
@@ -7,6 +10,9 @@
 **Ten plan zastępuje dotychczasową roadmapę trzytygodniową. Ostateczne oddanie: 31.01.2027.** Pełne bramki i odpowiedzialności: [Plan zakończenia](23-plan-do-31-stycznia.md). Zakres legacy: [macierz](22-audyt-legacy-parity.md).
 
 ## Twarde terminy (bramki, nie obietnice)
+
+**Do 15 stycznia wdrażamy system w środowisku uzgodnionym z uczelnią. Od 16 stycznia pracownicy Działu Nauki testują działającą instalację; 31 stycznia nie jest dniem pierwszego wdrożenia.**
+
 
 | Docelowa data | Wspólny rezultat do odebrania | Przykładowa współpraca |
 |---|---|---|
@@ -17,9 +23,9 @@
 | **11.12** | Formularz F01 [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201), role i uprawnienia | B/E/F |
 | **18.12** | Zapis planów i operacji finansowych [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) | A/F |
 | **08.01** | Raporty [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215), import testowy [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) | A/D/F |
-| **15.01** | Feature freeze | Wszyscy |
-| **25.01** | Akceptacyjny odbiór biznesowy i techniczny [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) | Dział Nauki + prowadzący |
-| **31.01** | Finalny release + instrukcje, backup/restore, przekazanie | Prowadzący/C |
+| **10.01** | Feature freeze | Wszyscy |
+| **20–25.01** | Akceptacyjny odbiór biznesowy i techniczny po wdrożeniu [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) | Dział Nauki + prowadzący |
+| **31.01** | Aplikacja już wdrożona, przetestowana i odebrana; kompletna dokumentacja | Prowadzący/C |
 
 !!! warning "Święta nie są pełnym sprintem"
     Krytyczny kod projektu i finansów trzeba scalić **przed 18 grudnia**. Zakładać ograniczoną dostępność między 21.12 a 06.01; w styczniu tylko domknięcie, nie przebudowę architektury.
