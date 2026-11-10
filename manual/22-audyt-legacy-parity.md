@@ -1,5 +1,9 @@
 # Audyt legacy → Django: zakres odtworzenia i luki
 
+!!! important "Swoboda wyboru zadań — obowiązująca zasada"
+    **Żadne Issue wskazane w roadmapie ani banku zadań nie jest obowiązkowym przydziałem dla konkretnej grupy lub studenta.** To propozycje pomagające znaleźć sensowną pracę, szczególnie gdy zespół nie ma własnego pomysłu. Zespoły mogą proponować i realizować inne rozwiązania lub inaczej rozdzielić pracę między sobą, jeżeli prowadzą do potrzebnej funkcjonalności, nie duplikują istniejących PR i zachowują uzgodnione kontrakty. **Obowiązkowy jest wspólny cel i termin przekazania 31.01.2027, a nie numer Issue czy narzucona metoda implementacji.** Przed zmianą właściciela już trwającej pracy uzgodnij to z zainteresowanymi.
+
+
 **Stan analizy: 10.11.2026. Termin końcowy: 31.01.2027.** Porównano kod `dev` (SHA `e47e5800`) i dokumenty legacy w aplikacyjnym repozytorium. **Nie wykonano jeszcze pełnych testów interfejsu starego systemu z pracownikami Działu Nauki ani migracji rzeczywistych danych.** Każdy status jest oceną *potwierdzenia w kodzie*, a nie procentem ukończenia.
 
 !!! warning "Dwa różne zakresy"
@@ -22,7 +26,7 @@
 
 ## Macierz pokrycia rzeczywistych funkcji starej aplikacji
 
-| ID | Funkcja legacy / dowód | Stan w nowej aplikacji 10.11 | Odpowiedzialni | Wymagany odbiór / zadanie |
+| ID | Funkcja legacy / dowód | Stan w nowej aplikacji 10.11 | Sugerowany obszar współpracy | Kryterium odbioru / przykładowe Issue |
 |---|---|---|---|---|
 | L01 | Użytkownicy, role, sesje | **Częściowo:** Django auth/F2, [PR #180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180) | E+F | Uprawnienia admin/dziekan/rektor/kierownik i testy per rola, [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173) |
 | L02 | Wykaz prac według rodzaju, roku, użytkownika | **Częściowo:** F3 z 6 statycznych `SyntheticProject` | F | Lista z PostgreSQL, filtry i właściwe przypisania; [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213) |
