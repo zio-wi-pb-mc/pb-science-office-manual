@@ -1,7 +1,6 @@
 # Audyt legacy → Django: zakres odtworzenia i luki
 
-!!! important "Swoboda wyboru zadań — obowiązująca zasada"
-    **Żadne Issue wskazane w roadmapie ani banku zadań nie jest obowiązkowym przydziałem dla konkretnej grupy lub studenta.** To propozycje pomagające znaleźć sensowną pracę, szczególnie gdy zespół nie ma własnego pomysłu. Zespoły mogą proponować i realizować inne rozwiązania lub inaczej rozdzielić pracę między sobą, jeżeli prowadzą do potrzebnej funkcjonalności, nie duplikują istniejących PR i zachowują uzgodnione kontrakty. **Obowiązkowy jest wspólny cel i termin przekazania 31.01.2027, a nie numer Issue czy narzucona metoda implementacji.** Przed zmianą właściciela już trwającej pracy uzgodnij to z zainteresowanymi.
+**Cel projektu:** do **31 stycznia 2027 r.** dostarczamy **wdrożoną, przetestowaną i odebraną przez Dział Nauki aplikację** zastępującą uzgodniony zakres starego systemu. Zespoły samodzielnie wybierają zadania i rozwiązania; roadmapa oraz Issues są propozycjami pomagającymi zaplanować pracę.
 
 
 **Stan analizy: 10.11.2026. Termin końcowy: 31.01.2027.** Porównano kod `dev` (SHA `e47e5800`) i dokumenty legacy w aplikacyjnym repozytorium. **Nie wykonano jeszcze pełnych testów interfejsu starego systemu z pracownikami Działu Nauki ani migracji rzeczywistych danych.** Każdy status jest oceną *potwierdzenia w kodzie*, a nie procentem ukończenia.
