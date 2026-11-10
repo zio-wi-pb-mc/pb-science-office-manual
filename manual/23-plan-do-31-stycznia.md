@@ -1,5 +1,8 @@
 # Plan zakończenia ZIO — twardy termin 31 stycznia 2027
 
+!!! danger "31.01.2027 = działająca aplikacja po wdrożeniu i testach"
+    **31 stycznia NIE jest terminem przekazania kodu do późniejszego wdrożenia.** Do tego dnia aplikacja ma być już **wdrożona w docelowo uzgodnionym środowisku, uruchomiona, przetestowana przez Dział Nauki i odebrana**. Instalacja, migracja, konta i role, bezpieczeństwo, scenariusze użytkowników oraz backup/restore muszą przejść testy wcześniej. Sama demonstracja lub zielone CI nie wystarczą. Konkretne zadania dla studentów nadal są propozycjami, nie nakazem.
+
 !!! important "Swoboda wyboru zadań — obowiązująca zasada"
     **Żadne Issue wskazane w roadmapie ani banku zadań nie jest obowiązkowym przydziałem dla konkretnej grupy lub studenta.** To propozycje pomagające znaleźć sensowną pracę, szczególnie gdy zespół nie ma własnego pomysłu. Zespoły mogą proponować i realizować inne rozwiązania lub inaczej rozdzielić pracę między sobą, jeżeli prowadzą do potrzebnej funkcjonalności, nie duplikują istniejących PR i zachowują uzgodnione kontrakty. **Obowiązkowy jest wspólny cel i termin przekazania 31.01.2027, a nie numer Issue czy narzucona metoda implementacji.** Przed zmianą właściciela już trwającej pracy uzgodnij to z zainteresowanymi.
 
@@ -7,9 +10,12 @@
 **Stan: 10.11.2026. Pozostało 82 dni kalendarzowe do 31.01.2027; mniej efektywnych dni z powodu świąt, sesji i integracji.** 31 stycznia jest **ostatecznym dniem przekazania**, nie początkiem testów. W razie poślizgu redukujemy zakres jawnie po uzgodnieniu z prowadzącym i Działem Nauki; nie udajemy zgodności 1:1.
 
 !!! danger "Reguła terminowa"
-    **Nie ma kolejnego semestru na poprawki studentów.** Od 15 stycznia obowiązuje feature freeze; 25 stycznia protokół odbioru; do 31 stycznia kod, obrazy, migracje, dokumentacja i przekazanie. Każdy niezamknięty MUST ma właściciela, datę i jawne ryzyko.
+    **Nie ma kolejnego semestru na poprawki studentów.** Od 10 stycznia obowiązuje feature freeze; do 15 stycznia wdrożenie w uzgodnionym środowisku; 16–25 stycznia testy użytkowników i odbiór; do 31 stycznia aplikacja jest już wdrożona, przetestowana i odebrana. Każdy niezamknięty MUST ma właściciela, datę i jawne ryzyko.
 
 ## Bramy dostawy
+
+**Krytyczna ścieżka wdrożeniowa:** do **10.01** koniec implementacji, do **15.01** wdrożenie w uzgodnionym środowisku i migracja próbna, **16–25.01** testy z pracownikami Działu Nauki i poprawki, **26–30.01** retesty, backup/restore i podpisanie odbioru, **31.01** system już działa i jest odebrany. Gotowość produkcyjna wymaga zapewnienia hostingu, dostępu i decyzji bezpieczeństwa po stronie uczelni, więc tę zależność trzeba potwierdzić wcześniej.
+
 
 | Data graniczna | Bramka | Kryterium PASS / FAIL |
 |---|---|---|
@@ -20,9 +26,9 @@
 | **11.12** | F01 + główne prawa i role | [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) zintegrowane; praca na trwałych danych; E testuje odmowy |
 | **18.12** | Krytyczne operacje finansowe | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214): plan, rezerwacja, wydatek, rozliczenie, korekta, ślad zmian; obliczenia parity |
 | **08.01** | Raporty i migracja próbna | [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215), [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216): podstawowe CSV/druk, importer testowy, zgodność sum i raport odrzuceń |
-| **15.01** | FEATURE FREEZE | Wszystkie MUST zaimplementowane albo jawnie oznaczone jako nieosiągalne z decyzją prowadzącego. Dalej tylko błędy krytyczne, bezpieczeństwo i poprawki odbioru |
-| **25.01** | ODBIÓR | Instalacja od czystego klona, E2E dwóch ról, scenariusze finansowe, migracja/rollback, podpisana lista uwag |
-| **31.01** | HANDOFF | Finalny release `main`, dokumentacja operatora, backup i odtwarzanie, dane testowe, lista ograniczeń, komplet informacji dostępny bez udziału studentów |
+| **10.01** | FEATURE FREEZE / koniec rozwoju funkcji | Wszystkie MUST zaimplementowane albo jawnie oznaczone jako nieosiągalne z decyzją prowadzącego. Dalej tylko błędy krytyczne, bezpieczeństwo i poprawki odbioru |
+| **20–25.01** | ODBIÓR po wdrożeniu | Instalacja od czystego klona, E2E dwóch ról, scenariusze finansowe, migracja/rollback, podpisana lista uwag |
+| **31.01** | SYSTEM WDROŻONY I ODEBRANY | Finalny release `main`, dokumentacja operatora, backup i odtwarzanie, dane testowe, lista ograniczeń, komplet informacji dostępny bez udziału studentów |
 
 **Uwaga:** bramka 13.11 to agresywny cel naprawczy; faktyczne dostępności studentów mogą wymusić eskalację, ale nie przesuwają terminu przekazania.
 
