@@ -1,33 +1,17 @@
-# Bank zadań — tylko luki produktu
+# Bank zadań — wyłącznie rezultat przydatny przed 31.01
 
-**Stan zweryfikowany w GitHub: 10.11.2026.** Statusy zmieniają się wraz z PR-ami; ostatecznym źródłem są [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1), [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues) i [PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls).
+To **rezerwowe pomysły**, nie lista dodatkowych przydziałów. [Twarde terminy](23-plan-do-31-stycznia.md), [obowiązujące zadania](16-propozycje-zadan-po-audycie.md), [macierz legacy](22-audyt-legacy-parity.md). Nie rozpoczynaj żadnego z poniższych zadań, jeśli istnieje już właściciel i Issue.
 
-**To propozycje rezerwowe, a nie automatyczny przydział.** Najpierw realizuj [P0 i zadania własnego zespołu](16-propozycje-zadan-po-audycie.md). Na `dev` są już logowanie (#180), integracja F2/F3/F4 (#212), objaśnienia F4 (#203) i Docker Demo (#193). Nie twórz ich ponownie.
-
-## P0 — rzeczywiste blokery
-
-| Kierunek | Co należy sprawdzić / dostarczyć | Istniejący właściciel |
+| Obszar | Przykładowy mały PR, jeśli brak osoby/fragmentu | Efekt akceptacyjny |
 |---|---|---|
-| Autoryzacja obiektowa | Użytkownik A nie widzi projektu ani budżetu B przez żaden URL, HTML czy JSON | E: [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173), [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) |
-| Pełny scenariusz Demo | `DEBUG=False`, Postgres, dwa konta, login → lista → szczegóły → budżet; test nie kończy się na health | C + F: [#207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207), [#212](https://github.com/zio-wi-pb-mc/pb-science-office/pull/212) |
-| Pierwszy formularz | Realny F01 z jednym modelem, zapisem, walidacją, stroną i testami | B: [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) |
+| **F/E** | Modele relacji użytkownik–projekt; test dostępu do cudzego budżetu | 403/404 także dla JSON i bezpośredniego URL; [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173) |
+| **F** | Model + migracja projektu, formularz edycji, test archiwum | Projekt zapisany w PostgreSQL i dostępny po restarcie; [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213) |
+| **A** | Zapis planu finansowego, rezerwacja, wydatek, rozliczenie częściowe, narzut | Oczekiwane wyniki matematyczne na danych trwałych; [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) |
+| **B** | Wyłącznie brakujący fragment F01 lub obowiązkowy ekran operacji admin po decyzji z Działem Nauki | Rzeczywisty zapis i test; [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) |
+| **D** | Import kilku projektów różnych typów/lat i wyciągnięcie raportu odrzuceń | Idempotencja, zgodność sum, brak rzeczywistych danych w CI; [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) |
+| **A/F** | Eksport kosztorysu CSV i historia wydatków | Zgodność z raportem w aplikacji i dostępem roli; [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215) |
+| **C** | Automatyczny E2E na obrazie Demo, backup i restore bazy | PASS całego flow `DEBUG=False`, nie tylko health; [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) |
 
-## P1 — po odblokowaniu P0
+**Nie rozdrabniać Issue na fikcyjne S/M/L.** O rozmiarze decydują zasady [#86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86), nie autor. Nie zaczynać nowych ADR lub kolejnych kopii słowników, drugiego szkieletu aplikacji ani nowego frontendu. Każdy nowy formularz spoza potwierdzonego legacy wymaga decyzji prowadzącego.
 
-| Kierunek | Zakres | Istniejąca praca |
-|---|---|---|
-| Finanse / A | Potwierdzenie kwot z rezerwy, niepokryte testami przypadki salda, spójny projekt i rok | [#204](https://github.com/zio-wi-pb-mc/pb-science-office/issues/204), [#210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210) |
-| UX i błędy / A + F | Konkretnie zgłoszone błędy 403/404/500, mobilne F3 po integracji | [#209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209), [#211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211) |
-| Legacy / D | Jeden mały aktualny plan i wykonywalna próba parity; bez starego PR 108 plików | [#132](https://github.com/zio-wi-pb-mc/pb-science-office/pull/132), [#124](https://github.com/zio-wi-pb-mc/pb-science-office/issues/124) |
-| Dokumentacja / A | Zamknąć istniejące [#185](https://github.com/zio-wi-pb-mc/pb-science-office/pull/185) po review; nowa dokumentacja wyłącznie jeśli odblokowuje kod | [#167](https://github.com/zio-wi-pb-mc/pb-science-office/issues/167) |
-| Narzędzia / C | `doctor`, skanery lub dodatkowe CI tylko gdy istnieje realny błąd lub blocker | [#196](https://github.com/zio-wi-pb-mc/pb-science-office/issues/196) — opcjonalne |
-
-## Zanim założysz nowe Issue
-
-1. Sprawdź [Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1), [otwarte PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls) oraz Issues.
-2. Ustal, czy praca nie jest już w PR lub przypisana innej osobie. **APPROVE ≠ MERGED**.
-3. Podaj jednego właściciela, działający rezultat i instrukcję odbioru.
-4. Wybierz najmniejszą potrzebną zmianę. Bez tworzenia zadania tylko po to, żeby ktoś miał zajęcie.
-5. PR z feature branch do `dev`, nie do `main`; student/lead odpowiada za integrację, prowadzący za release.
-
-[Roadmap](21-roadmap-3-tygodnie.md) · [Dashboard](19-dashboard-projektu.md)
+Przed utworzeniem Issue: sprawdź [PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls), [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues), [Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1), wskaż ownera, termin i sposób demonstracji. Studenci integrują tylko do `dev`.
