@@ -1,158 +1,54 @@
-# Co robić teraz — stan projektu i priorytety
+# Co robić teraz — priorytety i odpowiedzialność
 
-**Stan na: 04.11.2026**  
-**Źródło prawdy:** GitHub Issues, Pull Requests i GitHub Project mają pierwszeństwo przed tą stroną. Szybkie linki są na stronie [Dashboard projektu i leaderboard](19-dashboard-projektu.md).
+**Stan zweryfikowany w GitHub: 10.11.2026.** Statusy zmieniają się wraz z PR-ami; ostatecznym źródłem są [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1), [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues) i [PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls).
 
-!!! important "Etap projektu"
-    Projekt wychodzi z szerokiego Discovery. Priorytetem są teraz **działający kod, testy, integracja, migracja danych i usuwanie blokad MVP**.
+**P0 do odbioru:** zalogowany użytkownik A widzi własny projekt i budżet, nie widzi projektów użytkownika B nawet przez ręcznie wpisany URL; użytkownik anonimowy nie ma dostępu. Ten sam przepływ działa w Demo (`DEBUG=False`) na PostgreSQL.
 
-    Zespoły A–F określają główny obszar odpowiedzialności, ale **nie są sztywnymi silosami**. Jeżeli ktoś kończy pracę w swoim obszarze, powinien pomóc tam, gdzie najbardziej przyspieszy wspólny produkt.
+## Stan funkcjonalności
 
-[**Roadmap i plan pracy A–F na 4–20 listopada**](21-roadmap-3-tygodnie.md) — konkretne zadania na najbliższe zajęcia i kolejne dwa tygodnie, zależności i kryteria odbioru.
+| Obszar | Potwierdzone | Pozostaje |
+|---|---|---|
+| Auth / F2 | [#180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180) MERGED | Przypisanie do projektów nie jest jeszcze egzekwowane dla wszystkich widoków |
+| F2 → F3 → F4 | [#212](https://github.com/zio-wi-pb-mc/pb-science-office/pull/212) MERGED 09.11 — nawigacja i test przepływu | Cały przebieg w Demo `DEBUG=False` i przypadki autoryzacji obiektowej |
+| Budżet | [#192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) i [#203](https://github.com/zio-wi-pb-mc/pb-science-office/pull/203) MERGED | Testy na danych dwóch użytkowników; review [#210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210) |
+| Docker / staging | [#193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) i [#188](https://github.com/zio-wi-pb-mc/pb-science-office/pull/188) MERGED | Funkcjonalne Demo, nie tylko `/health/` oraz `/version/` |
+| Release | [#90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90) MERGED do `main` | Następne wydanie dopiero po akceptacji prowadzącego |
+| Uprawnienia | [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) otwarty Draft, błędna baza `main` | Przenieść na współczesny `dev`, unikając nadpisania #212 |
+| Formularz F01 | [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) w toku | Wspólna integracja formularza i test od stworzenia do odczytu |
 
-## Najbliższy cel produktu
+## Zespoły — aktualny przydział kierunku
 
-Najważniejszy wspólny przepływ:
+| Zespół / lead | PRIMARY | BACKUP, jeśli brak blokerów |
+|---|---|---|
+| **A — Daniel Perkowski** | [#204](https://github.com/zio-wi-pb-mc/pb-science-office/issues/204): rzeczywiste przypadki finansowe F4; [#209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209) — ekran 403/404/500 | [#210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210) + [#185](https://github.com/zio-wi-pb-mc/pb-science-office/pull/185) — domknąć review i integrację, bez następnej wielkiej analizy |
+| **B — Karina Chilkiewicz** | [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201): jeden formularz F01; doprowadzić model, walidację, widoki i testy do integracji | Test działania F01 po zalogowaniu, poprawki użyteczności |
+| **C — Vladislav Matveev** | [#207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) / [#205](https://github.com/zio-wi-pb-mc/pb-science-office/issues/205): bezpieczne konta demo i uruchomienie pełnego Demo z `DEBUG=False` | Wspólny test funkcjonalny z F/E; narzędzie doctor [#196](https://github.com/zio-wi-pb-mc/pb-science-office/issues/196) tylko gdy usuwa realny problem |
+| **D — Tomasz Sidoruk** | [#132](https://github.com/zio-wi-pb-mc/pb-science-office/pull/132) / [#124](https://github.com/zio-wi-pb-mc/pb-science-office/issues/124): przenieść wartościowy fragment planu do małego PR `dev`; następnie pierwszy wykonywalny test zgodności | Minimalny importer jednego syntetycznego przypadku, po potwierdzeniu zakresu |
+| **E — Michał Borawski / Cezary Babik** | [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173) / [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174): obiektowe uprawnienia F3/F4 i serwerowe odmowy | Scenariusze dostępu [#181](https://github.com/zio-wi-pb-mc/pb-science-office/issues/181) z dwoma kontami i dwoma projektami |
+| **F — Paweł Kozikowski** | Odebrać #212 i zintegrować E/C: pełny przepływ Demo z testem | [#211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211): mobilne F3 po rozwiązaniu konfliktu; [#155](https://github.com/zio-wi-pb-mc/pb-science-office/issues/155) — aktualizacja kryteriów |
 
-`logowanie testowe → lista projektów → szczegóły projektu → budżet`
+**Nie przydzielamy dodatkowych zadań tylko po to, żeby każdy miał PR.** Lider po każdym merge sprawdza własny backlog i najbliższy P0. Koordynacja między zespołami jest ważniejsza niż własność pojedynczego pliku.
 
-Ma działać:
+## Otwarte PR — stan LIVE 10.11
 
-- w jednej aplikacji,
-- po czystym klonie repozytorium,
-- na danych syntetycznych,
-- z PostgreSQL,
-- z testami automatycznymi,
-- bez ręcznego poprawiania konfiguracji.
+| PR | Autor | Stan | Następny ruch |
+|---|---|---|---|
+| [#209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209) | Aleksandra Masiejczyk (A) | OPEN, APPROVE z review | Autor/lider może scalić do `dev` po sprawdzeniu CI i konfliktów |
+| [#210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210) | Daniel Perkowski (A) | OPEN, APPROVE | Potwierdzić kwoty z F4; potem merge `dev` |
+| [#185](https://github.com/zio-wi-pb-mc/pb-science-office/pull/185) | Daniel Perkowski (A) | OPEN, APPROVE | Krótki merge `dev`, bez poszerzania zakresu |
+| [#207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) | Weronika Sosnowska (C) | OPEN, APPROVE warunkowe | **Usunąć `TEST_USER_PASSWORD=password` z `.env.example`**, sprawdzić bezpieczne Demo, potem merge |
+| [#211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211) | Paweł Kozikowski (F) | OPEN, APPROVE | Usunąć konflikt z aktualnym `dev` po #212, ponowić CI |
+| [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) | Cezary Babik (E) | OPEN, Draft do `main` | Przenieść uprawnienia na aktualny `dev` bez nadpisania F3/F4 |
+| [#132](https://github.com/zio-wi-pb-mc/pb-science-office/pull/132) | Tomasz Sidoruk (D) | OPEN do `main` | Mały nowy PR do `dev`; stary zamknąć po migracji treści |
 
-Po jego ustabilizowaniu dokładamy **pierwszy mały formularz/proces**.
+Na dzień sprawdzenia **7 otwartych PR, bez nowego merge**. APPROVE ≠ MERGED. Właściwy tryb: student i lead realizują merge do `dev`; prowadzący zatwierdza tylko wydania do `main`.
 
-## Najbliższy checkpoint — aktualny na 03.11
+## Kryteria odbioru najbliższego kamienia milowego
 
-1. **Fundament F1 #157 jest już scalony** — nie rozpoczynaj go ponownie.
-2. **F2 / logowanie: [PR #180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180)** — scalony do `dev` 03.11. Priorytet: integracja z F3/F4 w [Issue #194](https://github.com/zio-wi-pb-mc/pb-science-office/issues/194).
-3. **Local Demo: [PR #193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193)** — scalony do `dev` 03.11; teraz konieczna funkcjonalna walidacja przepływu z `DEBUG=False`.
-4. **F3/F4: [Issue #155](https://github.com/zio-wi-pb-mc/pb-science-office/issues/155)** — uzupełnić odbiór wspólnego przepływu projekt → szczegóły → budżet, także przypadki brzegowe; [PR #192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) jest scalony do `dev` 04.11.
-5. **Dostęp do projektów: [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174)** — nadal Draft; wymaga uzgodnienia i integracji z F2/F3.
-6. **[Pierwszy release PR #90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90) (`dev → main`)** — **MERGED 04.11.2026**, commit `b800a67`; CI dla `main` PASS. Gałąź `dev` została odtworzona od aktualnego `main`. Kolejne PR kierujcie do `dev`, nie do `main`. Jest to wersja rozwojowa, nie produkcyjna.
+1. `docker compose` startuje w Demo z `DEBUG=False`, `/health/` jest zielone i użytkownik może zalogować się testowym kontem.
+2. Użytkownik A widzi na liście tylko przypisane projekty; szczegóły i budżet B są odrzucane po bezpośrednim URL (także API/JSON).
+3. Ten sam identyfikator projektu i rok są zachowane od listy do budżetu; dane nie są mieszane.
+4. Testy na PostgreSQL przechodzą; wykonać także przynajmniej jeden test przepływu HTTP/E2E, a nie wyłącznie unit tests i smoke `/health/`.
+5. F01 ma działać w obrębie tej samej aplikacji bez nowych frameworków i bez sztucznego dublowania istniejących modeli.
 
-!!! warning "Ważny blocker demonstracji"
-    Obecna lista i szczegóły projektów F3 są w kodzie `dev` odcinane przy `DEBUG=False`. Tymczasem nowy obraz Demo #193 używa `DEBUG=False`. **Sukces smoke testów obrazu nie oznacza jeszcze, że pełny przepływ MVP działa w tym trybie.** Należy rozwiązać to w F/E/C przez poprawny dostęp i integrację, bez wymuszania `DEBUG=True` w środowisku release-like.
-
-## Co już istnieje
-
-- na `dev` są aplikacja Django, Docker/PostgreSQL, bazowe widoki syntetycznych projektów F3 i podsumowanie budżetu F4;
-- #157 (integracja szkieletu) jest zakończone, a mechanizm `/version/` jest już dostępny;
-- PR #180 (logowanie), #193 (Docker Demo) i #192 (testy F4) są już scalone do `dev`;
-- PR #174 (uprawnienia obiektowe) pozostaje Draft;
-- PR #188 (procedura Shared Staging) ma pozytywne CI i jest technicznie mergeable; opis procedury trzeba uzgodnić z obrazem z PR #193 przed scaleniem;
-- nie ma jeszcze potwierdzenia, że cały przepływ `login → lista → szczegóły → budżet` działa razem w trybie `DEBUG=False`.
-
-## Aktualne role zespołów
-
-| Zespół | Główna odpowiedzialność teraz |
-|---|---|
-| **A** | ulepszenia istniejącego widoku finansów F4 i brakujące testy biznesowe; wsparcie walidacji formularza, bez kolejnych szerokich analiz legacy |
-| **B** | pierwszy mały formularz (wybór zakresu, Django/UI, walidacja, testy), praktyczny UX i E2E po integracji F2 |
-| **C** | Platform & Integration: samodzielny backlog doctor, CI/migracje, konta demo, testy HTTP i security, staging |
-| **D** | dane legacy, importer, migracja i parity tests |
-| **E** | role, uprawnienia, dostęp do danych i minimalny workflow |
-| **F** | integracja vertical slice i rozwój działającego MVP |
-
-Szczegółowy, względnie stały zakres A–F: [Plan Discovery A–F](12-plan-discovery-a-f.md).
-
-## Gdy kończysz bieżące zadanie
-
-Nie czekaj automatycznie na przydział prowadzącego.
-
-1. sprawdź otwarte Issues i PR,
-2. sprawdź [Bank możliwych zadań MVP](17-bank-zadan-mvp.md),
-3. wybierz najmniejszy brak, który realnie przesuwa produkt do przodu,
-4. sprawdź, czy nikt już tego nie robi,
-5. zaproponuj Issue z jednym właścicielem i mierzalnym rezultatem.
-
-Kolejność priorytetów dla wolnych osób:
-
-1. integracja F2/F3/F4,
-2. testy automatyczne vertical slice,
-3. Docker / CI / release / demo,
-4. importer i testy migracji,
-5. kontrola dostępu,
-6. pierwszy mały formularz/proces.
-
-Nowy dokument Discovery jest niżej na liście, chyba że jego brak konkretnie blokuje kod lub test.
-
-## Środowiska
-
-Docelowy model uruchamiania projektu opisuje osobna strona:
-
-[**Środowiska MVP — Local Dev, Demo i Shared Staging**](18-srodowiska-mvp.md)
-
-Najważniejsza zasada: **każdy student powinien móc uruchomić aktualną aplikację i ją zobaczyć**, a zaakceptowany stan produktu powinien być możliwy do demonstracji w środowisku zbliżonym do wdrożeniowego.
-
-## Aktualny skład aktywnych zespołów
-
-### PS1
-
-**A — obecny system i dane**  
-Lead: Daniel Perkowski  
-Jakub Mirończuk, Daniel Perkowski, Aleksandra Masiejczyk
-
-**B — procesy, formularze i wymagania**  
-Lead: Karina Chilkiewicz  
-Patrycja Choćko, Karina Chilkiewicz, Bartłomiej Karanowski, Klaudia Natalia Klim, Gabriel Chomiczewski
-
-**C — Core i środowisko techniczne**  
-Lead: Vladislav Matveev  
-Mykola Nishchymnyi, Vladislav Matveev, Weronika Sosnowska, Nazar Hrinchenko, Maciej Sawicki
-
-### PS2
-
-**D — legacy, baza i migracja**  
-Lead: Tomasz Sidoruk  
-Miłosz Dubowski, Tomasz Sidoruk
-
-**E — role, workflow i wymagania użytkowników**  
-Lead: Michał Borawski  
-Emilia Drewnowska, Cezary Babik, Michał Borawski
-
-**F — pierwszy vertical slice / implementacja**  
-Lead: Paweł Kozikowski  
-Jakub Pawlak, Patryk Bura, Łukasz Bondar, Paweł Kozikowski
-
-## Wyrównywanie obciążenia
-
-Nie utrzymujemy sztucznie równych silosów.
-
-- Jakub Pawlak po ukończeniu swoich bieżących zadań może wesprzeć D przy importerze/migracji,
-- osoby z B po zakończeniu bieżących zadań mogą przechodzić do testów A/F lub implementacji pierwszego formularza,
-- osoby z A mogą pisać fixtures i wykonywalne testy finansów używane bezpośrednio przez F4,
-- C może i powinno pomagać F w integracji, CI, Dockerze i środowisku demonstracyjnym.
-
-## Kamienie milowe
-
-| Termin | Oczekiwany stan produktu |
-|---|---|
-| koniec października | #157 domknięte, pierwszy stabilny release, F2/F3/F4 na wspólnej bazie |
-| połowa listopada | działa `logowanie → lista → szczegóły → budżet` |
-| koniec listopada | podstawowe uprawnienia + pierwszy mały formularz/proces + testy |
-| początek grudnia | feature freeze MVP; dalej stabilizacja, UX, testy i dokumentacja |
-
-## Czego teraz nie robić
-
-- nie tworzyć drugiego skeletonu,
-- nie powtarzać szerokiej analizy legacy bez konkretnego odbiorcy,
-- nie tworzyć drugiego modelu projektu, auth, finansów ani Dockera,
-- nie czekać z implementacją na zakończenie wszystkich dokumentów,
-- nie rozpoczynać zwykłej pracy od `main`,
-- nie tworzyć Issue tylko dlatego, że temat widnieje w dawnym planie zajęć.
-
-## Historia aktualizacji
-
-- **04.11.2026 (A)** — scalenie #163/#192/#136 potwierdzone; A przechodzi do funkcji budżetu F4 i uzupełniania konkretnych luk testowych, zgodnie z planem produktu.
-- **04.11.2026** — po merge #180/#192/#193 zespół C dostał niezależne zadania inżynierskie; zaktualizowano roadmapę i kierunki prac.
-- **03.11.2026 (aktualizacja po review)** — potwierdzono APPROVE prowadzącego dla #180/#192/#193, bez merge; określono brakujące kroki integracyjne i kierunek dla zespołu B.
-- **03.11.2026** — zaktualizowano checkpoint po merge #157; wskazano otwarte PR #180/#193/#192/#174, ryzyko `DEBUG=False` w Demo oraz kolejność integracji MVP.
-- **28.10.2026** — strona została skrócona do bieżącego stanu i priorytetów; szczegółowy bank pracy i środowiska wydzielono na osobne strony.
-- **22.10.2026** — przesunięto nacisk z Discovery na implementację, testy i integrację.
-- **14–15.10.2026** — utworzono i doprecyzowano pierwszy przekrojowy obraz A–F.
+[Roadmap](21-roadmap-3-tygodnie.md) · [Dashboard](19-dashboard-projektu.md) · [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues)

@@ -4,9 +4,9 @@ Ta strona zbiera najważniejsze miejsca do codziennej pracy nad projektem.
 
 ## Contribution Leaderboard
 
-**Aktualne przeliczenie: 03.11.2026.**
+**Ostatnie formalnie zweryfikowane przeliczenie punktów: 03.11.2026. Aktualizacja stanu PR/Issues: 10.11.2026.** Punktów nie doliczono automatycznie za nowe PR, bo [reguły #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86) wymagają indywidualnej weryfikacji.
 
-**Kontrola po akceptacjach PR — 03.11.2026:** PR #180, #192 i #193 otrzymały APPROVE prowadzącego, ale wciąż są otwarte; nie dopisano za nie punktów. Samo zatwierdzenie PR nie spełnia warunków rozliczenia z [Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86).
+**Weryfikacja LIVE 10.11:** PR #180, #192, #193, #188, #163, #203, #212 są już **MERGED**. To jednak **nie oznacza przyznania punktów**: dla każdego zadania trzeba sprawdzić Issue, pojedynczego Assignee, merytoryczne review, datę zatwierdzenia rozmiaru i tygodniowy limit. APPROVE dla #209/#210/#185/#207/#211 nie jest merge.
 
 !!! important "Punkty ≠ automatyczna ocena"
     Ranking jest narzędziem motywacyjnym. Pokazuje punkty formalnie rozliczone według zasad z #86.
@@ -61,22 +61,28 @@ W bieżącym przeliczeniu uwzględniono także prace rozliczone po 28.10, m.in.:
 - #184 / #183 — endpoint wersji aplikacji,
 - oraz review tych prac, o ile spełniały zasady #86.
 
-### Scalone prace, które nadal nie dają punktów za task
+### Nowe prace wymagające rozliczenia według #86
 
-To nie oznacza, że praca była bezwartościowa. Po prostu nie spełnia jeszcze formalnych warunków leaderboardu.
+To **kolejka do weryfikacji**, nie automatycznie przyznane punkty. Zmiana statusu PR/Issue nie przesądza o wyniku.
 
-| PR / Issue | Student | Dlaczego task nie jest jeszcze punktowany |
-|---|---|---|
-| #136 / #134 | Aleksandra Masiejczyk | Issue #134 nadal otwarte |
-| #164 / #125 | Miłosz Dubowski | brak studenckiego merytorycznego peer review PR |
-| #117 / #116 | Cezary Babik | Issue #116 nadal otwarte |
-| #123 / #120 | Emilia Drewnowska | Issue nadal otwarte i ma dwóch Assignees |
-| #99 / #81 | Aleksandra Masiejczyk | Issue #81 nadal otwarte |
-| #105 / #79 | Patrycja Choćko | brak merytorycznego peer review studenta |
-| #88 / #87 | Jakub Mirończuk | brak merytorycznego peer review studenta |
-| #63 / #30 | Daniel Perkowski | brak merytorycznego peer review studenta |
-| #29 / #20 | Aleksandra Masiejczyk | brak merytorycznego peer review studenta |
-| #27 / #26 | Jakub Mirończuk | brak merytorycznego peer review studenta |
+| PR / Issue | Autor / zespół | Stan na 10.11 | Co zweryfikować |
+|---|---|---|---|
+| [#212](https://github.com/zio-wi-pb-mc/pb-science-office/pull/212) / [#194](https://github.com/zio-wi-pb-mc/pb-science-office/issues/194) | Patryk Bura / F | MERGED, Issue zamknięte | Student peer review, zgodność autora/assignee, rozmiar |
+| [#203](https://github.com/zio-wi-pb-mc/pb-science-office/pull/203) / [#202](https://github.com/zio-wi-pb-mc/pb-science-office/issues/202) | Jakub Mirończuk / A | MERGED, Issue zamknięte | Review i rozmiar zadania |
+| [#192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) / [#191](https://github.com/zio-wi-pb-mc/pb-science-office/issues/191) | Aleksandra Masiejczyk / A | MERGED, Issue zamknięte | Review i reguły rozliczenia |
+| [#163](https://github.com/zio-wi-pb-mc/pb-science-office/pull/163) / [#162](https://github.com/zio-wi-pb-mc/pb-science-office/issues/162) | Aleksandra Masiejczyk / A | MERGED, Issue zamknięte | Review i reguły rozliczenia |
+| [#188](https://github.com/zio-wi-pb-mc/pb-science-office/pull/188) / [#187](https://github.com/zio-wi-pb-mc/pb-science-office/issues/187) | Mykola Nishchymnyi / C | MERGED, Issue zamknięte | Merytoryczne review i reguły |
+| [#193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) / [#190](https://github.com/zio-wi-pb-mc/pb-science-office/issues/190) | Maciej Sawicki / C | MERGED, Issue zamknięte | Merytoryczne review i reguły |
+| [#180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180) / [#113](https://github.com/zio-wi-pb-mc/pb-science-office/issues/113) | Patryk Bura / F | MERGED, Issue zamknięte | Merytoryczne review i reguły |
+| [#136](https://github.com/zio-wi-pb-mc/pb-science-office/pull/136) / [#134](https://github.com/zio-wi-pb-mc/pb-science-office/issues/134) | Aleksandra Masiejczyk / A | MERGED, Issue **nadal otwarte** | Domknięcie kryteriów; bez punktów za task |
+| [#209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209) / [#208](https://github.com/zio-wi-pb-mc/pb-science-office/issues/208) | Aleksandra Masiejczyk / A | APPROVE, ale PR **OPEN** | Bez punktów tasku przed merge i zamknięciem Issue |
+| [#207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) / [#205](https://github.com/zio-wi-pb-mc/pb-science-office/issues/205) | Weronika Sosnowska / C | APPROVE, ale PR **OPEN** | Bez punktów tasku przed usunięciem ryzyka hasła, merge i zamknięciem Issue |
+
+**Starsze nierozliczone przypadki z poprzedniego snapshotu (#164/#125, #117/#116, #123/#120, #105/#79, #88/#87, #63/#30, #29/#20, #27/#26) wymagają oddzielnej weryfikacji i nie zostały przeliczone.** Uwaga: #81 jest już zamknięte, więc wcześniejszy powód odmowy punktów dla #99/#81 nie jest aktualny; inne warunki nadal należy sprawdzić.
+
+### Bieżąca praca niepunktowana jako ukończona (10.11)
+
+**7 otwartych PR:** [#209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209), [#210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210), [#185](https://github.com/zio-wi-pb-mc/pb-science-office/pull/185), [#207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207), [#211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211), [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174), [#132](https://github.com/zio-wi-pb-mc/pb-science-office/pull/132). Spośród nich pięć ma APPROVE, a #174 i #132 wymagają przebudowy/zmiany bazy. To nie są ukończone zadania.
 
 [**Pełne zasady i historia naliczeń — Issue #86**](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86)
 
@@ -97,6 +103,13 @@ Najważniejsze:
 - samo kliknięcie Approve bez merytorycznej treści nie gwarantuje punktu.
 
 ---
+
+## Jak aktualizować ranking bez zawyżania
+
+1. Odczytać każde MERGED PR i jego Issue, autora oraz jednego właściwego assignee.
+2. Sprawdzić merytoryczne studenckie review (samo Approve prowadzącego nie wystarczy), zatwierdzenie M/L **przed** merge i maksymalnie 3 punkty za review w tygodniu.
+3. Dodać punkty dopiero po spełnieniu **wszystkich** reguł z #86; opublikować nowy snapshot jednocześnie tutaj i w Issue #86.
+4. Do tego czasu powyższe liczby 03.11 są **historycznym snapshotem**, a nie oceną obecnego wkładu. W szczególności 0 punktów obok studenta nie oznacza braku pracy.
 
 ## GitHub Project — główna tablica pracy
 

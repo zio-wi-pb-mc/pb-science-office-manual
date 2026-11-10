@@ -1,5 +1,8 @@
 # Środowiska MVP — Local Dev, Demo i Shared Staging
 
+**Aktualizacja 10.11:** [#193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) (obraz Demo) i [#188](https://github.com/zio-wi-pb-mc/pb-science-office/pull/188) (procedura staging) są scalone do `dev`. [#212](https://github.com/zio-wi-pb-mc/pb-science-office/pull/212) łączy logowanie, projekty i budżet, lecz **test pełnej ścieżki w `DEBUG=False` i uprawnienia do własnych projektów nadal wymagają odbioru**. W `main` jest wydanie rozwojowe v0.1.0, bieżąca integracja odbywa się w `dev`.
+
+
 Celem jest, aby projekt był nie tylko kodem w repozytorium, ale **aplikacją, którą można łatwo uruchomić, zobaczyć i testować**.
 
 Nie nazywamy środowiska demonstracyjnego „produkcją”. Produkcja uczelniana będzie wymagała osobnych decyzji infrastrukturalnych i bezpieczeństwa.
@@ -142,7 +145,7 @@ Pozostałe zespoły dostarczają:
 3. **C-DEMO-02** — deterministyczny seed syntetycznych użytkowników/projektów/budżetów.
 4. **F/E/C** — udostępnić pełny przepływ projektu w Demo z `DEBUG=False` bez obchodzenia kontroli dostępu.
 5. **C-STAGE-01 / PR #188** — uzgodnić procedurę ze stanem obrazu Demo, następnie review i integracja.
-6. **C-REL-01 / [PR #90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90)** — pierwsze wydanie rozwojowe do `main` **scalone 04.11.2026** (commit `b800a67`, CI PASS). `dev` odtworzono. Nie oznacza to jeszcze gotowości produkcyjnego Demo.
+6. **C-REL-01 / [PR #90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90)** — wydanie v0.1.0 do `main` scalone 04.11.2026. Kolejne wydanie dopiero po odbiorze pełnego Demo `DEBUG=False` i uprawnień; `dev` pozostaje gałęzią integracyjną.
 7. Po dostępności serwera — uruchomić Shared Staging.
 
 # Definition of Done środowiska demonstracyjnego
