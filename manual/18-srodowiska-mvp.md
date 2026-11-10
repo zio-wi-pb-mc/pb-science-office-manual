@@ -1,5 +1,12 @@
 # Środowiska MVP — Local Dev, Demo i Shared Staging
 
+!!! warning "Plan na 31.01.2027"
+    Do 13.11 test całego Demo w `DEBUG=False` (z uprawnieniami), do 08.01 próba importu i eksportu, do 25.01 restore i instalacja od czystego klona, a do 31.01 dokumentacja operatorska i przekazanie. Odpowiada [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217). **Smoke check /health nie potwierdza gotowego produktu.**
+
+[Plan deadline](23-plan-do-31-stycznia.md) · [Macierz legacy](22-audyt-legacy-parity.md)
+
+
+
 **Aktualizacja 10.11:** [#193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) (obraz Demo) i [#188](https://github.com/zio-wi-pb-mc/pb-science-office/pull/188) (procedura staging) są scalone do `dev`. [#212](https://github.com/zio-wi-pb-mc/pb-science-office/pull/212) łączy logowanie, projekty i budżet, lecz **test pełnej ścieżki w `DEBUG=False` i uprawnienia do własnych projektów nadal wymagają odbioru**. W `main` jest wydanie rozwojowe v0.1.0, bieżąca integracja odbywa się w `dev`.
 
 

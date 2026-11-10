@@ -1,5 +1,25 @@
 # Dashboard projektu i leaderboard
 
+!!! warning "Stan produktu ≠ punktacja / deadline 31.01.2027"
+    Ranking punktów pochodzi z **ostatniego formalnego rozliczenia 03.11**; nie jest wykresem wykonania legacy. Dla postępu projektu stosujemy [macierz funkcji](22-audyt-legacy-parity.md) i [bramki do 31 stycznia](23-plan-do-31-stycznia.md). Nie zmieniono punktacji bez pełnego rozliczenia wg #86.
+
+## Product delivery — kontrola 10.11
+
+| Obszar | Status w kodzie | Następna bramka |
+|---|---|---|
+| F2 → F3 → F4 | [#212](https://github.com/zio-wi-pb-mc/pb-science-office/pull/212) MERGED do `dev` | Demo `DEBUG=False` i zakres użytkownika |
+| Bezpieczeństwo projektów | [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173) OPEN, [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) Draft | 13.11, test A/B + HTML/JSON/budżet |
+| Projekty w PostgreSQL | `SyntheticProject`, nie trwały CRUD | [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213) do 04.12 |
+| Operacje finansowe | Podgląd i testy bez ewidencji zapisów | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) do 18.12 |
+| F01 | [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) IN PROGRESS | 11.12 |
+| Eksporty / raporty | Brak implementacji pełnych raportów | [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215) do 08.01 |
+| Migracja legacy | Brak potwierdzonej migracji do modeli Django | [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) do 08.01 |
+| Odbiór i przekazanie | Zaplanowane, nie wykonane | [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) do 31.01 |
+
+**Nie podajemy fikcyjnego procentu ukończenia systemu.** Przyjęcie kryteriów MUST z Działem Nauki do 20.11 warunkuje wiarygodną ocenę zakresu.
+
+
+
 Ta strona zbiera najważniejsze miejsca do codziennej pracy nad projektem.
 
 ## Contribution Leaderboard
@@ -110,6 +130,13 @@ Najważniejsze:
 2. Sprawdzić merytoryczne studenckie review (samo Approve prowadzącego nie wystarczy), zatwierdzenie M/L **przed** merge i maksymalnie 3 punkty za review w tygodniu.
 3. Dodać punkty dopiero po spełnieniu **wszystkich** reguł z #86; opublikować nowy snapshot jednocześnie tutaj i w Issue #86.
 4. Do tego czasu powyższe liczby 03.11 są **historycznym snapshotem**, a nie oceną obecnego wkładu. W szczególności 0 punktów obok studenta nie oznacza braku pracy.
+
+## Jak rozliczać wkład do stycznia
+
+- Punkty z 03.11 nie zostały automatycznie przeliczone; dodatkowe Issues #213–#217 są strumieniami dostawy, **nie premią punktową**.
+- Przed aktualizacją wyniku sprawdź autora/assignee, merged PR, zamknięte Issue, merytoryczne peer review, zatwierdzony przed merge rozmiar oraz limit 3 pkt review tygodniowo.
+- Oddziel przyznanie punktów od odebrania funkcji: dopiero działający rezultat w jednym systemie realizuje bramkę.
+- Ocena pracy nie wynika z pozycji w rankingu: studenci muszą mieć szansę pokazać realny wkład.
 
 ## GitHub Project — główna tablica pracy
 
