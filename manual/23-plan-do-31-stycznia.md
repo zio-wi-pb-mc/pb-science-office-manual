@@ -1,5 +1,9 @@
 # Plan zakończenia ZIO — twardy termin 31 stycznia 2027
 
+!!! important "Swoboda wyboru zadań — obowiązująca zasada"
+    **Żadne Issue wskazane w roadmapie ani banku zadań nie jest obowiązkowym przydziałem dla konkretnej grupy lub studenta.** To propozycje pomagające znaleźć sensowną pracę, szczególnie gdy zespół nie ma własnego pomysłu. Zespoły mogą proponować i realizować inne rozwiązania lub inaczej rozdzielić pracę między sobą, jeżeli prowadzą do potrzebnej funkcjonalności, nie duplikują istniejących PR i zachowują uzgodnione kontrakty. **Obowiązkowy jest wspólny cel i termin przekazania 31.01.2027, a nie numer Issue czy narzucona metoda implementacji.** Przed zmianą właściciela już trwającej pracy uzgodnij to z zainteresowanymi.
+
+
 **Stan: 10.11.2026. Pozostało 82 dni kalendarzowe do 31.01.2027; mniej efektywnych dni z powodu świąt, sesji i integracji.** 31 stycznia jest **ostatecznym dniem przekazania**, nie początkiem testów. W razie poślizgu redukujemy zakres jawnie po uzgodnieniu z prowadzącym i Działem Nauki; nie udajemy zgodności 1:1.
 
 !!! danger "Reguła terminowa"
@@ -22,9 +26,9 @@
 
 **Uwaga:** bramka 13.11 to agresywny cel naprawczy; faktyczne dostępności studentów mogą wymusić eskalację, ale nie przesuwają terminu przekazania.
 
-## Plan prac A–F — nie przydzielać fikcyjnych zadań
+## Proponowany podział prac A–F — bez narzucania Issues
 
-| Zespół / lead | Teraz: PRIMARY | Potem: kolejne działające elementy | Owner/Issue |
+| Zespół / lead | Przykładowy temat na teraz | Możliwe kolejne funkcje | Punkty odniesienia |
 |---|---|---|---|
 | **A / Daniel Perkowski** | Domknąć [PR #209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209), [PR #210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210), [PR #185](https://github.com/zio-wi-pb-mc/pb-science-office/pull/185); rzeczywiste przypadki [#204](https://github.com/zio-wi-pb-mc/pb-science-office/issues/204) | **Trwałe finanse** [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214), potem raporty [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215). Kod i testy, nie słowniki |
 | **B / Karina Chilkiewicz** | Zintegrować **jeden** F01: [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) | Po odbiorze F01 — minimum interfejsu administracyjnego dla legacy rejestrów / dane wejściowe do finansów; po decyzji o MUST |
@@ -33,9 +37,9 @@
 | **E / Michał Borawski** | [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)/[PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) dostosować do aktualnego `dev`; uprawnienia per projekt | Role admin/dziekan/rektor/kierownik, autoryzacja write/export i audyt z F/C |
 | **F / Paweł Kozikowski** | Stabilizować [PR #212](https://github.com/zio-wi-pb-mc/pb-science-office/pull/212) z E/C, usunąć konflikt [PR #211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211) | **Model + CRUD projektów** [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213), integracja finansów [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) i wymaganych widoków |
 
-**Lider odpowiada za przepływ zadań, nie za samotne napisanie całego modułu.** Po 20.11 każda osoba ma konkretny fragment aplikacji lub test akceptacyjny; PR powinny być małe, integrowane do `dev` codziennie lub po każdym ukończonym fragmencie. Prowadzący jest jedynym mergerem `dev → main`.
+**Lider pomaga zespołowi wybrać sensowne zadania i koordynuje uzgodniony plan, nie narzuca konkretnych Issues. Zespół może zaproponować inną ścieżkę do tego samego celu.** Po 20.11 każda osoba ma konkretny fragment aplikacji lub test akceptacyjny; PR powinny być małe, integrowane do `dev` codziennie lub po każdym ukończonym fragmencie. Prowadzący jest jedynym mergerem `dev → main`.
 
-## Właściciele przekrojowych braków
+## Przykładowe Issues dla przekrojowych braków
 
 - [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213) — F: kanoniczne projekty i ich edycja.
 - [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) — A/F: zapisy i reguły finansowe.
@@ -43,7 +47,7 @@
 - [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) — D: importer i test parity.
 - [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) — C/E/F: Demo, odbiór, przekazanie, kontrola zakresu.
 
-Nowe Issues to **strumienie delivery**, nie dodatkowe punkty ani zachęta do kopiowania już istniejących #112/#155/#173/#197–201. Jeśli pojawi się kolizja, zadanie opisuje wymagany rezultat i zostaje podzielone na małe, niepowielające się PR.
+Nowe Issues to **propozycje strumieni delivery**, a nie przymusowe przydziały ani dodatkowe punkty ani zachęta do kopiowania już istniejących #112/#155/#173/#197–201. Jeśli pojawi się kolizja, zadanie opisuje wymagany rezultat i zostaje podzielone na małe, niepowielające się PR.
 
 ## Reguły, żeby nie stracić grudnia
 
