@@ -1,90 +1,51 @@
 # ZIO — co robić teraz
 
-!!! important "Nie musisz czytać całego manuala"
-    Jeśli wchodzisz tutaj przed zajęciami albo po zakończeniu swojego zadania, zacznij od poniższych kroków.
+**Stan zweryfikowany w GitHub: 10.11.2026.** Statusy zmieniają się wraz z PR-ami; ostatecznym źródłem są [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1), [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues) i [PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls).
 
-## Aktualność — 4 listopada 2026: pierwsze wydanie rozwojowe
+!!! important "Priorytet: działający produkt, nie liczba zadań"
+    Do końca najbliższego etapu chcemy uruchomić i pokazać **jedną aplikację Django**: logowanie → lista projektów → szczegóły → budżet właściwego projektu. Musi też odmawiać dostępu do cudzych projektów i działać w Demo z `DEBUG=False`. Potem integrujemy pierwszy formularz F01.
 
-!!! success "v0.1.0 — pierwszy merge do main zakończony"
-    [PR #90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90) (`dev → main`) został **scalony 4.11.2026**. Pierwszy stan aplikacji jest teraz w [gałęzi `main`](https://github.com/zio-wi-pb-mc/pb-science-office/tree/main), commit `b800a67`. Wszystkie joby CI uruchomione po scaleniu zakończyły się sukcesem.
+## Aktualność — 10 listopada: działający przepływ coraz bliżej
 
-**Jak pracujemy dalej:** odtworzono [gałąź `dev`](https://github.com/zio-wi-pb-mc/pb-science-office/tree/dev) na bazie wydania. Nowe zadania: `feature → dev` (PR, review i testy); okresowe wydania: `dev → main` po decyzji prowadzącego. **Nie usuwamy `dev` po kolejnych wydaniach.**
+- **Wykonane:** [#212](https://github.com/zio-wi-pb-mc/pb-science-office/pull/212) scalił integrację F2 → F3 → F4 (nawigacja, ochrona przed anonimowym dostępem, test przepływu); [#203](https://github.com/zio-wi-pb-mc/pb-science-office/pull/203) dodał objaśnienia kwot F4; [#188](https://github.com/zio-wi-pb-mc/pb-science-office/pull/188) procedurę Shared Staging. Wcześniej [#180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180), [#193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193), [#192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) i [#163](https://github.com/zio-wi-pb-mc/pb-science-office/pull/163) weszły do `dev`.
+- **Wydanie:** [#90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90) (v0.1.0) jest już w `main`; to wydanie rozwojowe. Aktualny rozwój trwa w [`dev`](https://github.com/zio-wi-pb-mc/pb-science-office/tree/dev), **nie** bezpośrednio w `main`.
+- **Największa luka:** [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173) / [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) — dostępu do projektu nie wolno ograniczać tylko do zalogowania. Trzeba weryfikować *przypisanie użytkownika do danego projektu* na serwerze, także po wejściu przez bezpośredni URL i dla JSON/budżetu.
+- **Demo:** zielony CI nie zastępuje sprawdzenia całej ścieżki w obrazie z `DEBUG=False`.
 
-**Co dalej:** to **wydanie rozwojowe, nie gotowy system produkcyjny**. Priorytetem jest działające MVP: logowanie → projekty → szczegóły → budżet, a potem formularz. Pełny przepływ przy `DEBUG=False` nadal wymaga integracji i odbioru; zielony smoke test obrazu nie potwierdza ukończenia całego produktu.
+## Na najbliższe zajęcia
 
-## Plan na najbliższe 3 tygodnie
+| Priorytet | Właściciel / praca | Co należy dowieźć |
+|---|---|---|
+| **P0** | **E + F** · [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173) / [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) | Serwerowe uprawnienia do listy, szczegółów, JSON i budżetu; test użytkownika A/B |
+| **P0** | **C + F** · [#207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) | Bezpieczne konta Demo; `DEBUG=False`; pełny scenariusz od zalogowania do budżetu |
+| **P0/P1** | **B** · [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) | Jeden działający formularz F01: model, walidacja, UI, testy |
+| **P1** | **F** · [#211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211) | Rozwiązać konflikt z `dev` po #212 i domknąć mobilne F3 |
+| **P1** | **A** · [#209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209), [#210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210), [#204](https://github.com/zio-wi-pb-mc/pb-science-office/issues/204) | Błędy 403/404/500, poprawne przykłady finansów, brakujące przypadki |
+| **P1** | **D** · [#132](https://github.com/zio-wi-pb-mc/pb-science-office/pull/132) | Mały aktualny PR do `dev` zamiast konfliktowego PR do `main` |
 
-**[Roadmap 4–20 listopada — cele, zadania dla A–F i kryteria ukończenia](21-roadmap-3-tygodnie.md)**
+**Otwarte PR z review:** [#209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209), [#210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210), [#185](https://github.com/zio-wi-pb-mc/pb-science-office/pull/185), [#207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207), [#211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211), [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174), [#132](https://github.com/zio-wi-pb-mc/pb-science-office/pull/132). **APPROVE nie oznacza MERGED**; autorzy/liderzy integrują do `dev`.
 
-Tutaj znajdziesz, co można robić **już na najbliższych zajęciach**, co planujemy na **następne 2–3 tygodnie** oraz które PR/Issues są już zajęte. Zanim wybierzesz zadanie, sprawdź aktualny [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1).
+[**Roadmap — plan i kryteria odbioru**](21-roadmap-3-tygodnie.md) · [**Aktualne zadania A–F**](16-propozycje-zadan-po-audycie.md) · [**Dashboard i leaderboard**](19-dashboard-projektu.md)
 
-**[Grupa A — aktualny plan implementacyjny (finanse F4, testy biznesowe)](21-roadmap-3-tygodnie.md#zespol-a-zadania-nastawione-na-produkt-aktualizacja-0411)** — nie powtarzajcie scalonych PR #163, #192, #136.
+## Leaderboard — ostatni zatwierdzony snapshot (03.11)
 
-## Najpilniejsze prace — 04.11.2026
+**Punkty nie są jeszcze przeliczone na 10.11.** Zachowujemy wynik z [#86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86), dopóki nie zostaną indywidualnie zweryfikowane zamknięcia Issues, peer review, rozmiary i limity tygodniowe. Nowe scalenia **nie oznaczają automatycznie** nowych punktów.
 
-!!! info "Stan implementacji"
-    Logowanie [#180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180), testy F4 [#192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) i Docker Demo [#193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) **zostały scalone do `dev`**. Nie zaczynaj tych zadań ponownie.
-
-Teraz F integruje [pełny przepływ #194](https://github.com/zio-wi-pb-mc/pb-science-office/issues/194), E pracuje nad dostępem [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173), a C dostał **niezależny backlog inżynierski bez czekania na importer i pozostałe zespoły**. [Zobacz zadania C w roadmapie](21-roadmap-3-tygodnie.md#zespol-c-zadania-niezalezne-od-innych-grup-aktualizacja-0411).
-
-[**Aktualne priorytety i zależności**](16-propozycje-zadan-po-audycie.md) · [**Bank pracy bez duplikatów**](17-bank-zadan-mvp.md)
-
-## Leaderboard — TOP 5
-
-**Stan: 03.11.2026.**
-
-[**Otwórz pełny Dashboard i Leaderboard**](19-dashboard-projektu.md)
-
-| # | Student | Zespół | Punkty |
+| # | Student | Zespół | Punkty (03.11) |
 |---:|---|:---:|---:|
-| 1 | Weronika Sosnowska (@wersosn) | C | **22** |
-| 2 | Nazar Hrinchenko (@Grinnazar) | C | **21** |
-| 3 | Vladislav Matveev (@Leucist) | C | **19** |
-| 4 | Mykola Nishchymnyi (@kolyasiquez) | C | **16** |
-| 5 | Maciej Sawicki (@Maciek-Sawicki) | C | **15** |
+| 1 | Weronika Sosnowska | C | **22** |
+| 2 | Nazar Hrinchenko | C | **21** |
+| 3 | Vladislav Matveev | C | **19** |
+| 4 | Mykola Nishchymnyi | C | **16** |
+| 5 | Maciej Sawicki | C | **15** |
 
-Punkty są naliczane wyłącznie za prace spełniające zasady #86. Scalone, ale formalnie nierozliczone zadania są pokazane osobno na Dashboardzie.
+[Pełna tabela i nierozliczone PR](19-dashboard-projektu.md)
 
-## 1. Sprawdź swoją aktualną pracę
+## Jak postępować
 
-[**Otwórz GitHub Project — główna tablica pracy**](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1)
+1. Otwórz [Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1) i sprawdź własny Issue oraz blokery.
+2. Jeśli masz APPROVE, sprawdź konflikt i CI, a następnie uzgodnij merge do `dev` z liderem.
+3. Jeśli skończyłeś pracę, nie otwieraj nowej analizy dla samej aktywności — dołącz do istniejącego P0.
+4. Gałęzie: **`feature → dev`** (studenci), **`dev → main`** (wydanie przez prowadzącego). Nie usuwajcie `dev`.
 
-Sprawdź:
-- czy masz zadanie `IN PROGRESS`,
-- czy czeka na Ciebie review lub test,
-- czy ktoś zgłosił blocker albo zależność od Twojej pracy.
-
-## 2. Jeśli nie masz zadania — zobacz priorytety
-
-[**Co robić teraz — stan projektu i priorytety**](16-propozycje-zadan-po-audycie.md)
-
-Najbliższy wspólny cel produktu:
-
-`logowanie → lista projektów → szczegóły projektu → budżet`
-
-Jeżeli Twój obszar nie ma w tej chwili pracy blokującej MVP, możesz pomóc innemu zespołowi.
-
-## 3. Wybierz sensowny kolejny krok
-
-[**Bank możliwych zadań MVP**](17-bank-zadan-mvp.md)
-
-Dobre nowe zadanie powinno prowadzić do co najmniej jednego z rezultatów:
-- działającego kodu,
-- testu automatycznego,
-- integracji,
-- poprawy Docker/CI,
-- importu/migracji,
-- usunięcia konkretnego blockera MVP.
-
-## Szybkie linki
-
-- [Dashboard i Leaderboard](19-dashboard-projektu.md)
-- [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1)
-- [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues)
-- [Pull Requests](https://github.com/zio-wi-pb-mc/pb-science-office/pulls)
-- [Leaderboard #86 — zasady i historia](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86)
-- [Środowiska MVP — Local, Demo, Staging](18-srodowiska-mvp.md)
-
-## Najważniejsza zasada
-
-**A–F nie są silosami.** Zespół określa główny obszar odpowiedzialności, ale produkt jest wspólny.
+[Informacje podstawowe](20-informacje-podstawowe.md) · [Środowiska](18-srodowiska-mvp.md) · [Bank propozycji](17-bank-zadan-mvp.md)
