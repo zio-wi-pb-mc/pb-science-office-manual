@@ -1,10 +1,6 @@
 # Co robić teraz — propozycje priorytetów do stycznia
 
-!!! danger "31.01.2027 = działająca aplikacja po wdrożeniu i testach"
-    **31 stycznia NIE jest terminem przekazania kodu do późniejszego wdrożenia.** Do tego dnia aplikacja ma być już **wdrożona w docelowo uzgodnionym środowisku, uruchomiona, przetestowana przez Dział Nauki i odebrana**. Instalacja, migracja, konta i role, bezpieczeństwo, scenariusze użytkowników oraz backup/restore muszą przejść testy wcześniej. Sama demonstracja lub zielone CI nie wystarczą. Konkretne zadania dla studentów nadal są propozycjami, nie nakazem.
-
-!!! important "Swoboda wyboru zadań — obowiązująca zasada"
-    **Żadne Issue wskazane w roadmapie ani banku zadań nie jest obowiązkowym przydziałem dla konkretnej grupy lub studenta.** To propozycje pomagające znaleźć sensowną pracę, szczególnie gdy zespół nie ma własnego pomysłu. Zespoły mogą proponować i realizować inne rozwiązania lub inaczej rozdzielić pracę między sobą, jeżeli prowadzą do potrzebnej funkcjonalności, nie duplikują istniejących PR i zachowują uzgodnione kontrakty. **Obowiązkowy jest wspólny cel i termin przekazania 31.01.2027, a nie numer Issue czy narzucona metoda implementacji.** Przed zmianą właściciela już trwającej pracy uzgodnij to z zainteresowanymi.
+**Cel projektu:** do **31 stycznia 2027 r.** dostarczamy **wdrożoną, przetestowaną i odebraną przez Dział Nauki aplikację** zastępującą uzgodniony zakres starego systemu. Zespoły samodzielnie wybierają zadania i rozwiązania; roadmapa oraz Issues są propozycjami pomagającymi zaplanować pracę.
 
 
 **Stan: 10.11.2026. Nieprzekraczalny deadline: 31.01.2027.** [Pełny harmonogram](23-plan-do-31-stycznia.md) · [Macierz brakujących funkcji starego systemu](22-audyt-legacy-parity.md).
