@@ -1,21 +1,14 @@
 # ZIO — co robić teraz
 
-!!! danger "31.01.2027 = działająca aplikacja po wdrożeniu i testach"
-    **31 stycznia NIE jest terminem przekazania kodu do późniejszego wdrożenia.** Do tego dnia aplikacja ma być już **wdrożona w docelowo uzgodnionym środowisku, uruchomiona, przetestowana przez Dział Nauki i odebrana**. Instalacja, migracja, konta i role, bezpieczeństwo, scenariusze użytkowników oraz backup/restore muszą przejść testy wcześniej. Sama demonstracja lub zielone CI nie wystarczą. Konkretne zadania dla studentów nadal są propozycjami, nie nakazem.
-
-!!! important "Swoboda wyboru zadań — obowiązująca zasada"
-    **Żadne Issue wskazane w roadmapie ani banku zadań nie jest obowiązkowym przydziałem dla konkretnej grupy lub studenta.** To propozycje pomagające znaleźć sensowną pracę, szczególnie gdy zespół nie ma własnego pomysłu. Zespoły mogą proponować i realizować inne rozwiązania lub inaczej rozdzielić pracę między sobą, jeżeli prowadzą do potrzebnej funkcjonalności, nie duplikują istniejących PR i zachowują uzgodnione kontrakty. **Obowiązkowy jest wspólny cel i termin przekazania 31.01.2027, a nie numer Issue czy narzucona metoda implementacji.** Przed zmianą właściciela już trwającej pracy uzgodnij to z zainteresowanymi.
+**Cel projektu:** do **31 stycznia 2027 r.** dostarczamy **wdrożoną, przetestowaną i odebraną przez Dział Nauki aplikację** zastępującą uzgodniony zakres starego systemu. Zespoły samodzielnie wybierają zadania i rozwiązania; roadmapa oraz Issues są propozycjami pomagającymi zaplanować pracę.
 
 
-!!! danger "Twardy termin: 31 stycznia 2027"
-    **Studenci kończą przedmiot w styczniu. Cały projekt musi zostać przekazany najpóźniej 31.01.2027.** Zasadnicze implementacje muszą zakończyć się w grudniu, 15 stycznia następuje feature freeze. Dalsze rozbudowy nie mogą zastąpić funkcji wymaganych przez Dział Nauki.
+## Plan i aktualne zadania
 
-## Dwa najważniejsze dokumenty planistyczne
-
-- **[Plan zakończenia ZIO do 31 stycznia](23-plan-do-31-stycznia.md)** — bramki 13.11, 20.11, 04.12, 18.12, 08.01, 15.01 i odbiór.
+- **[Harmonogram projektu](23-plan-do-31-stycznia.md)** — terminy prac, wdrożenia i odbioru.
 - **[Audyt legacy → Django: funkcje, luki, odpowiedzialni](22-audyt-legacy-parity.md)** — 27 obszarów starej aplikacji porównanych z kodem `dev`, odróżnienie potwierdzonego legacy od nowych formularzy.
 
-## Aktualność — 10 listopada: integracja i zasadnicze braki
+## Aktualny stan — 10 listopada
 
 **Wykonane:** [#90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90) — v0.1.0 w `main`; [#212](https://github.com/zio-wi-pb-mc/pb-science-office/pull/212) — logowanie → projekty → budżet w `dev`; [#203](https://github.com/zio-wi-pb-mc/pb-science-office/pull/203) — objaśnienia kwot; [#188](https://github.com/zio-wi-pb-mc/pb-science-office/pull/188) — staging. Wszystkie te PR są scalone.
 
