@@ -1,16 +1,9 @@
 # Plan zakończenia ZIO — twardy termin 31 stycznia 2027
 
-!!! danger "31.01.2027 = działająca aplikacja po wdrożeniu i testach"
-    **31 stycznia NIE jest terminem przekazania kodu do późniejszego wdrożenia.** Do tego dnia aplikacja ma być już **wdrożona w docelowo uzgodnionym środowisku, uruchomiona, przetestowana przez Dział Nauki i odebrana**. Instalacja, migracja, konta i role, bezpieczeństwo, scenariusze użytkowników oraz backup/restore muszą przejść testy wcześniej. Sama demonstracja lub zielone CI nie wystarczą. Konkretne zadania dla studentów nadal są propozycjami, nie nakazem.
-
-!!! important "Swoboda wyboru zadań — obowiązująca zasada"
-    **Żadne Issue wskazane w roadmapie ani banku zadań nie jest obowiązkowym przydziałem dla konkretnej grupy lub studenta.** To propozycje pomagające znaleźć sensowną pracę, szczególnie gdy zespół nie ma własnego pomysłu. Zespoły mogą proponować i realizować inne rozwiązania lub inaczej rozdzielić pracę między sobą, jeżeli prowadzą do potrzebnej funkcjonalności, nie duplikują istniejących PR i zachowują uzgodnione kontrakty. **Obowiązkowy jest wspólny cel i termin przekazania 31.01.2027, a nie numer Issue czy narzucona metoda implementacji.** Przed zmianą właściciela już trwającej pracy uzgodnij to z zainteresowanymi.
+**Cel projektu:** do **31 stycznia 2027 r.** dostarczamy **wdrożoną, przetestowaną i odebraną przez Dział Nauki aplikację** zastępującą uzgodniony zakres starego systemu. Zespoły samodzielnie wybierają zadania i rozwiązania; roadmapa oraz Issues są propozycjami pomagającymi zaplanować pracę.
 
 
-**Stan: 10.11.2026. Pozostało 82 dni kalendarzowe do 31.01.2027; mniej efektywnych dni z powodu świąt, sesji i integracji.** 31 stycznia jest **ostatecznym dniem przekazania**, nie początkiem testów. W razie poślizgu redukujemy zakres jawnie po uzgodnieniu z prowadzącym i Działem Nauki; nie udajemy zgodności 1:1.
-
-!!! danger "Reguła terminowa"
-    **Nie ma kolejnego semestru na poprawki studentów.** Od 10 stycznia obowiązuje feature freeze; do 15 stycznia wdrożenie w uzgodnionym środowisku; 16–25 stycznia testy użytkowników i odbiór; do 31 stycznia aplikacja jest już wdrożona, przetestowana i odebrana. Każdy niezamknięty MUST ma właściciela, datę i jawne ryzyko.
+**Stan planu: 10.11.2026.** Harmonogram uwzględnia okres świąteczny oraz czas na wdrożenie i testy użytkowników.
 
 ## Bramy dostawy
 
