@@ -1,5 +1,5 @@
 site_name: ZIO — instrukcja projektu
-site_description: Instrukcja pracy studentów w projekcie ZIO
+site_description: Aktualna praca studentów i plan ZIO
 repo_url: "https://github.com/zio-wi-pb-mc/pb-science-office"
 docs_dir: manual
 theme:
@@ -12,12 +12,13 @@ nav:
   - Start: index.md
   - Co robić teraz: 16-propozycje-zadan-po-audycie.md
   - Plan do 31 stycznia: 23-plan-do-31-stycznia.md
-  - Audyt legacy → nowy system: 22-audyt-legacy-parity.md
-  - Roadmap A–F: 21-roadmap-3-tygodnie.md
-  - Bank zadań MVP: 17-bank-zadan-mvp.md
-  - Dashboard projektu: 19-dashboard-projektu.md
-  - Środowiska MVP: 18-srodowiska-mvp.md
-  - Informacje podstawowe: 20-informacje-podstawowe.md
+  - Zespoły A–F: 21-roadmap-3-tygodnie.md
+  - Dashboard i leaderboard: 19-dashboard-projektu.md
+  - Bank propozycji: 17-bank-zadan-mvp.md
+  - Informacje podstawowe:
+      - Wprowadzenie: 20-informacje-podstawowe.md
+      - Audyt funkcji legacy: 22-audyt-legacy-parity.md
+      - Środowiska i wdrożenie: 18-srodowiska-mvp.md
 markdown_extensions:
   - admonition
   - tables
