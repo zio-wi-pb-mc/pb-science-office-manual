@@ -1,9 +1,25 @@
 # Audyt legacy → Django: zakres odtworzenia i luki
 
+## Aktualizacja stanu po merge 16.11.2026
+
+**Sprawdzony `dev`: `167722fa`.** Poprzednia macierz L01–L27 pozostaje analizą bazową z 10 listopada; poniżej znajdują się potwierdzone zmiany w kodzie, nie automatyczna zmiana oceny całego legacy.
+
+| Obszar | Nowy dowód w repozytorium | Ocena |
+|---|---|---|
+| Formularz **F01** (nowa funkcjonalność) | `src/project_cards/models.py`, `forms.py`, `views.py`, migracja `0001_initial.py`, testy; [PR #222](https://github.com/zio-wi-pb-mc/pb-science-office/pull/222), [PR #223](https://github.com/zio-wi-pb-mc/pb-science-office/pull/223), [PR #224](https://github.com/zio-wi-pb-mc/pb-science-office/pull/224) | **Częściowo działający moduł** z zapisem PostgreSQL i kontrolą właściciela; wymaga wspólnego testu od czystej bazy, brak zwykłego widoku edycji poza adminem |
+| Importer L25 | `src/legacy_import/`, `scripts/legacy/import_sample.py`, [PR #226](https://github.com/zio-wi-pb-mc/pb-science-office/pull/226) | **Częściowo:** walidacja/dry-run/idempotencja, ale magazyn jest pamięciowy. Brak importu do docelowych tabel Django |
+| Uprawnienia L16/L18 | `projects/views.py`, `budget_preview/views.py`; [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173), [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) | **Brak ochrony obiektowej F3/F4**, mimo że F01 ogranicza dostęp do własnych fiszek |
+| Demo L27 | `projects/views.py` i `budget_preview/views.py` sprawdzają `settings.DEBUG` | **Blokada:** F3/F4 404 przy `DEBUG=False`; [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219) |
+| Testy i infrastruktura | [PR #218](https://github.com/zio-wi-pb-mc/pb-science-office/pull/218), [PR #225](https://github.com/zio-wi-pb-mc/pb-science-office/pull/225), [PR #228](https://github.com/zio-wi-pb-mc/pb-science-office/pull/228); <a href="https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/43774911214">CI 4/4 PASS</a> | Postęp w testach i wymaganiach, ale nie potwierdzenie wdrożenia produkcyjnego |
+| Projekty i finanse L02–L15 | `src/projects/data.py` nadal zawiera `SYNTHETIC_PROJECTS` | **Nadal brak trwałego CRUD i ewidencji finansowej**; [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220), [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221), [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) |
+
+W katalogu 58 materiałów formularzowych znajdują się również procesy spoza starej aplikacji. To **nie** jest lista 58 obowiązkowych funkcji do 31 stycznia; zakres odtworzenia ustala Dział Nauki.
+
+
 **Cel projektu:** do **31 stycznia 2027 r.** dostarczamy **wdrożoną, przetestowaną i odebraną przez Dział Nauki aplikację** zastępującą uzgodniony zakres starego systemu. Zespoły samodzielnie wybierają zadania i rozwiązania; roadmapa oraz Issues są propozycjami pomagającymi zaplanować pracę.
 
 
-**Stan analizy: 10.11.2026. Termin końcowy: 31.01.2027.** Porównano kod `dev` (SHA `e47e5800`) i dokumenty legacy w aplikacyjnym repozytorium. **Nie wykonano jeszcze pełnych testów interfejsu starego systemu z pracownikami Działu Nauki ani migracji rzeczywistych danych.** Każdy status jest oceną *potwierdzenia w kodzie*, a nie procentem ukończenia.
+**Bazowa macierz: 10.11.2026 (kod `e47e5800`). Aktualizacja przyrostów: 16.11.2026 (kod `167722fa`). Termin: 31.01.2027.** Porównano kod `dev` (SHA `e47e5800`) i dokumenty legacy w aplikacyjnym repozytorium. **Nie wykonano jeszcze pełnych testów interfejsu starego systemu z pracownikami Działu Nauki ani migracji rzeczywistych danych.** Każdy status jest oceną *potwierdzenia w kodzie*, a nie procentem ukończenia.
 
 !!! warning "Dwa różne zakresy"
     **Zastąpienie istniejącego systemu** to administrowanie projektami, finansami, użytkownikami, rozliczeniami, delegacjami, konferencjami, archiwum i raportami potwierdzonymi w PHP/DB. **Nowe formularze i cyfrowy workflow**, opisane w katalogu 58 dokumentów, nie są automatycznie funkcjami starego systemu. Ich ewentualne dodanie to odrębna decyzja biznesowa; nie można bez niej obiecać pełnej realizacji do stycznia.
@@ -61,7 +77,7 @@
 
 | Obszar | Dowód | Stan i decyzja |
 |---|---|---|
-| F01 — fiszka projektowa | wzór P01 / [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) | **W trakcie**; cel na grudzień, jest *nową* funkcją względem potwierdzonego kodu legacy |
+| F01 — fiszka projektowa | wzór P01 / [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) | **Częściowo wdrożone 16.11:** model, forma, widoki i testy #222–#224 w `dev`; odbiór integracji w toku, jest *nową* funkcją względem potwierdzonego kodu legacy |
 | Wnioski o prace własne i projekty doktorskie, ocena, raporty i protokoły | `process-research-work.md` | **Niezaimplementowane**, nie utożsamiać z istniejącą ewidencją legacy |
 | Wnioski o podróże, konferencje, publikacje | `process-travel-conference.md` i `forms-catalog.md` | Wzory/formularze — **nie** dowód cyfrowego workflow w legacy |
 | Workflow submit/revise/approve/reject | `statuses-and-transitions.md` | **Propozycja nowego systemu**, nie potwierdzona funkcja starej aplikacji |
