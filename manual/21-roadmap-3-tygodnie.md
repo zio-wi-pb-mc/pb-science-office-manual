@@ -1,44 +1,38 @@
-# Roadmap ZIO — od 10 listopada do 31 stycznia
+# Roadmap zespołów A–F — 16 listopada 2026
 
-**Cel projektu:** do **31 stycznia 2027 r.** dostarczamy **wdrożoną, przetestowaną i odebraną przez Dział Nauki aplikację** zastępującą uzgodniony zakres starego systemu. Zespoły samodzielnie wybierają zadania i rozwiązania; roadmapa oraz Issues są propozycjami pomagającymi zaplanować pracę.
+**Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
 
+To **propozycje kierunków** oparte na bieżącym kodzie. Liderzy i studenci samodzielnie ustalają kolejność oraz podział pracy. Dla dat wdrożenia i odbioru zobacz [plan końcowy](23-plan-do-31-stycznia.md).
 
-**Plan pracy do końca stycznia.** Pełne bramki i odpowiedzialności: [Plan zakończenia](23-plan-do-31-stycznia.md). Zakres legacy: [macierz](22-audyt-legacy-parity.md).
+## Najbliższe zajęcia: 16–20 listopada
 
-## Twarde terminy (bramki, nie obietnice)
-
-
-| Docelowa data | Wspólny rezultat do odebrania | Przykładowa współpraca |
+| Zespół | Co już się ruszyło | Najbardziej przydatny następny rezultat |
 |---|---|---|
-| **13.11** | Test dwóch kont, serwerowe uprawnienia oraz ścieżka logowanie → projekt → budżet w `DEBUG=False` | E/C/F |
-| **20.11** | Akceptacja listy MUST przez Dział Nauki; lista niepewności i rezygnacji | Prowadzący + A–F |
-| **27–30.11** | Pierwsza demonstracja pracownikom, feedback i protokół braków | F/C + prowadzący |
-| **04.12** | Model projektów i CRUD na PostgreSQL [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213) | F/D |
-| **11.12** | Formularz F01 [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201), role i uprawnienia | B/E/F |
-| **18.12** | Zapis planów i operacji finansowych [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) | A/F |
-| **08.01** | Raporty [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215), import testowy [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) | A/D/F |
-| **10.01** | Feature freeze | Wszyscy |
-| **20–25.01** | Akceptacyjny odbiór biznesowy i techniczny po wdrożeniu [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) | Dział Nauki + prowadzący |
-| **31.01** | Aplikacja już wdrożona, przetestowana i odebrana; kompletna dokumentacja | Prowadzący/C |
+| **A — finanse** | Przypadki rezerwy i testy F2/F3/F4: [PR #210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210), [PR #218](https://github.com/zio-wi-pb-mc/pb-science-office/pull/218) | Uzgodniony kontrakt trwałych zapisów z F; pierwszy test plan → rezerwacja → wydatek po restarcie |
+| **B — formularze** | F01 w `dev`: model, migracja, formularz i widoki ([PR #222](https://github.com/zio-wi-pb-mc/pb-science-office/pull/222), [PR #223](https://github.com/zio-wi-pb-mc/pb-science-office/pull/223), [PR #224](https://github.com/zio-wi-pb-mc/pb-science-office/pull/224)) | Jeden odbiór integracyjny na PostgreSQL; ocena braków w [#200](https://github.com/zio-wi-pb-mc/pb-science-office/issues/200)/[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201); później kolejne potrzebne ekrany |
+| **C — platforma** | Seed Demo [PR #207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) i wymogi odbioru [PR #228](https://github.com/zio-wi-pb-mc/pb-science-office/pull/228) | Funkcjonalny test `DEBUG=False` z F/E, kopie/restore i konkretne kroki do wdrożenia |
+| **D — migracja** | Plan testów [PR #225](https://github.com/zio-wi-pb-mc/pb-science-office/pull/225) i importer pamięciowy [PR #226](https://github.com/zio-wi-pb-mc/pb-science-office/pull/226) | Adapter do docelowego modelu F, test uzgodnienia danych i idempotencji |
+| **E — uprawnienia** | Stary Draft [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) (bez merge) | Bezpieczne role i przypisania per projekt na aktualnym `dev`, budżety/JSON, test A/B |
+| **F — integracja** | Mobilne F3 [PR #211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211), rozpisane [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219), [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220), [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) | Naprawa Demo `DEBUG=False`, wspólny model projektów i CRUD z PostgreSQL |
 
-!!! warning "Święta nie są pełnym sprintem"
-    Krytyczny kod projektu i finansów trzeba scalić **przed 18 grudnia**. Zakładać ograniczoną dostępność między 21.12 a 06.01; w styczniu tylko domknięcie, nie przebudowę architektury.
+## Kamienie milowe projektu
 
-## Przykładowe ścieżki pracy A–F — można wybrać inne
+| Do kiedy | Wynik do sprawdzenia |
+|---|---|
+| **20.11** | Test A/B i funkcjonalny Demo PASS/FAIL; zakres funkcji legacy uzgodniony z Działem Nauki |
+| **27–30.11** | Pierwszy pokaz działania aplikacji i lista braków z opiniami pracowników |
+| **04.12** | Trwałe projekty, migracje i odczyt F3/F4 ([#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220)) |
+| **11.12** | Tworzenie/edycja projektów ([#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221)) i odebrany przepływ F01 |
+| **18.12** | Podstawowe trwałe operacje finansowe i testy bilansów ([#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214)) |
+| **08.01** | Raporty, eksport i import próbny ([#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215), [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216)) |
+| **10.01** | Zakończenie dodawania nowych funkcji |
+| **15.01** | Wdrożenie w uzgodnionym środowisku |
+| **16–25.01** | Testy z Działem Nauki i usuwanie błędów |
+| **26–30.01** | Retesty, backup/restore, protokół odbioru |
+| **31.01** | **Aplikacja wdrożona, przetestowana i odebrana** |
 
-| Zespół | Możliwy temat 10–20.11 | Możliwy temat 21.11–18.12 | Możliwy temat 19.12–31.01 |
-|---|---|---|---|
-| **A** | [#209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209), [#210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210), [#185](https://github.com/zio-wi-pb-mc/pb-science-office/pull/185), [#204](https://github.com/zio-wi-pb-mc/pb-science-office/issues/204) | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) zapis finansów i testy parytetu | [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215) raporty, poprawki danych i odbiór |
-| **B** | [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201): F01 | Dokończyć F01; następnie tylko potwierdzone MUST administracji | Testy formularzy, poprawki i wsparcie odbioru |
-| **C** | [#207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207), test Demo `DEBUG=False` | Integracja, CI, automatyzacja migracji i E2E | [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) backup/restore, clean clone, release |
-| **D** | [#132](https://github.com/zio-wi-pb-mc/pb-science-office/pull/132) przenieść do `dev` + mapowanie | [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) importer pod modele F/A | Uzgodnienia, parity, próbna migracja |
-| **E** | [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)/[#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) uprawnienia per projekt | Role i kontrola operacji admin/finanse/eksport | Testy bezpieczeństwa i odmów |
-| **F** | [#212](https://github.com/zio-wi-pb-mc/pb-science-office/pull/212) z E/C, poprawić [#211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211) | [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213) CRUD, integracja [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) i F01 | Uspójnienie aplikacji, bugfix, odbiór |
+## Jak raportować pracę
 
-## Dlaczego zmieniamy plan?
+Pokaż **działający ekran, migrację, test lub wynik importu**, a nie sam opis postępu. Przy każdym zadaniu: link do PR/Issue, krótki scenariusz uruchomienia, wynik PASS/FAIL i ewentualny blocker. PR studenckie trafiają do `dev`, wydania `dev → main` wykonuje prowadzący.
 
-W dniu 10.11 kod nadal ma syntetyczną listę projektów, brak modelu projektu w DB, brak trwałych operacji finansowych i importu oraz niedomknięty dostęp do własnych prac. Liczba PR nie mierzy zastępowalności legacy. Szczegółowa, źródłowo ograniczona ocena 27 obszarów znajduje się w [audycie](22-audyt-legacy-parity.md).
-
-**Cel końcowy nie oznacza automatycznie wdrożenia produkcyjnego:** decyzja o użyciu realnych danych i zastąpieniu starego systemu wymaga pozytywnego odbioru oraz zgody uczelni. Jeżeli nie wszystkie funkcje okażą się wykonalne, musi powstać jawna lista braków wraz z decyzją biznesową, nie ukryta zmiana definicji „wszystko”.
-
-[GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1) · [Zadania](16-propozycje-zadan-po-audycie.md) · [Audyt](22-audyt-legacy-parity.md)
+[Bank propozycji](17-bank-zadan-mvp.md) · [Dashboard](19-dashboard-projektu.md) · [Audyt legacy](22-audyt-legacy-parity.md)
