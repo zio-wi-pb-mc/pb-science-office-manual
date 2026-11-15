@@ -1,45 +1,43 @@
 # ZIO — co robić teraz
 
-**Cel projektu:** do **31 stycznia 2027 r.** dostarczamy **wdrożoną, przetestowaną i odebraną przez Dział Nauki aplikację** zastępującą uzgodniony zakres starego systemu. Zespoły samodzielnie wybierają zadania i rozwiązania; roadmapa oraz Issues są propozycjami pomagającymi zaplanować pracę.
+**Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
 
+**Stan zweryfikowany: 16.11.2026**, gałąź [`dev`](https://github.com/zio-wi-pb-mc/pb-science-office/tree/dev), commit `167722fa`.
 
-## Plan i aktualne zadania
+## Najbliższy cel: działające Demo
 
-- **[Harmonogram projektu](23-plan-do-31-stycznia.md)** — terminy prac, wdrożenia i odbioru.
-- **[Audyt legacy → Django: funkcje, luki, odpowiedzialni](22-audyt-legacy-parity.md)** — 27 obszarów starej aplikacji porównanych z kodem `dev`, odróżnienie potwierdzonego legacy od nowych formularzy.
+**P0:** logowanie → lista projektów → szczegóły → budżet w Docker Demo (`DEBUG=False`), z uprawnieniami do własnych projektów i odmową dostępu do cudzych adresów HTML/JSON/budżetów.
 
-## Aktualny stan — 10 listopada
+| Status | Co to oznacza |
+|---|---|
+| **Działa w kodzie deweloperskim** | Logowanie i połączony przepływ F2/F3/F4; F01 ma model PostgreSQL, formularz, zapis i podgląd własnych fiszek |
+| **Blokuje pokaz** | Brak uprawnień per projekt ([#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)) i blokada F3/F4 w `DEBUG=False` ([#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219)) |
+| **Następny większy krok** | Trwały model projektów i CRUD ([#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220), [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221)), finanse zapisujące do bazy ([#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214)) i importer docelowy ([#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216)) |
 
-**Wykonane:** [#90](https://github.com/zio-wi-pb-mc/pb-science-office/pull/90) — v0.1.0 w `main`; [#212](https://github.com/zio-wi-pb-mc/pb-science-office/pull/212) — logowanie → projekty → budżet w `dev`; [#203](https://github.com/zio-wi-pb-mc/pb-science-office/pull/203) — objaśnienia kwot; [#188](https://github.com/zio-wi-pb-mc/pb-science-office/pull/188) — staging. Wszystkie te PR są scalone.
+**CI:** <a href="https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/43774911214">aktualny `dev` — cztery joby PASS</a>. Test Docker Demo sprawdza uruchomienie, migracje, health, wersję i statyczne pliki, **nie pełny przepływ użytkownika**.
 
-**Niedostarczone:** trwałe dane i edycja projektów (dziś sześć `SyntheticProject`), zapis rezerwacji i wydatków, dostęp do własnych projektów, pełne Demo `DEBUG=False`, migracja, raporty i wiele operacji starego systemu. Sama liczba łączonych PR **nie oznacza** zgodności 1:1 z legacy.
+## Co nowego od 10 listopada?
 
-## Propozycje najważniejszych obszarów — od teraz
+- **12 PR-ów scalonych do `dev`**, w tym 7 w ostatnim przeglądzie. Studenci dostarczyli m.in. [PR #222](https://github.com/zio-wi-pb-mc/pb-science-office/pull/222), [PR #223](https://github.com/zio-wi-pb-mc/pb-science-office/pull/223), [PR #224](https://github.com/zio-wi-pb-mc/pb-science-office/pull/224) (F01), [PR #226](https://github.com/zio-wi-pb-mc/pb-science-office/pull/226) (importer), [PR #218](https://github.com/zio-wi-pb-mc/pb-science-office/pull/218) (testy finansowe), [PR #225](https://github.com/zio-wi-pb-mc/pb-science-office/pull/225) (plan testów) i [PR #228](https://github.com/zio-wi-pb-mc/pb-science-office/pull/228) (wymagania środowiska).
+- **Tylko jeden PR otwarty:** [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) — stary Draft do `main`; nie scalać starego kodu F3. Nowe uprawnienia integrować z bieżącym `dev`.
+- Zespół F rozpoczął podział prac nad bazą projektów na [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220) (model/odczyt) i [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) (formularze). To konkretne zadania przygotowawcze, nie funkcje już scalone.
 
-| Priorytet obszaru | Przykładowy kierunek pracy | Proponowane zespoły |
-|---|---|---|
-| **1. Natychmiast** | [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173): dostęp obiektowy + [#205](https://github.com/zio-wi-pb-mc/pb-science-office/issues/205): bezpieczne konta Demo; pełny test `DEBUG=False` | E/C/F |
-| **2. Do 20.11** | Uzgodnienie funkcji MUST z Działem Nauki na podstawie [audytu](22-audyt-legacy-parity.md) | Prowadzący + liderzy |
-| **3. Do 04.12** | [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213): baza projektów, migracje i CRUD | F + D |
-| **4. Do 11.12** | [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201): działająca fiszka F01 | B + F |
-| **5. Do 18.12** | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214): zapis finansów, rezerwacje, wydatki, korekty | A + F |
-| **6. Do 08.01** | [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215): raporty i CSV; [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216): importer z testem zgodności | A/D/F |
-| **7. Do 31.01** | [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217): odbiór przez pracowników, backup, instrukcje, ostateczny release | C/E/F + prowadzący |
+## Wybierz swój następny krok
 
-**[Otwórz plan z podziałem A–F](21-roadmap-3-tygodnie.md)** · **[Co robić teraz](16-propozycje-zadan-po-audycie.md)** · **[Bank bez duplikowania pracy](17-bank-zadan-mvp.md)**
+1. Masz własne zadanie? Kontynuuj je, sprawdź CI i zależności w [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1).
+2. Nie masz pomysłu? Zajrzyj do [aktualnych priorytetów](16-propozycje-zadan-po-audycie.md) albo [banku propozycji](17-bank-zadan-mvp.md).
+3. Masz lepszy pomysł? Zaproponuj go liderowi i sprawdź, czy nie dubluje istniejącego PR. Liczy się działający rezultat.
 
-## Prace oczekujące na integrację
+[**Plan i terminy do 31 stycznia**](23-plan-do-31-stycznia.md) · [**Roadmapa A–F**](21-roadmap-3-tygodnie.md) · [**Dashboard i leaderboard**](19-dashboard-projektu.md)
 
-7 otwartych PR na czas audytu: [#209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209), [#210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210), [#185](https://github.com/zio-wi-pb-mc/pb-science-office/pull/185), [#207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207), [#211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211), [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174), [#132](https://github.com/zio-wi-pb-mc/pb-science-office/pull/132). Studenci/liderzy odpowiadają za scalanie do `dev`; prowadzący odpowiada za wydania `dev → main`. **Nie wyprzedzać starymi PR aktualnego kodu.**
+## Następny punkt kontrolny — 20 listopada
 
-## Leaderboard — nie utożsamiać z postępem produktu
+**F/E/C:** wynik testu dwóch kont i Demo `DEBUG=False` zapisany jako PASS/FAIL. **B:** jeden test pełnego tworzenia i odczytu F01 na PostgreSQL. **D/F:** uzgodniony kontrakt docelowego modelu projektu i importera. **A:** testy i reguły finansowe przygotowane do trwałego zapisu.
 
-**Ostatni formalny snapshot: 03.11.2026** (TOP 5: Weronika Sosnowska 22, Nazar Hrinchenko 21, Vladislav Matveev 19, Mykola Nishchymnyi 16, Maciej Sawicki 15). Nie dopisano punktów za merge bez weryfikacji reguł [#86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86). Rankingu nie należy traktować jako procentu ukończenia projektu ani oceny wkładu w ostatnich dniach.
+Do końca listopada planujemy pierwszy pokaz pracownikom Działu Nauki. Zakres funkcji niezbędnych do zastąpienia legacy trzeba z nimi potwierdzić przed dalszą rozbudową.
 
-[**Pełny dashboard i kolejka do rozliczenia**](19-dashboard-projektu.md) · [Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1)
+## Zasady pracy
 
-## Jak pracujemy
+PR studencki: `feature → dev` po review i testach. Wydanie: `dev → main` przez prowadzącego. Nie trzeba tworzyć nowych Issues tylko po to, żeby „mieć pracę”. Istniejący [leaderboard](19-dashboard-projektu.md) pokazuje punkty **formalnie rozliczone do 03.11** oraz osobno nowsze osiągnięcia — bez automatycznego naliczania za merge.
 
-Przed pracą sprawdź [Issue](https://github.com/zio-wi-pb-mc/pb-science-office/issues) i [otwarte PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls). Wybierz **najbliższy brak działającego produktu**, nie nowe Discovery. Jeden rezultat = kod/test/eksport/import/ekran, działający od czystego klona i możliwy do pokazania. Normalne PR: `feature → dev`. Wydania: `dev → main` tylko przez prowadzącego, **nie usuwać `dev` po merge**.
-
-[Informacje podstawowe](20-informacje-podstawowe.md) · [Środowiska](18-srodowiska-mvp.md)
+[Środowiska i uruchomienie](18-srodowiska-mvp.md) · [Audyt funkcji legacy](22-audyt-legacy-parity.md) · [Informacje podstawowe](20-informacje-podstawowe.md)
