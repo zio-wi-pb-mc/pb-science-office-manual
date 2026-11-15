@@ -1,39 +1,43 @@
 # Dashboard projektu i leaderboard
 
-**Cel projektu:** do **31 stycznia 2027 r.** dostarczamy **wdrożoną, przetestowaną i odebraną przez Dział Nauki aplikację** zastępującą uzgodniony zakres starego systemu. Zespoły samodzielnie wybierają zadania i rozwiązania; roadmapa oraz Issues są propozycjami pomagającymi zaplanować pracę.
+**Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
 
+**Stan kodu i PR: 16.11.2026.** Dane punktowe są odrębnym, formalnie zatwierdzonym snapshotem z **03.11.2026**, zgodnym z [Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86).
 
-!!! warning "Stan produktu ≠ punktacja / deadline 31.01.2027"
-    Ranking punktów pochodzi z **ostatniego formalnego rozliczenia 03.11**; nie jest wykresem wykonania legacy. Dla postępu projektu stosujemy [macierz funkcji](22-audyt-legacy-parity.md) i [bramki do 31 stycznia](23-plan-do-31-stycznia.md). Nie zmieniono punktacji bez pełnego rozliczenia wg #86.
+## Gotowość produktu
 
-## Product delivery — kontrola 10.11
-
-| Obszar | Status w kodzie | Następna bramka |
+| Element | Obecny stan | Co dalej |
 |---|---|---|
-| F2 → F3 → F4 | [#212](https://github.com/zio-wi-pb-mc/pb-science-office/pull/212) MERGED do `dev` | Demo `DEBUG=False` i zakres użytkownika |
-| Bezpieczeństwo projektów | [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173) OPEN, [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) Draft | 13.11, test A/B + HTML/JSON/budżet |
-| Projekty w PostgreSQL | `SyntheticProject`, nie trwały CRUD | [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213) do 04.12 |
-| Operacje finansowe | Podgląd i testy bez ewidencji zapisów | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) do 18.12 |
-| F01 | [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) IN PROGRESS | 11.12 |
-| Eksporty / raporty | Brak implementacji pełnych raportów | [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215) do 08.01 |
-| Migracja legacy | Brak potwierdzonej migracji do modeli Django | [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) do 08.01 |
-| Odbiór i przekazanie | Zaplanowane, nie wykonane | [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) do 31.01 |
+| CI dla `dev` | **PASS: 4/4 jobów**, SHA `167722fa` | <a href="https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/43774911214">Szczegóły CI</a> |
+| Logowanie → F3 → F4 | Połączony przepływ na danych syntetycznych | E: [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173) + F: [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219) blokują bezpieczne Demo |
+| F01 | **Model, formularz, zapis/odczyt własnych fiszek i testy w `dev`** | B: odbiór całej ścieżki na PostgreSQL, porządek w [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) |
+| Projekty główne | **Brak trwałego modelu F3**, obecnie `SyntheticProject` | F: [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220), [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) w ramach [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213) |
+| Finanse | Podgląd, walidacja i testy na scenariuszach | A/F: trwały zapis [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) |
+| Importer | Dry-run, walidacja, idempotencja na magazynie pamięciowym | D/F: [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) do docelowego ORM |
+| Raporty i wdrożenie | Plan i procedury, niepełna implementacja | [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215), [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) i uzgodnienie hostingu |
 
-**Nie podajemy fikcyjnego procentu ukończenia systemu.** Przyjęcie kryteriów MUST z Działem Nauki do 20.11 warunkuje wiarygodną ocenę zakresu.
+**Uwaga:** w Docker Demo `DEBUG=False` projekty i budżety nadal mają ścieżkę zwracającą 404. CI obrazu nie wykonuje funkcjonalnego testu F3/F4.
 
+## Aktywność studentów — 10–16 listopada
 
-Ta strona zbiera najważniejsze miejsca do codziennej pracy nad projektem.
+**12 scalonych PR, 8 różnych autorów, 5 zespołów.** To nowa aktywność i realna implementacja, ale PR-y mają różny zakres. Tabela opisuje *zakończone scalenia*, nie punkty i nie indywidualne oceny.
 
-## Contribution Leaderboard
+| Zespół | Autorzy i scalone PR | Rezultat |
+|---|---|---|
+| **A — 4 PR** | Daniel Perkowski [PR #210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210), [PR #185](https://github.com/zio-wi-pb-mc/pb-science-office/pull/185), [PR #218](https://github.com/zio-wi-pb-mc/pb-science-office/pull/218); Aleksandra Masiejczyk [PR #209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209) | Referencyjne kwoty, testy i obsługa błędów |
+| **B — 3 PR** | Gabriel Chomiczewski [PR #222](https://github.com/zio-wi-pb-mc/pb-science-office/pull/222); Karina Chilkiewicz [PR #223](https://github.com/zio-wi-pb-mc/pb-science-office/pull/223); Klaudia Klim [PR #224](https://github.com/zio-wi-pb-mc/pb-science-office/pull/224) | Model, formularz, widoki i testy F01 |
+| **C — 2 PR** | Weronika Sosnowska [PR #207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207), [PR #228](https://github.com/zio-wi-pb-mc/pb-science-office/pull/228) | Konta demo i wymagania odbioru |
+| **D — 2 PR** | Tomasz Sidoruk [PR #225](https://github.com/zio-wi-pb-mc/pb-science-office/pull/225), [PR #226](https://github.com/zio-wi-pb-mc/pb-science-office/pull/226) | Plan zgodności i pierwszy importer |
+| **F — 1 PR** | Paweł Kozikowski [PR #211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211) | Mobilny widok F3 |
+| **E — bez nowego merge** | [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) pozostaje Draft | Otwarta krytyczna praca nad uprawnieniami |
 
-**Ostatnie formalnie zweryfikowane przeliczenie punktów: 03.11.2026. Aktualizacja stanu PR/Issues: 10.11.2026.** Punktów nie doliczono automatycznie za nowe PR, bo [reguły #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86) wymagają indywidualnej weryfikacji.
+**Jak to czytać:** największe wdrożeniowe przyspieszenie nastąpiło w B i D. Zespół E ma ważne zadanie w toku, ale brak scalenia nie dowodzi braku pracy. Liczba PR nie zastępuje oceny działania produktu.
 
-**Weryfikacja LIVE 10.11:** PR #180, #192, #193, #188, #163, #203, #212 są już **MERGED**. To jednak **nie oznacza przyznania punktów**: dla każdego zadania trzeba sprawdzić Issue, pojedynczego Assignee, merytoryczne review, datę zatwierdzenia rozmiaru i tygodniowy limit. APPROVE dla #209/#210/#185/#207/#211 nie jest merge.
+## Contribution Leaderboard — oficjalny snapshot 03.11
 
-!!! important "Punkty ≠ automatyczna ocena"
-    Ranking jest narzędziem motywacyjnym. Pokazuje punkty formalnie rozliczone według zasad z #86.
+Poniższa punktacja pozostaje bez zmian do przeliczenia według [zasad #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86): zamknięte Issue, właściwy pojedynczy assignee, merge, merytoryczny studencki review, zatwierdzony przed merge rozmiar M/L i limity tygodniowe. **Najnowsze prace z tabeli powyżej nie są jeszcze rozliczone punktowo.**
 
-### Ranking indywidualny — od początku semestru
+### Ranking indywidualny
 
 | # | Student | GitHub | Zespół | Punkty | Rozliczone taski | Punktowane review |
 |---:|---|---|:---:|---:|---:|---:|
@@ -60,9 +64,7 @@ Ta strona zbiera najważniejsze miejsca do codziennej pracy nad projektem.
 | 18 | Michał Borawski | @michalborawski | E | **0** | 0 | 0 |
 | 18 | Patryk Bura | @Patryk-Bura | F | **0** | 0 | 0 |
 
-### Ranking zespołów
-
-Ranking zespołowy = suma punktów aktywnych członków / liczba aktywnych członków.
+### Ranking zespołowy
 
 | # | Zespół | Suma punktów | Aktywni | Punkty / osobę |
 |---:|:---:|---:|---:|---:|
@@ -73,97 +75,12 @@ Ranking zespołowy = suma punktów aktywnych członków / liczba aktywnych czło
 | 4 | F | **6** | 4 | **1.50** |
 | 6 | E | **0** | 3 | **0.00** |
 
-### Co zostało uwzględnione od poprzedniego snapshotu
+**Ważne:** zero punktów z 03.11 nie jest informacją o braku aktywności po tej dacie. Przed nowym rankingiem wymagany jest audyt PR/Issues i peer review — nie dopisujemy punktów automatycznie.
 
-W bieżącym przeliczeniu uwzględniono także prace rozliczone po 28.10, m.in.:
+## Miejsca pracy
 
-- #157 / #156 — stabilizacja i weryfikacja skeletonu,
-- #161 / #160 — testy niezmienności agregacji F4,
-- #182 / #166 — testy zgodności HTML/JSON F4,
-- #184 / #183 — endpoint wersji aplikacji,
-- oraz review tych prac, o ile spełniały zasady #86.
-
-### Nowe prace wymagające rozliczenia według #86
-
-To **kolejka do weryfikacji**, nie automatycznie przyznane punkty. Zmiana statusu PR/Issue nie przesądza o wyniku.
-
-| PR / Issue | Autor / zespół | Stan na 10.11 | Co zweryfikować |
-|---|---|---|---|
-| [#212](https://github.com/zio-wi-pb-mc/pb-science-office/pull/212) / [#194](https://github.com/zio-wi-pb-mc/pb-science-office/issues/194) | Patryk Bura / F | MERGED, Issue zamknięte | Student peer review, zgodność autora/assignee, rozmiar |
-| [#203](https://github.com/zio-wi-pb-mc/pb-science-office/pull/203) / [#202](https://github.com/zio-wi-pb-mc/pb-science-office/issues/202) | Jakub Mirończuk / A | MERGED, Issue zamknięte | Review i rozmiar zadania |
-| [#192](https://github.com/zio-wi-pb-mc/pb-science-office/pull/192) / [#191](https://github.com/zio-wi-pb-mc/pb-science-office/issues/191) | Aleksandra Masiejczyk / A | MERGED, Issue zamknięte | Review i reguły rozliczenia |
-| [#163](https://github.com/zio-wi-pb-mc/pb-science-office/pull/163) / [#162](https://github.com/zio-wi-pb-mc/pb-science-office/issues/162) | Aleksandra Masiejczyk / A | MERGED, Issue zamknięte | Review i reguły rozliczenia |
-| [#188](https://github.com/zio-wi-pb-mc/pb-science-office/pull/188) / [#187](https://github.com/zio-wi-pb-mc/pb-science-office/issues/187) | Mykola Nishchymnyi / C | MERGED, Issue zamknięte | Merytoryczne review i reguły |
-| [#193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) / [#190](https://github.com/zio-wi-pb-mc/pb-science-office/issues/190) | Maciej Sawicki / C | MERGED, Issue zamknięte | Merytoryczne review i reguły |
-| [#180](https://github.com/zio-wi-pb-mc/pb-science-office/pull/180) / [#113](https://github.com/zio-wi-pb-mc/pb-science-office/issues/113) | Patryk Bura / F | MERGED, Issue zamknięte | Merytoryczne review i reguły |
-| [#136](https://github.com/zio-wi-pb-mc/pb-science-office/pull/136) / [#134](https://github.com/zio-wi-pb-mc/pb-science-office/issues/134) | Aleksandra Masiejczyk / A | MERGED, Issue **nadal otwarte** | Domknięcie kryteriów; bez punktów za task |
-| [#209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209) / [#208](https://github.com/zio-wi-pb-mc/pb-science-office/issues/208) | Aleksandra Masiejczyk / A | APPROVE, ale PR **OPEN** | Bez punktów tasku przed merge i zamknięciem Issue |
-| [#207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) / [#205](https://github.com/zio-wi-pb-mc/pb-science-office/issues/205) | Weronika Sosnowska / C | APPROVE, ale PR **OPEN** | Bez punktów tasku przed usunięciem ryzyka hasła, merge i zamknięciem Issue |
-
-**Starsze nierozliczone przypadki z poprzedniego snapshotu (#164/#125, #117/#116, #123/#120, #105/#79, #88/#87, #63/#30, #29/#20, #27/#26) wymagają oddzielnej weryfikacji i nie zostały przeliczone.** Uwaga: #81 jest już zamknięte, więc wcześniejszy powód odmowy punktów dla #99/#81 nie jest aktualny; inne warunki nadal należy sprawdzić.
-
-### Bieżąca praca niepunktowana jako ukończona (10.11)
-
-**7 otwartych PR:** [#209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209), [#210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210), [#185](https://github.com/zio-wi-pb-mc/pb-science-office/pull/185), [#207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207), [#211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211), [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174), [#132](https://github.com/zio-wi-pb-mc/pb-science-office/pull/132). Spośród nich pięć ma APPROVE, a #174 i #132 wymagają przebudowy/zmiany bazy. To nie są ukończone zadania.
-
-[**Pełne zasady i historia naliczeń — Issue #86**](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86)
-
-### Zasady punktacji w skrócie
-
-| Wkład | Punkty |
-|---|---:|
-| Zadanie S — rozmiar domyślny | 2 |
-| Zadanie M — zatwierdzone przed merge | 5 |
-| Zadanie L — zatwierdzone przez prowadzącego przed merge | 8 |
-| Merytoryczne peer review | +1 |
-
-Najważniejsze:
-- zadanie musi mieć zamknięte Issue, jednego właściwego Assignee, merge i merytoryczne peer review,
-- M/L musi zostać zatwierdzone **przed mergem**,
-- zatwierdzenie rozmiaru po merge nie działa wstecz,
-- review: maksymalnie 3 pkt na tydzień,
-- samo kliknięcie Approve bez merytorycznej treści nie gwarantuje punktu.
-
----
-
-## Jak aktualizować ranking bez zawyżania
-
-1. Odczytać każde MERGED PR i jego Issue, autora oraz jednego właściwego assignee.
-2. Sprawdzić merytoryczne studenckie review (samo Approve prowadzącego nie wystarczy), zatwierdzenie M/L **przed** merge i maksymalnie 3 punkty za review w tygodniu.
-3. Dodać punkty dopiero po spełnieniu **wszystkich** reguł z #86; opublikować nowy snapshot jednocześnie tutaj i w Issue #86.
-4. Do tego czasu powyższe liczby 03.11 są **historycznym snapshotem**, a nie oceną obecnego wkładu. W szczególności 0 punktów obok studenta nie oznacza braku pracy.
-
-## Jak rozliczać wkład do stycznia
-
-- Punkty z 03.11 nie zostały automatycznie przeliczone; dodatkowe Issues #213–#217 są strumieniami dostawy, **nie premią punktową**.
-- Przed aktualizacją wyniku sprawdź autora/assignee, merged PR, zamknięte Issue, merytoryczne peer review, zatwierdzony przed merge rozmiar oraz limit 3 pkt review tygodniowo.
-- Oddziel przyznanie punktów od odebrania funkcji: dopiero działający rezultat w jednym systemie realizuje bramkę.
-- Ocena pracy nie wynika z pozycji w rankingu: studenci muszą mieć szansę pokazać realny wkład.
-
-## GitHub Project — główna tablica pracy
-
-[**Otwórz GitHub Project — ZIO 2026 / PB Science Office**](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1)
-
-GitHub Project jest podstawowym widokiem bieżącej pracy:
-
-- `BACKLOG`,
-- `READY`,
-- `IN PROGRESS`,
-- `REVIEW`,
-- `TEST`,
-- `BLOCKED`,
-- `DONE`.
-
-Przed rozpoczęciem nowego zadania sprawdź tablicę, Issues i otwarte Pull Requesty.
-
-## Najważniejsze skróty
-
-- [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1)
-- [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues)
-- [Pull Requests](https://github.com/zio-wi-pb-mc/pb-science-office/pulls)
-- [Contribution Leaderboard #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86)
-- [Stan projektu i priorytety](16-propozycje-zadan-po-audycie.md)
-- [Bank możliwych zadań MVP](17-bank-zadan-mvp.md)
-
-!!! important "Źródło prawdy"
-    Dla statusu pracy źródłem prawdy są GitHub Project, Issues i Pull Requests. GitHub Pages pokazuje bieżący snapshot punktów i zasady organizacyjne.
+- [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1) — aktualne przydziały i statusy.
+- [Otwarte PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls) — aktualnie tylko #174.
+- [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues) — zadania i kryteria odbioru.
+- [Bank propozycji](17-bank-zadan-mvp.md) — pomysły dla osób bez własnego zadania.
+- [Roadmapa](21-roadmap-3-tygodnie.md) — cele na najbliższe tygodnie.
