@@ -1,20 +1,19 @@
-# Bank propozycji — co można zrobić, gdy brakuje pomysłu
+# Bank propozycji — gdy nie masz własnego pomysłu
 
-**Cel projektu:** do **31 stycznia 2027 r.** dostarczamy **wdrożoną, przetestowaną i odebraną przez Dział Nauki aplikację** zastępującą uzgodniony zakres starego systemu. Zespoły samodzielnie wybierają zadania i rozwiązania; roadmapa oraz Issues są propozycjami pomagającymi zaplanować pracę.
+To **pomysły do wyboru**, a nie obowiązkowe zadania ani przydział według zespołu. Najpierw sprawdź [priorytety](16-propozycje-zadan-po-audycie.md), [Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1) i [PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls). Jeśli coś już istnieje, pomóż autorowi lub wybierz inny brak.
 
-
-To **rezerwowe pomysły**, nie lista dodatkowych przydziałów. [Twarde terminy](23-plan-do-31-stycznia.md), [proponowane priorytety](16-propozycje-zadan-po-audycie.md), [macierz legacy](22-audyt-legacy-parity.md). Nie rozpoczynaj żadnego z poniższych zadań, jeśli istnieje już właściciel i Issue.
-
-| Obszar | Przykładowy mały PR, jeśli brak osoby/fragmentu | Efekt akceptacyjny |
+| Propozycja | Konkretny rezultat | Powiązanie |
 |---|---|---|
-| **F/E** | Modele relacji użytkownik–projekt; test dostępu do cudzego budżetu | 403/404 także dla JSON i bezpośredniego URL; [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173) |
-| **F** | Model + migracja projektu, formularz edycji, test archiwum | Projekt zapisany w PostgreSQL i dostępny po restarcie; [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213) |
-| **A** | Zapis planu finansowego, rezerwacja, wydatek, rozliczenie częściowe, narzut | Oczekiwane wyniki matematyczne na danych trwałych; [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) |
-| **B** | Wyłącznie brakujący fragment F01 lub obowiązkowy ekran operacji admin po decyzji z Działem Nauki | Rzeczywisty zapis i test; [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) |
-| **D** | Import kilku projektów różnych typów/lat i wyciągnięcie raportu odrzuceń | Idempotencja, zgodność sum, brak rzeczywistych danych w CI; [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) |
-| **A/F** | Eksport kosztorysu CSV i historia wydatków | Zgodność z raportem w aplikacji i dostępem roli; [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215) |
-| **C** | Automatyczny E2E na obrazie Demo, backup i restore bazy | PASS całego flow `DEBUG=False`, nie tylko health; [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) |
+| Test cudzych zasobów | Zaloguj A/B, sprawdź listę, szczegóły, budżet i JSON przez ręczny URL; udokumentuj FAIL i poprawkę | [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173), [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219) |
+| Test Demo w CI | Jeden job naprawdę przechodzący `login → F3 → F4` z `DEBUG=False`, PostgreSQL i odrzuceniem anonimowego dostępu | [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219), [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) |
+| F01 na czystej bazie | Test migracji PostgreSQL, POST formularza, odczytu i izolacji właściciela; bez duplikowania istniejących testów `project_cards` | [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) |
+| Model trwałych projektów | Migracja + bezpieczny odczyt F3/F4 z PostgreSQL; przypadek kolizji identyfikatorów legacy/lat | [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220) |
+| Minimalna edycja | Formularz operatora: utwórz, edytuj, błędy walidacji, brak uprawnienia | [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) |
+| Zapis finansowy | Jeden rekord planu/rezerwacji/wydatku na trwałej bazie i test salda po restarcie | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) |
+| Adapter importera | Import jednego syntetycznego projektu z dry-run do ORM, następnie drugi idempotentny przebieg | [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) |
+| Zestawienie CSV | Wydruk/zapis raportu finansowego z tego samego projektu i roku, z kontrolą dostępu | [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215) |
+| Odbiór wdrożenia | Przetestuj backup/restore na osobnej bazie, instrukcję od czystego klona i smoke po wdrożeniu | [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) |
 
-**Możecie również zaproponować własny temat** — uzgodnijcie z liderem zależności i kryterium odbioru. **Nie rozdrabniać Issue na fikcyjne S/M/L.** O rozmiarze decydują zasady [#86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86), nie autor. Nie zaczynać nowych ADR lub kolejnych kopii słowników, drugiego szkieletu aplikacji ani nowego frontendu. Każdy nowy formularz spoza potwierdzonego legacy wymaga decyzji prowadzącego.
+**Zasada:** można zaproponować zupełnie inne rozwiązanie, jeżeli wnosi widoczny efekt do wspólnej aplikacji. Nie tworzyć duplikatu formularza F01, modułu projektów, Dockera ani nowego szkieletu Django.
 
-Przed utworzeniem Issue: sprawdź [PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls), [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues), [Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1), wskaż ownera, termin i sposób demonstracji. Studenci integrują tylko do `dev`.
+[Plan do stycznia](23-plan-do-31-stycznia.md) · [Zadania A–F](21-roadmap-3-tygodnie.md)
