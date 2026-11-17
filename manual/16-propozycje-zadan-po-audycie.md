@@ -2,16 +2,16 @@
 
 **Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
 
-**Kontrola LIVE: 16.11.2026, `dev` `167722fa`, CI PASS.** [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1) jest źródłem przypisań; ta strona podpowiada, gdzie praca może mieć największy efekt.
+**Kontrola LIVE: 17.11.2026, `dev` `5af06805`, CI PASS.** [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1) jest źródłem przypisań; ta strona podpowiada, gdzie praca może mieć największy efekt.
 
 ## P0 — blokery działającej aplikacji
 
 | Brak / status | Możliwe działania | Zespoły do uzgodnienia |
 |---|---|---|
-| **Ochrona cudzych projektów** — [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173), [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) Draft, jedyny otwarty PR | Przenieść mechanizm przypisań na aktualny model `dev`, chronić listę, szczegóły i URL budżetu/JSON. Test: konta A/B, własne i cudze projekty | E + F |
+| **Ochrona cudzych projektów** — [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173), [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) Draft (nadal otwarty) | Przenieść mechanizm przypisań na aktualny model `dev`, chronić listę, szczegóły i URL budżetu/JSON. Test: konta A/B, własne i cudze projekty | E + F |
 | **Demo `DEBUG=False`** — [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219) | Usunąć zależność dostępności F3/F4 od `settings.DEBUG` bez ujawniania widoków anonimowym/nieuprawnionym. Test rzeczywistego obrazu, nie tylko `/health/` | F + C + E |
 | **Trwałe projekty** — [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213), podzadania [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220) i [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) | Jeden model projektu w PostgreSQL, migracje, przełączenie F3/F4, tworzenie/edycja przez operatora; bez kopiowania `SyntheticProject` do kolejnego modułu | F + D + E |
-| **F01: odbiór integracji** — [PR #222](https://github.com/zio-wi-pb-mc/pb-science-office/pull/222), [PR #223](https://github.com/zio-wi-pb-mc/pb-science-office/pull/223), [PR #224](https://github.com/zio-wi-pb-mc/pb-science-office/pull/224) MERGED; [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) OPEN | Przeprowadzić czysty migrate, scenariusz login → nowa fiszka → zapis → podgląd → ponowny odczyt oraz odmowę cudzej fiszki. Zidentyfikować wyłącznie brakujące testy #200/#201 i domknąć wykonane Issues | B + C |
+| **F01: odbiór integracji** — [PR #222](https://github.com/zio-wi-pb-mc/pb-science-office/pull/222), [PR #223](https://github.com/zio-wi-pb-mc/pb-science-office/pull/223), [PR #224](https://github.com/zio-wi-pb-mc/pb-science-office/pull/224) MERGED; [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) OPEN | Przeprowadzić czysty migrate, scenariusz login → nowa fiszka → zapis → podgląd → ponowny odczyt oraz odmowę cudzej fiszki. Oczyścić gałęzie [#229](https://github.com/zio-wi-pb-mc/pb-science-office/pull/229) i [#231](https://github.com/zio-wi-pb-mc/pb-science-office/pull/231) ze starych plików, ponowić CI i domknąć rzeczywiście wykonane Issues | B + C |
 | **Finanse na trwałych danych** — [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) | Plan, rezerwacja, wydatek, korekta, historia i saldo z PostgreSQL; wykorzystać istniejące testy F4, w tym [PR #218](https://github.com/zio-wi-pb-mc/pb-science-office/pull/218) | A + F |
 | **Importer do docelowych modeli** — [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216), [PR #226](https://github.com/zio-wi-pb-mc/pb-science-office/pull/226) MERGED | Zachować działające walidacje/dry-run/idempotencję; podłączyć do modelu z #220, sprawdzić zgodność sum i lat | D + F |
 
@@ -20,7 +20,7 @@
 ## P1 — po zabezpieczeniu P0 lub równolegle
 
 - [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215) — raporty i eksport CSV z rzeczywistych zapisów, bez pisania drugiego silnika obliczeń.
-- [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) — automatyczny test funkcjonalny Demo, przygotowanie hostingu, backup/restore i harmonogram testów z Działem Nauki. Dokument [PR #228](https://github.com/zio-wi-pb-mc/pb-science-office/pull/228) jest podstawą, nie końcem tych prac.
+- [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) — automatyczny test funkcjonalny Demo, przygotowanie hostingu i harmonogram testów z Działem Nauki. Backup/restore PostgreSQL z testem CI dodano w [#232](https://github.com/zio-wi-pb-mc/pb-science-office/pull/232); pozostaje sprawdzenie na docelowym środowisku. Dokument [PR #228](https://github.com/zio-wi-pb-mc/pb-science-office/pull/228) jest podstawą, nie końcem tych prac.
 - Obsługa 403/404/500 ([PR #209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209)) i mobilne F3 ([PR #211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211)) są **MERGED** — nie zgłaszać ich ponownie jako nowych funkcji.
 - [#196](https://github.com/zio-wi-pb-mc/pb-science-office/issues/196) — opcjonalny `doctor` tylko przy realnej potrzebie; dodatkowe ogólne dokumenty niżej niż test działającej aplikacji.
 
@@ -30,11 +30,11 @@
 |---|---|
 | **A** | [PR #210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210), [PR #218](https://github.com/zio-wi-pb-mc/pb-science-office/pull/218) — przykłady finansowe i testy konkretnych kwot; [PR #209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209) — strony błędów |
 | **B** | [PR #222](https://github.com/zio-wi-pb-mc/pb-science-office/pull/222), [PR #223](https://github.com/zio-wi-pb-mc/pb-science-office/pull/223), [PR #224](https://github.com/zio-wi-pb-mc/pb-science-office/pull/224) — model F01, formularz, widoki i testy; pozostaje odbiór całości |
-| **C** | [PR #207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) — bezpieczniejszy seed kont Demo; [PR #228](https://github.com/zio-wi-pb-mc/pb-science-office/pull/228) — lista wymagań infrastruktury |
+| **C** | [PR #207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) — konta Demo; [PR #228](https://github.com/zio-wi-pb-mc/pb-science-office/pull/228) — wymagania infrastruktury; [PR #232](https://github.com/zio-wi-pb-mc/pb-science-office/pull/232) — backup/restore PostgreSQL z testem CI |
 | **D** | [PR #225](https://github.com/zio-wi-pb-mc/pb-science-office/pull/225) — plan testów legacy; [PR #226](https://github.com/zio-wi-pb-mc/pb-science-office/pull/226) — importer pamięciowy z dry-run |
 | **E** | [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) nadal Draft; brak przyjętych uprawnień F3/F4 |
 | **F** | [PR #211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211) — mobilne F3; przygotowane #220/#221 do wdrożenia modelu/CRUD |
 
-**Status PR:** 1 OPEN (#174), pozostałe PR z przeglądu scalone. Zielony CI nie oznacza jeszcze rozwiązania P0.
+**Status PR (17.11):** 3 OPEN — #174, #229 i #231. #232 scalony. Zmiany testowe F01 wymagają oczyszczenia gałęzi, a nie pisania testów od zera. Zielony CI nie oznacza jeszcze rozwiązania P0.
 
 [Roadmapa A–F](21-roadmap-3-tygodnie.md) · [Dashboard](19-dashboard-projektu.md) · [Bank propozycji](17-bank-zadan-mvp.md)
