@@ -6,7 +6,7 @@ To **pomysły do wyboru**, a nie obowiązkowe zadania ani przydział według zes
 |---|---|---|
 | Test cudzych zasobów | Zaloguj A/B, sprawdź listę, szczegóły, budżet i JSON przez ręczny URL; udokumentuj FAIL i poprawkę | [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173), [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219) |
 | Test Demo w CI | Jeden job naprawdę przechodzący `login → F3 → F4` z `DEBUG=False`, PostgreSQL i odrzuceniem anonimowego dostępu | [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219), [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) |
-| F01 na czystej bazie | Test migracji PostgreSQL, POST formularza, odczytu i izolacji właściciela; bez duplikowania istniejących testów `project_cards` | [#197](https://github.com/zio-wi-pb-mc/pb-science-office/issues/197)–[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201) |
+| Odbiór F01 przez inny zespół | Ręcznie uruchom migracje PostgreSQL, POST i odczyt fiszki; odnotuj wynik bez dublowania scalonych testów | [PR #229](https://github.com/zio-wi-pb-mc/pb-science-office/pull/229), [PR #231](https://github.com/zio-wi-pb-mc/pb-science-office/pull/231) (już scalone) |
 | Model trwałych projektów | Migracja + bezpieczny odczyt F3/F4 z PostgreSQL; przypadek kolizji identyfikatorów legacy/lat | [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220) |
 | Minimalna edycja | Formularz operatora: utwórz, edytuj, błędy walidacji, brak uprawnienia | [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) |
 | Zapis finansowy | Jeden rekord planu/rezerwacji/wydatku na trwałej bazie i test salda po restarcie | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) |
