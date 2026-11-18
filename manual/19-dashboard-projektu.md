@@ -42,7 +42,9 @@ Oceniamy rzeczywisty wkład studentów — również review, testy, integrację 
 
 ## Contribution Leaderboard — oficjalny snapshot 03.11
 
-Poniższa punktacja pozostaje bez zmian do przeliczenia według [zasad #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86): zamknięte Issue, właściwy pojedynczy assignee, merge, merytoryczny studencki review, zatwierdzony przed merge rozmiar M/L i limity tygodniowe. **Najnowsze prace z tabeli powyżej nie są jeszcze rozliczone punktowo.**
+Poniższa punktacja pozostaje bez zmian do przeliczenia według [zasad #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86): zamknięte Issue, właściwy pojedynczy assignee, merge do `dev`, merytoryczny studencki review, zatwierdzony przed merge rozmiar M/L (chyba że prowadzący jawnie dopuści wyjątek) i limity tygodniowe. **Najnowsze prace z tabeli powyżej nie są jeszcze rozliczone punktowo.**
+
+**Decyzja prowadzącego 18.11:** [Issue #230](https://github.com/zio-wi-pb-mc/pb-science-office/issues/230) / [PR #232](https://github.com/zio-wi-pb-mc/pb-science-office/pull/232), autor **@Maciek-Sawicki** — zatwierdzony rozmiar **L (8 pkt)** z jawnym wyjątkiem od terminu zatwierdzenia (po merge). Punkty zostaną rozliczone po niezależnym odbiorze backup → restore na osobnej bazie i weryfikacji pozostałych warunków #86; historyczny ranking z 03.11 pozostaje bez zmian. Wcześniejsze merge wykonane przez prowadzącego nie pozbawiają studentów uznania za ich rzeczywisty wkład.
 
 ### Ranking indywidualny
 
