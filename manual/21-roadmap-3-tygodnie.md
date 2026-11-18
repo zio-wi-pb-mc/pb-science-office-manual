@@ -1,4 +1,4 @@
-# Roadmap zespołów A–F — 16 listopada 2026
+# Roadmap zespołów A–F — 18 listopada 2026
 
 **Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
 
@@ -9,11 +9,11 @@ To **propozycje kierunków** oparte na bieżącym kodzie. Liderzy i studenci sam
 | Zespół | Co już się ruszyło | Najbardziej przydatny następny rezultat |
 |---|---|---|
 | **A — finanse** | Przypadki rezerwy i testy F2/F3/F4: [PR #210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210), [PR #218](https://github.com/zio-wi-pb-mc/pb-science-office/pull/218) | Uzgodniony kontrakt trwałych zapisów z F; pierwszy test plan → rezerwacja → wydatek po restarcie |
-| **B — formularze** | F01 w `dev`: model, migracja, formularz i widoki ([PR #222](https://github.com/zio-wi-pb-mc/pb-science-office/pull/222), [PR #223](https://github.com/zio-wi-pb-mc/pb-science-office/pull/223), [PR #224](https://github.com/zio-wi-pb-mc/pb-science-office/pull/224)) | Jeden odbiór integracyjny na PostgreSQL; ocena braków w [#200](https://github.com/zio-wi-pb-mc/pb-science-office/issues/200)/[#201](https://github.com/zio-wi-pb-mc/pb-science-office/issues/201); później kolejne potrzebne ekrany |
-| **C — platforma** | Seed Demo [PR #207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) i wymogi odbioru [PR #228](https://github.com/zio-wi-pb-mc/pb-science-office/pull/228) | Funkcjonalny test `DEBUG=False` z F/E, kopie/restore i konkretne kroki do wdrożenia |
+| **B — formularze** | F01 z modelem, formularzem, widokami i testami (#222–#224, #229, #231); #197–#201 zamknięte | Próba ręczna na PostgreSQL przez osobę spoza B; następnie wspieranie uzgodnionych braków produktu |
+| **C — platforma** | Seed Demo #207, wymagania #228, backup/restore #232 i doctor #234 — w `dev` | Funkcjonalny test dwóch kont `DEBUG=False` z F/E, ręczny odbiór backup/restore i doctor przez niezależną osobę |
 | **D — migracja** | Plan testów [PR #225](https://github.com/zio-wi-pb-mc/pb-science-office/pull/225) i importer pamięciowy [PR #226](https://github.com/zio-wi-pb-mc/pb-science-office/pull/226) | Adapter do docelowego modelu F, test uzgodnienia danych i idempotencji |
-| **E — uprawnienia** | Stary Draft [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) (bez merge) | Bezpieczne role i przypisania per projekt na aktualnym `dev`, budżety/JSON, test A/B |
-| **F — integracja** | Mobilne F3 [PR #211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211), rozpisane [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219), [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220), [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) | Naprawa Demo `DEBUG=False`, wspólny model projektów i CRUD z PostgreSQL |
+| **E — uprawnienia** | Stary Draft [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) (bez merge) | Mały nowy PR do `dev` ze wspólną kontrolą per projekt; lista filtrowana, cudze HTML/JSON/budżety → 404 |
+| **F — integracja** | Mobilne F3 [PR #211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211), rozpisane [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219), [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220), [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) | Integracja #235 z kontrolą E; niezależnie #220 (model PostgreSQL), potem #221 (CRUD) |
 
 ## Kamienie milowe projektu
 
