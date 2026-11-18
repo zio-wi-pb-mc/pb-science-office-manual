@@ -2,7 +2,13 @@
 
 **Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
 
-**Stan przeglądu: 18.11.2026**, gałąź [`dev`](https://github.com/zio-wi-pb-mc/pb-science-office/tree/dev), commit `e8d94872` (CI po merge w toku podczas przeglądu).
+**Stan przeglądu: 18.11.2026**, gałąź [`dev`](https://github.com/zio-wi-pb-mc/pb-science-office/tree/dev), commit `e8d94872` ([CI PASS](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850)).
+
+## Uzgodnienie E/F — 18 listopada
+
+**Wspólny test do 20.11:** E przygotowuje kontrolę przypisania projektu na aktualnym `dev` ([#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)); F integruje ją z F3/F4 i częściowym [PR #235](https://github.com/zio-wi-pb-mc/pb-science-office/pull/235); C sprawdza Docker Demo z `DEBUG=False`. Użytkownik anonimowy trafia do logowania, lista filtruje projekty, a cudze szczegóły i budżety (HTML/JSON) zwracają 404. **Równolegle** trwa praca nad modelem PostgreSQL [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220) i CRUD [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221).
+
+To **kierunki współpracy i warunki odbioru**, a nie nakaz wyboru określonych Issues. Szczegóły w [koordynacji #127](https://github.com/zio-wi-pb-mc/pb-science-office/issues/127).
 
 ## Najbliższy cel: działające Demo
 
@@ -14,7 +20,7 @@
 | **Blokuje pokaz** | Brak uprawnień per projekt ([#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)) i blokada F3/F4 w `DEBUG=False` ([#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219)) |
 | **Następny większy krok** | Trwały model projektów i CRUD ([#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220), [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221)), finanse zapisujące do bazy ([#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214)) i importer docelowy ([#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216)) |
 
-**CI:** [aktualny `dev` — PASS](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/). Test Docker Demo sprawdza uruchomienie, migracje, health, wersję i statyczne pliki, **nie pełny przepływ użytkownika**.
+**CI:** [aktualny `dev` — PASS](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850). Test Docker Demo sprawdza uruchomienie, migracje, health, wersję i statyczne pliki, **nie pełny przepływ użytkownika**.
 
 ## Co nowego od 10 listopada?
 
