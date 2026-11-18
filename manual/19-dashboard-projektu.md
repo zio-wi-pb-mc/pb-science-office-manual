@@ -2,19 +2,19 @@
 
 **Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
 
-**Stan kodu i PR: 17.11.2026 (`dev` `5af06805`).** Dane punktowe są odrębnym, formalnie zatwierdzonym snapshotem z **03.11.2026**, zgodnym z [Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86).
+**Stan kodu i PR: 18.11.2026 (`dev` `e8d94872`, CI po merge w toku).** Dane punktowe są odrębnym, formalnie zatwierdzonym snapshotem z **03.11.2026**, zgodnym z [Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86).
 
 ## Gotowość produktu
 
 | Element | Obecny stan | Co dalej |
 |---|---|---|
-| CI dla `dev` | **PASS po #232**, SHA `5af06805` | <a href="https://github.com/zio-wi-pb-mc/pb-science-office/actions/">Szczegóły CI</a> |
+| CI dla `dev` | **PASS na poprzednim SHA** `5af06805`; po #229/#231/#234 CI w toku dla `e8d94872` | <a href="https://github.com/zio-wi-pb-mc/pb-science-office/actions/">Szczegóły CI</a> |
 | Logowanie → F3 → F4 | Połączony przepływ na danych syntetycznych | E: [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173) + F: [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219) blokują bezpieczne Demo |
-| F01 | **Model, formularz, zapis/odczyt własnych fiszek i testy w `dev`** | B: [#229](https://github.com/zio-wi-pb-mc/pb-science-office/pull/229) (testy przepływu) i [#231](https://github.com/zio-wi-pb-mc/pb-science-office/pull/231) (testy walidacji) — oczyszczenie starych zmian i ponowne CI; pełny odbiór na PostgreSQL |
+| F01 | **Model, formularz, zapis/odczyt własnych fiszek i testy w `dev`** | B: [#229](https://github.com/zio-wi-pb-mc/pb-science-office/pull/229) i [#231](https://github.com/zio-wi-pb-mc/pb-science-office/pull/231) scalone; Issues #197–#201 zamknięte. Potwierdzić próbę E2E na PostgreSQL |
 | Projekty główne | **Brak trwałego modelu F3**, obecnie `SyntheticProject` | F: [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220), [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) w ramach [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213) |
 | Finanse | Podgląd, walidacja i testy na scenariuszach | A/F: trwały zapis [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) |
 | Importer | Dry-run, walidacja, idempotencja na magazynie pamięciowym | D/F: [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) do docelowego ORM |
-| Backup PostgreSQL | **[#232](https://github.com/zio-wi-pb-mc/pb-science-office/pull/232) MERGED** — backup, restore i test w CI | C: próbny restore na docelowym środowisku i instrukcja operatora |
+| Backup i diagnostyka | **[#232](https://github.com/zio-wi-pb-mc/pb-science-office/pull/232)** — backup/restore; **[#234](https://github.com/zio-wi-pb-mc/pb-science-office/pull/234)** — `doctor`; oba MERGED | C: ręczna próba przez inną osobę; #230 i #196 otwarte do odbioru |
 | Raporty i wdrożenie | Plan i procedury, niepełna implementacja | [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215), [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) i uzgodnienie hostingu |
 
 **Uwaga:** w Docker Demo `DEBUG=False` projekty i budżety nadal mają ścieżkę zwracającą 404. CI obrazu nie wykonuje funkcjonalnego testu F3/F4.
@@ -81,7 +81,7 @@ Poniższa punktacja pozostaje bez zmian do przeliczenia według [zasad #86](http
 ## Miejsca pracy
 
 - [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1) — aktualne przydziały i statusy.
-- [Otwarte PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls) — #174, #229 i #231 (stan 17.11).
+- [Otwarte PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls) — #174 i #235 (stan 18.11, oba Draft).
 - [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues) — zadania i kryteria odbioru.
 - [Bank propozycji](17-bank-zadan-mvp.md) — pomysły dla osób bez własnego zadania.
 - [Roadmapa](21-roadmap-3-tygodnie.md) — cele na najbliższe tygodnie.
