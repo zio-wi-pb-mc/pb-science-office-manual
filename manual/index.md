@@ -58,6 +58,6 @@ Na spotkanie z Działem Nauki przygotowujemy listę funkcji potrzebnych do zast�
 
 ## Zasady pracy
 
-PR studencki: `feature → dev` po review i testach. Wydanie: `dev → main` przez prowadzącego. Wybierajcie działania, które przynoszą mierzalne rezultaty w aplikacji. Istniejący [leaderboard](19-dashboard-projektu.md) pokazuje punkty **formalnie rozliczone do 03.11** oraz osobno nowsze osiągnięcia — zgodnie z zasadami punktowania #86.
+PR studencki: `feature → dev` po review i testach, **merge do `dev` wykonują sami studenci**. Prowadzący może wystawić APPROVE lub komentarz, ale nie scala za studentów. Wydanie: `dev → main` przez prowadzącego. Wybierajcie działania, które przynoszą mierzalne rezultaty w aplikacji. Istniejący [leaderboard](19-dashboard-projektu.md) pokazuje punkty **formalnie rozliczone do 03.11** oraz osobno nowsze osiągnięcia — zgodnie z zasadami punktowania #86.
 
 [Środowiska i uruchomienie](18-srodowiska-mvp.md) · [Audyt funkcji legacy](22-audyt-legacy-parity.md) · [Informacje podstawowe](20-informacje-podstawowe.md)
