@@ -2,14 +2,15 @@
 
 **Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
 
-**Stan planu: 16.11.2026.** Prace trwają na [`dev`](https://github.com/zio-wi-pb-mc/pb-science-office/tree/dev); do wydania w `main` decyduje prowadzący. Zapisane Issues pokazują możliwości realizacji, a nie przymusowy przydział.
+**Stan planu: 18.11.2026.** Prace trwają na [`dev`](https://github.com/zio-wi-pb-mc/pb-science-office/tree/dev); do wydania w `main` decyduje prowadzący. Zapisane Issues pokazują możliwości realizacji, a nie przymusowy przydział.
 
 ## Terminy i kryteria odbioru
 
 | Data | Kamień milowy | Sprawdzamy |
 |---|---|---|
-| **20.11** | Bezpieczny vertical slice i ustalenie zakresu | Dwa konta z różnymi projektami; odmowa cudzych HTML/JSON/budżetów; logowanie → F3 → F4 przy `DEBUG=False`. Wynik w [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217). Dział Nauki potwierdza funkcje niezbędne do zastąpienia legacy |
-| **27–30.11** | Pokaz dla Działu Nauki | Wspólny demonstrator i zebrane uwagi użytkowników, w tym krytyczne braki |
+| **20.11** | Uzgodnienie współpracy i kontraktu | Liderzy ustalają identyfikację projektu, granice prac E/F/C, B/F, D/F i A/F oraz kto odpowiada za integrację. Aktualny stan Demo zapisują jako PASS/FAIL; ukończona funkcja nie jest warunkiem tego checkpointu |
+| **24–27.11** | Pierwsze przyrosty implementacji | Małe PR-y/testy dla przypisań, modelu projektów, formularzy i finansów; próba dwóch kont oraz ustalenie braków |
+| **01–04.12** | Pierwszy pokaz i przegląd współpracy | Pokaz wyłącznie bezpiecznych i działających funkcji; zebranie uwag Działu Nauki, uzgodnienie zakresu obowiązkowego; 03.12 przegląd skuteczności wsparcia między zespołami |
 | **04.12** | Projekty w PostgreSQL | Model/migracje, właściwy typ/rok/projekt, F3 i F4 bez odczytu z `SyntheticProject` |
 | **11.12** | Operacje na projektach i F01 | Operator tworzy/edytuje projekt; F01 przechodzi tworzenie, zapis i ponowny odczyt, kontrola właściciela |
 | **18.12** | Główna ewidencja finansowa | Trwałe plany, rezerwacje, wydatki, saldo i korekty; testy finansów |
@@ -28,6 +29,8 @@
 4. **B:** F01 [PR #222](https://github.com/zio-wi-pb-mc/pb-science-office/pull/222)/[PR #223](https://github.com/zio-wi-pb-mc/pb-science-office/pull/223)/[PR #224](https://github.com/zio-wi-pb-mc/pb-science-office/pull/224) jest scalona; pozostał odbiór integracyjny, nie kolejny model.
 5. **A/F/D:** zapis finansowy → raporty i importer docelowy. Nie rozwijamy wyłącznie syntetycznego demo.
 6. **C + uczelnia:** hosting, dostęp, bezpieczeństwo środowiska, backup i sposób przekazania — uzgodnić teraz, nie w styczniu.
+
+**Terminy listopadowe i grudniowe są punktami kontrolnymi pracy; nie zakładamy wykonania całej implementacji w ciągu dwóch dni.**
 
 **Ryzyko terminowe:** dla ograniczonego, uzgodnionego zakresu plan może być wykonalny przy sprawnej integracji. Pełnego zastąpienia wszystkich funkcji legacy nie potwierdza aktualny stan repozytorium. Zakres musi zostać zatwierdzony przez Dział Nauki, bez dodawania nieustalonych nowych formularzy.
 
