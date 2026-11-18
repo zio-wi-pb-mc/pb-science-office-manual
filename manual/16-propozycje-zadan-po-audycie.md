@@ -36,15 +36,15 @@ Zespoły A–F pozostają bez zmian organizacyjnych. Gdy własny fragment jest g
 - [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215) — raporty i eksport CSV z rzeczywistych zapisów, bez pisania drugiego silnika obliczeń.
 - [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) — automatyczny test funkcjonalny Demo, przygotowanie hostingu i harmonogram testów z Działem Nauki. [#235](https://github.com/zio-wi-pb-mc/pb-science-office/pull/235) jest Draftem, ponieważ demonstrator nie ma jeszcze rozdzielonych uprawnień między kontami. Backup/restore PostgreSQL z testem CI dodano w [#232](https://github.com/zio-wi-pb-mc/pb-science-office/pull/232); pozostaje sprawdzenie na docelowym środowisku. Dokument [PR #228](https://github.com/zio-wi-pb-mc/pb-science-office/pull/228) jest podstawą, nie końcem tych prac.
 - Obsługa 403/404/500 ([PR #209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209)) i mobilne F3 ([PR #211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211)) są **MERGED** — nie zgłaszać ich ponownie jako nowych funkcji.
-- [#196](https://github.com/zio-wi-pb-mc/pb-science-office/issues/196) — opcjonalny `doctor` tylko przy realnej potrzebie; dodatkowe ogólne dokumenty niżej niż test działającej aplikacji.
+- [#196](https://github.com/zio-wi-pb-mc/pb-science-office/issues/196) — `doctor.py` jest już w `dev` po [PR #234](https://github.com/zio-wi-pb-mc/pb-science-office/pull/234); pozostaje praktyczny odbiór przez osobę spoza zespołu C. Nie pisać drugiego narzędzia diagnostycznego.
 
 ## Co już dostarczono — nie powielać
 
 | Zespół | Potwierdzony przyrost w `dev` |
 |---|---|
 | **A** | [PR #210](https://github.com/zio-wi-pb-mc/pb-science-office/pull/210), [PR #218](https://github.com/zio-wi-pb-mc/pb-science-office/pull/218) — przykłady finansowe i testy konkretnych kwot; [PR #209](https://github.com/zio-wi-pb-mc/pb-science-office/pull/209) — strony błędów |
-| **B** | [PR #222](https://github.com/zio-wi-pb-mc/pb-science-office/pull/222), [PR #223](https://github.com/zio-wi-pb-mc/pb-science-office/pull/223), [PR #224](https://github.com/zio-wi-pb-mc/pb-science-office/pull/224) — model F01, formularz, widoki i testy; pozostaje odbiór całości |
-| **C** | [PR #207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) — konta Demo; [PR #228](https://github.com/zio-wi-pb-mc/pb-science-office/pull/228) — wymagania infrastruktury; [PR #232](https://github.com/zio-wi-pb-mc/pb-science-office/pull/232) — backup/restore PostgreSQL z testem CI |
+| **B** | [#222](https://github.com/zio-wi-pb-mc/pb-science-office/pull/222), [#223](https://github.com/zio-wi-pb-mc/pb-science-office/pull/223), [#224](https://github.com/zio-wi-pb-mc/pb-science-office/pull/224), [#229](https://github.com/zio-wi-pb-mc/pb-science-office/pull/229), [#231](https://github.com/zio-wi-pb-mc/pb-science-office/pull/231) — model, formularz, widoki i testy F01; pozostaje odbiór całości |
+| **C** | [#207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) — konta Demo; [#228](https://github.com/zio-wi-pb-mc/pb-science-office/pull/228) — wymagania; [#232](https://github.com/zio-wi-pb-mc/pb-science-office/pull/232) — backup/restore; [#234](https://github.com/zio-wi-pb-mc/pb-science-office/pull/234) — diagnostyka |
 | **D** | [PR #225](https://github.com/zio-wi-pb-mc/pb-science-office/pull/225) — plan testów legacy; [PR #226](https://github.com/zio-wi-pb-mc/pb-science-office/pull/226) — importer pamięciowy z dry-run |
 | **E** | [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) nadal Draft; brak przyjętych uprawnień F3/F4 |
 | **F** | [PR #211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211) — mobilne F3; przygotowane #220/#221 do wdrożenia modelu/CRUD |
