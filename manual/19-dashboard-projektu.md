@@ -2,13 +2,13 @@
 
 **Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
 
-**Stan kodu i PR: 18.11.2026 (`dev` `e8d94872`, CI po merge w toku).** Dane punktowe są odrębnym, formalnie zatwierdzonym snapshotem z **03.11.2026**, zgodnym z [Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86).
+**Stan kodu i PR: 18.11.2026 (`dev` `e8d94872`, CI PASS).** Dane punktowe są odrębnym, formalnie zatwierdzonym snapshotem z **03.11.2026**, zgodnym z [Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86).
 
 ## Gotowość produktu
 
 | Element | Obecny stan | Co dalej |
 |---|---|---|
-| CI dla `dev` | **PASS na poprzednim SHA** `5af06805`; po #229/#231/#234 CI w toku dla `e8d94872` | <a href="https://github.com/zio-wi-pb-mc/pb-science-office/actions/">Szczegóły CI</a> |
+| CI dla `dev` | **PASS na aktualnym SHA** `e8d94872` (5 jobów: application, repository, Docker Compose, Demo image, backup/restore) | [Szczegóły CI](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850) |
 | Logowanie → F3 → F4 | Połączony przepływ na danych syntetycznych | E: [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173) + F: [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219) blokują bezpieczne Demo |
 | F01 | **Model, formularz, zapis/odczyt własnych fiszek i testy w `dev`** | B: [#229](https://github.com/zio-wi-pb-mc/pb-science-office/pull/229) i [#231](https://github.com/zio-wi-pb-mc/pb-science-office/pull/231) scalone; Issues #197–#201 zamknięte. Potwierdzić próbę E2E na PostgreSQL |
 | Projekty główne | **Brak trwałego modelu F3**, obecnie `SyntheticProject` | F: [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220), [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) w ramach [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213) |
