@@ -1,6 +1,6 @@
 # Co robić teraz — stan projektu i propozycje
 
-**Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
+**Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Każdy zespół może wybierać własne zadania lub wspierać inne zespoły; roadmapa pokazuje najbardziej potrzebne kierunki pracy.
 
 **Kontrola LIVE: 18.11.2026, `dev` `e8d94872`; [CI PASS](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850).** [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1) jest źródłem przypisań; ta strona podpowiada, gdzie praca może mieć największy efekt.
 
@@ -29,7 +29,7 @@ Zespoły A–F pozostają bez zmian organizacyjnych. Gdy własny fragment jest g
 | **Finanse na trwałych danych** — [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) | Plan, rezerwacja, wydatek, korekta, historia i saldo z PostgreSQL; wykorzystać istniejące testy F4, w tym [PR #218](https://github.com/zio-wi-pb-mc/pb-science-office/pull/218) | A + F |
 | **Importer do docelowych modeli** — [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216), [PR #226](https://github.com/zio-wi-pb-mc/pb-science-office/pull/226) MERGED | Zachować działające walidacje/dry-run/idempotencję; podłączyć do modelu z #220, sprawdzić zgodność sum i lat | D + F |
 
-**Nie czekamy z pracami niezależnymi na rozwiązanie wszystkich blokad.** PR ma zamykać mały, testowalny fragment. O wyborze konkretnego Issue decydują student i lider.
+**Pracujcie równolegle nad niezależnymi fragmentami.** Każdy PR powinien dostarczać mały, testowalny rezultat. Temat wybierają studenci w porozumieniu z liderem.
 
 ## P1 — po zabezpieczeniu P0 lub równolegle
 
