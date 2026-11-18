@@ -4,7 +4,7 @@
 
 To **propozycje kierunków** oparte na bieżącym kodzie. Liderzy i studenci samodzielnie ustalają kolejność oraz podział pracy. Dla dat wdrożenia i odbioru zobacz [plan końcowy](23-plan-do-31-stycznia.md).
 
-## Najbliższe zajęcia: 16–20 listopada
+## Najbliższe zajęcia: 18–20 listopada
 
 | Zespół | Co już się ruszyło | Najbardziej przydatny następny rezultat |
 |---|---|---|
@@ -19,8 +19,9 @@ To **propozycje kierunków** oparte na bieżącym kodzie. Liderzy i studenci sam
 
 | Do kiedy | Wynik do sprawdzenia |
 |---|---|
-| **20.11** | Test A/B i funkcjonalny Demo PASS/FAIL; zakres funkcji legacy uzgodniony z Działem Nauki |
-| **27–30.11** | Pierwszy pokaz działania aplikacji i lista braków z opiniami pracowników |
+| **20.11** | Krótki checkpoint liderów: kontrakt projektu, podział małych fragmentów i blokery; bez wymagania kompletnego Demo |
+| **24–27.11** | Pierwsze małe PR-y/testy oraz próba integracji E/F/C na dwóch kontach; odrębnie postęp modelu PostgreSQL |
+| **01–04.12** | Ocena bezpiecznego Demo, pierwszy pokaz Działowi Nauki działającego zakresu i zebranie uwag; 03.12 ocena dwutygodniowej współpracy |
 | **04.12** | Trwałe projekty, migracje i odczyt F3/F4 ([#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220)) |
 | **11.12** | Tworzenie/edycja projektów ([#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221)) i odebrany przepływ F01 |
 | **18.12** | Podstawowe trwałe operacje finansowe i testy bilansów ([#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214)) |
