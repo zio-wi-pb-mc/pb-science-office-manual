@@ -27,7 +27,7 @@ Oceniamy rzeczywisty wkład studentów — również review, testy, integrację 
 
 ## Aktywność studentów — 10–16 listopada
 
-**12 scalonych PR w okresie 10–16 listopada, 8 różnych autorów, 5 zespołów; dodatkowo #232 scalony 17.11.** To nowa aktywność i realna implementacja, ale PR-y mają różny zakres. Tabela opisuje *zakończone scalenia*, nie punkty i nie indywidualne oceny.
+**12 scalonych PR w okresie 10–16 listopada, 8 różnych autorów, 5 zespołów. Po tym okresie scalono także #232 (17.11) i #229, #231, #234 (18.11).** To nowa aktywność i realna implementacja, ale PR-y mają różny zakres. Tabela opisuje *zakończone scalenia*, nie punkty i nie indywidualne oceny.
 
 | Zespół | Autorzy i scalone PR | Rezultat |
 |---|---|---|
@@ -38,7 +38,7 @@ Oceniamy rzeczywisty wkład studentów — również review, testy, integrację 
 | **F — 1 PR** | Paweł Kozikowski [PR #211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211) | Mobilny widok F3 |
 | **E — bez nowego merge** | [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) pozostaje Draft | Otwarta krytyczna praca nad uprawnieniami |
 
-**Jak to czytać:** największe wdrożeniowe przyspieszenie nastąpiło w B i D. Zespół E ma ważne zadanie w toku, ale brak scalenia nie dowodzi braku pracy. Liczba PR nie zastępuje oceny działania produktu.
+**Jak to czytać:** powyższa tabela opisuje przede wszystkim prace do 16 listopada. Nowsze scalenia #229, #231, #232 i #234 są uwzględnione w sekcji gotowości produktu, lecz nie zwiększają automatycznie punktów. Największe wdrożeniowe przyspieszenie nastąpiło w B i D. Zespół E ma ważne zadanie w toku, ale brak scalenia nie dowodzi braku pracy. Liczba PR nie zastępuje oceny działania produktu.
 
 ## Contribution Leaderboard — oficjalny snapshot 03.11
 
