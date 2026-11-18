@@ -4,6 +4,20 @@
 
 **Kontrola LIVE: 18.11.2026, `dev` `e8d94872`; [CI PASS](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850).** [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1) jest źródłem przypisań; ta strona podpowiada, gdzie praca może mieć największy efekt.
 
+## Podział wspólnej pracy — propozycja do uzgodnienia przez liderów
+
+Zespoły A–F pozostają bez zmian organizacyjnych. Gdy własny fragment jest gotowy albo zablokowany, można przejąć **mały, testowalny fragment** z innego obszaru. Uzgodnijcie przed rozpoczęciem, kto jest autorem PR, kto integruje i co stanowi odbiór; pracujcie od aktualnego `dev`. Bez duplikowania modeli i bez równoległych zmian tych samych plików.
+
+| Wspólny obszar | Proponowany podział | Rezultat |
+|---|---|---|
+| [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220) — model projektów | D: pomoc przy modelu, migracjach i testach; F: kontrakt i podłączenie F3/F4; E: wymagania uprawnień | Jeden model w PostgreSQL, odczyt po ponownym uruchomieniu |
+| [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) — CRUD | B: formularze, walidacja i testy; F: integracja; E: prawa zapisu | Tworzenie i edycja projektu przez operatora |
+| [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173) / [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219) — dostęp i Demo | E: przypisania i serwerowa kontrola; F: budżet HTML/JSON; C: test 2 kont w `DEBUG=False` | Brak odczytu cudzych projektów, spójna polityka odpowiedzi |
+| [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) — finanse | A: modele operacji, transakcje i testy; F/D: uzgodnienie klucza projektu | Pierwszy trwały scenariusz plan → wydatek/rezerwacja → saldo |
+| [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) — importer | D: przygotowanie mapowania, testów i raportu; F: docelowy ORM | Import po ustaleniu modelu, bez kolejnego pamięciowego demonstratora |
+
+**Najpierw kontrakt**: typ/rok/identyfikator projektu, relacje do finansów i przypisań. Jeśli inne zespoły mogą już wykonać niezależne testy lub fragment UI, nie powinny czekać na zakończenie całego #220. Zgłaszajcie na GitHubie konkretny blocker, osobę odpowiedzialną i potrzebną decyzję.
+
 ## P0 — blokery działającej aplikacji
 
 | Brak / status | Możliwe działania | Zespoły do uzgodnienia |
