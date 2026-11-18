@@ -6,7 +6,7 @@
 
 ## Uzgodnienie E/F — 18 listopada
 
-**Wspólny test do 20.11:** E przygotowuje kontrolę przypisania projektu na aktualnym `dev` ([#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)); F integruje ją z F3/F4 i częściowym [PR #235](https://github.com/zio-wi-pb-mc/pb-science-office/pull/235); C sprawdza Docker Demo z `DEBUG=False`. Użytkownik anonimowy trafia do logowania, lista filtruje projekty, a cudze szczegóły i budżety (HTML/JSON) zwracają 404. **Równolegle** trwa praca nad modelem PostgreSQL [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220) i CRUD [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221).
+**Plan integracji:** E przygotowuje kontrolę przypisania projektu na aktualnym `dev` ([#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)); F integruje ją z F3/F4 i częściowym [PR #235](https://github.com/zio-wi-pb-mc/pb-science-office/pull/235); C sprawdza Docker Demo z `DEBUG=False`. Użytkownik anonimowy trafia do logowania, lista filtruje projekty, a cudze szczegóły i budżety (HTML/JSON) zwracają 404. **Równolegle** trwa praca nad modelem PostgreSQL [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220) i CRUD [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221).
 
 To **kierunki współpracy i warunki odbioru**, a nie nakaz wyboru określonych Issues. Szczegóły w [koordynacji #127](https://github.com/zio-wi-pb-mc/pb-science-office/issues/127).
 
@@ -30,12 +30,13 @@ Pomoc poza własną grupą jest uwzględniana w **ocenie indywidualnego wkładu*
 
 **CI:** [aktualny `dev` — PASS](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850). Test Docker Demo sprawdza uruchomienie, migracje, health, wersję i statyczne pliki, **nie pełny przepływ użytkownika**.
 
-## Co nowego od 10 listopada?
+## Aktualny postęp — 18 listopada
 
-- **12 PR-ów scalonych do `dev`**, w tym 7 w ostatnim przeglądzie. Studenci dostarczyli m.in. [PR #222](https://github.com/zio-wi-pb-mc/pb-science-office/pull/222), [PR #223](https://github.com/zio-wi-pb-mc/pb-science-office/pull/223), [PR #224](https://github.com/zio-wi-pb-mc/pb-science-office/pull/224) (F01), [PR #226](https://github.com/zio-wi-pb-mc/pb-science-office/pull/226) (importer), [PR #218](https://github.com/zio-wi-pb-mc/pb-science-office/pull/218) (testy finansowe), [PR #225](https://github.com/zio-wi-pb-mc/pb-science-office/pull/225) (plan testów) i [PR #228](https://github.com/zio-wi-pb-mc/pb-science-office/pull/228) (wymagania środowiska).
-- **2 otwarte PR-y:** [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) — stary Draft uprawnień, oraz [#235](https://github.com/zio-wi-pb-mc/pb-science-office/pull/235) — Draft F3/F4 przy `DEBUG=False`, oczekujący na izolację projektów między kontami.
-- **Nowe scalenia:** [#232](https://github.com/zio-wi-pb-mc/pb-science-office/pull/232) (backup/restore), [#231](https://github.com/zio-wi-pb-mc/pb-science-office/pull/231) (walidacja F01), [#229](https://github.com/zio-wi-pb-mc/pb-science-office/pull/229) (przepływ F01), [#234](https://github.com/zio-wi-pb-mc/pb-science-office/pull/234) (diagnostyka). Issues F01 #197–#201 zamknięte.
-- Zespół F rozpoczął podział prac nad bazą projektów na [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220) (model/odczyt) i [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) (formularze). To konkretne zadania przygotowawcze, nie funkcje już scalone.
+- **F01:** model, formularz, widoki i testy scalone — [#222](https://github.com/zio-wi-pb-mc/pb-science-office/pull/222), [#223](https://github.com/zio-wi-pb-mc/pb-science-office/pull/223), [#224](https://github.com/zio-wi-pb-mc/pb-science-office/pull/224), [#229](https://github.com/zio-wi-pb-mc/pb-science-office/pull/229), [#231](https://github.com/zio-wi-pb-mc/pb-science-office/pull/231). Issues #197–#201 zamknięte. Pozostał odbiór manualny w pełnym scenariuszu PostgreSQL.
+- **Infrastruktura:** [#232](https://github.com/zio-wi-pb-mc/pb-science-office/pull/232) — backup/restore, [#234](https://github.com/zio-wi-pb-mc/pb-science-office/pull/234) — diagnostyka `doctor.py`; oba w `dev`, CI PASS. Nadal potrzebny niezależny test działania.
+- **Import danych i finanse:** [#226](https://github.com/zio-wi-pb-mc/pb-science-office/pull/226) — importer syntetyczny z walidacją i dry-run; [#218](https://github.com/zio-wi-pb-mc/pb-science-office/pull/218) — integracyjne testy finansów. Trwałe zapisy wymagają kolejnych zmian.
+- **Dwa otwarte Drafty:** [#174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) (historyczne uprawnienia) i [#235](https://github.com/zio-wi-pb-mc/pb-science-office/pull/235) (częściowa obsługa `DEBUG=False`). Nie są jeszcze scalone — test dostępu dwóch użytkowników nadal pozostaje blockerem.
+- **Nowe kierunki:** [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220) — model projektów w PostgreSQL, [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) — tworzenie/edycja. Można włączyć wsparcie B/D/F, ale to propozycja współpracy, nie zmiana przydziałów.
 
 ## Wybierz swój następny krok
 
@@ -45,11 +46,15 @@ Pomoc poza własną grupą jest uwzględniana w **ocenie indywidualnego wkładu*
 
 [**Plan i terminy do 31 stycznia**](23-plan-do-31-stycznia.md) · [**Roadmapa A–F**](21-roadmap-3-tygodnie.md) · [**Dashboard i leaderboard**](19-dashboard-projektu.md)
 
-## Następny punkt kontrolny — 20 listopada
+## Najbliższe terminy
 
-**F/E/C:** wynik testu dwóch kont i Demo `DEBUG=False` zapisany jako PASS/FAIL. **B:** testy #229/#231 scalone; wykonać końcową próbę tworzenia i odczytu F01 na PostgreSQL. **E/F:** uprawnienia per projekt i Demo `DEBUG=False` pozostają krytyczne. **D/F:** uzgodniony kontrakt docelowego modelu projektu i importera. **A:** testy i reguły finansowe przygotowane do trwałego zapisu.
+| Kiedy | Co sprawdzamy |
+|---|---|
+| **20 listopada** | Krótkie ustalenia liderów: wspólny klucz projektu, odpowiedzialność za integrację i małe fragmenty pracy, blokery E/F/C. Nie wymagamy ukończonego Demo tego dnia |
+| **24–27 listopada** | Pierwsze małe PR-y i testy w obszarach uprawnień, modelu PostgreSQL, formularzy i finansów. C przygotowuje próbę Demo z dwoma kontami |
+| **1–4 grudnia** | Ocena bezpiecznego scenariusza Demo i pierwszy pokaz pracownikom Działu Nauki **w zakresie funkcji faktycznie działających**; 3 grudnia krótki przegląd skuteczności współpracy |
 
-Do końca listopada planujemy pierwszy pokaz pracownikom Działu Nauki. Zakres funkcji niezbędnych do zastąpienia legacy trzeba z nimi potwierdzić przed dalszą rozbudową.
+Do spotkania z Działem Nauki przygotowujemy listę funkcji niezbędnych do zastąpienia starego systemu. Termin końcowy projektu pozostaje bez zmian — **31 stycznia 2027 r.**
 
 ## Zasady pracy
 
