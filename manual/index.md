@@ -1,20 +1,20 @@
 # ZIO — co robić teraz
 
-**Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
+**Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Każdy zespół może wybierać własne zadania lub wspierać inne zespoły; roadmapa pokazuje najbardziej potrzebne kierunki pracy.
 
 **Stan przeglądu: 18.11.2026**, gałąź [`dev`](https://github.com/zio-wi-pb-mc/pb-science-office/tree/dev), commit `e8d94872` ([CI PASS](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850)).
 
 ## Uzgodnienie E/F — 18 listopada
 
-**Plan integracji:** E przygotowuje kontrolę przypisania projektu na aktualnym `dev` ([#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)); F integruje ją z F3/F4 i częściowym [PR #235](https://github.com/zio-wi-pb-mc/pb-science-office/pull/235); C sprawdza Docker Demo z `DEBUG=False`. Użytkownik anonimowy trafia do logowania, lista filtruje projekty, a cudze szczegóły i budżety (HTML/JSON) zwracają 404. **Równolegle** trwa praca nad modelem PostgreSQL [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220) i CRUD [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221).
+**Wspólna praca:** E przygotowuje kontrolę przypisania projektu na aktualnym `dev` ([#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)); F integruje ją z F3/F4 i częściowym [PR #235](https://github.com/zio-wi-pb-mc/pb-science-office/pull/235); C sprawdza Docker Demo z `DEBUG=False`. Użytkownik anonimowy trafia do logowania, lista filtruje projekty, a cudze szczegóły i budżety (HTML/JSON) zwracają 404. **Równolegle** trwa praca nad modelem PostgreSQL [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220) i CRUD [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221).
 
-To **kierunki współpracy i warunki odbioru**, a nie nakaz wyboru określonych Issues. Szczegóły w [koordynacji #127](https://github.com/zio-wi-pb-mc/pb-science-office/issues/127).
+Szczegóły współpracy i ustalenia techniczne: [koordynacja #127](https://github.com/zio-wi-pb-mc/pb-science-office/issues/127).
 
 ## Wspólny produkt, elastyczne zespoły — od 18 listopada
 
-**Nie łączymy organizacyjnie grup A–F.** Zachowujemy liderów, grupy zajęciowe (A–C i D–F), dotychczasową historię i indywidualne ocenianie. **Można za to pomagać w zadaniach innego zespołu** — liczy się rezultat dla wspólnej aplikacji. Zmiany zakresów uzgadniajcie między liderami i zapisujcie krótko w odpowiednim Issue, aby dwie osoby nie robiły tego samego.
+**Pracujemy w sześciu zespołach A–F nad jednym produktem.** Zachowujemy liderów i dwa terminy zajęć (A–C i D–F). Wspólna implementacja, testowanie i integracja między zespołami to pełnoprawny wkład w aplikację. Zmiany zakresów uzgadniajcie między liderami i zapisujcie krótko w odpowiednim Issue, aby dwie osoby nie robiły tego samego.
 
-**Najpilniejsze współprace:** B + F → formularze projektów [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221); D + F → model PostgreSQL [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220); E + F + C → uprawnienia i bezpieczne Demo [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)/[#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219); A + F → zapis finansów [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214). To **propozycje podziału implementacji, nie nowe automatyczne przydziały**. D/F/E/A muszą wcześniej uzgodnić wspólny kontrakt danych projektów.
+**Najpilniejsze współprace:** B + F → formularze projektów [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221); D + F → model PostgreSQL [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220); E + F + C → uprawnienia i bezpieczne Demo [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)/[#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219); A + F → zapis finansów [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214). Podział pracy ustalają zainteresowani studenci i liderzy. D/F/E/A uzgadniają wspólny kontrakt danych projektów.
 
 Pomoc poza własną grupą jest uwzględniana w **ocenie indywidualnego wkładu** na dotychczasowych zasadach; sama przynależność do zespołu ani współautorstwo bez rzeczywistej pracy nie daje automatycznie punktów. [Szczegóły oceniania](08-ocenianie.md).
 
@@ -46,18 +46,18 @@ Pomoc poza własną grupą jest uwzględniana w **ocenie indywidualnego wkładu*
 
 [**Plan i terminy do 31 stycznia**](23-plan-do-31-stycznia.md) · [**Roadmapa A–F**](21-roadmap-3-tygodnie.md) · [**Dashboard i leaderboard**](19-dashboard-projektu.md)
 
-## Najbliższe terminy
+## Najbliższe działania
 
-| Kiedy | Co sprawdzamy |
+| Kiedy orientacyjnie | Cel |
 |---|---|
-| **20 listopada** | Krótkie ustalenia liderów: wspólny klucz projektu, odpowiedzialność za integrację i małe fragmenty pracy, blokery E/F/C. Nie wymagamy ukończonego Demo tego dnia |
-| **24–27 listopada** | Pierwsze małe PR-y i testy w obszarach uprawnień, modelu PostgreSQL, formularzy i finansów. C przygotowuje próbę Demo z dwoma kontami |
-| **1–4 grudnia** | Ocena bezpiecznego scenariusza Demo i pierwszy pokaz pracownikom Działu Nauki **w zakresie funkcji faktycznie działających**; 3 grudnia krótki przegląd skuteczności współpracy |
+| **W najbliższych dniach** | Liderzy uzgadniają wspólny klucz projektu, współpracę między zespołami, odpowiedzialność za integrację i najważniejsze blokery. |
+| **W kolejnym tygodniu** | Pierwsze małe PR-y i testy uprawnień, PostgreSQL, formularzy oraz finansów. C/E/F sprawdzają Demo na dwóch kontach. |
+| **Na przełomie listopada i grudnia** | Oceniamy bezpieczeństwo Demo, prezentujemy działające funkcje Działowi Nauki, zbieramy uwagi i sprawdzamy efekty współpracy zespołów. |
 
-Do spotkania z Działem Nauki przygotowujemy listę funkcji niezbędnych do zastąpienia starego systemu. Termin końcowy projektu pozostaje bez zmian — **31 stycznia 2027 r.**
+Na spotkanie z Działem Nauki przygotowujemy listę funkcji potrzebnych do zastąpienia starego systemu. **Końcowy termin projektu: 31 stycznia 2027 r.**
 
 ## Zasady pracy
 
-PR studencki: `feature → dev` po review i testach. Wydanie: `dev → main` przez prowadzącego. Nie trzeba tworzyć nowych Issues tylko po to, żeby „mieć pracę”. Istniejący [leaderboard](19-dashboard-projektu.md) pokazuje punkty **formalnie rozliczone do 03.11** oraz osobno nowsze osiągnięcia — bez automatycznego naliczania za merge.
+PR studencki: `feature → dev` po review i testach. Wydanie: `dev → main` przez prowadzącego. Wybierajcie działania, które przynoszą mierzalne rezultaty w aplikacji. Istniejący [leaderboard](19-dashboard-projektu.md) pokazuje punkty **formalnie rozliczone do 03.11** oraz osobno nowsze osiągnięcia — zgodnie z zasadami punktowania #86.
 
 [Środowiska i uruchomienie](18-srodowiska-mvp.md) · [Audyt funkcji legacy](22-audyt-legacy-parity.md) · [Informacje podstawowe](20-informacje-podstawowe.md)

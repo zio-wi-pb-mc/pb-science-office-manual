@@ -1,10 +1,10 @@
 # Roadmap zespołów A–F — 18 listopada 2026
 
-**Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
+**Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Każdy zespół może wybierać własne zadania lub wspierać inne zespoły; roadmapa pokazuje najbardziej potrzebne kierunki pracy.
 
 To **propozycje kierunków** oparte na bieżącym kodzie. Liderzy i studenci samodzielnie ustalają kolejność oraz podział pracy. Dla dat wdrożenia i odbioru zobacz [plan końcowy](23-plan-do-31-stycznia.md).
 
-## Najbliższe zajęcia: 18–20 listopada
+## Co możemy zrobić na najbliższych zajęciach
 
 | Zespół | Co już się ruszyło | Najbardziej przydatny następny rezultat |
 |---|---|---|
@@ -15,21 +15,21 @@ To **propozycje kierunków** oparte na bieżącym kodzie. Liderzy i studenci sam
 | **E — uprawnienia** | Stary Draft [PR #174](https://github.com/zio-wi-pb-mc/pb-science-office/pull/174) (bez merge) | Mały nowy PR do `dev` ze wspólną kontrolą per projekt; lista filtrowana, cudze HTML/JSON/budżety → 404 |
 | **F — integracja** | Mobilne F3 [PR #211](https://github.com/zio-wi-pb-mc/pb-science-office/pull/211), rozpisane [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219), [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220), [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) | Integracja #235 z kontrolą E; niezależnie #220 (model PostgreSQL), potem #221 (CRUD) |
 
-## Kamienie milowe projektu
+## Orientacyjne etapy projektu
 
-| Do kiedy | Wynik do sprawdzenia |
+| Horyzont | Wynik do sprawdzenia |
 |---|---|
-| **20.11** | Krótki checkpoint liderów: kontrakt projektu, podział małych fragmentów i blokery; bez wymagania kompletnego Demo |
-| **24–27.11** | Pierwsze małe PR-y/testy oraz próba integracji E/F/C na dwóch kontach; odrębnie postęp modelu PostgreSQL |
-| **01–04.12** | Ocena bezpiecznego Demo, pierwszy pokaz Działowi Nauki działającego zakresu i zebranie uwag; 03.12 ocena dwutygodniowej współpracy |
-| **04.12** | Trwałe projekty, migracje i odczyt F3/F4 ([#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220)) |
-| **11.12** | Tworzenie/edycja projektów ([#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221)) i odebrany przepływ F01 |
-| **18.12** | Podstawowe trwałe operacje finansowe i testy bilansów ([#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214)) |
-| **08.01** | Raporty, eksport i import próbny ([#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215), [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216)) |
-| **10.01** | Zakończenie dodawania nowych funkcji |
-| **15.01** | Wdrożenie w uzgodnionym środowisku |
-| **16–25.01** | Testy z Działem Nauki i usuwanie błędów |
-| **26–30.01** | Retesty, backup/restore, protokół odbioru |
+| **W najbliższych dniach** | Liderzy uzgadniają kontrakt projektu, małe fragmenty pracy, odpowiedzialność za integrację i rozwiązania blokerów |
+| **W kolejnym tygodniu** | Pierwsze małe PR-y/testy oraz próba integracji E/F/C na dwóch kontach; odrębnie postęp modelu PostgreSQL |
+| **Na przełomie listopada i grudnia** | Sprawdzenie bezpiecznego Demo, pokaz Działowi Nauki dostępnych funkcjonalności, zebranie uwag i ocena efektów współpracy |
+| **Na początku grudnia** | Trwałe projekty, migracje i odczyt F3/F4 ([#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220)) |
+| **W pierwszej połowie grudnia** | Tworzenie/edycja projektów ([#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221)) i odebrany przepływ F01 |
+| **Przed przerwą świąteczną** | Podstawowe trwałe operacje finansowe i testy bilansów ([#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214)) |
+| **Na początku stycznia** | Raporty, eksport i import próbny ([#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215), [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216)) |
+| **Po domknięciu funkcjonalności** | Zakończenie dodawania nowych funkcji |
+| **Około połowy stycznia** | Wdrożenie w uzgodnionym środowisku |
+| **W drugiej połowie stycznia** | Testy z Działem Nauki i usuwanie błędów |
+| **Przed odbiorem końcowym** | Retesty, backup/restore, protokół odbioru |
 | **31.01** | **Aplikacja wdrożona, przetestowana i odebrana** |
 
 ## Jak raportować pracę

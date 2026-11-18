@@ -1,12 +1,12 @@
 # Dashboard projektu i leaderboard
 
-**Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
+**Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Każdy zespół może wybierać własne zadania lub wspierać inne zespoły; roadmapa pokazuje najbardziej potrzebne kierunki pracy.
 
 **Stan kodu i PR: 18.11.2026 (`dev` `e8d94872`, CI PASS).** Dane punktowe są odrębnym, formalnie zatwierdzonym snapshotem z **03.11.2026**, zgodnym z [Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86).
 
 ## Zasady współpracy między zespołami
 
-**A–F nie są łączone w jedną grupę.** Zostaje indywidualna punktacja, dotychczasowi liderzy i dwa terminy zajęć. Dopuszczamy wspólne realizowanie fragmentów innych zespołów: B pomaga F przy formularzach, D przy modelu PostgreSQL, C przy odbiorze uprawnień i Demo, A przy modelu finansów. Podział odpowiedzialności należy potwierdzić w odpowiednich Issues; nie jest to automatyczne przejęcie ich przez inne osoby.
+**Sześć zespołów A–F współpracuje nad jedną aplikacją.** Zachowujemy indywidualną punktację, dotychczasowych liderów i dwa terminy zajęć. Dopuszczamy wspólne realizowanie fragmentów innych zespołów: B pomaga F przy formularzach, D przy modelu PostgreSQL, C przy odbiorze uprawnień i Demo, A przy modelu finansów. Studenci i liderzy ustalają swój udział w odpowiednich Issues.
 
 Oceniamy rzeczywisty wkład studentów — również review, testy, integrację i pomoc poza własnym zespołem — zgodnie z [zasadami oceniania](08-ocenianie.md) i [leaderboardem #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86). Historyczne punkty z 03.11 pozostają bez zmian do audytu.
 
@@ -82,7 +82,7 @@ Poniższa punktacja pozostaje bez zmian do przeliczenia według [zasad #86](http
 | 4 | F | **6** | 4 | **1.50** |
 | 6 | E | **0** | 3 | **0.00** |
 
-**Ważne:** zero punktów z 03.11 nie jest informacją o braku aktywności po tej dacie. Przed nowym rankingiem wymagany jest audyt PR/Issues i peer review — nie dopisujemy punktów automatycznie.
+**Ważne:** punktacja jest historycznym snapshotem z 03.11. Nowy ranking powstanie po sprawdzeniu PR/Issues i peer review zgodnie z zasadami #86.
 
 ## Miejsca pracy
 
