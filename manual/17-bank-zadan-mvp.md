@@ -1,6 +1,6 @@
 # Bank propozycji — gdy nie masz własnego pomysłu
 
-To **pomysły do wyboru**, a nie obowiązkowe zadania ani przydział według zespołu. Najpierw sprawdź [priorytety](16-propozycje-zadan-po-audycie.md), [Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1) i [PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls). Jeśli coś już istnieje, pomóż autorowi lub wybierz inny brak.
+To propozycje konkretnych prac dla osób szukających kolejnego zadania. Najpierw sprawdź [priorytety](16-propozycje-zadan-po-audycie.md), [Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1) i [PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls). Jeśli coś już istnieje, pomóż autorowi lub wybierz inny brak.
 
 | Propozycja | Konkretny rezultat | Powiązanie |
 |---|---|---|
@@ -14,6 +14,6 @@ To **pomysły do wyboru**, a nie obowiązkowe zadania ani przydział według zes
 | Zestawienie CSV | Wydruk/zapis raportu finansowego z tego samego projektu i roku, z kontrolą dostępu | [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215) |
 | Odbiór wdrożenia | Przetestuj backup/restore na osobnej bazie, instrukcję od czystego klona i smoke po wdrożeniu | [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) |
 
-**Zasada:** można zaproponować zupełnie inne rozwiązanie, jeżeli wnosi widoczny efekt do wspólnej aplikacji. Nie tworzyć duplikatu formularza F01, modułu projektów, Dockera ani nowego szkieletu Django.
+**Własne pomysły są mile widziane:** wybierzcie konkretny brak produktu, sprawdźcie istniejące PR-y i uzgodnijcie integrację ze wspólnym kodem.
 
 [Plan do stycznia](23-plan-do-31-stycznia.md) · [Zadania A–F](21-roadmap-3-tygodnie.md)
