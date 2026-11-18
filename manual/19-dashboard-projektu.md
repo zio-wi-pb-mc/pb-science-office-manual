@@ -4,6 +4,12 @@
 
 **Stan kodu i PR: 18.11.2026 (`dev` `e8d94872`, CI PASS).** Dane punktowe są odrębnym, formalnie zatwierdzonym snapshotem z **03.11.2026**, zgodnym z [Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86).
 
+## Zasady współpracy między zespołami
+
+**A–F nie są łączone w jedną grupę.** Zostaje indywidualna punktacja, dotychczasowi liderzy i dwa terminy zajęć. Dopuszczamy wspólne realizowanie fragmentów innych zespołów: B pomaga F przy formularzach, D przy modelu PostgreSQL, C przy odbiorze uprawnień i Demo, A przy modelu finansów. Podział odpowiedzialności należy potwierdzić w odpowiednich Issues; nie jest to automatyczne przejęcie ich przez inne osoby.
+
+Oceniamy rzeczywisty wkład studentów — również review, testy, integrację i pomoc poza własnym zespołem — zgodnie z [zasadami oceniania](08-ocenianie.md) i [leaderboardem #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86). Historyczne punkty z 03.11 pozostają bez zmian do audytu.
+
 ## Gotowość produktu
 
 | Element | Obecny stan | Co dalej |
