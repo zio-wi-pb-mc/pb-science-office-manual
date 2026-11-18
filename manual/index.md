@@ -10,6 +10,14 @@
 
 To **kierunki współpracy i warunki odbioru**, a nie nakaz wyboru określonych Issues. Szczegóły w [koordynacji #127](https://github.com/zio-wi-pb-mc/pb-science-office/issues/127).
 
+## Wspólny produkt, elastyczne zespoły — od 18 listopada
+
+**Nie łączymy organizacyjnie grup A–F.** Zachowujemy liderów, grupy zajęciowe (A–C i D–F), dotychczasową historię i indywidualne ocenianie. **Można za to pomagać w zadaniach innego zespołu** — liczy się rezultat dla wspólnej aplikacji. Zmiany zakresów uzgadniajcie między liderami i zapisujcie krótko w odpowiednim Issue, aby dwie osoby nie robiły tego samego.
+
+**Najpilniejsze współprace:** B + F → formularze projektów [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221); D + F → model PostgreSQL [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220); E + F + C → uprawnienia i bezpieczne Demo [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)/[#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219); A + F → zapis finansów [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214). To **propozycje podziału implementacji, nie nowe automatyczne przydziały**. D/F/E/A muszą wcześniej uzgodnić wspólny kontrakt danych projektów.
+
+Pomoc poza własną grupą jest uwzględniana w **ocenie indywidualnego wkładu** na dotychczasowych zasadach; sama przynależność do zespołu ani współautorstwo bez rzeczywistej pracy nie daje automatycznie punktów. [Szczegóły oceniania](08-ocenianie.md).
+
 ## Najbliższy cel: działające Demo
 
 **P0:** logowanie → lista projektów → szczegóły → budżet w Docker Demo (`DEBUG=False`), z uprawnieniami do własnych projektów i odmową dostępu do cudzych adresów HTML/JSON/budżetów.
