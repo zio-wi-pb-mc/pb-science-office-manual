@@ -90,4 +90,4 @@ W katalogu 58 materiałów formularzowych znajdują się również procesy spoza
 3. Nie wykazano pełnej poprawności reguł finansowych względem oryginalnych zapisów ani działania Demo w `DEBUG=False` od loginu do budżetu.
 4. Nie znamy dostępnych studentogodzin w grudniu i styczniu ani rzeczywistego zakresu operacji konferencji/delegacji.
 
-**Decyzja do 20.11:** przedstawiciel Działu Nauki zatwierdza tabelę L01–L27 w podziale **MUST (potrzebne do zastąpienia) / LATER (poza wymaganym zakresem) / UNCERTAIN**. Po 20.11 żadne nowe „fajne” formularze nie mogą wypierać MUST bez jawnej zmiany zakresu. Zobacz [plan do 31 stycznia](23-plan-do-31-stycznia.md).
+**W najbliższym czasie:** wspólnie z Działem Nauki uzgadniamy zakres tabeli L01–L27, rozdzielając funkcje na **MUST (potrzebne do zastąpienia) / LATER (kolejny etap) / UNCERTAIN (do wyjaśnienia)**. Uzgodnione funkcje MUST wyznaczają priorytety dalszej implementacji. Zobacz [plan do 31 stycznia](23-plan-do-31-stycznia.md).
