@@ -2,7 +2,7 @@
 
 **Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Każdy zespół może wybierać własne zadania lub wspierać inne zespoły; roadmapa pokazuje najbardziej potrzebne kierunki pracy.
 
-**Stan kodu i PR: 18.11.2026 (`dev` `e8d94872`, CI PASS).** Leaderboard: audyt 18.11, z punktem wyjścia w zatwierdzonym snapshotcie z 03.11, zgodnie z [Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86).
+**Stan techniczny sprawdzony 24.11.2026: `dev` nadal `e8d94872` ([ostatni CI PASS z 18.11](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850)); kluczowe PR-y są na gałęziach, nie na `dev`.** Leaderboard: audyt 18.11, z punktem wyjścia w zatwierdzonym snapshotcie z 03.11, zgodnie z [Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86).
 
 ## Zasady współpracy między zespołami
 
@@ -10,24 +10,26 @@
 
 Oceniamy rzeczywisty wkład studentów — również review, testy, integrację i pomoc poza własnym zespołem — zgodnie z [zasadami oceniania](08-ocenianie.md) i [leaderboardem #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86). Historyczny snapshot z 03.11 pozostał punktem wyjścia; nowe punkty dopisano po audycie 18.11.
 
-## Gotowość produktu
+## Gotowość produktu — audyt 24 listopada
 
 | Element | Obecny stan | Co dalej |
 |---|---|---|
-| CI dla `dev` | **PASS na aktualnym SHA** `e8d94872` (5 jobów: application, repository, Docker Compose, Demo image, backup/restore) | [Szczegóły CI](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850) |
-| Logowanie → F3 → F4 | Połączony przepływ na danych syntetycznych | E: [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173) + F: [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219) blokują bezpieczne Demo |
-| F01 | **Model, formularz, zapis/odczyt własnych fiszek i testy w `dev`** | B: [#229](https://github.com/zio-wi-pb-mc/pb-science-office/pull/229) i [#231](https://github.com/zio-wi-pb-mc/pb-science-office/pull/231) scalone; Issues #197–#201 zamknięte. Potwierdzić próbę E2E na PostgreSQL |
-| Projekty główne | **Brak trwałego modelu F3**, obecnie `SyntheticProject` | F: [#220](https://github.com/zio-wi-pb-mc/pb-science-office/issues/220), [#221](https://github.com/zio-wi-pb-mc/pb-science-office/issues/221) w ramach [#213](https://github.com/zio-wi-pb-mc/pb-science-office/issues/213) |
-| Finanse | Podgląd, walidacja i testy na scenariuszach | A/F: trwały zapis [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) |
-| Importer | Dry-run, walidacja, idempotencja na magazynie pamięciowym | D/F: [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) do docelowego ORM |
-| Backup i diagnostyka | **[#232](https://github.com/zio-wi-pb-mc/pb-science-office/pull/232)** — backup/restore; **[#234](https://github.com/zio-wi-pb-mc/pb-science-office/pull/234)** — `doctor`; oba MERGED | C: ręczna próba przez inną osobę; #230 i #196 otwarte do odbioru |
-| Raporty i wdrożenie | Plan i procedury, niepełna implementacja | [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215), [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) i uzgodnienie hostingu |
+| CI dla `dev` | `e8d94872`, CI PASS **18.11**, brak kolejnych merge | Studenci integrują #235 → #237 → #236 i powtarzają CI |
+| Dostęp per projekt i Docker Demo | [PR #235](https://github.com/zio-wi-pb-mc/pb-science-office/pull/235): dwa konta A/B, F3/F4 HTML/JSON przy `DEBUG=False` — pozytywne testy **na gałęzi** i studencki APPROVE | Studencki merge i niezależny odbiór [#246](https://github.com/zio-wi-pb-mc/pb-science-office/issues/246) |
+| Trwały model projektów | [PR #237](https://github.com/zio-wi-pb-mc/pb-science-office/pull/237), model PostgreSQL i testy PASS na gałęzi | Niezależne review aktualnego HEAD, rebase po #235 |
+| Tworzenie/edycja | [PR #236](https://github.com/zio-wi-pb-mc/pb-science-office/pull/236), zintegrowane testy na PostgreSQL 328 PASS/2 SKIP, próba Demo HTTP PASS według PR | Aktualizacja i review po #237, dopiero potem merge |
+| E — uprawnienia | [PR #240](https://github.com/zio-wi-pb-mc/pb-science-office/pull/240) nowy; #174 historyczny Draft | Nie scalać osobnej migracji `ProjectAssignment`; uzgodnić jeden kontrakt z #235 |
+| F01 | Ręczny odbiór PostgreSQL w [PR #239](https://github.com/zio-wi-pb-mc/pb-science-office/pull/239): **PASS** logowanie/zapis/odczyt/404 cudzej fiszki, ale lokalnie flaky test (1 failed/240 passed/2 skipped) | Review raportu, osobna poprawka niestabilnego testu |
+| Finanse | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) ma lokalny WIP @dperkowski, bez PR i bez integracji z `dev` | Pierwszy mały PR po #237, kwoty F4 częściowo syntetyczne |
+| Importer | [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216): dry-run/validacja w `dev` | Podłączenie do kanonicznego `Project`, bez drugiego modelu |
+| Backup/doctor | PR #232 i #234 scalone; #230 i #196 nadal otwarte | Niezależna praktyczna próba |
+| F02 | B przydzieliło [#241–#245](https://github.com/zio-wi-pb-mc/pb-science-office/issues/241) | Potwierdzić priorytet biznesowy, nie blokować pierwszego Demo |
 
-**Uwaga:** w Docker Demo `DEBUG=False` projekty i budżety nadal mają ścieżkę zwracającą 404. CI obrazu nie wykonuje funkcjonalnego testu F3/F4.
+**Stan demonstratora na 24.11: NO-GO do ogłoszenia pełnej gotowości na `dev`.** Po scaleniu krytycznych PR przez studentów i niezależnym PASS #246 można zorganizować **ograniczony pokaz** na danych syntetycznych. Finanse, importer i raporty nie są jeszcze gotowe do odbioru. Wydania `dev → main` wyłącznie prowadzący.
 
 ## Aktywność studentów — 10–18 listopada
 
-**16 scalonych PR w okresie 10–18 listopada, 12 różnych autorów, 5 zespołów.** To nowa aktywność i realna implementacja, ale PR-y mają różny zakres. Tabela opisuje *zakończone scalenia*, nie punkty i nie indywidualne oceny.
+**Historyczne zestawienie: 16 scalonych PR w okresie 10–18 listopada, 12 różnych autorów, 5 zespołów.** To nowa aktywność i realna implementacja, ale PR-y mają różny zakres. Tabela opisuje *zakończone scalenia*, nie punkty i nie indywidualne oceny.
 
 | Zespół | Autorzy i scalone PR | Rezultat |
 |---|---|---|
@@ -121,7 +123,7 @@ Zastosowano zasady S=2, M=5, L=8; poniższy przyrost nie zawiera niedokończonyc
 ## Miejsca pracy
 
 - [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1) — aktualne przydziały i statusy.
-- [Otwarte PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls) — #174 i #235 (stan 18.11, oba Draft).
+- [Otwarte PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls) — stan 24.11: #174 (Draft), #235, #236, #237, #239, #240.
 - [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues) — zadania i kryteria odbioru.
 - [Bank propozycji](17-bank-zadan-mvp.md) — pomysły dla osób bez własnego zadania.
 - [Roadmapa](21-roadmap-3-tygodnie.md) — cele na najbliższe tygodnie.
