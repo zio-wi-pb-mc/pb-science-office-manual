@@ -14,7 +14,11 @@
 | Równolegle [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)/[PR #240](https://github.com/zio-wi-pb-mc/pb-science-office/pull/240) | E / @CzaroAmaro | Jeden wspólny kontrakt z F; **nie scalać** drugiego `ProjectAssignment` |
 | Po integracji [#246](https://github.com/zio-wi-pb-mc/pb-science-office/issues/246) | C / @Grinnazar | Niezależny odbiór Docker Demo na `dev`, wynik GO/NO-GO do [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217) |
 
-**Po każdym studenckim merge do `dev` aktualizować kolejny PR i powtarzać CI.** Scalenia wykonują studenci, ChatGPT nie wykonuje merge. Wydanie `dev → main` wyłącznie prowadzący.
+**Po każdym studenckim merge do `dev` aktualizować kolejny PR i powtarzać CI.** Scalenia wykonują studenci. Wydanie `dev → main` wyłącznie prowadzący.
+
+## Praca równoległa
+
+A i D mogą już przygotowywać przyrosty na uzgodnionym HEAD #237, C rozpocząć próbny odbiór zintegrowanej gałęzi #236, a B pomóc w niezależnym review formularzy CRUD. Zależne PR-y oznaczamy jako Draft z podanym SHA bazowym; po integracji aktualizujemy je do `dev` i ponawiamy CI. Końcowy odbiór dotyczy zintegrowanego `dev`. Zachowujemy właścicieli zadań i indywidualne rozliczenie wkładu. C równolegle przygotowuje wspólne środowisko testowe (#217); dostępność serwera uczelni pozostaje do uzgodnienia.
 
 ## Równoległa praca A–F
 
@@ -31,7 +35,7 @@
 
 | Termin | Kryterium |
 |---|---|
-| **27–30.11 lub początek grudnia** | Ograniczony pokaz F01, listy/szczegółów/budżetu i ewentualnie CRUD — **tylko jeśli #246 potwierdzi PASS** |
+| **Przełom listopada i grudnia** | Ograniczony pokaz F01, listy/szczegółów/budżetu i ewentualnie CRUD — **tylko jeśli #246 potwierdzi PASS** |
 | **04–11.12** | Trwałe projekty i CRUD na `dev`, naprawa uwag z odbioru F01 |
 | **18.12** | Podstawowe operacje finansowe na trwałych danych i sprawdzony bilans |
 | **08.01** | CSV/raporty i importer z kontrolą jakości |
