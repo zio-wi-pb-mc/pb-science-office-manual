@@ -26,6 +26,7 @@ A i D mogą już przygotowywać przyrosty na uzgodnionym HEAD #237, C rozpoczą�
 | F01 | Ręczny odbiór PostgreSQL w [PR #239](https://github.com/zio-wi-pb-mc/pb-science-office/pull/239): **PASS** logowanie/zapis/odczyt/404 cudzej fiszki, ale lokalnie flaky test (1 failed/240 passed/2 skipped) | Review raportu, osobna poprawka niestabilnego testu |
 | Finanse | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) ma lokalny WIP @dperkowski, bez PR i bez integracji z `dev` | Draft na HEAD #237 już teraz; kwoty F4 częściowo syntetyczne |
 | Importer | [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216): dry-run/validacja w `dev` | Podłączenie do kanonicznego `Project`, bez drugiego modelu |
+| Role PostgreSQL | [PR #247](https://github.com/zio-wi-pb-mc/pb-science-office/pull/247) — konflikt, CI FAIL (4/5 jobów) | C: naprawa inicjalizacji, Compose, Demo i backup/restore; nie blokuje pierwszego Demo |
 | Backup/doctor | PR #232 i #234 scalone; #230 i #196 nadal otwarte | Niezależna praktyczna próba |
 | F02 | B przydzieliło [#241–#245](https://github.com/zio-wi-pb-mc/pb-science-office/issues/241) | Potwierdzić priorytet biznesowy, nie blokować pierwszego Demo |
 
@@ -127,7 +128,7 @@ Zastosowano zasady S=2, M=5, L=8; poniższy przyrost nie zawiera niedokończonyc
 ## Miejsca pracy
 
 - [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1) — aktualne przydziały i statusy.
-- [Otwarte PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls) — stan 24.11: #174 (Draft), #235, #236, #237, #239, #240.
+- [Otwarte PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls) — stan 24.11: #174 (Draft), #235, #236, #237, #239, #240, #247.
 - [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues) — zadania i kryteria odbioru.
 - [Bank propozycji](17-bank-zadan-mvp.md) — pomysły dla osób bez własnego zadania.
 - [Roadmapa](21-roadmap-3-tygodnie.md) — cele na najbliższe tygodnie.
