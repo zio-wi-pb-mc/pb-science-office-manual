@@ -10,6 +10,10 @@
 
 Oceniamy rzeczywisty wkład studentów — również review, testy, integrację i pomoc poza własnym zespołem — zgodnie z [zasadami oceniania](08-ocenianie.md) i [leaderboardem #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86). Historyczny snapshot z 03.11 pozostał punktem wyjścia; nowe punkty dopisano po audycie 18.11.
 
+## Praca równoległa
+
+A i D mogą już przygotowywać przyrosty na uzgodnionym HEAD #237, C rozpocząć próbny odbiór zintegrowanej gałęzi #236, a B pomóc w niezależnym review formularzy CRUD. Zależne PR-y oznaczamy jako Draft z podanym SHA bazowym; po integracji aktualizujemy je do `dev` i ponawiamy CI. Końcowy odbiór dotyczy zintegrowanego `dev`. Zachowujemy właścicieli zadań i indywidualne rozliczenie wkładu. C równolegle przygotowuje wspólne środowisko testowe (#217); dostępność serwera uczelni pozostaje do uzgodnienia.
+
 ## Gotowość produktu — audyt 24 listopada
 
 | Element | Obecny stan | Co dalej |
@@ -20,7 +24,7 @@ Oceniamy rzeczywisty wkład studentów — również review, testy, integrację 
 | Tworzenie/edycja | [PR #236](https://github.com/zio-wi-pb-mc/pb-science-office/pull/236), zintegrowane testy na PostgreSQL 328 PASS/2 SKIP, próba Demo HTTP PASS według PR | Aktualizacja i review po #237, dopiero potem merge |
 | E — uprawnienia | [PR #240](https://github.com/zio-wi-pb-mc/pb-science-office/pull/240) nowy; #174 historyczny Draft | Nie scalać osobnej migracji `ProjectAssignment`; uzgodnić jeden kontrakt z #235 |
 | F01 | Ręczny odbiór PostgreSQL w [PR #239](https://github.com/zio-wi-pb-mc/pb-science-office/pull/239): **PASS** logowanie/zapis/odczyt/404 cudzej fiszki, ale lokalnie flaky test (1 failed/240 passed/2 skipped) | Review raportu, osobna poprawka niestabilnego testu |
-| Finanse | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) ma lokalny WIP @dperkowski, bez PR i bez integracji z `dev` | Pierwszy mały PR po #237, kwoty F4 częściowo syntetyczne |
+| Finanse | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) ma lokalny WIP @dperkowski, bez PR i bez integracji z `dev` | Draft na HEAD #237 już teraz; kwoty F4 częściowo syntetyczne |
 | Importer | [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216): dry-run/validacja w `dev` | Podłączenie do kanonicznego `Project`, bez drugiego modelu |
 | Backup/doctor | PR #232 i #234 scalone; #230 i #196 nadal otwarte | Niezależna praktyczna próba |
 | F02 | B przydzieliło [#241–#245](https://github.com/zio-wi-pb-mc/pb-science-office/issues/241) | Potwierdzić priorytet biznesowy, nie blokować pierwszego Demo |
