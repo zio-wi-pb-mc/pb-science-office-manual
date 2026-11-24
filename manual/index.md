@@ -28,8 +28,10 @@
 | **B — formularze** | F01 jest w `dev`. [#241–#245](https://github.com/zio-wi-pb-mc/pb-science-office/issues/241) — przydzielone zadania F02: @Camed, @karichil, @Hackeristi, @patrycjachocko, @Zapsiu. **F02 nie blokuje Demo**; jego priorytet i wymagane pola należy potwierdzić z Działem Nauki |
 | **C — platforma/testy** | **@Grinnazar** [#246](https://github.com/zio-wi-pb-mc/pb-science-office/issues/246) odbiór Demo; **@wersosn** [#238](https://github.com/zio-wi-pb-mc/pb-science-office/issues/238)/[PR #239](https://github.com/zio-wi-pb-mc/pb-science-office/pull/239) odbiór F01; **@Maciek-Sawicki** [#230](https://github.com/zio-wi-pb-mc/pb-science-office/issues/230) backup/restore; **@kolyasiquez** [#196](https://github.com/zio-wi-pb-mc/pb-science-office/issues/196) doctor |
 | **D — migracja** | **@TS40**, [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216): przygotowanie adaptera do `Project` na gałęzi #237, odbiór po integracji, test idempotencji i raport zgodności |
-| **E — uprawnienia** | **@CzaroAmaro**, [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)/[#240](https://github.com/zio-wi-pb-mc/pb-science-office/pull/240): usuńcie kolizję z #235; **@Emili-d** [#181](https://github.com/zio-wi-pb-mc/pb-science-office/issues/181) scenariusze; **@michalborawski** [#120](https://github.com/zio-wi-pb-mc/pb-science-office/issues/120) macierz ról |
+| **E — uprawnienia** | **@CzaroAmaro**, [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173)/[#240](https://github.com/zio-wi-pb-mc/pb-science-office/pull/240): usuńcie kolizję z #235; **@Emili-d** [#181](https://github.com/zio-wi-pb-mc/pb-science-office/issues/181) scenariusze; **@michalborawski / @Emili-d** [#120](https://github.com/zio-wi-pb-mc/pb-science-office/issues/120) macierz ról |
 | **F — integracja** | **@Pawelkoz201** koordynuje #235/#237/#236; autorzy kodu **@lukaszbondar1** (#237) i **@Patryk-Bura** (#236) odpowiadają za swoje zmiany i studencki merge |
+
+**C / #233:** nowy [PR #247](https://github.com/zio-wi-pb-mc/pb-science-office/pull/247) rozdziela konta PostgreSQL. Konflikt i CI FAIL; poprawki równolegle, bez blokowania pierwszego Demo.
 
 ## Co już można pokazać i czego NIE obiecywać
 
