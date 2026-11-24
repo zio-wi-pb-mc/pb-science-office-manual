@@ -2,7 +2,13 @@
 
 **Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Każdy zespół może wybierać własne zadania lub wspierać inne zespoły; roadmapa pokazuje najbardziej potrzebne kierunki pracy.
 
-**Stan planu: 18.11.2026.** Prace trwają na [`dev`](https://github.com/zio-wi-pb-mc/pb-science-office/tree/dev); do wydania w `main` decyduje prowadzący. Zapisane Issues pokazują możliwości realizacji, a nie przymusowy przydział.
+**Stan planu: 24.11.2026 (zaktualizowany checkpoint Demo).** Prace trwają na [`dev`](https://github.com/zio-wi-pb-mc/pb-science-office/tree/dev); do wydania w `main` decyduje prowadzący. Zapisane Issues pokazują możliwości realizacji, a nie przymusowy przydział.
+
+## Najbliższa bramka: ograniczony pokaz Działowi Nauki
+
+Na 24.11 `dev` nadal wskazuje `e8d94872`, a kod nowego dostępu/CRUD jest w otwartych PR-ach [#235](https://github.com/zio-wi-pb-mc/pb-science-office/pull/235) → [#237](https://github.com/zio-wi-pb-mc/pb-science-office/pull/237) → [#236](https://github.com/zio-wi-pb-mc/pb-science-office/pull/236). **Merge do `dev` wykonują sami studenci** po review i CI. E [#240](https://github.com/zio-wi-pb-mc/pb-science-office/pull/240) musi uzgodnić jeden wspólny model przypisań z F, aby uniknąć dwóch migracji tej samej funkcji. C [#246](https://github.com/zio-wi-pb-mc/pb-science-office/issues/246) sprawdzi dwa konta, odmowy cudzych HTML/JSON/budżetów, zapis i ponowny odczyt projektu w Docker Demo `DEBUG=False`, dostarczając **GO/NO-GO**.
+
+Pokaz **27–30 listopada lub pierwsze dni grudnia** jest warunkowy, wyłącznie na syntetycznych danych i służy uzgodnieniu zakresu z pracownikami Działu Nauki. Nie deklarować gotowych finansów, migracji legacy ani raportów. F01 ma ręczny PASS w [PR #239](https://github.com/zio-wi-pb-mc/pb-science-office/pull/239), ale lokalnie wykryto niestabilny test timestampów. Zadania F02 [#241–#245](https://github.com/zio-wi-pb-mc/pb-science-office/issues/241) są przydzielone; **priorytet biznesowy tego formularza nie został jeszcze zatwierdzony**.
 
 ## Etapy prac i kryteria odbioru
 
