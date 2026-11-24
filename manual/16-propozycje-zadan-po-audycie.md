@@ -1,6 +1,6 @@
 # Co robić teraz — zadania do integracji i pokazu
 
-**Audyt 24.11.2026.** `dev` nadal `e8d94872` ([CI PASS z 18.11](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850)). Otwartych jest **6 PR-ów**, w tym #174 jako stary Draft. Największe przyrosty powstały na gałęziach studenckich. **Priorytet: przenieść je bezpiecznie do `dev` i odebrać funkcjonalnie**, zamiast tworzyć nowe, konkurencyjne implementacje.
+**Audyt 24.11.2026.** `dev` nadal `e8d94872` ([CI PASS z 18.11](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850)). Otwartych jest **7 PR-ów**, w tym #174 jako stary Draft. Największe przyrosty powstały na gałęziach studenckich. **Priorytet: przenieść je bezpiecznie do `dev` i odebrać funkcjonalnie**, zamiast tworzyć nowe, konkurencyjne implementacje.
 
 ## Dla wszystkich: krytyczna ścieżka P0
 
@@ -23,9 +23,9 @@
 | B — F02 | **@Camed** #241, **@karichil** #242, **@Hackeristi** #243, **@patrycjachocko** #244, **@Zapsiu** #245 | Zadania mają wykonawców. Praca równoległa; brak potwierdzenia przez Dział Nauki, że F02 jest teraz MUST. Nie przebudowywać F01 ani opóźniać integracji F |
 | C — F01 | **@wersosn** [#238](https://github.com/zio-wi-pb-mc/pb-science-office/issues/238), [PR #239](https://github.com/zio-wi-pb-mc/pb-science-office/pull/239) | Raport ręczny **PASS**, ale zaznaczony flaky test timestampów (1 failed lokalnie). Po review studencki merge raportu; osobno mały fix bez maskowania błędu |
 | C — operacje | **@Maciek-Sawicki** [#230](https://github.com/zio-wi-pb-mc/pb-science-office/issues/230); **@kolyasiquez** [#196](https://github.com/zio-wi-pb-mc/pb-science-office/issues/196) | Niezależna próba backup/restore i doctor na odtwarzalnym środowisku; zamknąć po kryteriach odbioru |
-| C — ograniczone konto DB | **@Leucist** [#233](https://github.com/zio-wi-pb-mc/pb-science-office/issues/233) | Konta admin/runtime na PostgreSQL bez podnoszenia praw aplikacji; nie blokuje pierwszego Demo, ale potrzebne przed wdrożeniem |
+| C — ograniczone konto DB | **@Leucist** [#233](https://github.com/zio-wi-pb-mc/pb-science-office/issues/233) | [PR #247](https://github.com/zio-wi-pb-mc/pb-science-office/pull/247): konflikt i CI FAIL (4 joby); poprawić inicjalizację, start i backup/restore. Konta admin/runtime bez podnoszenia praw aplikacji; nie blokuje pierwszego Demo, ale potrzebne przed wdrożeniem |
 | D — importer | **@TS40** [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) | Adapter do `projects.Project` z #237; walidacja, idempotentny drugi przebieg, raport liczby rekordów i sum, bez danych rzeczywistych |
-| E — role | **@Emili-d** [#181](https://github.com/zio-wi-pb-mc/pb-science-office/issues/181); **@michalborawski** [#120](https://github.com/zio-wi-pb-mc/pb-science-office/issues/120) | Przenieść uzgodnione scenariusze 403/404 i rolę operatora do wspólnego kontraktu z F; nie tworzyć drugiej implementacji |
+| E — role | **@Emili-d** [#181](https://github.com/zio-wi-pb-mc/pb-science-office/issues/181); **@michalborawski / @Emili-d** [#120](https://github.com/zio-wi-pb-mc/pb-science-office/issues/120) | Przenieść uzgodnione scenariusze 403/404 i rolę operatora do wspólnego kontraktu z F; nie tworzyć drugiej implementacji |
 
 ## Praca równoległa
 
