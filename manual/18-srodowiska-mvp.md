@@ -2,7 +2,7 @@
 
 **Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
 
-**Stan zweryfikowany: 16.11.2026.** [PR #193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) (Docker Demo), [PR #188](https://github.com/zio-wi-pb-mc/pb-science-office/pull/188) (procedura Shared Staging) i [PR #207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) (bezpieczny seed kont) są scalone do `dev`.
+**Stan zweryfikowany: 24.11.2026.** [PR #193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) (Docker Demo), [PR #188](https://github.com/zio-wi-pb-mc/pb-science-office/pull/188) (procedura Shared Staging) i [PR #207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) (bezpieczny seed kont) są scalone do `dev`.
 
 ## Co istnieje
 
@@ -42,7 +42,11 @@ Używaj konfiguracji `APP_ENV=demo`, `DEBUG=False`. Seed kont działa wyłączni
 5. Wylogowanie i powtórna próba wejścia.
 6. F01: nowa fiszka, zapis do bazy, ponowny odczyt, odmowa cudzej fiszki.
 
-Obecne testy w [CI](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/43774911214) potwierdzają budowę obrazu i podstawową dostępność, **nie zaliczają punktów 3–6**. Ich brak to zadania P0: [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173), [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219), [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217).
+Obecne testy w [CI](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850) potwierdzają budowę obrazu i podstawową dostępność, **nie zaliczają punktów 3–6**. Ich brak to zadania P0: [#173](https://github.com/zio-wi-pb-mc/pb-science-office/issues/173), [#219](https://github.com/zio-wi-pb-mc/pb-science-office/issues/219), [#217](https://github.com/zio-wi-pb-mc/pb-science-office/issues/217).
+
+## Przygotowanie Shared Staging
+
+C przygotowuje konfigurację w ramach #217 na podstawie `docs/shared-staging.md`. Dostępność VM, SSH, DNS i HTTPS wymaga uzgodnienia z administratorem. Izolowana baza, dane syntetyczne, sekrety poza repozytorium, ograniczony SSH, backup i rollback. Przed udostępnieniem sprawdzić działanie widoków i uprawnień przy `DEBUG=False`; konfiguracja `APP_ENV=staging` wymaga osobnej weryfikacji. Lokalny test #246 na #236 można zacząć niezależnie od VM.
 
 ## Do wdrożenia i przekazania
 
