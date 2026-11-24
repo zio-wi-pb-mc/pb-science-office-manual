@@ -26,7 +26,7 @@ A i D mogą już przygotowywać przyrosty na uzgodnionym HEAD #237, C rozpoczą�
 |---|---|---|
 | A | @dperkowski [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214), @mielonxd [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215) | Mały PR: plan → rezerwacja → wydatek → saldo z PostgreSQL; zakres raportów do uzgodnienia |
 | B | @Camed #241, @karichil #242, @Hackeristi #243, @patrycjachocko #244, @Zapsiu #245 | F02 jako praca równoległa, ale priorytet formularza musi potwierdzić Dział Nauki |
-| C | @wersosn #238/PR #239, @Grinnazar #246, @Maciek-Sawicki #230, @kolyasiquez #196, @Leucist #233 | Odbiór F01 (ręczny PASS, flaky test), Docker Demo, backup/restore i doctor, docelowo ograniczone konto DB |
+| C | @wersosn #238/PR #239, @Grinnazar #246, @Maciek-Sawicki #230, @kolyasiquez #196, @Leucist #233 | Odbiór F01 (ręczny PASS, flaky test), Docker Demo, backup/restore i doctor, docelowo ograniczone konto DB (#247: konflikt i CI FAIL; poprawki równolegle) |
 | D | @TS40 [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) | Adapter importera do kanonicznego ORM i raport porównania/idempotencji |
 | E | @CzaroAmaro #173/#240, @Emili-d #181, @michalborawski #120 | Spójne uprawnienia, scenariusze odmów, brak powielania F |
 | F | @Pawelkoz201 koordynacja, @lukaszbondar1 #237, @Patryk-Bura #236 | Trwały model i CRUD projektów, bezpieczne Demo |
