@@ -33,7 +33,6 @@
 | C — ograniczone konto DB | **@Leucist** [#233](https://github.com/zio-wi-pb-mc/pb-science-office/issues/233) | [PR #247](https://github.com/zio-wi-pb-mc/pb-science-office/pull/247): konflikt i CI FAIL (4 joby); poprawić inicjalizację, start i backup/restore. Konta admin/runtime bez podnoszenia praw aplikacji; nie blokuje pierwszego Demo, ale potrzebne przed wdrożeniem |
 | D — importer | **@TS40** [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) | Adapter do `projects.Project` z #237; walidacja, idempotentny drugi przebieg, raport liczby rekordów i sum; próby na zanonimizowanym dumpie poza repo |
 | E — role | **@Emili-d** [#181](https://github.com/zio-wi-pb-mc/pb-science-office/issues/181); **@michalborawski / @Emili-d** [#120](https://github.com/zio-wi-pb-mc/pb-science-office/issues/120) | Przenieść uzgodnione scenariusze 403/404 i rolę operatora do wspólnego kontraktu z F; nie tworzyć drugiej implementacji |
-
 | E/C — SAML2 | **@michalborawski** [#249](https://github.com/zio-wi-pb-mc/pb-science-office/issues/249), wsparcie C/F | Lokalna integracja i testy, metadane do administratora |
 
 ## Najbliższe dwa tygodnie
