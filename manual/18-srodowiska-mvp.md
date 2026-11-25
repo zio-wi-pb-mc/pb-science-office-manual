@@ -2,7 +2,7 @@
 
 **Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Zespoły mogą samodzielnie wybierać zadania; wskazane Issues są propozycjami, nie przydziałami.
 
-**Stan zweryfikowany: 24.11.2026.** [PR #193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) (Docker Demo), [PR #188](https://github.com/zio-wi-pb-mc/pb-science-office/pull/188) (procedura Shared Staging) i [PR #207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) (bezpieczny seed kont) są scalone do `dev`.
+**Stan zweryfikowany: 25.11.2026.** [PR #193](https://github.com/zio-wi-pb-mc/pb-science-office/pull/193) (Docker Demo), [PR #188](https://github.com/zio-wi-pb-mc/pb-science-office/pull/188) (procedura Shared Staging) i [PR #207](https://github.com/zio-wi-pb-mc/pb-science-office/pull/207) (bezpieczny seed kont) są scalone do `dev`.
 
 ## Co istnieje
 
@@ -46,7 +46,11 @@ Obecne testy w [CI](https://github.com/zio-wi-pb-mc/pb-science-office/actions/ru
 
 ## Przygotowanie Shared Staging
 
-C przygotowuje konfigurację w ramach #217 na podstawie `docs/shared-staging.md`. Dostępność VM, SSH, DNS i HTTPS wymaga uzgodnienia z administratorem. Izolowana baza, dane syntetyczne, sekrety poza repozytorium, ograniczony SSH, backup i rollback. Przed udostępnieniem sprawdzić działanie widoków i uprawnień przy `DEBUG=False`; konfiguracja `APP_ENV=staging` wymaga osobnej weryfikacji. Lokalny test #246 na #236 można zacząć niezależnie od VM.
+C przygotowuje konfigurację w ramach #217 na podstawie `docs/shared-staging.md`. Administrator zaproponował VM z Ubuntu i adres `nauka.pb.edu.pl/test/` za reverse proxy. Wersja systemu, adres i dostęp SSH/HTTPS do potwierdzenia. Sprawdzić prefiks URL, static, cookies i przekierowania. Izolowana baza, dane syntetyczne, sekrety poza repozytorium, ograniczony SSH, backup i rollback. Przed udostępnieniem sprawdzić działanie widoków i uprawnień przy `DEBUG=False`; konfiguracja `APP_ENV=staging` wymaga osobnej weryfikacji. Lokalny test #246 na #236 można zacząć niezależnie od VM.
+
+## Logowanie uczelniane
+
+[#249](https://github.com/zio-wi-pb-mc/pb-science-office/issues/249): SAML2 z `login.pb.edu.pl`, metadane SP/IdP do uzgodnienia. Lokalne konta testowe na pierwsze Demo; role i przypisania pozostają w aplikacji. Nie udostępniamy studentom LDAP ani sekretów.
 
 ## Do wdrożenia i przekazania
 
