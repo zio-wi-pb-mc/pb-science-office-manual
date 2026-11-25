@@ -1,6 +1,13 @@
 # Co robić teraz — zadania do integracji i pokazu
 
-**Audyt 24.11.2026.** `dev` nadal `e8d94872` ([CI PASS z 18.11](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850)). Otwartych jest **7 PR-ów**, w tym #174 jako stary Draft. Największe przyrosty powstały na gałęziach studenckich. **Priorytet: przenieść je bezpiecznie do `dev` i odebrać funkcjonalnie**, zamiast tworzyć nowe, konkurencyjne implementacje.
+**Stan 25.11.2026.** `dev` nadal `e8d94872` ([CI PASS z 18.11](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850)). Otwartych jest **8 PR-ów**, w tym #174 jako stary Draft. Największe przyrosty powstały na gałęziach studenckich. **Priorytet: przenieść je bezpiecznie do `dev` i odebrać funkcjonalnie**, zamiast tworzyć nowe, konkurencyjne implementacje.
+
+## Aktualności — 25 listopada
+
+- Przygotowujemy wspólny serwer testowy. Proponowany adres: `nauka.pb.edu.pl/test/`. Konfiguracja i termin udostępnienia do uzgodnienia z administratorem.
+- Logowanie uczelniane przez SAML2 (`login.pb.edu.pl`): [#249](https://github.com/zio-wi-pb-mc/pb-science-office/issues/249), E przy wsparciu C/F. Pierwszy pokaz może odbyć się na kontach testowych.
+- Do prób migracji mamy zanonimizowany dump starej bazy. Używamy go po sprawdzeniu anonimizacji, poza GitHubem i publicznym Demo.
+- Finanse: [PR #248](https://github.com/zio-wi-pb-mc/pb-science-office/pull/248) — pierwszy przyrost, CI PASS, Draft na modelu #237.
 
 ## Dla wszystkich: krytyczna ścieżka P0
 
@@ -18,14 +25,29 @@
 
 | Obszar | Osoba i Issue | Najbliższy mały rezultat |
 |---|---|---|
-| A — finanse | **@dperkowski** [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) | Przygotować Draft PR na uzgodnionym HEAD #237 już teraz: plan, rezerwacja, wydatek, saldo z PostgreSQL po ponownym odczycie. Nie reklamować jako ukończonego modułu finansów |
+| A — finanse | **@dperkowski** [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) | [PR #248](https://github.com/zio-wi-pb-mc/pb-science-office/pull/248) (Draft, CI PASS) — review i próba integracji z #236: plan, rezerwacja, wydatek, saldo z PostgreSQL po ponownym odczycie. Nie reklamować jako ukończonego modułu finansów |
 | A — raporty | **@mielonxd** [#215](https://github.com/zio-wi-pb-mc/pb-science-office/issues/215) | 1–2 kluczowe raporty do potwierdzenia u użytkownika, później CSV; nie tworzyć eksportu fikcyjnych danych jako odbioru |
 | B — F02 | **@Camed** #241, **@karichil** #242, **@Hackeristi** #243, **@patrycjachocko** #244, **@Zapsiu** #245 | Zadania mają wykonawców. Praca równoległa; brak potwierdzenia przez Dział Nauki, że F02 jest teraz MUST. Nie przebudowywać F01 ani opóźniać integracji F |
 | C — F01 | **@wersosn** [#238](https://github.com/zio-wi-pb-mc/pb-science-office/issues/238), [PR #239](https://github.com/zio-wi-pb-mc/pb-science-office/pull/239) | Raport ręczny **PASS**, ale zaznaczony flaky test timestampów (1 failed lokalnie). Po review studencki merge raportu; osobno mały fix bez maskowania błędu |
 | C — operacje | **@Maciek-Sawicki** [#230](https://github.com/zio-wi-pb-mc/pb-science-office/issues/230); **@kolyasiquez** [#196](https://github.com/zio-wi-pb-mc/pb-science-office/issues/196) | Niezależna próba backup/restore i doctor na odtwarzalnym środowisku; zamknąć po kryteriach odbioru |
 | C — ograniczone konto DB | **@Leucist** [#233](https://github.com/zio-wi-pb-mc/pb-science-office/issues/233) | [PR #247](https://github.com/zio-wi-pb-mc/pb-science-office/pull/247): konflikt i CI FAIL (4 joby); poprawić inicjalizację, start i backup/restore. Konta admin/runtime bez podnoszenia praw aplikacji; nie blokuje pierwszego Demo, ale potrzebne przed wdrożeniem |
-| D — importer | **@TS40** [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) | Adapter do `projects.Project` z #237; walidacja, idempotentny drugi przebieg, raport liczby rekordów i sum, bez danych rzeczywistych |
+| D — importer | **@TS40** [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216) | Adapter do `projects.Project` z #237; walidacja, idempotentny drugi przebieg, raport liczby rekordów i sum; próby na zanonimizowanym dumpie poza repo |
 | E — role | **@Emili-d** [#181](https://github.com/zio-wi-pb-mc/pb-science-office/issues/181); **@michalborawski / @Emili-d** [#120](https://github.com/zio-wi-pb-mc/pb-science-office/issues/120) | Przenieść uzgodnione scenariusze 403/404 i rolę operatora do wspólnego kontraktu z F; nie tworzyć drugiej implementacji |
+
+| E/C — SAML2 | **@michalborawski** [#249](https://github.com/zio-wi-pb-mc/pb-science-office/issues/249), wsparcie C/F | Lokalna integracja i testy, metadane do administratora |
+
+## Najbliższe dwa tygodnie
+
+| Zespół | W najbliższych dniach | W kolejnym tygodniu |
+|---|---|---|
+| A | Review [PR #248](https://github.com/zio-wi-pb-mc/pb-science-office/pull/248), sprawdzenie kwot i kontraktu z D/F | Integracja finansów po modelu #237; saldo, rozliczenia, zakres raportów #215 |
+| B | F02: #241–#245; pomoc w review CRUD #236 | Zintegrowany formularz F02 z testami; poprawki po uwagach |
+| C | Próba #246 na #236, przygotowanie stagingu #217, poprawki #247 | Wdrożenie na VM po jej udostępnieniu, odbiór zintegrowanego dev, backup/restore, pomoc przy SAML2 |
+| D | Adapter importera #216 do #237; uzgodnienie finansów z #248 | Próbny import zanonimizowanej bazy w izolacji, raport zgodności i idempotencji |
+| E | Uzgodnienie #240 z #235, role #120/#181; rozpoczęcie #249 | Test SAML2 lokalnie i przygotowanie metadanych; testy uprawnień |
+| F | Integracja #235 → #237 → #236, review i CI | Poprawki po odbiorze C, integracja finansów A i wsparcie SAML2 |
+
+Nie czekamy na zakończenie całego modułu. Prace zależne można przygotować na uzgodnionej gałęzi; końcowy odbiór na `dev`. Studenci samodzielnie scalają PR-y po review i CI. Wydanie do `main` wykonuje prowadzący.
 
 ## Praca równoległa
 
