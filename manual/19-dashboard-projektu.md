@@ -2,7 +2,7 @@
 
 **Cel ZIO:** do **31 stycznia 2027 r.** aplikacja ma być **wdrożona, przetestowana i odebrana przez Dział Nauki**. Każdy zespół może wybierać własne zadania lub wspierać inne zespoły; roadmapa pokazuje najbardziej potrzebne kierunki pracy.
 
-**Stan techniczny sprawdzony 24.11.2026: `dev` nadal `e8d94872` ([ostatni CI PASS z 18.11](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850)); kluczowe PR-y są na gałęziach, nie na `dev`.** Leaderboard: audyt 18.11, z punktem wyjścia w zatwierdzonym snapshotcie z 03.11, zgodnie z [Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86).
+**Stan techniczny sprawdzony 25.11.2026: `dev` nadal `e8d94872` ([ostatni CI PASS z 18.11](https://github.com/zio-wi-pb-mc/pb-science-office/actions/runs/44258929850)); kluczowe PR-y są na gałęziach, nie na `dev`.** Leaderboard: audyt 18.11, z punktem wyjścia w zatwierdzonym snapshotcie z 03.11, zgodnie z [Issue #86](https://github.com/zio-wi-pb-mc/pb-science-office/issues/86).
 
 ## Zasady współpracy między zespołami
 
@@ -14,7 +14,7 @@ Oceniamy rzeczywisty wkład studentów — również review, testy, integrację 
 
 A i D mogą już przygotowywać przyrosty na uzgodnionym HEAD #237, C rozpocząć próbny odbiór zintegrowanej gałęzi #236, a B pomóc w niezależnym review formularzy CRUD. Zależne PR-y oznaczamy jako Draft z podanym SHA bazowym; po integracji aktualizujemy je do `dev` i ponawiamy CI. Końcowy odbiór dotyczy zintegrowanego `dev`. Zachowujemy właścicieli zadań i indywidualne rozliczenie wkładu. C równolegle przygotowuje wspólne środowisko testowe (#217); dostępność serwera uczelni pozostaje do uzgodnienia.
 
-## Gotowość produktu — audyt 24 listopada
+## Gotowość produktu — stan 25 listopada
 
 | Element | Obecny stan | Co dalej |
 |---|---|---|
@@ -24,13 +24,15 @@ A i D mogą już przygotowywać przyrosty na uzgodnionym HEAD #237, C rozpoczą�
 | Tworzenie/edycja | [PR #236](https://github.com/zio-wi-pb-mc/pb-science-office/pull/236), zintegrowane testy na PostgreSQL 328 PASS/2 SKIP, próba Demo HTTP PASS według PR | Aktualizacja i review po #237, dopiero potem merge |
 | E — uprawnienia | [PR #240](https://github.com/zio-wi-pb-mc/pb-science-office/pull/240) nowy; #174 historyczny Draft | Nie scalać osobnej migracji `ProjectAssignment`; uzgodnić jeden kontrakt z #235 |
 | F01 | Ręczny odbiór PostgreSQL w [PR #239](https://github.com/zio-wi-pb-mc/pb-science-office/pull/239): **PASS** logowanie/zapis/odczyt/404 cudzej fiszki, ale lokalnie flaky test (1 failed/240 passed/2 skipped) | Review raportu, osobna poprawka niestabilnego testu |
-| Finanse | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) ma lokalny WIP @dperkowski, bez PR i bez integracji z `dev` | Draft na HEAD #237 już teraz; kwoty F4 częściowo syntetyczne |
+| Finanse | [#214](https://github.com/zio-wi-pb-mc/pb-science-office/issues/214) — [PR #248](https://github.com/zio-wi-pb-mc/pb-science-office/pull/248) Draft, CI PASS na gałęzi #237; brak integracji z dev | Review, próby na #236 i integracja po #237; kwoty F4 na dev nadal syntetyczne |
 | Importer | [#216](https://github.com/zio-wi-pb-mc/pb-science-office/issues/216): dry-run/validacja w `dev` | Podłączenie do kanonicznego `Project`, bez drugiego modelu |
 | Role PostgreSQL | [PR #247](https://github.com/zio-wi-pb-mc/pb-science-office/pull/247) — konflikt, CI FAIL (4/5 jobów) | C: naprawa inicjalizacji, Compose, Demo i backup/restore; nie blokuje pierwszego Demo |
+| Staging | Administrator zaproponował VM i reverse proxy; serwer jeszcze niedostępny | C: konfiguracja #217 |
+| SAML2 | [#249](https://github.com/zio-wi-pb-mc/pb-science-office/issues/249) — nowe zadanie E/C | Test lokalny, metadane i integracja z uczelnianym IdP |
 | Backup/doctor | PR #232 i #234 scalone; #230 i #196 nadal otwarte | Niezależna praktyczna próba |
 | F02 | B przydzieliło [#241–#245](https://github.com/zio-wi-pb-mc/pb-science-office/issues/241) | Potwierdzić priorytet biznesowy, nie blokować pierwszego Demo |
 
-**Stan demonstratora na 24.11: NO-GO do ogłoszenia pełnej gotowości na `dev`.** Po scaleniu krytycznych PR przez studentów i niezależnym PASS #246 można zorganizować **ograniczony pokaz** na danych syntetycznych. Finanse, importer i raporty nie są jeszcze gotowe do odbioru. Wydania `dev → main` wyłącznie prowadzący.
+**Stan demonstratora na 25.11: NO-GO do ogłoszenia pełnej gotowości na `dev`.** Po scaleniu krytycznych PR przez studentów i niezależnym PASS #246 można zorganizować **ograniczony pokaz** na danych syntetycznych. Finanse, importer i raporty nie są jeszcze gotowe do odbioru. Wydania `dev → main` wyłącznie prowadzący.
 
 ## Aktywność studentów — 10–18 listopada
 
@@ -128,7 +130,7 @@ Zastosowano zasady S=2, M=5, L=8; poniższy przyrost nie zawiera niedokończonyc
 ## Miejsca pracy
 
 - [GitHub Project](https://github.com/orgs/zio-wi-pb-mc/projects/1/views/1) — aktualne przydziały i statusy.
-- [Otwarte PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls) — stan 24.11: #174 (Draft), #235, #236, #237, #239, #240, #247.
+- [Otwarte PR](https://github.com/zio-wi-pb-mc/pb-science-office/pulls) — stan 25.11: #174 (Draft), #235, #236, #237, #239, #240, #247, #248.
 - [Issues](https://github.com/zio-wi-pb-mc/pb-science-office/issues) — zadania i kryteria odbioru.
 - [Bank propozycji](17-bank-zadan-mvp.md) — pomysły dla osób bez własnego zadania.
 - [Roadmapa](21-roadmap-3-tygodnie.md) — cele na najbliższe tygodnie.
